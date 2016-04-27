@@ -1,6 +1,0 @@
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\bin\Release\MicrosoftOnline.Ads.BingAdsApi.dll.config
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\bin\Release\MicrosoftOnline.Ads.BingAdsApi.dll
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\bin\Release\MicrosoftOnline.Ads.BingAdsApi.pdb
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Release\MicrosoftOnline.Ads.BingAdsApi.dll
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Release\MicrosoftOnline.Ads.BingAdsApi.pdb
-D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Release\MicrosoftOnline.Ads.BingAdsApi.csprojResolveAssemblyReference.cache
