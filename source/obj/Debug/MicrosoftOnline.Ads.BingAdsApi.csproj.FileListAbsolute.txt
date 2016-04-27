@@ -4,3 +4,9 @@ D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\bin\Debug\Micr
 D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.csprojResolveAssemblyReference.cache
 D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.dll
 D:\BI\MicrosoftOnline.Ads.BIClient\MicrosoftOnline.Ads.BingAdsApi\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.pdb
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\bin\Debug\MicrosoftOnline.Ads.BingAdsApi.dll.config
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\bin\Debug\MicrosoftOnline.Ads.BingAdsApi.dll
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\bin\Debug\MicrosoftOnline.Ads.BingAdsApi.pdb
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.csprojResolveAssemblyReference.cache
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.dll
+D:\Git\MicrosoftOnline.Ads.BingAdsApi\source\obj\Debug\MicrosoftOnline.Ads.BingAdsApi.pdb
