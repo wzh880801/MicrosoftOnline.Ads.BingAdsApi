@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://bingads.microsoft.com/Customer/v9" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomerManagementService" targetNamespace="https://bingads.microsoft.com/Customer/v9" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ICustomerManagementService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://bingads.microsoft.com/Customer/v9/Imports">
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd0" namespace="https://bingads.microsoft.com/Customer/v9" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd3" namespace="https://adapi.microsoft.com" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd2" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAccountsInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetAccountsInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetAccountsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsInfoResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccountsInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccountsInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsRequest">
+    <wsdl:part name="parameters" element="tns:FindAccountsRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsResponse">
+    <wsdl:part name="parameters" element="tns:FindAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_FindAccounts_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_FindAccounts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountRequest">
+    <wsdl:part name="parameters" element="tns:AddAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountResponse">
+    <wsdl:part name="parameters" element="tns:AddAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="https://adapi.microsoft.com" name="detail" element="q3:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRequest">
+    <wsdl:part name="parameters" element="tns:UpdateAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountResponse">
+    <wsdl:part name="parameters" element="tns:UpdateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="https://adapi.microsoft.com" name="detail" element="q4:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerRequest">
+    <wsdl:part name="parameters" element="tns:GetCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerResponse">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomer_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="https://adapi.microsoft.com" name="detail" element="q5:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRequest">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerResponse">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateCustomer_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="https://adapi.microsoft.com" name="detail" element="q6:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SignupCustomerRequest">
+    <wsdl:part name="parameters" element="tns:SignupCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="SignupCustomerRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SignupCustomerResponse">
+    <wsdl:part name="parameters" element="tns:SignupCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignupCustomerResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SignupCustomer_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="https://adapi.microsoft.com" name="detail" element="q7:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountRequest">
+    <wsdl:part name="parameters" element="tns:GetAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountResponse">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="https://adapi.microsoft.com" name="detail" element="q8:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetCustomersInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetCustomersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomersInfoResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomersInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="https://adapi.microsoft.com" name="detail" element="q9:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomersInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountRequest">
+    <wsdl:part name="parameters" element="tns:DeleteAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountResponse">
+    <wsdl:part name="parameters" element="tns:DeleteAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q10="https://adapi.microsoft.com" name="detail" element="q10:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerRequest">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerResponse">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCustomerResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteCustomer_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q11="https://adapi.microsoft.com" name="detail" element="q11:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRequest">
+    <wsdl:part name="parameters" element="tns:UpdateUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserResponse">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUser_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q12="https://adapi.microsoft.com" name="detail" element="q12:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRolesRequest">
+    <wsdl:part name="parameters" element="tns:UpdateUserRolesRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRolesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRolesResponse">
+    <wsdl:part name="parameters" element="tns:UpdateUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserRolesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUserRoles_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q13="https://adapi.microsoft.com" name="detail" element="q13:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRequest">
+    <wsdl:part name="parameters" element="tns:GetUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetUserRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetUserResponse">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUser_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q14="https://adapi.microsoft.com" name="detail" element="q14:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserRequest">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserResponse">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCurrentUser_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q15="https://adapi.microsoft.com" name="detail" element="q15:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserRequest">
+    <wsdl:part name="parameters" element="tns:DeleteUserRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserResponse">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteUser_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q16="https://adapi.microsoft.com" name="detail" element="q16:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUsersInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q17="https://adapi.microsoft.com" name="detail" element="q17:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerPilotFeaturesRequest">
+    <wsdl:part name="parameters" element="tns:GetCustomerPilotFeaturesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerPilotFeaturesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerPilotFeaturesResponse">
+    <wsdl:part name="parameters" element="tns:GetCustomerPilotFeaturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerPilotFeaturesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomerPilotFeatures_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="https://adapi.microsoft.com" name="detail" element="q18:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCustomerPilotFeatures_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetPilotFeaturesCountriesRequest">
+    <wsdl:part name="parameters" element="tns:GetPilotFeaturesCountriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetPilotFeaturesCountriesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetPilotFeaturesCountriesResponse">
+    <wsdl:part name="parameters" element="tns:GetPilotFeaturesCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPilotFeaturesCountriesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetPilotFeaturesCountries_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="https://adapi.microsoft.com" name="detail" element="q19:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetPilotFeaturesCountries_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessibleCustomerRequest">
+    <wsdl:part name="parameters" element="tns:GetAccessibleCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessibleCustomerRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessibleCustomerResponse">
+    <wsdl:part name="parameters" element="tns:GetAccessibleCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccessibleCustomerResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccessibleCustomer_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q20="https://adapi.microsoft.com" name="detail" element="q20:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetAccessibleCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsOrCustomersInfoRequest">
+    <wsdl:part name="parameters" element="tns:FindAccountsOrCustomersInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsOrCustomersInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsOrCustomersInfoResponse">
+    <wsdl:part name="parameters" element="tns:FindAccountsOrCustomersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindAccountsOrCustomersInfoResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_FindAccountsOrCustomersInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q21="https://adapi.microsoft.com" name="detail" element="q21:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_FindAccountsOrCustomersInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeCustomerToAgencyRequest">
+    <wsdl:part name="parameters" element="tns:UpgradeCustomerToAgencyRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeCustomerToAgencyRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeCustomerToAgencyResponse">
+    <wsdl:part name="parameters" element="tns:UpgradeCustomerToAgencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpgradeCustomerToAgencyResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpgradeCustomerToAgency_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q22="https://adapi.microsoft.com" name="detail" element="q22:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpgradeCustomerToAgency_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="AddPrepayAccountRequest">
+    <wsdl:part name="parameters" element="tns:AddPrepayAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddPrepayAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="AddPrepayAccountResponse">
+    <wsdl:part name="parameters" element="tns:AddPrepayAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPrepayAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddPrepayAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q23="https://adapi.microsoft.com" name="detail" element="q23:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrepayAccountRequest">
+    <wsdl:part name="parameters" element="tns:UpdatePrepayAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrepayAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrepayAccountResponse">
+    <wsdl:part name="parameters" element="tns:UpdatePrepayAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrepayAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdatePrepayAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q24="https://adapi.microsoft.com" name="detail" element="q24:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="MapCustomerIdToExternalCustomerIdRequest">
+    <wsdl:part name="parameters" element="tns:MapCustomerIdToExternalCustomerIdRequest" />
+  </wsdl:message>
+  <wsdl:message name="MapCustomerIdToExternalCustomerIdRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="MapCustomerIdToExternalCustomerIdResponse">
+    <wsdl:part name="parameters" element="tns:MapCustomerIdToExternalCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapCustomerIdToExternalCustomerIdResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapCustomerIdToExternalCustomerId_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q25="https://adapi.microsoft.com" name="detail" element="q25:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="MapAccountIdToExternalAccountIdsRequest">
+    <wsdl:part name="parameters" element="tns:MapAccountIdToExternalAccountIdsRequest" />
+  </wsdl:message>
+  <wsdl:message name="MapAccountIdToExternalAccountIdsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="MapAccountIdToExternalAccountIdsResponse">
+    <wsdl:part name="parameters" element="tns:MapAccountIdToExternalAccountIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MapAccountIdToExternalAccountIdsResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapAccountIdToExternalAccountIds_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q26="https://adapi.microsoft.com" name="detail" element="q26:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomersRequest">
+    <wsdl:part name="parameters" element="tns:SearchCustomersRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomersRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomersResponse">
+    <wsdl:part name="parameters" element="tns:SearchCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchCustomersResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchCustomers_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q27="https://adapi.microsoft.com" name="detail" element="q27:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLinksRequest">
+    <wsdl:part name="parameters" element="tns:AddClientLinksRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLinksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLinksResponse">
+    <wsdl:part name="parameters" element="tns:AddClientLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddClientLinksResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddClientLinks_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q28="https://adapi.microsoft.com" name="detail" element="q28:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddClientLinks_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientLinksRequest">
+    <wsdl:part name="parameters" element="tns:UpdateClientLinksRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientLinksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientLinksResponse">
+    <wsdl:part name="parameters" element="tns:UpdateClientLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClientLinksResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateClientLinks_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q29="https://adapi.microsoft.com" name="detail" element="q29:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateClientLinks_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientLinksRequest">
+    <wsdl:part name="parameters" element="tns:SearchClientLinksRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientLinksRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientLinksResponse">
+    <wsdl:part name="parameters" element="tns:SearchClientLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchClientLinksResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchClientLinks_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q30="https://adapi.microsoft.com" name="detail" element="q30:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchClientLinks_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SearchAccountsRequest">
+    <wsdl:part name="parameters" element="tns:SearchAccountsRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchAccountsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SearchAccountsResponse">
+    <wsdl:part name="parameters" element="tns:SearchAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAccountsResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchAccounts_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q31="https://adapi.microsoft.com" name="detail" element="q31:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="SendUserInvitationRequest">
+    <wsdl:part name="parameters" element="tns:SendUserInvitationRequest" />
+  </wsdl:message>
+  <wsdl:message name="SendUserInvitationRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SendUserInvitationResponse">
+    <wsdl:part name="parameters" element="tns:SendUserInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendUserInvitationResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SendUserInvitation_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q32="https://adapi.microsoft.com" name="detail" element="q32:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SendUserInvitation_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInvitationsRequest">
+    <wsdl:part name="parameters" element="tns:SearchUserInvitationsRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInvitationsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInvitationsResponse">
+    <wsdl:part name="parameters" element="tns:SearchUserInvitationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInvitationsResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchUserInvitations_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q33="https://adapi.microsoft.com" name="detail" element="q33:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchUserInvitations_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="ICustomerManagementService">
+    <wsdl:operation name="GetAccountsInfo">
+      <wsdl:input wsaw:Action="GetAccountsInfo" name="GetAccountsInfoRequest" message="tns:GetAccountsInfoRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountsInfoResponse" name="GetAccountsInfoResponse" message="tns:GetAccountsInfoResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountsInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetAccountsInfo_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountsInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetAccountsInfo_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAccounts">
+      <wsdl:input wsaw:Action="FindAccounts" name="FindAccountsRequest" message="tns:FindAccountsRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsResponse" name="FindAccountsResponse" message="tns:FindAccountsResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_FindAccounts_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsApiFault" name="ApiFault" message="tns:ICustomerManagementService_FindAccounts_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="AddAccount" name="AddAccountRequest" message="tns:AddAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountResponse" name="AddAccountResponse" message="tns:AddAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddAccount_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_AddAccount_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="UpdateAccount" name="UpdateAccountRequest" message="tns:UpdateAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateAccountResponse" name="UpdateAccountResponse" message="tns:UpdateAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateAccount_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="GetCustomer" name="GetCustomerRequest" message="tns:GetCustomerRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerResponse" name="GetCustomerResponse" message="tns:GetCustomerResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetCustomer_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCustomer_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="UpdateCustomer" name="UpdateCustomerRequest" message="tns:UpdateCustomerRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateCustomerResponse" name="UpdateCustomerResponse" message="tns:UpdateCustomerResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateCustomer_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateCustomer_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignupCustomer">
+      <wsdl:input wsaw:Action="SignupCustomer" name="SignupCustomerRequest" message="tns:SignupCustomerRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerResponse" name="SignupCustomerResponse" message="tns:SignupCustomerResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SignupCustomer_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="GetAccount" name="GetAccountRequest" message="tns:GetAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountResponse" name="GetAccountResponse" message="tns:GetAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetAccount_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersInfo">
+      <wsdl:input wsaw:Action="GetCustomersInfo" name="GetCustomersInfoRequest" message="tns:GetCustomersInfoRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomersInfoResponse" name="GetCustomersInfoResponse" message="tns:GetCustomersInfoResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomersInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetCustomersInfo_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomersInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCustomersInfo_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <wsdl:input wsaw:Action="DeleteAccount" name="DeleteAccountRequest" message="tns:DeleteAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountResponse" name="DeleteAccountResponse" message="tns:DeleteAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_DeleteAccount_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="DeleteCustomer" name="DeleteCustomerRequest" message="tns:DeleteCustomerRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteCustomerResponse" name="DeleteCustomerResponse" message="tns:DeleteCustomerResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_DeleteCustomer_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_DeleteCustomer_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="UpdateUser" name="UpdateUserRequest" message="tns:UpdateUserRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserResponse" name="UpdateUserResponse" message="tns:UpdateUserResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUser_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateUser_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRoles">
+      <wsdl:input wsaw:Action="UpdateUserRoles" name="UpdateUserRolesRequest" message="tns:UpdateUserRolesRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesResponse" name="UpdateUserRolesResponse" message="tns:UpdateUserRolesResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateUserRoles_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="GetUser" name="GetUserRequest" message="tns:GetUserRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserResponse" name="GetUserResponse" message="tns:GetUserResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUser_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetUser_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <wsdl:input wsaw:Action="GetCurrentUser" name="GetCurrentUserRequest" message="tns:GetCurrentUserRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserResponse" name="GetCurrentUserResponse" message="tns:GetCurrentUserResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetCurrentUser_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="DeleteUser" name="DeleteUserRequest" message="tns:DeleteUserRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteUserResponse" name="DeleteUserResponse" message="tns:DeleteUserResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_DeleteUser_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_DeleteUser_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfo">
+      <wsdl:input wsaw:Action="GetUsersInfo" name="GetUsersInfoRequest" message="tns:GetUsersInfoRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoResponse" name="GetUsersInfoResponse" message="tns:GetUsersInfoResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetUsersInfo_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerPilotFeatures">
+      <wsdl:input wsaw:Action="GetCustomerPilotFeatures" name="GetCustomerPilotFeaturesRequest" message="tns:GetCustomerPilotFeaturesRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerPilotFeaturesResponse" name="GetCustomerPilotFeaturesResponse" message="tns:GetCustomerPilotFeaturesResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerPilotFeaturesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetCustomerPilotFeatures_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCustomerPilotFeaturesApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCustomerPilotFeatures_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPilotFeaturesCountries">
+      <wsdl:input wsaw:Action="GetPilotFeaturesCountries" name="GetPilotFeaturesCountriesRequest" message="tns:GetPilotFeaturesCountriesRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetPilotFeaturesCountriesResponse" name="GetPilotFeaturesCountriesResponse" message="tns:GetPilotFeaturesCountriesResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetPilotFeaturesCountriesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetPilotFeaturesCountries_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetPilotFeaturesCountriesApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetPilotFeaturesCountries_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessibleCustomer">
+      <wsdl:input wsaw:Action="GetAccessibleCustomer" name="GetAccessibleCustomerRequest" message="tns:GetAccessibleCustomerRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccessibleCustomerResponse" name="GetAccessibleCustomerResponse" message="tns:GetAccessibleCustomerResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccessibleCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetAccessibleCustomer_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetAccessibleCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetAccessibleCustomer_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountsOrCustomersInfo">
+      <wsdl:input wsaw:Action="FindAccountsOrCustomersInfo" name="FindAccountsOrCustomersInfoRequest" message="tns:FindAccountsOrCustomersInfoRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsOrCustomersInfoResponse" name="FindAccountsOrCustomersInfoResponse" message="tns:FindAccountsOrCustomersInfoResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsOrCustomersInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_FindAccountsOrCustomersInfo_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/FindAccountsOrCustomersInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_FindAccountsOrCustomersInfo_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeCustomerToAgency">
+      <wsdl:input wsaw:Action="UpgradeCustomerToAgency" name="UpgradeCustomerToAgencyRequest" message="tns:UpgradeCustomerToAgencyRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpgradeCustomerToAgencyResponse" name="UpgradeCustomerToAgencyResponse" message="tns:UpgradeCustomerToAgencyResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpgradeCustomerToAgencyAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpgradeCustomerToAgency_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpgradeCustomerToAgencyApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpgradeCustomerToAgency_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrepayAccount">
+      <wsdl:input wsaw:Action="AddPrepayAccount" name="AddPrepayAccountRequest" message="tns:AddPrepayAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountResponse" name="AddPrepayAccountResponse" message="tns:AddPrepayAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_AddPrepayAccount_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrepayAccount">
+      <wsdl:input wsaw:Action="UpdatePrepayAccount" name="UpdatePrepayAccountRequest" message="tns:UpdatePrepayAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountResponse" name="UpdatePrepayAccountResponse" message="tns:UpdatePrepayAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdatePrepayAccount_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MapCustomerIdToExternalCustomerId">
+      <wsdl:input wsaw:Action="MapCustomerIdToExternalCustomerId" name="MapCustomerIdToExternalCustomerIdRequest" message="tns:MapCustomerIdToExternalCustomerIdRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdResponse" name="MapCustomerIdToExternalCustomerIdResponse" message="tns:MapCustomerIdToExternalCustomerIdResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_MapCustomerIdToExternalCustomerId_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MapAccountIdToExternalAccountIds">
+      <wsdl:input wsaw:Action="MapAccountIdToExternalAccountIds" name="MapAccountIdToExternalAccountIdsRequest" message="tns:MapAccountIdToExternalAccountIdsRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsResponse" name="MapAccountIdToExternalAccountIdsResponse" message="tns:MapAccountIdToExternalAccountIdsResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_MapAccountIdToExternalAccountIds_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomers">
+      <wsdl:input wsaw:Action="SearchCustomers" name="SearchCustomersRequest" message="tns:SearchCustomersRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersResponse" name="SearchCustomersResponse" message="tns:SearchCustomersResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchCustomers_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLinks">
+      <wsdl:input wsaw:Action="AddClientLinks" name="AddClientLinksRequest" message="tns:AddClientLinksRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddClientLinksResponse" name="AddClientLinksResponse" message="tns:AddClientLinksResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddClientLinksAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_AddClientLinks_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddClientLinksApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddClientLinks_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientLinks">
+      <wsdl:input wsaw:Action="UpdateClientLinks" name="UpdateClientLinksRequest" message="tns:UpdateClientLinksRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateClientLinksResponse" name="UpdateClientLinksResponse" message="tns:UpdateClientLinksResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateClientLinksAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateClientLinks_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateClientLinksApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateClientLinks_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchClientLinks">
+      <wsdl:input wsaw:Action="SearchClientLinks" name="SearchClientLinksRequest" message="tns:SearchClientLinksRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchClientLinksResponse" name="SearchClientLinksResponse" message="tns:SearchClientLinksResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchClientLinksAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchClientLinks_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchClientLinksApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchClientLinks_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAccounts">
+      <wsdl:input wsaw:Action="SearchAccounts" name="SearchAccountsRequest" message="tns:SearchAccountsRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsResponse" name="SearchAccountsResponse" message="tns:SearchAccountsResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchAccounts_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendUserInvitation">
+      <wsdl:input wsaw:Action="SendUserInvitation" name="SendUserInvitationRequest" message="tns:SendUserInvitationRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SendUserInvitationResponse" name="SendUserInvitationResponse" message="tns:SendUserInvitationResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SendUserInvitationAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SendUserInvitation_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SendUserInvitationApiFault" name="ApiFault" message="tns:ICustomerManagementService_SendUserInvitation_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInvitations">
+      <wsdl:input wsaw:Action="SearchUserInvitations" name="SearchUserInvitationsRequest" message="tns:SearchUserInvitationsRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchUserInvitationsResponse" name="SearchUserInvitationsResponse" message="tns:SearchUserInvitationsResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchUserInvitationsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchUserInvitations_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchUserInvitationsApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchUserInvitations_ApiFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICustomerManagementService" type="tns:ICustomerManagementService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ICustomerManagementService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccountsInfo">
+      <soap:operation soapAction="GetAccountsInfo" style="document" />
+      <wsdl:input name="GetAccountsInfoRequest">
+        <soap:header message="tns:GetAccountsInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetAccountsInfoRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetAccountsInfoRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetAccountsInfoRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetAccountsInfoRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAccountsInfoResponse">
+        <soap:header message="tns:GetAccountsInfoResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccounts">
+      <soap:operation soapAction="FindAccounts" style="document" />
+      <wsdl:input name="FindAccountsRequest">
+        <soap:header message="tns:FindAccountsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:FindAccountsRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:FindAccountsRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:FindAccountsRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:FindAccountsRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindAccountsResponse">
+        <soap:header message="tns:FindAccountsResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="AddAccount" style="document" />
+      <wsdl:input name="AddAccountRequest">
+        <soap:header message="tns:AddAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:AddAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:AddAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:AddAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:AddAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddAccountResponse">
+        <soap:header message="tns:AddAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="UpdateAccount" style="document" />
+      <wsdl:input name="UpdateAccountRequest">
+        <soap:header message="tns:UpdateAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateAccountResponse">
+        <soap:header message="tns:UpdateAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="GetCustomer" style="document" />
+      <wsdl:input name="GetCustomerRequest">
+        <soap:header message="tns:GetCustomerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetCustomerRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetCustomerRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetCustomerRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetCustomerRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCustomerResponse">
+        <soap:header message="tns:GetCustomerResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="UpdateCustomer" style="document" />
+      <wsdl:input name="UpdateCustomerRequest">
+        <soap:header message="tns:UpdateCustomerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateCustomerRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateCustomerRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateCustomerRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateCustomerRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateCustomerResponse">
+        <soap:header message="tns:UpdateCustomerResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SignupCustomer">
+      <soap:operation soapAction="SignupCustomer" style="document" />
+      <wsdl:input name="SignupCustomerRequest">
+        <soap:header message="tns:SignupCustomerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SignupCustomerRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SignupCustomerRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SignupCustomerRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SignupCustomerRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SignupCustomerResponse">
+        <soap:header message="tns:SignupCustomerResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="GetAccount" style="document" />
+      <wsdl:input name="GetAccountRequest">
+        <soap:header message="tns:GetAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAccountResponse">
+        <soap:header message="tns:GetAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersInfo">
+      <soap:operation soapAction="GetCustomersInfo" style="document" />
+      <wsdl:input name="GetCustomersInfoRequest">
+        <soap:header message="tns:GetCustomersInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetCustomersInfoRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetCustomersInfoRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetCustomersInfoRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetCustomersInfoRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCustomersInfoResponse">
+        <soap:header message="tns:GetCustomersInfoResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="DeleteAccount" style="document" />
+      <wsdl:input name="DeleteAccountRequest">
+        <soap:header message="tns:DeleteAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:DeleteAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:DeleteAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:DeleteAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:DeleteAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteAccountResponse">
+        <soap:header message="tns:DeleteAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="DeleteCustomer" style="document" />
+      <wsdl:input name="DeleteCustomerRequest">
+        <soap:header message="tns:DeleteCustomerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:DeleteCustomerRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:DeleteCustomerRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:DeleteCustomerRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:DeleteCustomerRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteCustomerResponse">
+        <soap:header message="tns:DeleteCustomerResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="UpdateUser" style="document" />
+      <wsdl:input name="UpdateUserRequest">
+        <soap:header message="tns:UpdateUserRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateUserRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateUserRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateUserRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateUserRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateUserResponse">
+        <soap:header message="tns:UpdateUserResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRoles">
+      <soap:operation soapAction="UpdateUserRoles" style="document" />
+      <wsdl:input name="UpdateUserRolesRequest">
+        <soap:header message="tns:UpdateUserRolesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateUserRolesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateUserRolesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateUserRolesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateUserRolesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateUserRolesResponse">
+        <soap:header message="tns:UpdateUserRolesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="GetUser" style="document" />
+      <wsdl:input name="GetUserRequest">
+        <soap:header message="tns:GetUserRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetUserRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetUserRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetUserRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetUserRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUserResponse">
+        <soap:header message="tns:GetUserResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUser">
+      <soap:operation soapAction="GetCurrentUser" style="document" />
+      <wsdl:input name="GetCurrentUserRequest">
+        <soap:header message="tns:GetCurrentUserRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetCurrentUserRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetCurrentUserRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetCurrentUserRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetCurrentUserRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCurrentUserResponse">
+        <soap:header message="tns:GetCurrentUserResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="DeleteUser" style="document" />
+      <wsdl:input name="DeleteUserRequest">
+        <soap:header message="tns:DeleteUserRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:DeleteUserRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:DeleteUserRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:DeleteUserRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:DeleteUserRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DeleteUserResponse">
+        <soap:header message="tns:DeleteUserResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfo">
+      <soap:operation soapAction="GetUsersInfo" style="document" />
+      <wsdl:input name="GetUsersInfoRequest">
+        <soap:header message="tns:GetUsersInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetUsersInfoRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetUsersInfoRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetUsersInfoRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetUsersInfoRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetUsersInfoResponse">
+        <soap:header message="tns:GetUsersInfoResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerPilotFeatures">
+      <soap:operation soapAction="GetCustomerPilotFeatures" style="document" />
+      <wsdl:input name="GetCustomerPilotFeaturesRequest">
+        <soap:header message="tns:GetCustomerPilotFeaturesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetCustomerPilotFeaturesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetCustomerPilotFeaturesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetCustomerPilotFeaturesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetCustomerPilotFeaturesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetCustomerPilotFeaturesResponse">
+        <soap:header message="tns:GetCustomerPilotFeaturesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPilotFeaturesCountries">
+      <soap:operation soapAction="GetPilotFeaturesCountries" style="document" />
+      <wsdl:input name="GetPilotFeaturesCountriesRequest">
+        <soap:header message="tns:GetPilotFeaturesCountriesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetPilotFeaturesCountriesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetPilotFeaturesCountriesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetPilotFeaturesCountriesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetPilotFeaturesCountriesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetPilotFeaturesCountriesResponse">
+        <soap:header message="tns:GetPilotFeaturesCountriesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessibleCustomer">
+      <soap:operation soapAction="GetAccessibleCustomer" style="document" />
+      <wsdl:input name="GetAccessibleCustomerRequest">
+        <soap:header message="tns:GetAccessibleCustomerRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetAccessibleCustomerRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetAccessibleCustomerRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetAccessibleCustomerRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetAccessibleCustomerRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAccessibleCustomerResponse">
+        <soap:header message="tns:GetAccessibleCustomerResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAccountsOrCustomersInfo">
+      <soap:operation soapAction="FindAccountsOrCustomersInfo" style="document" />
+      <wsdl:input name="FindAccountsOrCustomersInfoRequest">
+        <soap:header message="tns:FindAccountsOrCustomersInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:FindAccountsOrCustomersInfoRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:FindAccountsOrCustomersInfoRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:FindAccountsOrCustomersInfoRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:FindAccountsOrCustomersInfoRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="FindAccountsOrCustomersInfoResponse">
+        <soap:header message="tns:FindAccountsOrCustomersInfoResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpgradeCustomerToAgency">
+      <soap:operation soapAction="UpgradeCustomerToAgency" style="document" />
+      <wsdl:input name="UpgradeCustomerToAgencyRequest">
+        <soap:header message="tns:UpgradeCustomerToAgencyRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpgradeCustomerToAgencyRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpgradeCustomerToAgencyRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpgradeCustomerToAgencyRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpgradeCustomerToAgencyRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpgradeCustomerToAgencyResponse">
+        <soap:header message="tns:UpgradeCustomerToAgencyResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrepayAccount">
+      <soap:operation soapAction="AddPrepayAccount" style="document" />
+      <wsdl:input name="AddPrepayAccountRequest">
+        <soap:header message="tns:AddPrepayAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:AddPrepayAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:AddPrepayAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:AddPrepayAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:AddPrepayAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddPrepayAccountResponse">
+        <soap:header message="tns:AddPrepayAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrepayAccount">
+      <soap:operation soapAction="UpdatePrepayAccount" style="document" />
+      <wsdl:input name="UpdatePrepayAccountRequest">
+        <soap:header message="tns:UpdatePrepayAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdatePrepayAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdatePrepayAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdatePrepayAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdatePrepayAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdatePrepayAccountResponse">
+        <soap:header message="tns:UpdatePrepayAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapCustomerIdToExternalCustomerId">
+      <soap:operation soapAction="MapCustomerIdToExternalCustomerId" style="document" />
+      <wsdl:input name="MapCustomerIdToExternalCustomerIdRequest">
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MapCustomerIdToExternalCustomerIdResponse">
+        <soap:header message="tns:MapCustomerIdToExternalCustomerIdResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MapAccountIdToExternalAccountIds">
+      <soap:operation soapAction="MapAccountIdToExternalAccountIds" style="document" />
+      <wsdl:input name="MapAccountIdToExternalAccountIdsRequest">
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MapAccountIdToExternalAccountIdsResponse">
+        <soap:header message="tns:MapAccountIdToExternalAccountIdsResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomers">
+      <soap:operation soapAction="SearchCustomers" style="document" />
+      <wsdl:input name="SearchCustomersRequest">
+        <soap:header message="tns:SearchCustomersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SearchCustomersRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SearchCustomersRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SearchCustomersRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SearchCustomersRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchCustomersResponse">
+        <soap:header message="tns:SearchCustomersResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddClientLinks">
+      <soap:operation soapAction="AddClientLinks" style="document" />
+      <wsdl:input name="AddClientLinksRequest">
+        <soap:header message="tns:AddClientLinksRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:AddClientLinksRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:AddClientLinksRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:AddClientLinksRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:AddClientLinksRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddClientLinksResponse">
+        <soap:header message="tns:AddClientLinksResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateClientLinks">
+      <soap:operation soapAction="UpdateClientLinks" style="document" />
+      <wsdl:input name="UpdateClientLinksRequest">
+        <soap:header message="tns:UpdateClientLinksRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateClientLinksRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateClientLinksRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateClientLinksRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateClientLinksRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateClientLinksResponse">
+        <soap:header message="tns:UpdateClientLinksResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchClientLinks">
+      <soap:operation soapAction="SearchClientLinks" style="document" />
+      <wsdl:input name="SearchClientLinksRequest">
+        <soap:header message="tns:SearchClientLinksRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SearchClientLinksRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SearchClientLinksRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SearchClientLinksRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SearchClientLinksRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchClientLinksResponse">
+        <soap:header message="tns:SearchClientLinksResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAccounts">
+      <soap:operation soapAction="SearchAccounts" style="document" />
+      <wsdl:input name="SearchAccountsRequest">
+        <soap:header message="tns:SearchAccountsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SearchAccountsRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SearchAccountsRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SearchAccountsRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SearchAccountsRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchAccountsResponse">
+        <soap:header message="tns:SearchAccountsResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SendUserInvitation">
+      <soap:operation soapAction="SendUserInvitation" style="document" />
+      <wsdl:input name="SendUserInvitationRequest">
+        <soap:header message="tns:SendUserInvitationRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SendUserInvitationRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SendUserInvitationRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SendUserInvitationRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SendUserInvitationRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SendUserInvitationResponse">
+        <soap:header message="tns:SendUserInvitationResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInvitations">
+      <soap:operation soapAction="SearchUserInvitations" style="document" />
+      <wsdl:input name="SearchUserInvitationsRequest">
+        <soap:header message="tns:SearchUserInvitationsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SearchUserInvitationsRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SearchUserInvitationsRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SearchUserInvitationsRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SearchUserInvitationsRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchUserInvitationsResponse">
+        <soap:header message="tns:SearchUserInvitationsResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerManagementService">
+    <wsdl:port name="BasicHttpBinding_ICustomerManagementService" binding="tns:BasicHttpBinding_ICustomerManagementService">
+      <soap:address location="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

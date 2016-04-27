@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:simpleType name="BidOpportunityType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="FirstPage" />
+          <xs:enumeration value="MainLine" />
+          <xs:enumeration value="MainLine1" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="BidOpportunityType" nillable="true" type="tns:BidOpportunityType" />
+  <xs:complexType name="ArrayOfBidOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BidOpportunity" nillable="true" type="tns:BidOpportunity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBidOpportunity" nillable="true" type="tns:ArrayOfBidOpportunity" />
+  <xs:complexType name="BidOpportunity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Opportunity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
+          <xs:element minOccurs="0" name="CurrentBid" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInClicks" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInCost" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInImpressions" type="xs:long" />
+          <xs:element minOccurs="0" name="KeywordId" type="xs:long" />
+          <xs:element minOccurs="0" name="MatchType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SuggestedBid" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BidOpportunity" nillable="true" type="tns:BidOpportunity" />
+  <xs:complexType name="Opportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OpportunityKey" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Opportunity" nillable="true" type="tns:Opportunity" />
+  <xs:complexType name="ArrayOfBudgetOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BudgetOpportunity" nillable="true" type="tns:BudgetOpportunity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBudgetOpportunity" nillable="true" type="tns:ArrayOfBudgetOpportunity" />
+  <xs:complexType name="BudgetOpportunity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Opportunity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BudgetPoints" nillable="true" type="tns:ArrayOfBudgetPoint" />
+          <xs:element minOccurs="0" name="BudgetType" type="tns:BudgetLimitType" />
+          <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
+          <xs:element minOccurs="0" name="CurrentBudget" type="xs:double" />
+          <xs:element minOccurs="0" name="IncreaseInClicks" type="xs:double" />
+          <xs:element minOccurs="0" name="IncreaseInImpressions" type="xs:long" />
+          <xs:element minOccurs="0" name="PercentageIncreaseInClicks" type="xs:int" />
+          <xs:element minOccurs="0" name="PercentageIncreaseInImpressions" type="xs:int" />
+          <xs:element minOccurs="0" name="RecommendedBudget" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BudgetOpportunity" nillable="true" type="tns:BudgetOpportunity" />
+  <xs:complexType name="ArrayOfBudgetPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BudgetPoint" nillable="true" type="tns:BudgetPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBudgetPoint" nillable="true" type="tns:ArrayOfBudgetPoint" />
+  <xs:complexType name="BudgetPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BudgetAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="BudgetPointType" type="tns:BudgetPointType" />
+      <xs:element minOccurs="0" name="EstimatedWeeklyClicks" type="xs:double" />
+      <xs:element minOccurs="0" name="EstimatedWeeklyCost" type="xs:double" />
+      <xs:element minOccurs="0" name="EstimatedWeeklyImpressions" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BudgetPoint" nillable="true" type="tns:BudgetPoint" />
+  <xs:simpleType name="BudgetPointType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Current" />
+      <xs:enumeration value="Suggested" />
+      <xs:enumeration value="Maximum" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BudgetPointType" nillable="true" type="tns:BudgetPointType" />
+  <xs:simpleType name="BudgetLimitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MonthlyBudgetSpendUntilDepleted">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DailyBudgetStandard">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DailyBudgetAccelerated">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BudgetLimitType" nillable="true" type="tns:BudgetLimitType" />
+  <xs:simpleType name="KeywordOpportunityType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BroadMatch" />
+          <xs:enumeration value="CampaignContext" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="KeywordOpportunityType" nillable="true" type="tns:KeywordOpportunityType" />
+  <xs:complexType name="ArrayOfKeywordOpportunity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordOpportunity" nillable="true" type="tns:KeywordOpportunity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordOpportunity" nillable="true" type="tns:ArrayOfKeywordOpportunity" />
+  <xs:complexType name="KeywordOpportunity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Opportunity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+          <xs:element minOccurs="0" name="AdGroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
+          <xs:element minOccurs="0" name="CampaignName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Competition" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInClicks" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInCost" type="xs:double" />
+          <xs:element minOccurs="0" name="EstimatedIncreaseInImpressions" type="xs:long" />
+          <xs:element minOccurs="0" name="MatchType" type="xs:int" />
+          <xs:element minOccurs="0" name="MonthlySearches" type="xs:long" />
+          <xs:element minOccurs="0" name="SuggestedBid" type="xs:double" />
+          <xs:element minOccurs="0" name="SuggestedKeyword" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KeywordOpportunity" nillable="true" type="tns:KeywordOpportunity" />
+  <xs:complexType name="BroadMatchKeywordOpportunity">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:KeywordOpportunity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AverageCPC" type="xs:double" />
+          <xs:element minOccurs="0" name="AverageCTR" type="xs:double" />
+          <xs:element minOccurs="0" name="ClickShare" type="xs:double" />
+          <xs:element minOccurs="0" name="ImpressionShare" type="xs:double" />
+          <xs:element minOccurs="0" name="ReferenceKeywordBid" type="xs:double" />
+          <xs:element minOccurs="0" name="ReferenceKeywordId" type="xs:long" />
+          <xs:element minOccurs="0" name="ReferenceKeywordMatchType" type="xs:int" />
+          <xs:element minOccurs="0" name="SearchQueryKPIs" nillable="true" type="tns:ArrayOfBroadMatchSearchQueryKPI" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BroadMatchKeywordOpportunity" nillable="true" type="tns:BroadMatchKeywordOpportunity" />
+  <xs:complexType name="ArrayOfBroadMatchSearchQueryKPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BroadMatchSearchQueryKPI" nillable="true" type="tns:BroadMatchSearchQueryKPI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBroadMatchSearchQueryKPI" nillable="true" type="tns:ArrayOfBroadMatchSearchQueryKPI" />
+  <xs:complexType name="BroadMatchSearchQueryKPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AverageCTR" type="xs:double" />
+      <xs:element minOccurs="0" name="Clicks" type="xs:double" />
+      <xs:element minOccurs="0" name="Impressions" type="xs:long" />
+      <xs:element minOccurs="0" name="SRPV" type="xs:long" />
+      <xs:element minOccurs="0" name="SearchQuery" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BroadMatchSearchQueryKPI" nillable="true" type="tns:BroadMatchSearchQueryKPI" />
+  <xs:simpleType name="TargetAdPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MainLine1" />
+      <xs:enumeration value="MainLine" />
+      <xs:enumeration value="SideBar" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TargetAdPosition" nillable="true" type="tns:TargetAdPosition" />
+  <xs:complexType name="ArrayOfKeywordIdEstimatedBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordIdEstimatedBid" nillable="true" type="tns:KeywordIdEstimatedBid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordIdEstimatedBid" nillable="true" type="tns:ArrayOfKeywordIdEstimatedBid" />
+  <xs:complexType name="KeywordIdEstimatedBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeywordId" type="xs:long" />
+      <xs:element minOccurs="0" name="KeywordEstimatedBid" nillable="true" type="tns:KeywordEstimatedBid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordIdEstimatedBid" nillable="true" type="tns:KeywordIdEstimatedBid" />
+  <xs:complexType name="KeywordEstimatedBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedBids" nillable="true" type="tns:ArrayOfEstimatedBidAndTraffic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordEstimatedBid" nillable="true" type="tns:KeywordEstimatedBid" />
+  <xs:complexType name="ArrayOfEstimatedBidAndTraffic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstimatedBidAndTraffic" nillable="true" type="tns:EstimatedBidAndTraffic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstimatedBidAndTraffic" nillable="true" type="tns:ArrayOfEstimatedBidAndTraffic" />
+  <xs:complexType name="EstimatedBidAndTraffic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MinClicksPerWeek" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxClicksPerWeek" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="AverageCPC" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinImpressionsPerWeek" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxImpressionsPerWeek" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CTR" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MinTotalCostPerWeek" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxTotalCostPerWeek" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Currency" type="tns:Currency" />
+      <xs:element minOccurs="0" name="MatchType" type="tns:MatchType" />
+      <xs:element minOccurs="0" name="EstimatedMinBid" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstimatedBidAndTraffic" nillable="true" type="tns:EstimatedBidAndTraffic" />
+  <xs:simpleType name="Currency">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AlgerianDinar" />
+      <xs:enumeration value="ArgentinePeso" />
+      <xs:enumeration value="ArmenianDram" />
+      <xs:enumeration value="AustralianDollar" />
+      <xs:enumeration value="AzerbaijanianManat" />
+      <xs:enumeration value="BahrainiDinar" />
+      <xs:enumeration value="Baht" />
+      <xs:enumeration value="Balboa" />
+      <xs:enumeration value="BelarussianRuble" />
+      <xs:enumeration value="BelizeDollar" />
+      <xs:enumeration value="Bolivar" />
+      <xs:enumeration value="Boliviano" />
+      <xs:enumeration value="BrazilianReal" />
+      <xs:enumeration value="BruneiDollar" />
+      <xs:enumeration value="CanadianDollar" />
+      <xs:enumeration value="ChileanPeso" />
+      <xs:enumeration value="ColombianPeso" />
+      <xs:enumeration value="CordobaOro" />
+      <xs:enumeration value="CostaRicanColon" />
+      <xs:enumeration value="Croatiankuna" />
+      <xs:enumeration value="CzechKoruna" />
+      <xs:enumeration value="DanishKrone" />
+      <xs:enumeration value="Denar" />
+      <xs:enumeration value="DominicanPeso" />
+      <xs:enumeration value="Dong" />
+      <xs:enumeration value="EgyptianPound" />
+      <xs:enumeration value="Euro" />
+      <xs:enumeration value="Forint" />
+      <xs:enumeration value="Guarani" />
+      <xs:enumeration value="HongKongDollar" />
+      <xs:enumeration value="Hryvnia" />
+      <xs:enumeration value="IcelandKrona" />
+      <xs:enumeration value="IndianRupee" />
+      <xs:enumeration value="IranianRial" />
+      <xs:enumeration value="IraqiDinar" />
+      <xs:enumeration value="JamaicanDollar" />
+      <xs:enumeration value="JapaneseYen" />
+      <xs:enumeration value="JordanianDinar" />
+      <xs:enumeration value="KenyanShilling" />
+      <xs:enumeration value="Kroon" />
+      <xs:enumeration value="KuwaitiDinar" />
+      <xs:enumeration value="Lari" />
+      <xs:enumeration value="LatvianLats" />
+      <xs:enumeration value="LebanesePound" />
+      <xs:enumeration value="Lek" />
+      <xs:enumeration value="Lempira" />
+      <xs:enumeration value="Leu" />
+      <xs:enumeration value="Lev" />
+      <xs:enumeration value="LibyanDinar" />
+      <xs:enumeration value="LithuanianLitus" />
+      <xs:enumeration value="MalaysianRinggit" />
+      <xs:enumeration value="MexicanPeso" />
+      <xs:enumeration value="MoroccanDirham" />
+      <xs:enumeration value="NewIsraeliSheqel" />
+      <xs:enumeration value="NewTaiwanDollar" />
+      <xs:enumeration value="NewZealandDollar" />
+      <xs:enumeration value="NorwegianKrone" />
+      <xs:enumeration value="NuevoSol" />
+      <xs:enumeration value="PakistanRupee" />
+      <xs:enumeration value="Pataca" />
+      <xs:enumeration value="PesoUruguayo" />
+      <xs:enumeration value="PhilippinePeso" />
+      <xs:enumeration value="QatariRial" />
+      <xs:enumeration value="Quetzal" />
+      <xs:enumeration value="RialOmani" />
+      <xs:enumeration value="Rufiyaa" />
+      <xs:enumeration value="Rupiah" />
+      <xs:enumeration value="RussianRuble" />
+      <xs:enumeration value="SaudiRiyal" />
+      <xs:enumeration value="SingaporeDollar" />
+      <xs:enumeration value="SlovakKoruna" />
+      <xs:enumeration value="Som" />
+      <xs:enumeration value="SouthAfricanRand" />
+      <xs:enumeration value="SwedishKrona" />
+      <xs:enumeration value="SwissFranc" />
+      <xs:enumeration value="SyrianPound" />
+      <xs:enumeration value="Tenge" />
+      <xs:enumeration value="Tolar" />
+      <xs:enumeration value="TrinidadandTobagoDollar" />
+      <xs:enumeration value="Tugrik" />
+      <xs:enumeration value="TunisianDinar" />
+      <xs:enumeration value="TurkishLira" />
+      <xs:enumeration value="UAEDirham" />
+      <xs:enumeration value="UKPound" />
+      <xs:enumeration value="USDollar" />
+      <xs:enumeration value="UzbekistanSum" />
+      <xs:enumeration value="Won" />
+      <xs:enumeration value="YemeniRial" />
+      <xs:enumeration value="YuanRenminbi" />
+      <xs:enumeration value="YugoslavianNewDinar" />
+      <xs:enumeration value="ZimbabweDollar" />
+      <xs:enumeration value="Zloty" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Currency" nillable="true" type="tns:Currency" />
+  <xs:simpleType name="MatchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Exact" />
+      <xs:enumeration value="Phrase" />
+      <xs:enumeration value="Broad" />
+      <xs:enumeration value="Content" />
+      <xs:enumeration value="Aggregate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MatchType" nillable="true" type="tns:MatchType" />
+  <xs:complexType name="ArrayOfKeywordIdEstimatedPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordIdEstimatedPosition" nillable="true" type="tns:KeywordIdEstimatedPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordIdEstimatedPosition" nillable="true" type="tns:ArrayOfKeywordIdEstimatedPosition" />
+  <xs:complexType name="KeywordIdEstimatedPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeywordId" type="xs:long" />
+      <xs:element minOccurs="0" name="KeywordEstimatedPosition" nillable="true" type="tns:KeywordEstimatedPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordIdEstimatedPosition" nillable="true" type="tns:KeywordIdEstimatedPosition" />
+  <xs:complexType name="KeywordEstimatedPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstimatedPositions" nillable="true" type="tns:ArrayOfEstimatedPositionAndTraffic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordEstimatedPosition" nillable="true" type="tns:KeywordEstimatedPosition" />
+  <xs:complexType name="ArrayOfEstimatedPositionAndTraffic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EstimatedPositionAndTraffic" nillable="true" type="tns:EstimatedPositionAndTraffic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEstimatedPositionAndTraffic" nillable="true" type="tns:ArrayOfEstimatedPositionAndTraffic" />
+  <xs:complexType name="EstimatedPositionAndTraffic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MatchType" type="tns:MatchType" />
+      <xs:element minOccurs="0" name="MinClicksPerWeek" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxClicksPerWeek" type="xs:double" />
+      <xs:element minOccurs="0" name="AverageCPC" type="xs:double" />
+      <xs:element minOccurs="0" name="MinImpressionsPerWeek" type="xs:long" />
+      <xs:element minOccurs="0" name="MaxImpressionsPerWeek" type="xs:long" />
+      <xs:element minOccurs="0" name="CTR" type="xs:double" />
+      <xs:element minOccurs="0" name="MinTotalCostPerWeek" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxTotalCostPerWeek" type="xs:double" />
+      <xs:element minOccurs="0" name="Currency" type="tns:Currency" />
+      <xs:element minOccurs="0" name="EstimatedAdPosition" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstimatedPositionAndTraffic" nillable="true" type="tns:EstimatedPositionAndTraffic" />
+  <xs:complexType name="ArrayOfMatchType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchType" type="tns:MatchType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchType" nillable="true" type="tns:ArrayOfMatchType" />
+  <xs:complexType name="ArrayOfKeywordEstimatedBid">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordEstimatedBid" nillable="true" type="tns:KeywordEstimatedBid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordEstimatedBid" nillable="true" type="tns:ArrayOfKeywordEstimatedBid" />
+  <xs:complexType name="ArrayOfKeywordEstimatedPosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordEstimatedPosition" nillable="true" type="tns:KeywordEstimatedPosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordEstimatedPosition" nillable="true" type="tns:ArrayOfKeywordEstimatedPosition" />
+  <xs:complexType name="ArrayOfAdGroupBidLandscapeInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupBidLandscapeInput" nillable="true" type="tns:AdGroupBidLandscapeInput" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdGroupBidLandscapeInput" nillable="true" type="tns:ArrayOfAdGroupBidLandscapeInput" />
+  <xs:complexType name="AdGroupBidLandscapeInput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdGroupBidLandscapeType" type="tns:AdGroupBidLandscapeType" />
+      <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdGroupBidLandscapeInput" nillable="true" type="tns:AdGroupBidLandscapeInput" />
+  <xs:simpleType name="AdGroupBidLandscapeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Uniform" />
+      <xs:enumeration value="DefaultBidOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdGroupBidLandscapeType" nillable="true" type="tns:AdGroupBidLandscapeType" />
+  <xs:complexType name="ArrayOfAdGroupBidLandscape">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupBidLandscape" nillable="true" type="tns:AdGroupBidLandscape" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdGroupBidLandscape" nillable="true" type="tns:ArrayOfAdGroupBidLandscape" />
+  <xs:complexType name="AdGroupBidLandscape">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+      <xs:element minOccurs="0" name="AdGroupBidLandscapeType" type="tns:AdGroupBidLandscapeType" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="tns:DayMonthAndYear" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="tns:DayMonthAndYear" />
+      <xs:element minOccurs="0" name="BidLandscapePoints" nillable="true" type="tns:ArrayOfBidLandscapePoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdGroupBidLandscape" nillable="true" type="tns:AdGroupBidLandscape" />
+  <xs:complexType name="DayMonthAndYear">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DayMonthAndYear" nillable="true" type="tns:DayMonthAndYear" />
+  <xs:complexType name="ArrayOfBidLandscapePoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BidLandscapePoint" nillable="true" type="tns:BidLandscapePoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBidLandscapePoint" nillable="true" type="tns:ArrayOfBidLandscapePoint" />
+  <xs:complexType name="BidLandscapePoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bid" type="xs:double" />
+      <xs:element minOccurs="0" name="Clicks" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Impressions" type="xs:long" />
+      <xs:element minOccurs="0" name="TopImpressions" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Currency" type="tns:Currency" />
+      <xs:element minOccurs="0" name="Cost" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MarginalCPC" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BidLandscapePoint" nillable="true" type="tns:BidLandscapePoint" />
+  <xs:complexType name="ArrayOfKeywordBidLandscape">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordBidLandscape" nillable="true" type="tns:KeywordBidLandscape" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordBidLandscape" nillable="true" type="tns:ArrayOfKeywordBidLandscape" />
+  <xs:complexType name="KeywordBidLandscape">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeywordId" type="xs:long" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="tns:DayMonthAndYear" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="tns:DayMonthAndYear" />
+      <xs:element minOccurs="0" name="BidLandscapePoints" nillable="true" type="tns:ArrayOfBidLandscapePoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordBidLandscape" nillable="true" type="tns:KeywordBidLandscape" />
+  <xs:simpleType name="TimeInterval">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LastMonth" />
+      <xs:enumeration value="LastWeek" />
+      <xs:enumeration value="LastDay" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimeInterval" nillable="true" type="tns:TimeInterval" />
+  <xs:simpleType name="AdPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="MainLine1" />
+      <xs:enumeration value="MainLine2" />
+      <xs:enumeration value="MainLine3" />
+      <xs:enumeration value="MainLine4" />
+      <xs:enumeration value="SideBar1" />
+      <xs:enumeration value="SideBar2" />
+      <xs:enumeration value="SideBar3" />
+      <xs:enumeration value="SideBar4" />
+      <xs:enumeration value="SideBar5" />
+      <xs:enumeration value="SideBar6" />
+      <xs:enumeration value="SideBar7" />
+      <xs:enumeration value="SideBar8" />
+      <xs:enumeration value="SideBar9" />
+      <xs:enumeration value="SideBar10" />
+      <xs:enumeration value="Aggregate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdPosition" nillable="true" type="tns:AdPosition" />
+  <xs:complexType name="ArrayOfKeywordHistoricalPerformance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordHistoricalPerformance" nillable="true" type="tns:KeywordHistoricalPerformance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordHistoricalPerformance" nillable="true" type="tns:ArrayOfKeywordHistoricalPerformance" />
+  <xs:complexType name="KeywordHistoricalPerformance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeywordKPIs" nillable="true" type="tns:ArrayOfKeywordKPI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordHistoricalPerformance" nillable="true" type="tns:KeywordHistoricalPerformance" />
+  <xs:complexType name="ArrayOfKeywordKPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordKPI" nillable="true" type="tns:KeywordKPI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordKPI" nillable="true" type="tns:ArrayOfKeywordKPI" />
+  <xs:complexType name="KeywordKPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchType" type="tns:MatchType" />
+      <xs:element minOccurs="0" name="AdPosition" type="tns:AdPosition" />
+      <xs:element minOccurs="0" name="Clicks" type="xs:int" />
+      <xs:element minOccurs="0" name="Impressions" type="xs:long" />
+      <xs:element minOccurs="0" name="AverageCPC" type="xs:double" />
+      <xs:element minOccurs="0" name="CTR" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalCost" type="xs:double" />
+      <xs:element minOccurs="0" name="AverageBid" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordKPI" nillable="true" type="tns:KeywordKPI" />
+  <xs:complexType name="ArrayOfKeywordSearchCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordSearchCount" nillable="true" type="tns:KeywordSearchCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordSearchCount" nillable="true" type="tns:ArrayOfKeywordSearchCount" />
+  <xs:complexType name="KeywordSearchCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchCountsByAttributes" nillable="true" type="tns:ArrayOfSearchCountsByAttributes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordSearchCount" nillable="true" type="tns:KeywordSearchCount" />
+  <xs:complexType name="ArrayOfSearchCountsByAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCountsByAttributes" nillable="true" type="tns:SearchCountsByAttributes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCountsByAttributes" nillable="true" type="tns:ArrayOfSearchCountsByAttributes" />
+  <xs:complexType name="SearchCountsByAttributes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistoricalSearchCounts" nillable="true" type="tns:ArrayOfHistoricalSearchCountPeriodic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCountsByAttributes" nillable="true" type="tns:SearchCountsByAttributes" />
+  <xs:complexType name="ArrayOfHistoricalSearchCountPeriodic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricalSearchCountPeriodic" nillable="true" type="tns:HistoricalSearchCountPeriodic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricalSearchCountPeriodic" nillable="true" type="tns:ArrayOfHistoricalSearchCountPeriodic" />
+  <xs:complexType name="HistoricalSearchCountPeriodic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SearchCount" type="xs:long" />
+      <xs:element minOccurs="0" name="DayMonthAndYear" nillable="true" type="tns:DayMonthAndYear" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricalSearchCountPeriodic" nillable="true" type="tns:HistoricalSearchCountPeriodic" />
+  <xs:complexType name="ArrayOfKeywordCategoryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordCategoryResult" nillable="true" type="tns:KeywordCategoryResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordCategoryResult" nillable="true" type="tns:ArrayOfKeywordCategoryResult" />
+  <xs:complexType name="KeywordCategoryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeywordCategories" nillable="true" type="tns:ArrayOfKeywordCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordCategoryResult" nillable="true" type="tns:KeywordCategoryResult" />
+  <xs:complexType name="ArrayOfKeywordCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordCategory" nillable="true" type="tns:KeywordCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordCategory" nillable="true" type="tns:ArrayOfKeywordCategory" />
+  <xs:complexType name="KeywordCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfidenceScore" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordCategory" nillable="true" type="tns:KeywordCategory" />
+  <xs:complexType name="ArrayOfKeywordDemographicResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordDemographicResult" nillable="true" type="tns:KeywordDemographicResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordDemographicResult" nillable="true" type="tns:ArrayOfKeywordDemographicResult" />
+  <xs:complexType name="KeywordDemographicResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeywordDemographics" nillable="true" type="tns:ArrayOfKeywordDemographic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordDemographicResult" nillable="true" type="tns:KeywordDemographicResult" />
+  <xs:complexType name="ArrayOfKeywordDemographic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordDemographic" nillable="true" type="tns:KeywordDemographic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordDemographic" nillable="true" type="tns:ArrayOfKeywordDemographic" />
+  <xs:complexType name="KeywordDemographic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age18_24" type="xs:double" />
+      <xs:element minOccurs="0" name="Age25_34" type="xs:double" />
+      <xs:element minOccurs="0" name="Age35_49" type="xs:double" />
+      <xs:element minOccurs="0" name="Age50_64" type="xs:double" />
+      <xs:element minOccurs="0" name="Age65Plus" type="xs:double" />
+      <xs:element minOccurs="0" name="AgeUnknown" type="xs:double" />
+      <xs:element minOccurs="0" name="Female" type="xs:double" />
+      <xs:element minOccurs="0" name="Male" type="xs:double" />
+      <xs:element minOccurs="0" name="GenderUnknown" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordDemographic" nillable="true" type="tns:KeywordDemographic" />
+  <xs:complexType name="ArrayOfKeywordLocationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordLocationResult" nillable="true" type="tns:KeywordLocationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordLocationResult" nillable="true" type="tns:ArrayOfKeywordLocationResult" />
+  <xs:complexType name="KeywordLocationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KeywordLocations" nillable="true" type="tns:ArrayOfKeywordLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordLocationResult" nillable="true" type="tns:KeywordLocationResult" />
+  <xs:complexType name="ArrayOfKeywordLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordLocation" nillable="true" type="tns:KeywordLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordLocation" nillable="true" type="tns:ArrayOfKeywordLocation" />
+  <xs:complexType name="KeywordLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Device" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordLocation" nillable="true" type="tns:KeywordLocation" />
+  <xs:complexType name="ArrayOfKeywordAndConfidence">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordAndConfidence" nillable="true" type="tns:KeywordAndConfidence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordAndConfidence" nillable="true" type="tns:ArrayOfKeywordAndConfidence" />
+  <xs:complexType name="KeywordAndConfidence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SuggestedKeyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfidenceScore" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordAndConfidence" nillable="true" type="tns:KeywordAndConfidence" />
+  <xs:complexType name="ArrayOfKeywordSuggestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordSuggestion" nillable="true" type="tns:KeywordSuggestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordSuggestion" nillable="true" type="tns:ArrayOfKeywordSuggestion" />
+  <xs:complexType name="KeywordSuggestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Keyword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuggestionsAndConfidence" nillable="true" type="tns:ArrayOfKeywordAndConfidence" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordSuggestion" nillable="true" type="tns:KeywordSuggestion" />
+  <xs:complexType name="Selector">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateRange" nillable="true" type="tns:DateRange" />
+      <xs:element minOccurs="0" name="GroupBy" nillable="true" type="tns:ArrayOfField" />
+      <xs:element minOccurs="0" name="Ordering" nillable="true" type="tns:ArrayOfOrderBy" />
+      <xs:element minOccurs="0" name="PageInfo" nillable="true" type="tns:Paging" />
+      <xs:element minOccurs="0" name="Predicates" nillable="true" type="tns:ArrayOfPredicate" />
+      <xs:element minOccurs="0" name="SelectedFields" nillable="true" type="tns:ArrayOfField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Selector" nillable="true" type="tns:Selector" />
+  <xs:complexType name="DateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaxDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MinDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateRange" nillable="true" type="tns:DateRange" />
+  <xs:complexType name="ArrayOfField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" type="tns:Field" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfField" nillable="true" type="tns:ArrayOfField" />
+  <xs:simpleType name="Field">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOW" />
+      <xs:enumeration value="BidLandscape">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BidSuggestion">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EntityAuctionInsight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1021</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AggregatedAuctionInsight">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1022</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AuctionInsightAvailableChildren">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1023</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TopMover">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1011</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AccountId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2001</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CampaignId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AdGroupId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2003</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KeywordId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2004</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TimeInterval">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2005</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Field" nillable="true" type="tns:Field" />
+  <xs:complexType name="ArrayOfOrderBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderBy" nillable="true" type="tns:OrderBy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderBy" nillable="true" type="tns:ArrayOfOrderBy" />
+  <xs:complexType name="OrderBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SortOrder" type="tns:SortOrder" />
+      <xs:element minOccurs="0" name="SortingField" type="tns:Field" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderBy" nillable="true" type="tns:OrderBy" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASCENDING" />
+      <xs:enumeration value="DESCENDING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:complexType name="Paging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paging" nillable="true" type="tns:Paging" />
+  <xs:complexType name="ArrayOfPredicate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Predicate" nillable="true" type="tns:Predicate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPredicate" nillable="true" type="tns:ArrayOfPredicate" />
+  <xs:complexType name="Predicate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FilteringField" type="tns:Field" />
+      <xs:element minOccurs="0" name="Operator" type="tns:Operator" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Predicate" nillable="true" type="tns:Predicate" />
+  <xs:simpleType name="Operator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EQUALS" />
+      <xs:enumeration value="NOT_EQUALS" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="NOT_IN" />
+      <xs:enumeration value="GREATER_THAN" />
+      <xs:enumeration value="GREATER_THAN_EQUALS" />
+      <xs:enumeration value="LESS_THAN" />
+      <xs:enumeration value="LESS_THAN_EQUALS" />
+      <xs:enumeration value="STARTS_WITH" />
+      <xs:enumeration value="STARTS_WITH_IGNORE_CASE" />
+      <xs:enumeration value="CONTAINS" />
+      <xs:enumeration value="CONTAINS_IGNORE_CASE" />
+      <xs:enumeration value="DOES_NOT_CONTAIN" />
+      <xs:enumeration value="DOES_NOT_CONTAIN_IGNORE_CASE" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Operator" nillable="true" type="tns:Operator" />
+  <xs:complexType name="AuctionInsightResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalNumEntries" type="xs:int" />
+      <xs:element minOccurs="0" name="Entries" nillable="true" type="tns:ArrayOfAuctionInsightV2Entity" />
+      <xs:element minOccurs="0" name="UsedImpressions" type="xs:double" />
+      <xs:element minOccurs="0" name="UsedKeywords" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuctionInsightResult" nillable="true" type="tns:AuctionInsightResult" />
+  <xs:complexType name="ArrayOfAuctionInsightV2Entity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuctionInsightV2Entity" nillable="true" type="tns:AuctionInsightV2Entity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuctionInsightV2Entity" nillable="true" type="tns:ArrayOfAuctionInsightV2Entity" />
+  <xs:complexType name="AuctionInsightV2Entity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayDomain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregatedKPI" nillable="true" type="tns:AuctionInsightKPINode" />
+      <xs:element minOccurs="0" name="KPIs" nillable="true" type="tns:ArrayOfAuctionInsightKPINode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuctionInsightV2Entity" nillable="true" type="tns:AuctionInsightV2Entity" />
+  <xs:complexType name="AuctionInsightKPINode">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DimensionNames" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ImpressionShare" type="xs:double" />
+      <xs:element minOccurs="0" name="OverlapRate" type="xs:double" />
+      <xs:element minOccurs="0" name="AveragePosition" type="xs:double" />
+      <xs:element minOccurs="0" name="AboveRate" type="xs:double" />
+      <xs:element minOccurs="0" name="TopOfPageRate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuctionInsightKPINode" nillable="true" type="tns:AuctionInsightKPINode" />
+  <xs:complexType name="ArrayOfAuctionInsightKPINode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuctionInsightKPINode" nillable="true" type="tns:AuctionInsightKPINode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuctionInsightKPINode" nillable="true" type="tns:ArrayOfAuctionInsightKPINode" />
+</xs:schema>

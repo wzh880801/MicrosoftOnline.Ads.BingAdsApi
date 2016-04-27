@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://bingads.microsoft.com/Customer/v9" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/Customer/v9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd2" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetAccountsInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="OnlyParentAccounts" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
+  <xs:element name="DeveloperToken" nillable="true" type="xs:string" />
+  <xs:element name="Password" nillable="true" type="xs:string" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+  <xs:element name="GetAccountsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="AccountsInfo" nillable="true" type="q1:ArrayOfAccountInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrackingId" nillable="true" type="xs:string" />
+  <xs:element xmlns:q2="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiFault" nillable="true" type="q2:ApiFault" />
+  <xs:element name="FindAccountsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="AccountFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TopN" type="xs:int" />
+        <xs:element xmlns:q3="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ApplicationScope" nillable="true" type="q3:ApplicationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="AccountsInfo" nillable="true" type="q4:ArrayOfAccountInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q5:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q6:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Customer" nillable="true" type="q7:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Customer" nillable="true" type="q8:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignupCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Customer" nillable="true" type="q9:Customer" />
+        <xs:element xmlns:q10="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q10:Account" />
+        <xs:element minOccurs="0" name="ParentCustomerId" nillable="true" type="xs:long" />
+        <xs:element xmlns:q11="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ApplicationScope" type="q11:ApplicationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SignupCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+        <xs:element minOccurs="0" name="CustomerNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AccountId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q12:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerNameFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TopN" type="xs:int" />
+        <xs:element xmlns:q13="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ApplicationScope" type="q13:ApplicationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="CustomersInfo" nillable="true" type="q14:ArrayOfCustomerInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAccountResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+        <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="User" nillable="true" type="q15:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRolesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+        <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        <xs:element minOccurs="0" name="NewRoleId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NewAccountIds" nillable="true" type="q16:ArrayOflong" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NewCustomerIds" nillable="true" type="q17:ArrayOflong" />
+        <xs:element minOccurs="0" name="DeleteRoleId" nillable="true" type="xs:int" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeleteAccountIds" nillable="true" type="q18:ArrayOflong" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DeleteCustomerIds" nillable="true" type="q19:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="User" nillable="true" type="q20:User" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Roles" nillable="true" type="q21:ArrayOfint" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Accounts" nillable="true" type="q22:ArrayOflong" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Customers" nillable="true" type="q23:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="User" nillable="true" type="q24:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+        <xs:element xmlns:q25="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="StatusFilter" nillable="true" type="q25:UserLifeCycleStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="UsersInfo" nillable="true" type="q26:ArrayOfUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerPilotFeaturesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerPilotFeaturesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FeaturePilotFlags" nillable="true" type="q27:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPilotFeaturesCountriesRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPilotFeaturesCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PilotFeatures" nillable="true" type="q28:ArrayOfPilotFeature" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessibleCustomerRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessibleCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="AccessibleCustomer" nillable="true" type="q29:Customer" />
+        <xs:element minOccurs="0" name="ValidFields" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAccountsOrCustomersInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TopN" type="xs:int" />
+        <xs:element xmlns:q30="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ApplicationScope" nillable="true" type="q30:ApplicationType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAccountsOrCustomersInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="AccountInfoWithCustomerData" nillable="true" type="q31:ArrayOfAccountInfoWithCustomerData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpgradeCustomerToAgencyRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpgradeCustomerToAgencyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPrepayAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q32:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPrepayAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePrepayAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Account" nillable="true" type="q33:Account" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePrepayAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MapCustomerIdToExternalCustomerIdRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CustomerId" type="xs:long" />
+        <xs:element minOccurs="0" name="ExternalCustomerId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MapCustomerIdToExternalCustomerIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MapAccountIdToExternalAccountIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExternalAccountIds" nillable="true" type="q34:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MapAccountIdToExternalAccountIdsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomersRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ApplicationScope" type="q35:ApplicationType" />
+        <xs:element xmlns:q36="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q36:ArrayOfPredicate" />
+        <xs:element xmlns:q37="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="DateRange" nillable="true" type="q37:DateRange" />
+        <xs:element xmlns:q38="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Ordering" nillable="true" type="q38:ArrayOfOrderBy" />
+        <xs:element xmlns:q39="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PageInfo" nillable="true" type="q39:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Customers" nillable="true" type="q40:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddClientLinksRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ClientLinks" nillable="true" type="q41:ArrayOfClientLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddClientLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="https://bingads.microsoft.com/Customer/v9/Exception" minOccurs="0" name="OperationErrors" nillable="true" type="q42:ArrayOfOperationError" />
+        <xs:element xmlns:q43="https://bingads.microsoft.com/Customer/v9/Exception" minOccurs="0" name="PartialErrors" nillable="true" type="q43:ArrayOfArrayOfOperationError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateClientLinksRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ClientLinks" nillable="true" type="q44:ArrayOfClientLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateClientLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="https://bingads.microsoft.com/Customer/v9/Exception" minOccurs="0" name="OperationErrors" nillable="true" type="q45:ArrayOfOperationError" />
+        <xs:element xmlns:q46="https://bingads.microsoft.com/Customer/v9/Exception" minOccurs="0" name="PartialErrors" nillable="true" type="q46:ArrayOfArrayOfOperationError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchClientLinksRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q47:ArrayOfPredicate" />
+        <xs:element xmlns:q48="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Ordering" nillable="true" type="q48:ArrayOfOrderBy" />
+        <xs:element xmlns:q49="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PageInfo" nillable="true" type="q49:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchClientLinksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="ClientLinks" nillable="true" type="q50:ArrayOfClientLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAccountsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q51:ArrayOfPredicate" />
+        <xs:element xmlns:q52="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Ordering" nillable="true" type="q52:ArrayOfOrderBy" />
+        <xs:element xmlns:q53="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PageInfo" nillable="true" type="q53:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Accounts" nillable="true" type="q54:ArrayOfAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendUserInvitationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="UserInvitation" nillable="true" type="q55:UserInvitation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendUserInvitationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserInvitationId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserInvitationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q56:ArrayOfPredicate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchUserInvitationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="UserInvitations" nillable="true" type="q57:ArrayOfUserInvitation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

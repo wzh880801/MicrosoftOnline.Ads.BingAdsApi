@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://bingads.microsoft.com/AdInsight/v10" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/AdInsight/v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBatchError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchError" nillable="true" type="tns:BatchError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBatchError" nillable="true" type="tns:ArrayOfBatchError" />
+  <xs:complexType name="BatchError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BatchError" nillable="true" type="tns:BatchError" />
+  <xs:complexType name="ArrayOfOperationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationError" nillable="true" type="tns:OperationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationError" nillable="true" type="tns:ArrayOfOperationError" />
+  <xs:complexType name="OperationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationError" nillable="true" type="tns:OperationError" />
+</xs:schema>

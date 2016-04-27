@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="https://bingads.microsoft.com/Billing/v9" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomerBillingService" targetNamespace="https://bingads.microsoft.com/Billing/v9" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ICustomerBillingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="https://bingads.microsoft.com/Billing/v9/Imports">
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd0" namespace="https://bingads.microsoft.com/Billing/v9" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" namespace="https://adapi.microsoft.com" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd3" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBillingDocumentsInfoRequest">
+    <wsdl:part name="parameters" element="tns:GetBillingDocumentsInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsInfoRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsInfoResponse">
+    <wsdl:part name="parameters" element="tns:GetBillingDocumentsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsInfoResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_ApiBatchFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsRequest">
+    <wsdl:part name="parameters" element="tns:GetBillingDocumentsRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsResponse">
+    <wsdl:part name="parameters" element="tns:GetBillingDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBillingDocumentsResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocuments_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocuments_ApiBatchFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="GetDisplayInvoicesRequest">
+    <wsdl:part name="parameters" element="tns:GetDisplayInvoicesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDisplayInvoicesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetDisplayInvoicesResponse">
+    <wsdl:part name="parameters" element="tns:GetDisplayInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDisplayInvoicesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q3="https://adapi.microsoft.com" name="detail" element="q3:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_ApiBatchFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="AddInsertionOrderRequest">
+    <wsdl:part name="parameters" element="tns:AddInsertionOrderRequest" />
+  </wsdl:message>
+  <wsdl:message name="AddInsertionOrderRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="AddInsertionOrderResponse">
+    <wsdl:part name="parameters" element="tns:AddInsertionOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddInsertionOrderResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_AddInsertionOrder_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q4="https://adapi.microsoft.com" name="detail" element="q4:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInsertionOrderRequest">
+    <wsdl:part name="parameters" element="tns:UpdateInsertionOrderRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInsertionOrderRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInsertionOrderResponse">
+    <wsdl:part name="parameters" element="tns:UpdateInsertionOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInsertionOrderResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_UpdateInsertionOrder_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q5="https://adapi.microsoft.com" name="detail" element="q5:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_UpdateInsertionOrder_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionOrdersByAccountRequest">
+    <wsdl:part name="parameters" element="tns:GetInsertionOrdersByAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionOrdersByAccountRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionOrdersByAccountResponse">
+    <wsdl:part name="parameters" element="tns:GetInsertionOrdersByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInsertionOrdersByAccountResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetInsertionOrdersByAccount_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q6="https://adapi.microsoft.com" name="detail" element="q6:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetInsertionOrdersByAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="SearchInsertionOrdersRequest">
+    <wsdl:part name="parameters" element="tns:SearchInsertionOrdersRequest" />
+  </wsdl:message>
+  <wsdl:message name="SearchInsertionOrdersRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="SearchInsertionOrdersResponse">
+    <wsdl:part name="parameters" element="tns:SearchInsertionOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchInsertionOrdersResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_SearchInsertionOrders_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q7="https://adapi.microsoft.com" name="detail" element="q7:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_SearchInsertionOrders_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetKOHIOInvoicesRequest">
+    <wsdl:part name="parameters" element="tns:GetKOHIOInvoicesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetKOHIOInvoicesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetKOHIOInvoicesResponse">
+    <wsdl:part name="parameters" element="tns:GetKOHIOInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetKOHIOInvoicesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q8="https://adapi.microsoft.com" name="detail" element="q8:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMonthlySpendRequest">
+    <wsdl:part name="parameters" element="tns:GetAccountMonthlySpendRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMonthlySpendRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMonthlySpendResponse">
+    <wsdl:part name="parameters" element="tns:GetAccountMonthlySpendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountMonthlySpendResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetAccountMonthlySpend_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q9="https://adapi.microsoft.com" name="detail" element="q9:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetAccountMonthlySpend_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="ICustomerBillingService">
+    <wsdl:operation name="GetBillingDocumentsInfo">
+      <wsdl:input wsaw:Action="GetBillingDocumentsInfo" name="GetBillingDocumentsInfoRequest" message="tns:GetBillingDocumentsInfoRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoResponse" name="GetBillingDocumentsInfoResponse" message="tns:GetBillingDocumentsInfoResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiBatchFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingDocuments">
+      <wsdl:input wsaw:Action="GetBillingDocuments" name="GetBillingDocumentsRequest" message="tns:GetBillingDocumentsRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsResponse" name="GetBillingDocumentsResponse" message="tns:GetBillingDocumentsResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetBillingDocuments_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetBillingDocuments_ApiBatchFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisplayInvoices">
+      <wsdl:input wsaw:Action="GetDisplayInvoices" name="GetDisplayInvoicesRequest" message="tns:GetDisplayInvoicesRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesResponse" name="GetDisplayInvoicesResponse" message="tns:GetDisplayInvoicesResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetDisplayInvoices_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetDisplayInvoices_ApiBatchFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInsertionOrder">
+      <wsdl:input wsaw:Action="AddInsertionOrder" name="AddInsertionOrderRequest" message="tns:AddInsertionOrderRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderResponse" name="AddInsertionOrderResponse" message="tns:AddInsertionOrderResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderApiFault" name="ApiFault" message="tns:ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_AddInsertionOrder_AdApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsertionOrder">
+      <wsdl:input wsaw:Action="UpdateInsertionOrder" name="UpdateInsertionOrderRequest" message="tns:UpdateInsertionOrderRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/UpdateInsertionOrderResponse" name="UpdateInsertionOrderResponse" message="tns:UpdateInsertionOrderResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/UpdateInsertionOrderAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_UpdateInsertionOrder_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/UpdateInsertionOrderApiFault" name="ApiFault" message="tns:ICustomerBillingService_UpdateInsertionOrder_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsertionOrdersByAccount">
+      <wsdl:input wsaw:Action="GetInsertionOrdersByAccount" name="GetInsertionOrdersByAccountRequest" message="tns:GetInsertionOrdersByAccountRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetInsertionOrdersByAccountResponse" name="GetInsertionOrdersByAccountResponse" message="tns:GetInsertionOrdersByAccountResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetInsertionOrdersByAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetInsertionOrdersByAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetInsertionOrdersByAccountApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetInsertionOrdersByAccount_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchInsertionOrders">
+      <wsdl:input wsaw:Action="SearchInsertionOrders" name="SearchInsertionOrdersRequest" message="tns:SearchInsertionOrdersRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/SearchInsertionOrdersResponse" name="SearchInsertionOrdersResponse" message="tns:SearchInsertionOrdersResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/SearchInsertionOrdersAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_SearchInsertionOrders_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/SearchInsertionOrdersApiFault" name="ApiFault" message="tns:ICustomerBillingService_SearchInsertionOrders_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKOHIOInvoices">
+      <wsdl:input wsaw:Action="GetKOHIOInvoices" name="GetKOHIOInvoicesRequest" message="tns:GetKOHIOInvoicesRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesResponse" name="GetKOHIOInvoicesResponse" message="tns:GetKOHIOInvoicesResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_ApiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMonthlySpend">
+      <wsdl:input wsaw:Action="GetAccountMonthlySpend" name="GetAccountMonthlySpendRequest" message="tns:GetAccountMonthlySpendRequest" />
+      <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetAccountMonthlySpendResponse" name="GetAccountMonthlySpendResponse" message="tns:GetAccountMonthlySpendResponse" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetAccountMonthlySpendAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetAccountMonthlySpend_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetAccountMonthlySpendApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetAccountMonthlySpend_ApiFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICustomerBillingService" type="tns:ICustomerBillingService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ICustomerBillingService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBillingDocumentsInfo">
+      <soap:operation soapAction="GetBillingDocumentsInfo" style="document" />
+      <wsdl:input name="GetBillingDocumentsInfoRequest">
+        <soap:header message="tns:GetBillingDocumentsInfoRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsInfoRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsInfoRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsInfoRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsInfoRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBillingDocumentsInfoResponse">
+        <soap:header message="tns:GetBillingDocumentsInfoResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiBatchFault">
+        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingDocuments">
+      <soap:operation soapAction="GetBillingDocuments" style="document" />
+      <wsdl:input name="GetBillingDocumentsRequest">
+        <soap:header message="tns:GetBillingDocumentsRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetBillingDocumentsRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetBillingDocumentsResponse">
+        <soap:header message="tns:GetBillingDocumentsResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiBatchFault">
+        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisplayInvoices">
+      <soap:operation soapAction="GetDisplayInvoices" style="document" />
+      <wsdl:input name="GetDisplayInvoicesRequest">
+        <soap:header message="tns:GetDisplayInvoicesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetDisplayInvoicesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetDisplayInvoicesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetDisplayInvoicesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetDisplayInvoicesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDisplayInvoicesResponse">
+        <soap:header message="tns:GetDisplayInvoicesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiBatchFault">
+        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddInsertionOrder">
+      <soap:operation soapAction="AddInsertionOrder" style="document" />
+      <wsdl:input name="AddInsertionOrderRequest">
+        <soap:header message="tns:AddInsertionOrderRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:AddInsertionOrderRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:AddInsertionOrderRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:AddInsertionOrderRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:AddInsertionOrderRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AddInsertionOrderResponse">
+        <soap:header message="tns:AddInsertionOrderResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsertionOrder">
+      <soap:operation soapAction="UpdateInsertionOrder" style="document" />
+      <wsdl:input name="UpdateInsertionOrderRequest">
+        <soap:header message="tns:UpdateInsertionOrderRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:UpdateInsertionOrderRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:UpdateInsertionOrderRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:UpdateInsertionOrderRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:UpdateInsertionOrderRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpdateInsertionOrderResponse">
+        <soap:header message="tns:UpdateInsertionOrderResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsertionOrdersByAccount">
+      <soap:operation soapAction="GetInsertionOrdersByAccount" style="document" />
+      <wsdl:input name="GetInsertionOrdersByAccountRequest">
+        <soap:header message="tns:GetInsertionOrdersByAccountRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetInsertionOrdersByAccountRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetInsertionOrdersByAccountRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetInsertionOrdersByAccountRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetInsertionOrdersByAccountRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetInsertionOrdersByAccountResponse">
+        <soap:header message="tns:GetInsertionOrdersByAccountResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchInsertionOrders">
+      <soap:operation soapAction="SearchInsertionOrders" style="document" />
+      <wsdl:input name="SearchInsertionOrdersRequest">
+        <soap:header message="tns:SearchInsertionOrdersRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:SearchInsertionOrdersRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:SearchInsertionOrdersRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:SearchInsertionOrdersRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:SearchInsertionOrdersRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SearchInsertionOrdersResponse">
+        <soap:header message="tns:SearchInsertionOrdersResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetKOHIOInvoices">
+      <soap:operation soapAction="GetKOHIOInvoices" style="document" />
+      <wsdl:input name="GetKOHIOInvoicesRequest">
+        <soap:header message="tns:GetKOHIOInvoicesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetKOHIOInvoicesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetKOHIOInvoicesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetKOHIOInvoicesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetKOHIOInvoicesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetKOHIOInvoicesResponse">
+        <soap:header message="tns:GetKOHIOInvoicesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ApiBatchFault">
+        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountMonthlySpend">
+      <soap:operation soapAction="GetAccountMonthlySpend" style="document" />
+      <wsdl:input name="GetAccountMonthlySpendRequest">
+        <soap:header message="tns:GetAccountMonthlySpendRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetAccountMonthlySpendRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetAccountMonthlySpendRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetAccountMonthlySpendRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetAccountMonthlySpendRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetAccountMonthlySpendResponse">
+        <soap:header message="tns:GetAccountMonthlySpendResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerBillingService">
+    <wsdl:port name="BasicHttpBinding_ICustomerBillingService" binding="tns:BasicHttpBinding_ICustomerBillingService">
+      <soap:address location="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

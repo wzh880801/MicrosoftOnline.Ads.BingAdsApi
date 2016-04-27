@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b086e275-3bec-4c37-967a-31d8f81260a0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/v9/ReportingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReportingService.xsd" MetadataType="Schema" ID="ae0d8e9b-87d9-45b6-88a0-77b22badbc3e" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ReportingService1.xsd" MetadataType="Schema" ID="9d62ba22-0d3d-477a-ad30-8d76bc4b686c" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReportingService.disco" MetadataType="Disco" ID="8af22d0b-85c1-473d-83e7-027d88c0aacf" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?disco" />
+    <MetadataFile FileName="ReportingService2.xsd" MetadataType="Schema" ID="6d0179e6-2771-49b6-8325-52215a9b2db2" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReportingService3.xsd" MetadataType="Schema" ID="50ae0e14-819c-4074-a780-cb8a9ac19819" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReportingService.wsdl" MetadataType="Wsdl" ID="a339989e-5d55-40e1-b824-5e97fb5ad5bf" SourceId="1" SourceUrl="https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

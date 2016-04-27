@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BasicHttpBinding_IReportingService&quot;&gt;&lt;security mode=&quot;Transport&quot; /&gt;&lt;/Data&gt;" bindingType="basicHttpBinding" name="BasicHttpBinding_IReportingService" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IReportingService&quot; contract=&quot;V9.ReportingService.IReportingService&quot; name=&quot;BasicHttpBinding_IReportingService&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;https://reporting.api.bingads.microsoft.com/Api/Advertiser/Reporting/V9/ReportingService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IReportingService&quot; contract=&quot;V9.ReportingService.IReportingService&quot; name=&quot;BasicHttpBinding_IReportingService&quot; /&gt;" contractName="V9.ReportingService.IReportingService" name="BasicHttpBinding_IReportingService" />
+  </endpoints>
+</configurationSnapshot>

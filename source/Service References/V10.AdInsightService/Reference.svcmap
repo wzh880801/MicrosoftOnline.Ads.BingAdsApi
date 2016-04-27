@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b697af76-6390-4ab4-aabe-322da70c3471" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdInsightService.xsd" MetadataType="Schema" ID="51725896-3f23-49dc-8252-3ac505aa942e" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd5" />
+    <MetadataFile FileName="AdInsightService1.xsd" MetadataType="Schema" ID="44affbd9-fcaf-4d6b-bd45-612811b79ce5" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AdInsightService.wsdl" MetadataType="Wsdl" ID="e0051489-2c6f-44f0-927e-6f8df93a192d" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?wsdl" />
+    <MetadataFile FileName="AdInsightService2.xsd" MetadataType="Schema" ID="10293733-9e92-47f7-ae80-9d45229f17f8" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd6" />
+    <MetadataFile FileName="AdInsightService3.xsd" MetadataType="Schema" ID="b20d5e64-8e2c-4513-be4d-551354d4dcc3" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdInsightService4.xsd" MetadataType="Schema" ID="04f14094-32a6-4fd6-b01b-d19411fb902a" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AdInsightService5.xsd" MetadataType="Schema" ID="833833d4-e700-48e7-be08-5c69df4af31f" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AdInsightService6.xsd" MetadataType="Schema" ID="c9481e69-4d85-4dfb-b353-c41fec444567" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AdInsightService.disco" MetadataType="Disco" ID="a797a0af-a266-4abe-aa57-55e6c3a49094" SourceId="1" SourceUrl="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

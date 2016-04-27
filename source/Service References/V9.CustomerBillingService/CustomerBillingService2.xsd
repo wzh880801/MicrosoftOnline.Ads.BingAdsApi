@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://bingads.microsoft.com/Customer/v9/Entities" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/Customer/v9/Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBillingDocumentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillingDocumentInfo" nillable="true" type="tns:BillingDocumentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillingDocumentInfo" nillable="true" type="tns:ArrayOfBillingDocumentInfo" />
+  <xs:complexType name="BillingDocumentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DocumentId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillingDocumentInfo" nillable="true" type="tns:BillingDocumentInfo" />
+  <xs:simpleType name="DataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Xml">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pdf">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataType" nillable="true" type="tns:DataType" />
+  <xs:complexType name="ArrayOfBillingDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BillingDocument" nillable="true" type="tns:BillingDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBillingDocument" nillable="true" type="tns:ArrayOfBillingDocument" />
+  <xs:complexType name="BillingDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Type" type="tns:DataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BillingDocument" nillable="true" type="tns:BillingDocument" />
+  <xs:complexType name="InsertionOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      <xs:element minOccurs="0" name="BalanceAmount" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="BookingCountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="InsertionOrderId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastModifiedByUserId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LastModifiedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NotificationThreshold" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ReferenceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="SpendCapAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:InsertionOrderStatus" />
+      <xs:element minOccurs="0" name="PurchaseOrder" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsertionOrder" nillable="true" type="tns:InsertionOrder" />
+  <xs:simpleType name="InsertionOrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PendingSystemReview" />
+      <xs:enumeration value="PendingUserReview" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Declined" />
+      <xs:enumeration value="Expired" />
+      <xs:enumeration value="Canceled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InsertionOrderStatus" nillable="true" type="tns:InsertionOrderStatus" />
+  <xs:complexType name="ArrayOfInsertionOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsertionOrder" nillable="true" type="tns:InsertionOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsertionOrder" nillable="true" type="tns:ArrayOfInsertionOrder" />
+  <xs:complexType name="ArrayOfPredicate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Predicate" nillable="true" type="tns:Predicate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPredicate" nillable="true" type="tns:ArrayOfPredicate" />
+  <xs:complexType name="Predicate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Field" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operator" type="tns:PredicateOperator" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Predicate" nillable="true" type="tns:Predicate" />
+  <xs:simpleType name="PredicateOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="NotEquals" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="In" />
+      <xs:enumeration value="GreaterThanEquals" />
+      <xs:enumeration value="LessThanEquals" />
+      <xs:enumeration value="StartsWith" />
+      <xs:enumeration value="NotContains" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PredicateOperator" nillable="true" type="tns:PredicateOperator" />
+  <xs:complexType name="ArrayOfOrderBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderBy" nillable="true" type="tns:OrderBy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderBy" nillable="true" type="tns:ArrayOfOrderBy" />
+  <xs:complexType name="OrderBy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Field" type="tns:OrderByField" />
+      <xs:element minOccurs="0" name="Order" type="tns:SortOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderBy" nillable="true" type="tns:OrderBy" />
+  <xs:simpleType name="OrderByField">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Id" />
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="Number" />
+      <xs:enumeration value="LifeCycleStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderByField" nillable="true" type="tns:OrderByField" />
+  <xs:simpleType name="SortOrder">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ascending" />
+      <xs:enumeration value="Descending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrder" nillable="true" type="tns:SortOrder" />
+  <xs:complexType name="Paging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paging" nillable="true" type="tns:Paging" />
+</xs:schema>

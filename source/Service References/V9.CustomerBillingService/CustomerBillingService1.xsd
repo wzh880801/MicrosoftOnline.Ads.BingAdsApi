@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://bingads.microsoft.com/Billing/v9" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/Billing/v9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd3" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+  <xs:element name="GetBillingDocumentsInfoRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q1:ArrayOflong" />
+        <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
+  <xs:element name="DeveloperToken" nillable="true" type="xs:string" />
+  <xs:element name="Password" nillable="true" type="xs:string" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+  <xs:element name="GetBillingDocumentsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="BillingDocumentsInfo" nillable="true" type="q2:ArrayOfBillingDocumentInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrackingId" nillable="true" type="xs:string" />
+  <xs:element xmlns:q3="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiFault" nillable="true" type="q3:ApiFault" />
+  <xs:element xmlns:q4="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiBatchFault" nillable="true" type="q4:ApiBatchFault" />
+  <xs:element name="GetBillingDocumentsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DocumentIds" nillable="true" type="q5:ArrayOflong" />
+        <xs:element xmlns:q6="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Type" type="q6:DataType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBillingDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="BillingDocuments" nillable="true" type="q7:ArrayOfBillingDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisplayInvoicesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InvoiceIds" nillable="true" type="q8:ArrayOflong" />
+        <xs:element xmlns:q9="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Type" type="q9:DataType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDisplayInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="BillingDocuments" nillable="true" type="q10:ArrayOfBillingDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsertionOrderRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="InsertionOrder" nillable="true" type="q11:InsertionOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddInsertionOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertionOrderId" type="xs:long" />
+        <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInsertionOrderRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="InsertionOrder" nillable="true" type="q12:InsertionOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInsertionOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LastModifiedTime" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsertionOrdersByAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InsertionOrderIds" nillable="true" type="q13:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInsertionOrdersByAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="InsertionOrders" nillable="true" type="q14:ArrayOfInsertionOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchInsertionOrdersRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q15:ArrayOfPredicate" />
+        <xs:element xmlns:q16="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Ordering" nillable="true" type="q16:ArrayOfOrderBy" />
+        <xs:element xmlns:q17="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PageInfo" nillable="true" type="q17:Paging" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchInsertionOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="InsertionOrders" nillable="true" type="q18:ArrayOfInsertionOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKOHIOInvoicesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InvoiceIds" nillable="true" type="q19:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKOHIOInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="BillingDocuments" nillable="true" type="q20:ArrayOfBillingDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountMonthlySpendRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="MonthYear" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountMonthlySpendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Amount" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

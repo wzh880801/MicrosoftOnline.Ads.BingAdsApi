@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MicrosoftOnline.Ads.BingAdsApi.OAuthAuthentication" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAEAgQAAAIAAAACEAEAAAAAAAECACgAAAAAAAAAA=</HashCode>
+      <FileName>Authentication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MicrosoftOnline.Ads.BingAdsApi.PasswordAuthentication" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIAAAACAAAAAAAAAAAAACAQIAAAAAAAA=</HashCode>
+      <FileName>Authentication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MicrosoftOnline.Ads.BingAdsApi.ApiAuthentication" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MicrosoftOnline.Ads.BingAdsApi.TokenRefreshedEventArgs" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgQAAAAAAAgAEAEAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authentication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

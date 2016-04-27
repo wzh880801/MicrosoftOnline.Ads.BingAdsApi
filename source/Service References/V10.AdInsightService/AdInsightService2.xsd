@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Message" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Message" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" />
+  <xs:complexType name="ArrayOfKeywordAndMatchType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordAndMatchType" nillable="true" type="tns:KeywordAndMatchType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeywordAndMatchType" nillable="true" type="tns:ArrayOfKeywordAndMatchType" />
+  <xs:complexType name="KeywordAndMatchType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeywordText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="MatchTypes" nillable="true" type="q1:ArrayOfMatchType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeywordAndMatchType" nillable="true" type="tns:KeywordAndMatchType" />
+</xs:schema>

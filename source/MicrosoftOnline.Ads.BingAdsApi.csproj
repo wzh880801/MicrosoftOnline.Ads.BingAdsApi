@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26AB752C-3D4A-4168-8E17-E66E0E63B1F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MicrosoftOnline.Ads.BingAdsApi</RootNamespace>
+    <AssemblyName>MicrosoftOnline.Ads.BingAdsApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdInsightHelper.cs" />
+    <Compile Include="Authentication.cs" />
+    <Compile Include="BillingProcessor.cs" />
+    <Compile Include="BingAdsApiException.cs" />
+    <Compile Include="FinancialDocument.cs" />
+    <Compile Include="ConsolidatedFinancialDocument.cs" />
+    <Compile Include="BulkHelper.cs" />
+    <Compile Include="CampaignMHelper.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="CustomerBillingHelper.cs" />
+    <Compile Include="CustomerMHelper.cs" />
+    <Compile Include="FileProcessor.cs" />
+    <Compile Include="LogBase.cs" />
+    <Compile Include="LogEventArgs.cs" />
+    <Compile Include="MethodHelper.cs" />
+    <Compile Include="OAuthHelper.cs" />
+    <Compile Include="OAuthSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportingHelper.cs" />
+    <Compile Include="Service References\V10.AdInsightService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\V10.BulkService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\V10.CampaignManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\V9.CustomerBillingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\V9.CustomerManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\V9.ReportingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Authentication.cd" />
+    <None Include="FileProcessor.cd" />
+    <None Include="Service References\V10.AdInsightService\AdInsightService.wsdl" />
+    <None Include="Service References\V10.AdInsightService\AdInsightService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.AdInsightService\AdInsightService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\BulkService.wsdl" />
+    <None Include="Service References\V10.BulkService\BulkService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\BulkService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\BulkService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\BulkService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\BulkService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.wsdl" />
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService.wsdl" />
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService.wsdl" />
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.ReportingService\ReportingService.wsdl" />
+    <None Include="Service References\V9.ReportingService\ReportingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.ReportingService\ReportingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.ReportingService\ReportingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.ReportingService\ReportingService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\V10.AdInsightService\" />
+    <WCFMetadataStorage Include="Service References\V10.BulkService\" />
+    <WCFMetadataStorage Include="Service References\V10.CampaignManagementService\" />
+    <WCFMetadataStorage Include="Service References\V9.CustomerBillingService\" />
+    <WCFMetadataStorage Include="Service References\V9.CustomerManagementService\" />
+    <WCFMetadataStorage Include="Service References\V9.ReportingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerManagementService\CustomerManagementService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerManagementService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerManagementService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerManagementService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.ReportingService\ReportingService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.ReportingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.ReportingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.ReportingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerBillingService\CustomerBillingService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerBillingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerBillingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V9.CustomerBillingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.CampaignManagementService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.CampaignManagementService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.CampaignManagementService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.BulkService\BulkService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.BulkService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.BulkService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.BulkService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.AdInsightService\AdInsightService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.AdInsightService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.AdInsightService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.AdInsightService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

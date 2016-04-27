@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="Microsoft.Advertiser.AdInsight.Api.Service" elementFormDefault="qualified" targetNamespace="Microsoft.Advertiser.AdInsight.Api.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" />
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/AdInsight/v10" />
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd3" namespace="https://adapi.microsoft.com" />
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://adinsight.api.bingads.microsoft.com/Api/Advertiser/AdInsight/V10/AdInsightService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Message" />
+  <xs:element name="GetBidOpportunitiesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="OpportunityType" type="q1:BidOpportunityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
+  <xs:element name="CustomerAccountId" nillable="true" type="xs:string" />
+  <xs:element name="CustomerId" nillable="true" type="xs:string" />
+  <xs:element name="DeveloperToken" nillable="true" type="xs:string" />
+  <xs:element name="Password" nillable="true" type="xs:string" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+  <xs:element name="GetBidOpportunitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Opportunities" nillable="true" type="q2:ArrayOfBidOpportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrackingId" nillable="true" type="xs:string" />
+  <xs:complexType name="ApiFaultDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="https://adapi.microsoft.com" base="q3:ApplicationFault">
+        <xs:sequence>
+          <xs:element xmlns:q4="https://bingads.microsoft.com/AdInsight/v10" minOccurs="0" name="BatchErrors" nillable="true" type="q4:ArrayOfBatchError" />
+          <xs:element xmlns:q5="https://bingads.microsoft.com/AdInsight/v10" minOccurs="0" name="OperationErrors" nillable="true" type="q5:ArrayOfOperationError" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApiFaultDetail" nillable="true" type="tns:ApiFaultDetail" />
+  <xs:element name="GetBudgetOpportunitiesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetOpportunitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Opportunities" nillable="true" type="q6:ArrayOfBudgetOpportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordOpportunitiesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="OpportunityType" type="q7:KeywordOpportunityType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordOpportunitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Opportunities" nillable="true" type="q8:ArrayOfKeywordOpportunity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedBidByKeywordIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q9:ArrayOflong" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="TargetPositionForAds" type="q10:TargetAdPosition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedBidByKeywordIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordEstimatedBids" nillable="true" type="q11:ArrayOfKeywordIdEstimatedBid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedPositionByKeywordIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q12:ArrayOflong" />
+        <xs:element minOccurs="0" name="MaxBid" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedPositionByKeywordIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordEstimatedPositions" nillable="true" type="q13:ArrayOfKeywordIdEstimatedPosition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedBidByKeywordsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Message" minOccurs="0" name="Keywords" nillable="true" type="q14:ArrayOfKeywordAndMatchType" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="TargetPositionForAds" type="q15:TargetAdPosition" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Currency" nillable="true" type="q17:Currency" />
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="EntityLevelBid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedBidByKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordEstimatedBids" nillable="true" type="q18:ArrayOfKeywordEstimatedBid" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="AdGroupEstimatedBid" nillable="true" type="q19:EstimatedBidAndTraffic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedPositionByKeywordsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element minOccurs="0" name="MaxBid" type="xs:double" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q21:ArrayOfstring" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Currency" nillable="true" type="q22:Currency" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="MatchTypes" nillable="true" type="q23:ArrayOfMatchType" />
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstimatedPositionByKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordEstimatedPositions" nillable="true" type="q24:ArrayOfKeywordEstimatedPosition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBidLandscapeByAdGroupIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="AdGroupBidLandscapeInputs" nillable="true" type="q25:ArrayOfAdGroupBidLandscapeInput" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBidLandscapeByAdGroupIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="BidLandscape" nillable="true" type="q26:ArrayOfAdGroupBidLandscape" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBidLandscapeByKeywordIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q27:ArrayOflong" />
+        <xs:element minOccurs="0" name="IncludeCurrentBid" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBidLandscapeByKeywordIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="BidLandscape" nillable="true" type="q28:ArrayOfKeywordBidLandscape" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalKeywordPerformanceRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q29:ArrayOfstring" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="TimeInterval" nillable="true" type="q30:TimeInterval" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="TargetAdPosition" nillable="true" type="q31:AdPosition" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="MatchTypes" nillable="true" type="q32:ArrayOfMatchType" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q33:ArrayOfstring" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Devices" nillable="true" type="q34:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalKeywordPerformanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordHistoricalPerformances" nillable="true" type="q35:ArrayOfKeywordHistoricalPerformance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalSearchCountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q36:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q37:ArrayOfstring" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="StartDate" nillable="true" type="q38:DayMonthAndYear" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="EndDate" nillable="true" type="q39:DayMonthAndYear" />
+        <xs:element minOccurs="0" name="TimePeriodRollup" nillable="true" type="xs:string" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Devices" nillable="true" type="q40:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHistoricalSearchCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordSearchCounts" nillable="true" type="q41:ArrayOfKeywordSearchCount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordCategoriesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q42:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublisherCountry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaxCategories" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Result" nillable="true" type="q43:ArrayOfKeywordCategoryResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordDemographicsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q44:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublisherCountry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Device" nillable="true" type="q45:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordDemographicsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordDemographicResult" nillable="true" type="q46:ArrayOfKeywordDemographicResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordLocationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q47:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PublisherCountry" nillable="true" type="xs:string" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Device" nillable="true" type="q48:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Level" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="ParentCountry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaxLocations" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeywordLocationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordLocationResult" nillable="true" type="q49:ArrayOfKeywordLocationResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestKeywordsForUrlRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MaxKeywords" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="MinConfidenceScore" nillable="true" type="xs:double" />
+        <xs:element minOccurs="0" name="ExcludeBrand" nillable="true" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestKeywordsForUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Keywords" nillable="true" type="q50:ArrayOfKeywordAndConfidence" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestKeywordsFromExistingKeywordsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q51:ArrayOfstring" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q52:ArrayOfstring" />
+        <xs:element minOccurs="0" name="MaxSuggestionsPerKeyword" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="SuggestionType" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="RemoveDuplicates" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ExcludeBrand" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
+        <xs:element minOccurs="0" name="CampaignId" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuggestKeywordsFromExistingKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="KeywordSuggestions" nillable="true" type="q53:ArrayOfKeywordSuggestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionInsightDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Selector" nillable="true" type="q54:Selector" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuctionInsightDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Result" nillable="true" type="q55:AuctionInsightResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

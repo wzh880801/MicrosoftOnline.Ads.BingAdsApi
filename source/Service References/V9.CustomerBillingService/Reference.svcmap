@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="347f803d-8623-4a53-a9d2-b5c7d791ac3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomerBillingService.xsd" MetadataType="Schema" ID="1f32bf38-f7bf-4fd9-91f7-aa2656723321" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerBillingService1.xsd" MetadataType="Schema" ID="4f640258-81a6-49b2-9279-ee7463f54193" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerBillingService2.xsd" MetadataType="Schema" ID="478d16e2-9f65-421e-bdf5-b8cb9155cbf1" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerBillingService3.xsd" MetadataType="Schema" ID="7f09280c-6e13-4f3d-a9f7-64a95420893d" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomerBillingService4.xsd" MetadataType="Schema" ID="b9006b7f-ee9d-42a0-84ce-cb1e97da184a" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CustomerBillingService5.xsd" MetadataType="Schema" ID="135ebd25-281d-41fe-a677-bc9e10afba8a" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerBillingService.disco" MetadataType="Disco" ID="e5219701-2739-4293-b162-7432460332e1" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?disco" />
+    <MetadataFile FileName="CustomerBillingService.wsdl" MetadataType="Wsdl" ID="fc45c4d8-e3e3-4abc-a7e6-f222b81a40e1" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

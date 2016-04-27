@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://bingads.microsoft.com/CampaignManagement/v10" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/CampaignManagement/v10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://bulk.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/BulkService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://bulk.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/BulkService.svc?xsd=xsd3" namespace="https://adapi.microsoft.com" />
+  <xs:import schemaLocation="https://bulk.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/BulkService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:element name="DownloadCampaignsByAccountIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q1:ArrayOflong" />
+        <xs:element minOccurs="0" name="CompressionType" nillable="true" type="tns:CompressionType" />
+        <xs:element minOccurs="0" name="DataScope" type="tns:DataScope" />
+        <xs:element minOccurs="0" name="DownloadFileType" nillable="true" type="tns:DownloadFileType" />
+        <xs:element minOccurs="0" name="Entities" type="tns:BulkDownloadEntity" />
+        <xs:element minOccurs="0" name="FormatVersion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastSyncTimeInUTC" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PerformanceStatsDateRange" nillable="true" type="tns:PerformanceStatsDateRange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="CompressionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Zip" />
+      <xs:enumeration value="GZip" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CompressionType" nillable="true" type="tns:CompressionType" />
+  <xs:simpleType name="DataScope">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EntityData" />
+          <xs:enumeration value="EntityPerformanceData" />
+          <xs:enumeration value="QualityScoreData" />
+          <xs:enumeration value="BidSuggestionsData" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DataScope" nillable="true" type="tns:DataScope" />
+  <xs:simpleType name="DownloadFileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Csv" />
+      <xs:enumeration value="Tsv" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DownloadFileType" nillable="true" type="tns:DownloadFileType" />
+  <xs:simpleType name="BulkDownloadEntity">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="long" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Campaigns" />
+          <xs:enumeration value="AdGroups" />
+          <xs:enumeration value="Ads" />
+          <xs:enumeration value="Keywords" />
+          <xs:enumeration value="CampaignNegativeKeywords" />
+          <xs:enumeration value="AdGroupNegativeKeywords" />
+          <xs:enumeration value="CampaignTargets" />
+          <xs:enumeration value="AdGroupTargets" />
+          <xs:enumeration value="CampaignNegativeSites" />
+          <xs:enumeration value="AdGroupNegativeSites" />
+          <xs:enumeration value="CampaignSiteLinksAdExtensions" />
+          <xs:enumeration value="CampaignLocationAdExtensions" />
+          <xs:enumeration value="CampaignCallAdExtensions" />
+          <xs:enumeration value="AdGroupSiteLinksAdExtensions" />
+          <xs:enumeration value="LocationAdExtensions" />
+          <xs:enumeration value="CallAdExtensions" />
+          <xs:enumeration value="SiteLinksAdExtensions" />
+          <xs:enumeration value="NegativeKeywordLists" />
+          <xs:enumeration value="SharedNegativeKeywords" />
+          <xs:enumeration value="CampaignNegativeKeywordListAssociations" />
+          <xs:enumeration value="ImageAdExtensions" />
+          <xs:enumeration value="CampaignImageAdExtensions" />
+          <xs:enumeration value="AdGroupImageAdExtensions" />
+          <xs:enumeration value="AppAdExtensions" />
+          <xs:enumeration value="AdGroupAppAdExtensions" />
+          <xs:enumeration value="CampaignAppAdExtensions" />
+          <xs:enumeration value="AdGroupProductPartitions" />
+          <xs:enumeration value="CampaignProductScopes" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="BulkDownloadEntity" nillable="true" type="tns:BulkDownloadEntity" />
+  <xs:complexType name="PerformanceStatsDateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomDateRangeEnd" nillable="true" type="tns:Date" />
+      <xs:element minOccurs="0" name="CustomDateRangeStart" nillable="true" type="tns:Date" />
+      <xs:element minOccurs="0" name="PredefinedTime" nillable="true" type="tns:ReportTimePeriod" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerformanceStatsDateRange" nillable="true" type="tns:PerformanceStatsDateRange" />
+  <xs:complexType name="Date">
+    <xs:sequence>
+      <xs:element name="Day" type="xs:int" />
+      <xs:element name="Month" type="xs:int" />
+      <xs:element name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Date" nillable="true" type="tns:Date" />
+  <xs:simpleType name="ReportTimePeriod">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Today" />
+      <xs:enumeration value="Yesterday" />
+      <xs:enumeration value="LastSevenDays" />
+      <xs:enumeration value="ThisWeek" />
+      <xs:enumeration value="LastWeek" />
+      <xs:enumeration value="LastFourWeeks" />
+      <xs:enumeration value="ThisMonth" />
+      <xs:enumeration value="LastMonth" />
+      <xs:enumeration value="LastThreeMonths" />
+      <xs:enumeration value="LastSixMonths" />
+      <xs:enumeration value="ThisYear" />
+      <xs:enumeration value="LastYear" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ReportTimePeriod" nillable="true" type="tns:ReportTimePeriod" />
+  <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
+  <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
+  <xs:element name="CustomerAccountId" nillable="true" type="xs:string" />
+  <xs:element name="CustomerId" nillable="true" type="xs:string" />
+  <xs:element name="DeveloperToken" nillable="true" type="xs:string" />
+  <xs:element name="Password" nillable="true" type="xs:string" />
+  <xs:element name="UserName" nillable="true" type="xs:string" />
+  <xs:element name="DownloadCampaignsByAccountIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadRequestId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TrackingId" nillable="true" type="xs:string" />
+  <xs:complexType name="ApiFaultDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="https://adapi.microsoft.com" base="q2:ApplicationFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatchErrors" nillable="true" type="tns:ArrayOfBatchError" />
+          <xs:element minOccurs="0" name="OperationErrors" nillable="true" type="tns:ArrayOfOperationError" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApiFaultDetail" nillable="true" type="tns:ApiFaultDetail" />
+  <xs:complexType name="ArrayOfBatchError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchError" nillable="true" type="tns:BatchError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBatchError" nillable="true" type="tns:ArrayOfBatchError" />
+  <xs:complexType name="BatchError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FieldPath" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q3:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BatchError" nillable="true" type="tns:BatchError" />
+  <xs:complexType name="EditorialError">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BatchError">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Appealable" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DisapprovedText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublisherCountry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReasonCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EditorialError" nillable="true" type="tns:EditorialError" />
+  <xs:complexType name="ArrayOfOperationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationError" nillable="true" type="tns:OperationError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationError" nillable="true" type="tns:ArrayOfOperationError" />
+  <xs:complexType name="OperationError">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationError" nillable="true" type="tns:OperationError" />
+  <xs:element name="DownloadCampaignsByCampaignIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Campaigns" nillable="true" type="tns:ArrayOfCampaignScope" />
+        <xs:element minOccurs="0" name="CompressionType" nillable="true" type="tns:CompressionType" />
+        <xs:element minOccurs="0" name="DataScope" type="tns:DataScope" />
+        <xs:element minOccurs="0" name="DownloadFileType" nillable="true" type="tns:DownloadFileType" />
+        <xs:element minOccurs="0" name="Entities" type="tns:BulkDownloadEntity" />
+        <xs:element minOccurs="0" name="FormatVersion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LastSyncTimeInUTC" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PerformanceStatsDateRange" nillable="true" type="tns:PerformanceStatsDateRange" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfCampaignScope">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampaignScope" nillable="true" type="tns:CampaignScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCampaignScope" nillable="true" type="tns:ArrayOfCampaignScope" />
+  <xs:complexType name="CampaignScope">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
+      <xs:element minOccurs="0" name="ParentAccountId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CampaignScope" nillable="true" type="tns:CampaignScope" />
+  <xs:element name="DownloadCampaignsByCampaignIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DownloadRequestId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBulkDownloadStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBulkDownloadStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfOperationError" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q4:ArrayOfKeyValuePairOfstringstring" />
+        <xs:element minOccurs="0" name="PercentComplete" type="xs:int" />
+        <xs:element minOccurs="0" name="RequestStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResultFileUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBulkUploadUrlRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResponseMode" type="tns:ResponseMode" />
+        <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ResponseMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ErrorsOnly" />
+      <xs:enumeration value="ErrorsAndResults" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseMode" nillable="true" type="tns:ResponseMode" />
+  <xs:element name="GetBulkUploadUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UploadUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBulkUploadStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RequestId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBulkUploadStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfOperationError" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q5:ArrayOfKeyValuePairOfstringstring" />
+        <xs:element minOccurs="0" name="PercentComplete" type="xs:int" />
+        <xs:element minOccurs="0" name="RequestStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ResultFileUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

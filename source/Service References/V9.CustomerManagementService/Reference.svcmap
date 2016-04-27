@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="048757d2-1dae-4f69-9a0f-769526d76d52" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>true</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomerManagementService.wsdl" MetadataType="Wsdl" ID="bac7be4c-dd26-4335-91c6-901ace06bef0" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?wsdl" />
+    <MetadataFile FileName="CustomerManagementService.xsd" MetadataType="Schema" ID="9807ae55-fe73-466a-8bf2-8de635a73c66" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerManagementService1.xsd" MetadataType="Schema" ID="151b62aa-26b3-4284-8904-388791de86de" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd6" />
+    <MetadataFile FileName="CustomerManagementService2.xsd" MetadataType="Schema" ID="7314fa64-35ac-48fb-b4ea-4631f44f6f04" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerManagementService3.xsd" MetadataType="Schema" ID="bac40eba-8d84-434e-9e69-5f7a7a494e32" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerManagementService4.xsd" MetadataType="Schema" ID="cedf00e7-3e9a-4fe1-967a-0d03a27dd26f" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CustomerManagementService.disco" MetadataType="Disco" ID="80e321ca-a6e0-4f57-845d-c1a3f93ab239" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?disco" />
+    <MetadataFile FileName="CustomerManagementService5.xsd" MetadataType="Schema" ID="4e93ac15-dce5-4a1a-9408-ddc9894a81b3" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerManagementService6.xsd" MetadataType="Schema" ID="f3578619-d0a3-4fe3-b8cc-994d1405b372" SourceId="1" SourceUrl="https://clientcenter.api.bingads.microsoft.com/Api/CustomerManagement/v9/CustomerManagementService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
