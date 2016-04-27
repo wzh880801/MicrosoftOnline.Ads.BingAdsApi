@@ -38,7 +38,7 @@ namespace BingAdsApiDemo
                 "clientId");
 
             IList<AccountInfo> accounts = null;
-            using (CustomerMHelper cs = new CustomerMHelper())
+            using (CustomerMHelper cs = new CustomerMHelper(LogHandler))
             {
                 var response = cs.TryGetAccountsInfo(auth, CustomerId, true);
                 if (response != null && response.AccountsInfo != null)
@@ -54,7 +54,7 @@ namespace BingAdsApiDemo
             if (accounts.Count > 1000)
                 accounts = accounts.TakeWhile((p, i) => { return i < 1000; }).ToList();
 
-            using (ReportingHelper rs = new ReportingHelper())
+            using (ReportingHelper rs = new ReportingHelper(LogHandler))
             {
                 //Submit & download
                 var succeed = 
@@ -114,6 +114,22 @@ namespace BingAdsApiDemo
                     },
                 }
             };
+        }
+
+        void LogHandler(object sender, LogEventArgs e)
+        {
+            MicrosoftOnline.Ads.LogAssistant.LogEventArgs _e =
+                new MicrosoftOnline.Ads.LogAssistant.LogEventArgs(
+                    e.LogDateTime,
+                    MicrosoftOnline.Ads.LogAssistant.LogLevel.Error,
+                    MicrosoftOnline.Ads.LogAssistant.LogCategoryType.Exception,
+                    e.EntryPoint,
+                    e.Message,
+                    e.Parameters,
+                    e.Exception,
+                    e.TrackingId
+                );
+            MicrosoftOnline.Ads.LogAssistant.LogHelper.Log(_e);
         }
     }
 }
