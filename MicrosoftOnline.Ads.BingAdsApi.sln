@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{642E15
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{0DEAF6F2-268B-4416-9D16-FA74A036BDB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingAdsApiDemo", "..\BingAdsApiDemo\BingAdsApiDemo.csproj", "{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingAdsApiDemo", "example\BingAdsApiDemo.csproj", "{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
