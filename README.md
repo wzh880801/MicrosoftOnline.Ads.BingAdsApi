@@ -2,7 +2,7 @@
 .NET SDK for BingAds API
 
 `NuGet`: 
-\<br>You could get `MicrosoftOnline.Ads.Log.dll` & `Microsoft.Ads.BingAdsApi.dll` from [MyNuGet](http://nuget.esobing.com/nuget/) [`http://nuget.esobing.com/nuget/`](http://nuget.esobing.com/nuget/)
+<br>You could get `MicrosoftOnline.Ads.Log.dll` & `Microsoft.Ads.BingAdsApi.dll` from [MyNuGet](http://nuget.esobing.com/nuget/) [`http://nuget.esobing.com/nuget/`](http://nuget.esobing.com/nuget/)
 
 # Usage:
 
