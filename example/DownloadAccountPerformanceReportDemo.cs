@@ -60,6 +60,11 @@ namespace BingAdsApiDemo
                 var succeed = 
                     rs.TrySubmitGenerateReport(auth, BuildRequest(accounts.Select(p => p.Id).ToArray()), CustomerId, null, SaveFilePath);
             }
+
+            using(FileProcessor fp = new FileProcessor(null, Process, null, SaveFilePath))
+            {
+                fp.Process();
+            }
         }
 
         ReportRequest BuildRequest(long[] accountIds)
@@ -130,6 +135,18 @@ namespace BingAdsApiDemo
                     e.TrackingId
                 );
             MicrosoftOnline.Ads.LogAssistant.LogHelper.Log(_e);
+        }
+
+        void Process(object sender, ProcessEventArgs e)
+        {
+            //Show the row line
+            var line = "";
+            foreach(object o in e.RowValues)
+            {
+                line += string.Format("\t{0}", o);
+            }
+
+            Console.WriteLine(line.TrimStart('\t'));
         }
     }
 }

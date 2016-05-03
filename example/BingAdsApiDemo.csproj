@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DownloadAccountPerformanceReportDemo.cs" />
+    <Compile Include="GetTargetsDemo.cs" />
     <Compile Include="IDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -861,6 +861,345 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             return null;
         }
-    
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="campaignIds">100 CampaignIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByCampaignIdsResponse GetTargetsByCampaignIds(
+            ApiAuthentication auth,
+            long[] campaignIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByCampaignIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                CampaignIds = campaignIds,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetTargetsByCampaignIds(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByCampaignIds", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="campaignIds">100 CampaignIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByCampaignIdsResponse TryGetTargetsByCampaignIds(
+            ApiAuthentication auth,
+            long[] campaignIds,
+            long? customerId,
+            long? accountId)
+        {
+            return MethodHelper.TryGet(
+                GetTargetsByCampaignIds, 
+                this, 
+                auth, 
+                campaignIds, 
+                customerId, 
+                accountId);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="campaignIds">100 CampaignIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public async Task<GetTargetsByCampaignIdsResponse> GetTargetsByCampaignIdsAsync(
+            ApiAuthentication auth,
+            long[] campaignIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByCampaignIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                CampaignIds = campaignIds,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetTargetsByCampaignIdsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByCampaignIdsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="adGroupIds">100 AdGroupIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByAdGroupIdsResponse GetTargetsByAdGroupIds(
+            ApiAuthentication auth,
+            long[] adGroupIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByAdGroupIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                AdGroupIds = adGroupIds
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetTargetsByAdGroupIds(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByAdGroupIds", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="adGroupIds">100 AdGroupIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByAdGroupIdsResponse TryGetTargetsByAdGroupIds(
+            ApiAuthentication auth,
+            long[] adGroupIds,
+            long? customerId,
+            long? accountId)
+        {
+            return MethodHelper.TryGet(GetTargetsByAdGroupIds,
+                this,
+                auth,
+                adGroupIds,
+                customerId,
+                accountId);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="adGroupIds">100 AdGroupIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public async Task<GetTargetsByAdGroupIdsResponse> GetTargetsByAdGroupIdsAsync(
+            ApiAuthentication auth,
+            long[] adGroupIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByAdGroupIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                AdGroupIds = adGroupIds
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetTargetsByAdGroupIdsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByAdGroupIdsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="targetIds">100 TargetIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByIdsResponse GetTargetsByIds(
+            ApiAuthentication auth,
+            long[] targetIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                TargetIds = targetIds
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetTargetsByIds(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByIds", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="targetIds">100 TargetIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public GetTargetsByIdsResponse TryGetTargetsByIds(
+            ApiAuthentication auth,
+            long[] targetIds,
+            long? customerId,
+            long? accountId)
+        {
+            return MethodHelper.TryGet(GetTargetsByIds,
+                this,
+                auth,
+                targetIds,
+                customerId,
+                accountId);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="targetIds">100 TargetIds most</param>
+        /// <param name="customerId"></param>
+        /// <param name="accountId"></param>
+        /// <returns></returns>
+        public async Task<GetTargetsByIdsResponse> GetTargetsByIdsAsync(
+            ApiAuthentication auth,
+            long[] targetIds,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsByIdsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                TargetIds = targetIds
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetTargetsByIdsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsByIdsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetTargetsInfoFromLibraryResponse GetTargetsInfoFromLibrary(
+            ApiAuthentication auth,
+            long? customerId,
+            long? accountId)
+        {
+            var request = new GetTargetsInfoFromLibraryRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetTargetsInfoFromLibrary(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsInfoFromLibrary", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetTargetsInfoFromLibraryResponse TryGetTargetsInfoFromLibrary(
+           ApiAuthentication auth,
+           long? customerId,
+           long? accountId)
+        {
+            return MethodHelper.TryGet(
+                GetTargetsInfoFromLibrary,
+                this,
+                auth,
+                customerId,
+                accountId);
+        }
+
+        public async Task<GetTargetsInfoFromLibraryResponse> GetTargetsInfoFromLibraryAsync(
+           ApiAuthentication auth,
+           long? customerId,
+           long? accountId)
+        {
+            var request = new GetTargetsInfoFromLibraryRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetTargetsInfoFromLibraryAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsInfoFromLibraryAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
     }
 }
