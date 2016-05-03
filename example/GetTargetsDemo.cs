@@ -31,15 +31,27 @@ namespace BingAdsApiDemo
                 DateTime.UtcNow.Ticks,
                 "clientId");
 
-            IList<AccountInfo> accounts = null;
+            Customer customer = null;
+            using(CustomerMHelper cs = new CustomerMHelper(LogHandler))
+            {
+                var response = cs.TryGetCustomer(auth, CustomerId);
+                if (response == null)
+                    throw new BingAdsApiException("Retrieve customer failed!");
+
+                customer = response.Customer;
+            }
+
+            AccountInfo[] accounts = null;
             using (CustomerMHelper cs = new CustomerMHelper(LogHandler))
             {
                 var response = cs.TryGetAccountsInfo(auth, CustomerId, true);
-                if (response != null && response.AccountsInfo != null)
-                    accounts = response.AccountsInfo.ToList();
+                if (response == null)
+                    throw new BingAdsApiException("Retrieve accounts failed!");
+
+                accounts = response.AccountsInfo;
             }
 
-            if (accounts == null || accounts.Count == 0)
+            if (accounts == null || accounts.Length == 0)
                 return;
 
             foreach(var account in accounts)
@@ -90,9 +102,10 @@ namespace BingAdsApiDemo
 
                         foreach (var bid in deviceTarget.Bids)
                         {
-                            Console.WriteLine("Customer:\t{0}", CustomerId);
+                            Console.WriteLine("Customer:\t{0}", customer.Name);
                             Console.WriteLine("Account:\t{0}", account.Id);
-                            Console.WriteLine("Campaign:\t{0}", campaign.Id);
+                            Console.WriteLine("CampaignId:\t{0}", campaign.Id);
+                            Console.WriteLine("CampaignName:\t{0}", campaign.Name);
                             Console.WriteLine("DeviceName:\t{0}", bid.DeviceName);
                             Console.WriteLine("BidAdjustment:\t{0}", bid.BidAdjustment);
                             Console.WriteLine("OSNames:\t{0}", string.Join(",", bid.OSNames));
