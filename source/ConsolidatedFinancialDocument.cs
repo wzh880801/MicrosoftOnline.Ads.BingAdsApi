@@ -315,7 +315,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string cityField;
 
-        private long postalCodeField;
+        private string postalCodeField;
 
         private string countryCodeField;
 
@@ -361,7 +361,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long PostalCode
+        public string PostalCode
         {
             get
             {
@@ -417,7 +417,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string currencyCodeField;
 
-        private long currencyExchangeRateToUSDField;
+        private decimal currencyExchangeRateToUSDField;
 
         private string languageCodeField;
 
@@ -439,7 +439,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private ConsolidatedFinancialDocumentFinancialSummaryDocumentHeaderDocumentHeaderDataGrandTotals grandTotalsField;
 
-        private long  companyCodeField;
+        private long companyCodeField;
 
         private ConsolidatedFinancialDocumentFinancialSummaryDocumentHeaderDocumentHeaderDataTaxEntrySet taxEntrySetField;
 
@@ -532,7 +532,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long CurrencyExchangeRateToUSD
+        public decimal CurrencyExchangeRateToUSD
         {
             get
             {
@@ -675,7 +675,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long  CompanyCode
+        public long CompanyCode
         {
             get
             {
@@ -779,7 +779,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string dueDateField;
 
-        private long netTermField;
+        private int netTermField;
 
         /// <remarks/>
         public string EndDate
@@ -834,7 +834,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long NetTerm
+        public int NetTerm
         {
             get
             {
@@ -1095,7 +1095,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
     public partial class ConsolidatedFinancialDocumentFinancialSummaryFinancialSummaryDetailAccount
     {
 
-        private long groupIdField;
+        private int groupIdField;
 
         private string accountNumberField;
 
@@ -1105,7 +1105,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long GroupId
+        public int GroupId
         {
             get
             {
@@ -1228,11 +1228,11 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string versionField;
 
-        private long isCompressedField;
+        private bool isCompressedField;
 
-        private long isReRenderField;
+        private bool isReRenderField;
 
-        private long isPendingField;
+        private bool isPendingField;
 
         private ConsolidatedFinancialDocumentFinancialDocumentsFinancialDocumentDocumentHeaderDocumentHeaderData documentHeaderDataField;
 
@@ -1277,7 +1277,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long IsCompressed
+        public bool IsCompressed
         {
             get
             {
@@ -1290,7 +1290,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long IsReRender
+        public bool IsReRender
         {
             get
             {
@@ -1303,7 +1303,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long IsPending
+        public bool IsPending
         {
             get
             {
@@ -1458,7 +1458,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string cityField;
 
-        private long postalCodeField;
+        private string postalCodeField;
 
         private string countryCodeField;
 
@@ -1504,7 +1504,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long PostalCode
+        public string PostalCode
         {
             get
             {
@@ -1560,7 +1560,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string currencyCodeField;
 
-        private long currencyExchangeRateToUSDField;
+        private decimal currencyExchangeRateToUSDField;
 
         private string languageCodeField;
 
@@ -1582,7 +1582,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private ConsolidatedFinancialDocumentFinancialDocumentsFinancialDocumentDocumentHeaderDocumentHeaderDataGrandTotals grandTotalsField;
 
-        private long  companyCodeField;
+        private long companyCodeField;
 
         private ConsolidatedFinancialDocumentFinancialDocumentsFinancialDocumentDocumentHeaderDocumentHeaderDataTaxEntrySet taxEntrySetField;
 
@@ -1681,7 +1681,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long CurrencyExchangeRateToUSD
+        public decimal CurrencyExchangeRateToUSD
         {
             get
             {
@@ -1824,7 +1824,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long  CompanyCode
+        public long CompanyCode
         {
             get
             {
@@ -1967,7 +1967,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string dueDateField;
 
-        private long netTermField;
+        private int netTermField;
 
         /// <remarks/>
         public string EndDate
@@ -2022,7 +2022,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long NetTerm
+        public int NetTerm
         {
             get
             {
@@ -2226,12 +2226,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi
     public partial class ConsolidatedFinancialDocumentFinancialDocumentsFinancialDocumentDocumentHeaderDocumentHeaderDataTaxEntrySet
     {
 
-        private long totalTaxAmountField;
+        private decimal totalTaxAmountField;
 
-        private long totalTaxRateField;
+        private decimal totalTaxRateField;
 
         /// <remarks/>
-        public long TotalTaxAmount
+        public decimal TotalTaxAmount
         {
             get
             {
@@ -2244,7 +2244,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long TotalTaxRate
+        public decimal TotalTaxRate
         {
             get
             {
@@ -2561,7 +2561,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private decimal totalField;
 
-        private long  campaignTotalUnitCountField;
+        private long campaignTotalUnitCountField;
 
         private string accountNumberField;
 
@@ -2674,7 +2674,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public long  CampaignTotalUnitCount
+        public long CampaignTotalUnitCount
         {
             get
             {

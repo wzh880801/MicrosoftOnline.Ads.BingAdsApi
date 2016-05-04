@@ -277,7 +277,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string cityField;
 
-        private long postalCodeField;
+        private string postalCodeField;
 
         private string countryCodeField;
 
@@ -310,7 +310,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long PostalCode
+        public string PostalCode
         {
             get
             {
@@ -366,7 +366,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
         private string currencyCodeField;
 
-        private long currencyExchangeRateToUSDField;
+        private decimal currencyExchangeRateToUSDField;
 
         private string languageCodeField;
 
@@ -485,7 +485,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         /// <remarks/>
-        public long CurrencyExchangeRateToUSD
+        public decimal CurrencyExchangeRateToUSD
         {
             get
             {

@@ -382,11 +382,29 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return null;
         }
 
+        /// <summary>
+        /// Gets the specified billing documents.
+        /// https://msdn.microsoft.com/en-us/library/bing-ads-billing-getbillingdocuments(v=msads.90).aspx
+        /// </summary>
+        /// <param name="auth">Do not use ApiAuthentication directly. Use PasswordAuthentication or OAuthAuthentication derives from it instead.</param>
+        /// <param name="documentIds">A list of identifiers of the billing documents to get. To get a list of identifiers, call the GetBillingDocumentsInfo operation.
+        /// You can most set 10 document Ids here</param>
+        /// <param name="dataType">The format to use to generate the billing document. For example, you can generate the billing document in PDF or XML format.</param>
+        /// <returns></returns>
         public GetBillingDocumentsResponse TryGetBillingDocuments(ApiAuthentication auth, long[] documentIds, DataType dataType = DataType.Xml)
         {
             return MethodHelper.TryGet(GetBillingDocuments, this, auth, documentIds, dataType);
         }
 
+        /// <summary>
+        /// Gets the specified billing documents.
+        /// https://msdn.microsoft.com/en-us/library/bing-ads-billing-getbillingdocuments(v=msads.90).aspx
+        /// </summary>
+        /// <param name="auth">Do not use ApiAuthentication directly. Use PasswordAuthentication or OAuthAuthentication derives from it instead.</param>
+        /// <param name="documentIds">A list of identifiers of the billing documents to get. To get a list of identifiers, call the GetBillingDocumentsInfo operation.
+        /// You can most set 10 document Ids here</param>
+        /// <param name="dataType">The format to use to generate the billing document. For example, you can generate the billing document in PDF or XML format.</param>
+        /// <returns></returns>
         public async Task<GetBillingDocumentsResponse> GetBillingDocumentsAsync(ApiAuthentication auth, long[] documentIds, DataType dataType = DataType.Xml)
         {
             var request = new GetBillingDocumentsRequest
