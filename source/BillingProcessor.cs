@@ -64,7 +64,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
                 using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(this._base64String)))
                 {
-                    using (FileStream fs = new FileStream(localFile, FileMode.OpenOrCreate))
+                    using (FileStream fs = new FileStream(localFile, FileMode.Create))
                     {
                         ms.WriteTo(fs);
                     }
