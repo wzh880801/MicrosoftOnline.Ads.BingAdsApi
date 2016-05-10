@@ -12,7 +12,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         private EventHandler<ProcessEventArgs> _processHandler = null;
         private EventHandler<ProgressChangeEventArgs> _progressChangedHandler = null;
 
-        private bool _deleteTsvFileWhenProcessCompleted = true;
         private bool _completed = false;
 
         /// <summary>
@@ -26,6 +25,11 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public bool DeleteZipFileAfterProcessCompleted { get; set; }
 
         /// <summary>
+        /// Whether delete tsv file after whole process was done
+        /// </summary>
+        public bool DeleteTsvFileWhenProcessCompleted { get; set; }
+
+        /// <summary>
         /// Process a ZIP file
         /// UnZip and Parse the tsv file
         /// </summary>
@@ -37,7 +41,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// <param name="deleteZipFileWhenProcessCompleted">default is TRUE</param>
         public FileProcessor(
             EventHandler<LogEventArgs> logHandler,
-            EventHandler<ProcessEventArgs> processHandler, 
+            EventHandler<ProcessEventArgs> processHandler,
             EventHandler<ProgressChangeEventArgs> progressChangeHandler,
             string zipSourceFile,
             bool deleteTsvFileWhenProcessCompleted = true,
@@ -48,7 +52,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             this._progressChangedHandler = progressChangeHandler;
             this.ZipFileName = zipSourceFile;
 
-            if(string.IsNullOrEmpty(this.ZipFileName) || !File.Exists(this.ZipFileName))
+            if (string.IsNullOrEmpty(this.ZipFileName) || !File.Exists(this.ZipFileName))
             {
                 Log(new LogEventArgs(ServiceType.FileProcessor, "FileProcessor.FileProcessor()", "ArgumentNullException(\"zipSourceFile\")"));
                 throw new ArgumentNullException("zipSourceFile");
@@ -57,6 +61,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             BuildTsvPath();
 
             this.DeleteZipFileAfterProcessCompleted = deleteZipFileWhenProcessCompleted;
+            this.DeleteTsvFileWhenProcessCompleted = deleteTsvFileWhenProcessCompleted;
         }
 
         public void Dispose()
@@ -126,7 +131,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 result = false;
             }
 
-            if(_deleteTsvFileWhenProcessCompleted)
+            if (this.DeleteTsvFileWhenProcessCompleted)
             {
                 try
                 {
