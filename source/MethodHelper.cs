@@ -559,7 +559,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == false && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -584,7 +584,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -609,7 +609,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -634,7 +634,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -659,7 +659,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -684,7 +684,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
@@ -709,7 +709,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             int i = 0;
             bool response = false;
-            while (response == null && i < MAX_TRY_COUNT)
+            while (!response && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
                     service.IgnoreError = false;
