@@ -139,6 +139,20 @@ namespace BingAdsApiDemo
 
         void Process(object sender, ProcessEventArgs e)
         {
+            /*
+             * e.RowValues contains the whole values of each row
+             * e.g. the structure of the report file is 
+             * 
+             *  Cloumn1  Column2 Column3
+             *  1        2       3
+             *  10       30      40
+             *  
+             * then the e.RowValues will be
+             * [1,2,3]
+             * 
+             * you could get each column value by e.RowValues[index]
+             */
+
             //Show the row line
             var line = "";
             foreach(object o in e.RowValues)
@@ -147,6 +161,29 @@ namespace BingAdsApiDemo
             }
 
             Console.WriteLine(line.TrimStart('\t'));
-        }
+
+            /*
+             * You could also insert the data to DB, write to local file...
+             * 
+             * Report Schema:
+             * 
+             *  AccountPerformanceReportColumn.AccountId,
+                AccountPerformanceReportColumn.AccountName,
+                AccountPerformanceReportColumn.AccountNumber,
+                AccountPerformanceReportColumn.AdDistribution,
+                AccountPerformanceReportColumn.DeviceOS,
+                AccountPerformanceReportColumn.DeviceType,
+                AccountPerformanceReportColumn.CurrencyCode,
+                AccountPerformanceReportColumn.Network,
+                AccountPerformanceReportColumn.TopVsOther,
+                AccountPerformanceReportColumn.AverageCpc,
+                AccountPerformanceReportColumn.Impressions,
+                AccountPerformanceReportColumn.Clicks,
+                AccountPerformanceReportColumn.Spend,
+                AccountPerformanceReportColumn.TimePeriod
+             */
+
+            //var accountId = long.Parse(e.RowValues[0].ToString());
+        }       
     }
 }
