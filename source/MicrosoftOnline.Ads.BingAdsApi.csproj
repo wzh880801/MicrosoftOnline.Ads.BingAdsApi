@@ -47,25 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdInsightHelper.cs" />
-    <Compile Include="Authentication.cs" />
-    <Compile Include="BillingProcessor.cs" />
-    <Compile Include="BingAdsApiException.cs" />
+    <Compile Include="BingAdsService\AdInsightHelper.cs" />
+    <Compile Include="OAuth\Authentication.cs" />
+    <Compile Include="Processor\BillingProcessor.cs" />
+    <Compile Include="OAuth\BingAdsApiException.cs" />
     <Compile Include="FinancialDocument.cs" />
     <Compile Include="ConsolidatedFinancialDocument.cs" />
-    <Compile Include="BulkHelper.cs" />
-    <Compile Include="CampaignMHelper.cs" />
-    <Compile Include="Common.cs" />
-    <Compile Include="CustomerBillingHelper.cs" />
-    <Compile Include="CustomerMHelper.cs" />
-    <Compile Include="FileProcessor.cs" />
+    <Compile Include="BingAdsService\BulkHelper.cs" />
+    <Compile Include="BingAdsService\CampaignMHelper.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="BingAdsService\CustomerBillingHelper.cs" />
+    <Compile Include="BingAdsService\CustomerMHelper.cs" />
+    <Compile Include="Processor\FileProcessor.cs" />
     <Compile Include="LogBase.cs" />
     <Compile Include="LogEventArgs.cs" />
-    <Compile Include="MethodHelper.cs" />
-    <Compile Include="OAuthHelper.cs" />
-    <Compile Include="OAuthSettings.cs" />
+    <Compile Include="Common\MethodHelper.cs" />
+    <Compile Include="OAuth\OAuthHelper.cs" />
+    <Compile Include="OAuth\OAuthSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportingHelper.cs" />
+    <Compile Include="BingAdsService\ReportingHelper.cs" />
     <Compile Include="Service References\V10.AdInsightService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,8 +102,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Authentication.cd" />
-    <None Include="FileProcessor.cd" />
+    <None Include="OAuth\Authentication.cd" />
+    <None Include="Processor\FileProcessor.cd" />
     <None Include="Service References\V10.AdInsightService\AdInsightService.wsdl" />
     <None Include="Service References\V10.AdInsightService\AdInsightService.xsd">
       <SubType>Designer</SubType>
