@@ -10,13 +10,13 @@ namespace BingAdsApiDemo
     {
         static void Main(string[] args)
         {
-            //Run(new DownloadAccountPerformanceReportDemo(
-            //    new DateTime(2016, 1, 1),
-            //    new DateTime(2016, 1, 1),
-            //    527228,
-            //    @"d:\report.zip"));
+            Run(new DownloadAccountPerformanceReportDemo(
+                new DateTime(2016, 1, 1),
+                new DateTime(2016, 6, 1),
+                42164768,
+                @"d:\report.zip"));
 
-            Run(new GetTargetsDemo(527228));
+            //Run(new GetTargetsDemo(527228));
         }
 
         static void Run(IDemo demo)
