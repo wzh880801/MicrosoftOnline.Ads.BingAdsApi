@@ -184,11 +184,24 @@ namespace BingAdsApiDemo
             if (e.LogLevel == LogLevel.Error || e.LogLevel == LogLevel.Warn)
                 Console.WriteLine("Error/Warn occured while calling BingAds API, see the Log for details.");
 
+            var _logLevel = MicrosoftOnline.Ads.LogAssistant.LogLevel.Error;
+            switch (e.LogLevel)
+            {
+                case LogLevel.Error:
+                    break;
+                case LogLevel.Info:
+                    _logLevel = MicrosoftOnline.Ads.LogAssistant.LogLevel.Info;
+                    break;
+                case LogLevel.Warn:
+                    _logLevel = MicrosoftOnline.Ads.LogAssistant.LogLevel.Warn;
+                    break;
+            }
+
             MicrosoftOnline.Ads.LogAssistant.LogEventArgs _e =
                 new MicrosoftOnline.Ads.LogAssistant.LogEventArgs(
                     e.LogDateTime,
-                    MicrosoftOnline.Ads.LogAssistant.LogLevel.Error,
-                    MicrosoftOnline.Ads.LogAssistant.LogCategoryType.Exception,
+                    _logLevel,
+                    _logLevel == MicrosoftOnline.Ads.LogAssistant.LogLevel.Error ? MicrosoftOnline.Ads.LogAssistant.LogCategoryType.Exception : MicrosoftOnline.Ads.LogAssistant.LogCategoryType.System,
                     e.EntryPoint,
                     e.Message,
                     e.Parameters,
