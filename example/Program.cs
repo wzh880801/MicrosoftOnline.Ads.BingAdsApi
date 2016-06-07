@@ -16,7 +16,15 @@ namespace BingAdsApiDemo
                 42164768,
                 @"d:\report.zip"));
 
-            //Run(new GetTargetsDemo(527228));
+            //Run(new GetTargetsDemo(42164768));
+
+            //GetCustomerIndo
+            Run(new GetCustomerInfoDemo());
+
+            //GetAccounts
+            Run(new GetAccountListUnderCustomerDemo());
+
+            Console.ReadLine();
         }
 
         static void Run(IDemo demo)

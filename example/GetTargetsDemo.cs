@@ -20,19 +20,32 @@ namespace BingAdsApiDemo
 
         public void Run()
         {
-            ApiAuthentication auth = null;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("GetTargetsDemo");
 
-            //auth = new PasswordAuthentication("username", "passsword", "developerToken");
+            try
+            {
+                Work();
+            }
+            catch (Exception ex)
+            {
+                MicrosoftOnline.Ads.LogAssistant.LogHelper.Error(
+                    MicrosoftOnline.Ads.LogAssistant.LogCategoryType.Exception,
+                    "Work",
+                    ex.Message,
+                    this,
+                    ex);
+            }
 
-            auth = new OAuthAuthentication(
-                "accessToken",
-                "refreshToken",
-                "developerToken",
-                DateTime.UtcNow.Ticks,
-                "clientId");
+            Console.WriteLine("------------------------End--------------------------");
+        }
+
+        void Work()
+        {
+            var auth = Common.GetApiAuth();
 
             Customer customer = null;
-            using(CustomerMHelper cs = new CustomerMHelper(LogHandler))
+            using (CustomerMHelper cs = new CustomerMHelper(LogHandler))
             {
                 var response = cs.TryGetCustomer(auth, CustomerId);
                 if (response == null)
@@ -54,10 +67,10 @@ namespace BingAdsApiDemo
             if (accounts == null || accounts.Length == 0)
                 return;
 
-            foreach(var account in accounts)
+            foreach (var account in accounts)
             {
                 Campaign[] campaigns = null;
-                using(CampaignMHelper cs = new CampaignMHelper(LogHandler))
+                using (CampaignMHelper cs = new CampaignMHelper(LogHandler))
                 {
                     var response = cs.TryGetCampaignsByAccountId(
                         auth,
@@ -74,10 +87,10 @@ namespace BingAdsApiDemo
                 if (campaigns == null || campaigns.Length == 0)
                     continue;
 
-                foreach(var campaign in campaigns)
+                foreach (var campaign in campaigns)
                 {
                     Target[] targets = null;
-                    using(CampaignMHelper cs = new CampaignMHelper(LogHandler))
+                    using (CampaignMHelper cs = new CampaignMHelper(LogHandler))
                     {
                         var response = cs.TryGetTargetsByCampaignIds(
                             auth,
@@ -94,7 +107,7 @@ namespace BingAdsApiDemo
                     if (targets == null || targets.Length == 0)
                         continue;
 
-                    foreach(Target target in targets)
+                    foreach (Target target in targets)
                     {
                         var deviceTarget = target.DeviceOS;
                         if (deviceTarget == null || deviceTarget.Bids == null)

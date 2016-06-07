@@ -47,7 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="DownloadAccountPerformanceReportDemo.cs" />
+    <Compile Include="GetAccountListUnderCustomerDemo.cs" />
+    <Compile Include="GetCustomerInfoDemo.cs" />
     <Compile Include="GetTargetsDemo.cs" />
     <Compile Include="IDemo.cs" />
     <Compile Include="Program.cs" />
