@@ -22,13 +22,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method();
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method();
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -48,13 +53,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -74,13 +84,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -100,13 +115,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -126,13 +146,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -152,13 +177,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -178,13 +208,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -204,13 +239,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -230,13 +270,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7, t8);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7, t8);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -256,13 +301,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -282,13 +332,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -308,13 +363,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
@@ -334,13 +394,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             while (response == null && i < MAX_TRY_COUNT)
             {
                 if (i == MAX_TRY_COUNT - 1)
-                    service.IgnoreError = false;
-
-                try
                 {
+                    service.IgnoreError = false;
                     response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12);
                 }
-                catch { System.Threading.Thread.Sleep(1000); }
+                else
+                {
+                    try
+                    {
+                        response = method(t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12);
+                    }
+                    catch { System.Threading.Thread.Sleep(1000); }
+                }
 
                 i++;
             }
