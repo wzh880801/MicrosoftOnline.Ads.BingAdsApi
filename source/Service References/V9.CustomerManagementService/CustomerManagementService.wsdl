@@ -96,11 +96,11 @@
   <wsdl:message name="AddAccountResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_AddAccount_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_AddAccount_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q3="https://adapi.microsoft.com" name="detail" element="q3:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="UpdateAccountRequest">
     <wsdl:part name="parameters" element="tns:UpdateAccountRequest" />
@@ -184,11 +184,11 @@
   <wsdl:message name="SignupCustomerResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_SignupCustomer_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q7="https://adapi.microsoft.com" name="detail" element="q7:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetAccountRequest">
     <wsdl:part name="parameters" element="tns:GetAccountRequest" />
@@ -250,11 +250,11 @@
   <wsdl:message name="DeleteAccountResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_DeleteAccount_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q10="https://adapi.microsoft.com" name="detail" element="q10:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="DeleteCustomerRequest">
     <wsdl:part name="parameters" element="tns:DeleteCustomerRequest" />
@@ -294,11 +294,11 @@
   <wsdl:message name="UpdateUserResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_UpdateUser_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_UpdateUser_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q12="https://adapi.microsoft.com" name="detail" element="q12:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="UpdateUserRolesRequest">
     <wsdl:part name="parameters" element="tns:UpdateUserRolesRequest" />
@@ -316,11 +316,11 @@
   <wsdl:message name="UpdateUserRolesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_UpdateUserRoles_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q13="https://adapi.microsoft.com" name="detail" element="q13:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetUserRequest">
     <wsdl:part name="parameters" element="tns:GetUserRequest" />
@@ -338,11 +338,11 @@
   <wsdl:message name="GetUserResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_GetUser_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_GetUser_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q14="https://adapi.microsoft.com" name="detail" element="q14:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetCurrentUserRequest">
     <wsdl:part name="parameters" element="tns:GetCurrentUserRequest" />
@@ -360,11 +360,11 @@
   <wsdl:message name="GetCurrentUserResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_GetCurrentUser_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q15="https://adapi.microsoft.com" name="detail" element="q15:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="DeleteUserRequest">
     <wsdl:part name="parameters" element="tns:DeleteUserRequest" />
@@ -404,11 +404,11 @@
   <wsdl:message name="GetUsersInfoResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_GetUsersInfo_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q17="https://adapi.microsoft.com" name="detail" element="q17:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetCustomerPilotFeaturesRequest">
     <wsdl:part name="parameters" element="tns:GetCustomerPilotFeaturesRequest" />
@@ -536,11 +536,11 @@
   <wsdl:message name="AddPrepayAccountResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_AddPrepayAccount_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q23="https://adapi.microsoft.com" name="detail" element="q23:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="UpdatePrepayAccountRequest">
     <wsdl:part name="parameters" element="tns:UpdatePrepayAccountRequest" />
@@ -558,11 +558,11 @@
   <wsdl:message name="UpdatePrepayAccountResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_UpdatePrepayAccount_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q24="https://adapi.microsoft.com" name="detail" element="q24:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="MapCustomerIdToExternalCustomerIdRequest">
     <wsdl:part name="parameters" element="tns:MapCustomerIdToExternalCustomerIdRequest" />
@@ -580,11 +580,11 @@
   <wsdl:message name="MapCustomerIdToExternalCustomerIdResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_MapCustomerIdToExternalCustomerId_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q25="https://adapi.microsoft.com" name="detail" element="q25:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="MapAccountIdToExternalAccountIdsRequest">
     <wsdl:part name="parameters" element="tns:MapAccountIdToExternalAccountIdsRequest" />
@@ -602,11 +602,11 @@
   <wsdl:message name="MapAccountIdToExternalAccountIdsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_MapAccountIdToExternalAccountIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q26="https://adapi.microsoft.com" name="detail" element="q26:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="SearchCustomersRequest">
     <wsdl:part name="parameters" element="tns:SearchCustomersRequest" />
@@ -624,11 +624,11 @@
   <wsdl:message name="SearchCustomersResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_SearchCustomers_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q27="https://adapi.microsoft.com" name="detail" element="q27:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="AddClientLinksRequest">
     <wsdl:part name="parameters" element="tns:AddClientLinksRequest" />
@@ -712,11 +712,11 @@
   <wsdl:message name="SearchAccountsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerManagementService_SearchAccounts_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q31="https://adapi.microsoft.com" name="detail" element="q31:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="SendUserInvitationRequest">
     <wsdl:part name="parameters" element="tns:SendUserInvitationRequest" />
@@ -778,8 +778,8 @@
     <wsdl:operation name="AddAccount">
       <wsdl:input wsaw:Action="AddAccount" name="AddAccountRequest" message="tns:AddAccountRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountResponse" name="AddAccountResponse" message="tns:AddAccountResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddAccount_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_AddAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddAccount_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateAccount">
       <wsdl:input wsaw:Action="UpdateAccount" name="UpdateAccountRequest" message="tns:UpdateAccountRequest" />
@@ -802,8 +802,8 @@
     <wsdl:operation name="SignupCustomer">
       <wsdl:input wsaw:Action="SignupCustomer" name="SignupCustomerRequest" message="tns:SignupCustomerRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerResponse" name="SignupCustomerResponse" message="tns:SignupCustomerResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SignupCustomer_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustomerApiFault" name="ApiFault" message="tns:ICustomerManagementService_SignupCustomer_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAccount">
       <wsdl:input wsaw:Action="GetAccount" name="GetAccountRequest" message="tns:GetAccountRequest" />
@@ -820,8 +820,8 @@
     <wsdl:operation name="DeleteAccount">
       <wsdl:input wsaw:Action="DeleteAccount" name="DeleteAccountRequest" message="tns:DeleteAccountRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountResponse" name="DeleteAccountResponse" message="tns:DeleteAccountResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_DeleteAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_DeleteAccount_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteCustomer">
       <wsdl:input wsaw:Action="DeleteCustomer" name="DeleteCustomerRequest" message="tns:DeleteCustomerRequest" />
@@ -832,26 +832,26 @@
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="UpdateUser" name="UpdateUserRequest" message="tns:UpdateUserRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserResponse" name="UpdateUserResponse" message="tns:UpdateUserResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUser_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateUser_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUser_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUserRoles">
       <wsdl:input wsaw:Action="UpdateUserRoles" name="UpdateUserRolesRequest" message="tns:UpdateUserRolesRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesResponse" name="UpdateUserRolesResponse" message="tns:UpdateUserRolesResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdateUserRoles_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRolesApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdateUserRoles_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="GetUser" name="GetUserRequest" message="tns:GetUserRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserResponse" name="GetUserResponse" message="tns:GetUserResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUser_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetUser_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUser_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCurrentUser">
       <wsdl:input wsaw:Action="GetCurrentUser" name="GetCurrentUserRequest" message="tns:GetCurrentUserRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserResponse" name="GetCurrentUserResponse" message="tns:GetCurrentUserResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetCurrentUser_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUserApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetCurrentUser_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <wsdl:input wsaw:Action="DeleteUser" name="DeleteUserRequest" message="tns:DeleteUserRequest" />
@@ -862,8 +862,8 @@
     <wsdl:operation name="GetUsersInfo">
       <wsdl:input wsaw:Action="GetUsersInfo" name="GetUsersInfoRequest" message="tns:GetUsersInfoRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoResponse" name="GetUsersInfoResponse" message="tns:GetUsersInfoResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_GetUsersInfo_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfoApiFault" name="ApiFault" message="tns:ICustomerManagementService_GetUsersInfo_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerPilotFeatures">
       <wsdl:input wsaw:Action="GetCustomerPilotFeatures" name="GetCustomerPilotFeaturesRequest" message="tns:GetCustomerPilotFeaturesRequest" />
@@ -898,32 +898,32 @@
     <wsdl:operation name="AddPrepayAccount">
       <wsdl:input wsaw:Action="AddPrepayAccount" name="AddPrepayAccountRequest" message="tns:AddPrepayAccountRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountResponse" name="AddPrepayAccountResponse" message="tns:AddPrepayAccountResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_AddPrepayAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_AddPrepayAccount_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdatePrepayAccount">
       <wsdl:input wsaw:Action="UpdatePrepayAccount" name="UpdatePrepayAccountRequest" message="tns:UpdatePrepayAccountRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountResponse" name="UpdatePrepayAccountResponse" message="tns:UpdatePrepayAccountResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_UpdatePrepayAccount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepayAccountApiFault" name="ApiFault" message="tns:ICustomerManagementService_UpdatePrepayAccount_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="MapCustomerIdToExternalCustomerId">
       <wsdl:input wsaw:Action="MapCustomerIdToExternalCustomerId" name="MapCustomerIdToExternalCustomerIdRequest" message="tns:MapCustomerIdToExternalCustomerIdRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdResponse" name="MapCustomerIdToExternalCustomerIdResponse" message="tns:MapCustomerIdToExternalCustomerIdResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_MapCustomerIdToExternalCustomerId_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerIdToExternalCustomerIdApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapCustomerIdToExternalCustomerId_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="MapAccountIdToExternalAccountIds">
       <wsdl:input wsaw:Action="MapAccountIdToExternalAccountIds" name="MapAccountIdToExternalAccountIdsRequest" message="tns:MapAccountIdToExternalAccountIdsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsResponse" name="MapAccountIdToExternalAccountIdsResponse" message="tns:MapAccountIdToExternalAccountIdsResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_MapAccountIdToExternalAccountIds_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountIdToExternalAccountIdsApiFault" name="ApiFault" message="tns:ICustomerManagementService_MapAccountIdToExternalAccountIds_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SearchCustomers">
       <wsdl:input wsaw:Action="SearchCustomers" name="SearchCustomersRequest" message="tns:SearchCustomersRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersResponse" name="SearchCustomersResponse" message="tns:SearchCustomersResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchCustomers_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustomersApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchCustomers_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddClientLinks">
       <wsdl:input wsaw:Action="AddClientLinks" name="AddClientLinksRequest" message="tns:AddClientLinksRequest" />
@@ -946,8 +946,8 @@
     <wsdl:operation name="SearchAccounts">
       <wsdl:input wsaw:Action="SearchAccounts" name="SearchAccountsRequest" message="tns:SearchAccountsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsResponse" name="SearchAccountsResponse" message="tns:SearchAccountsResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerManagementService_SearchAccounts_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccountsApiFault" name="ApiFault" message="tns:ICustomerManagementService_SearchAccounts_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="SendUserInvitation">
       <wsdl:input wsaw:Action="SendUserInvitation" name="SendUserInvitationRequest" message="tns:SendUserInvitationRequest" />
@@ -1021,11 +1021,11 @@
         <soap:header message="tns:AddAccountResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdateAccount">
@@ -1105,11 +1105,11 @@
         <soap:header message="tns:SignupCustomerResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetAccount">
@@ -1168,11 +1168,11 @@
         <soap:header message="tns:DeleteAccountResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DeleteCustomer">
@@ -1210,11 +1210,11 @@
         <soap:header message="tns:UpdateUserResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdateUserRoles">
@@ -1231,11 +1231,11 @@
         <soap:header message="tns:UpdateUserRolesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetUser">
@@ -1252,11 +1252,11 @@
         <soap:header message="tns:GetUserResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCurrentUser">
@@ -1273,11 +1273,11 @@
         <soap:header message="tns:GetCurrentUserResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
@@ -1315,11 +1315,11 @@
         <soap:header message="tns:GetUsersInfoResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetCustomerPilotFeatures">
@@ -1441,11 +1441,11 @@
         <soap:header message="tns:AddPrepayAccountResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdatePrepayAccount">
@@ -1462,11 +1462,11 @@
         <soap:header message="tns:UpdatePrepayAccountResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="MapCustomerIdToExternalCustomerId">
@@ -1483,11 +1483,11 @@
         <soap:header message="tns:MapCustomerIdToExternalCustomerIdResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="MapAccountIdToExternalAccountIds">
@@ -1504,11 +1504,11 @@
         <soap:header message="tns:MapAccountIdToExternalAccountIdsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SearchCustomers">
@@ -1525,11 +1525,11 @@
         <soap:header message="tns:SearchCustomersResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="AddClientLinks">
@@ -1609,11 +1609,11 @@
         <soap:header message="tns:SearchAccountsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="SendUserInvitation">

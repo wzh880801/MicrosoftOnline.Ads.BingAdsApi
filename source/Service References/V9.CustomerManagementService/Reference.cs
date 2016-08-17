@@ -793,6 +793,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> BillingThresholdAmountField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.TaxIdStatus> TaxIdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Address BusinessAddressField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string AgencyContactName {
             get {
@@ -880,6 +886,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
                 if ((this.BillingThresholdAmountField.Equals(value) != true)) {
                     this.BillingThresholdAmountField = value;
                     this.RaisePropertyChanged("BillingThresholdAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.TaxIdStatus> TaxIdStatus {
+            get {
+                return this.TaxIdStatusField;
+            }
+            set {
+                if ((this.TaxIdStatusField.Equals(value) != true)) {
+                    this.TaxIdStatusField = value;
+                    this.RaisePropertyChanged("TaxIdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Address BusinessAddress {
+            get {
+                return this.BusinessAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BusinessAddressField, value) != true)) {
+                    this.BusinessAddressField = value;
+                    this.RaisePropertyChanged("BusinessAddress");
                 }
             }
         }
@@ -1527,6 +1559,195 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         Yakutsk = 12,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="https://bingads.microsoft.com/Customer/v9/Entities")]
+    [System.SerializableAttribute()]
+    public partial class Address : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Line1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Line2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Line3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Line4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PostalCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateOrProvinceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] TimeStampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CountryCode {
+            get {
+                return this.CountryCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryCodeField, value) != true)) {
+                    this.CountryCodeField = value;
+                    this.RaisePropertyChanged("CountryCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Line1 {
+            get {
+                return this.Line1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Line1Field, value) != true)) {
+                    this.Line1Field = value;
+                    this.RaisePropertyChanged("Line1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Line2 {
+            get {
+                return this.Line2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Line2Field, value) != true)) {
+                    this.Line2Field = value;
+                    this.RaisePropertyChanged("Line2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Line3 {
+            get {
+                return this.Line3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Line3Field, value) != true)) {
+                    this.Line3Field = value;
+                    this.RaisePropertyChanged("Line3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Line4 {
+            get {
+                return this.Line4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Line4Field, value) != true)) {
+                    this.Line4Field = value;
+                    this.RaisePropertyChanged("Line4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PostalCode {
+            get {
+                return this.PostalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PostalCodeField, value) != true)) {
+                    this.PostalCodeField = value;
+                    this.RaisePropertyChanged("PostalCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StateOrProvince {
+            get {
+                return this.StateOrProvinceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateOrProvinceField, value) != true)) {
+                    this.StateOrProvinceField = value;
+                    this.RaisePropertyChanged("StateOrProvince");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] TimeStamp {
+            get {
+                return this.TimeStampField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeStampField, value) != true)) {
+                    this.TimeStampField = value;
+                    this.RaisePropertyChanged("TimeStamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TaxType", Namespace="https://bingads.microsoft.com/Customer/v9/Entities")]
     public enum TaxType : int {
@@ -1536,6 +1757,23 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Business = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TaxIdStatus", Namespace="https://bingads.microsoft.com/Customer/v9/Entities")]
+    public enum TaxIdStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Valid = 174,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Invalid = 175,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pending = 176,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Inactive = 177,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1777,195 +2015,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
                 if ((object.ReferenceEquals(this.NumberField, value) != true)) {
                     this.NumberField = value;
                     this.RaisePropertyChanged("Number");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="https://bingads.microsoft.com/Customer/v9/Entities")]
-    [System.SerializableAttribute()]
-    public partial class Address : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CountryCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<long> IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Line1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Line2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Line3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string Line4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PostalCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateOrProvinceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] TimeStampField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string City {
-            get {
-                return this.CityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityField, value) != true)) {
-                    this.CityField = value;
-                    this.RaisePropertyChanged("City");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CountryCode {
-            get {
-                return this.CountryCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CountryCodeField, value) != true)) {
-                    this.CountryCodeField = value;
-                    this.RaisePropertyChanged("CountryCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<long> Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Line1 {
-            get {
-                return this.Line1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Line1Field, value) != true)) {
-                    this.Line1Field = value;
-                    this.RaisePropertyChanged("Line1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Line2 {
-            get {
-                return this.Line2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Line2Field, value) != true)) {
-                    this.Line2Field = value;
-                    this.RaisePropertyChanged("Line2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Line3 {
-            get {
-                return this.Line3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Line3Field, value) != true)) {
-                    this.Line3Field = value;
-                    this.RaisePropertyChanged("Line3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Line4 {
-            get {
-                return this.Line4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Line4Field, value) != true)) {
-                    this.Line4Field = value;
-                    this.RaisePropertyChanged("Line4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PostalCode {
-            get {
-                return this.PostalCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PostalCodeField, value) != true)) {
-                    this.PostalCodeField = value;
-                    this.RaisePropertyChanged("PostalCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateOrProvince {
-            get {
-                return this.StateOrProvinceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateOrProvinceField, value) != true)) {
-                    this.StateOrProvinceField = value;
-                    this.RaisePropertyChanged("StateOrProvince");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] TimeStamp {
-            get {
-                return this.TimeStampField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TimeStampField, value) != true)) {
-                    this.TimeStampField = value;
-                    this.RaisePropertyChanged("TimeStamp");
                 }
             }
         }
@@ -4119,10 +4168,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="AddAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountRe" +
             "sponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountAp" +
-            "iFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountAd" +
             "ApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountAp" +
+            "iFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddAccountResponse AddAccount(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddAccountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="AddAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddAccountRe" +
@@ -4167,10 +4216,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="SignupCustomer", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustom" +
             "erResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustom" +
-            "erApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustom" +
             "erAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustom" +
+            "erApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SignupCustomerResponse SignupCustomer(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SignupCustomerRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="SignupCustomer", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SignupCustom" +
@@ -4203,10 +4252,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="DeleteAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccoun" +
             "tResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccoun" +
-            "tApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccoun" +
             "tAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccoun" +
+            "tApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.DeleteAccountResponse DeleteAccount(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.DeleteAccountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="DeleteAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/DeleteAccoun" +
@@ -4227,10 +4276,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRe" +
             "sponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserAp" +
-            "iFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserAd" +
             "ApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserAp" +
+            "iFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserResponse UpdateUser(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRe" +
@@ -4239,10 +4288,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateUserRoles", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRo" +
             "lesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRo" +
-            "lesApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRo" +
             "lesAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRo" +
+            "lesApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserRolesResponse UpdateUserRoles(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserRolesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateUserRoles", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdateUserRo" +
@@ -4251,10 +4300,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserRespo" +
             "nse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserApiFa" +
-            "ult", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserAdApi" +
             "FaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserApiFa" +
+            "ult", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUserResponse GetUser(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUserRespo" +
@@ -4263,10 +4312,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetCurrentUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUs" +
             "erResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUs" +
-            "erApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUs" +
             "erAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUs" +
+            "erApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCurrentUserResponse GetCurrentUser(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCurrentUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetCurrentUser", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetCurrentUs" +
@@ -4287,10 +4336,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUsersInfo", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfo" +
             "Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfo" +
-            "ApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfo" +
             "AdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfo" +
+            "ApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUsersInfoResponse GetUsersInfo(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUsersInfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUsersInfo", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/GetUsersInfo" +
@@ -4359,10 +4408,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="AddPrepayAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAcc" +
             "ountResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAcc" +
-            "ountApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAcc" +
             "ountAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAcc" +
+            "ountApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddPrepayAccountResponse AddPrepayAccount(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddPrepayAccountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="AddPrepayAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/AddPrepayAcc" +
@@ -4371,10 +4420,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdatePrepayAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepay" +
             "AccountResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepay" +
-            "AccountApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepay" +
             "AccountAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepay" +
+            "AccountApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdatePrepayAccountResponse UpdatePrepayAccount(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdatePrepayAccountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdatePrepayAccount", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/UpdatePrepay" +
@@ -4383,10 +4432,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="MapCustomerIdToExternalCustomerId", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerI" +
             "dToExternalCustomerIdResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerI" +
-            "dToExternalCustomerIdApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerI" +
             "dToExternalCustomerIdAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerI" +
+            "dToExternalCustomerIdApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapCustomerIdToExternalCustomerIdResponse MapCustomerIdToExternalCustomerId(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapCustomerIdToExternalCustomerIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="MapCustomerIdToExternalCustomerId", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapCustomerI" +
@@ -4395,10 +4444,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="MapAccountIdToExternalAccountIds", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountId" +
             "ToExternalAccountIdsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountId" +
-            "ToExternalAccountIdsApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountId" +
             "ToExternalAccountIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountId" +
+            "ToExternalAccountIdsApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapAccountIdToExternalAccountIdsResponse MapAccountIdToExternalAccountIds(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapAccountIdToExternalAccountIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="MapAccountIdToExternalAccountIds", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/MapAccountId" +
@@ -4407,10 +4456,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="SearchCustomers", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustom" +
             "ersResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustom" +
-            "ersApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustom" +
             "ersAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustom" +
+            "ersApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchCustomersResponse SearchCustomers(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchCustomersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="SearchCustomers", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchCustom" +
@@ -4455,10 +4504,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="SearchAccounts", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccoun" +
             "tsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccoun" +
-            "tsApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccoun" +
             "tsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.ApiFault), Action="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccoun" +
+            "tsApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchAccountsResponse SearchAccounts(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchAccountsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="SearchAccounts", ReplyAction="https://bingads.microsoft.com/Customer/v9/ICustomerManagementService/SearchAccoun" +
@@ -4957,16 +5006,20 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/Customer/v9", Order=0)]
         public long AccountId;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/Customer/v9", Order=1)]
+        public System.Nullable<bool> IncludeTaxDetails;
+        
         public GetAccountRequest() {
         }
         
-        public GetAccountRequest(string ApplicationToken, string AuthenticationToken, string DeveloperToken, string Password, string UserName, long AccountId) {
+        public GetAccountRequest(string ApplicationToken, string AuthenticationToken, string DeveloperToken, string Password, string UserName, long AccountId, System.Nullable<bool> IncludeTaxDetails) {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
             this.DeveloperToken = DeveloperToken;
             this.Password = Password;
             this.UserName = UserName;
             this.AccountId = AccountId;
+            this.IncludeTaxDetails = IncludeTaxDetails;
         }
     }
     
@@ -6343,10 +6396,13 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/Customer/v9", Order=2)]
         public MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Paging PageInfo;
         
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/Customer/v9", Order=3)]
+        public System.Nullable<bool> IncludeTaxDetails;
+        
         public SearchAccountsRequest() {
         }
         
-        public SearchAccountsRequest(string ApplicationToken, string AuthenticationToken, string DeveloperToken, string Password, string UserName, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Predicate[] Predicates, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.OrderBy[] Ordering, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Paging PageInfo) {
+        public SearchAccountsRequest(string ApplicationToken, string AuthenticationToken, string DeveloperToken, string Password, string UserName, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Predicate[] Predicates, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.OrderBy[] Ordering, MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.Paging PageInfo, System.Nullable<bool> IncludeTaxDetails) {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
             this.DeveloperToken = DeveloperToken;
@@ -6355,6 +6411,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService {
             this.Predicates = Predicates;
             this.Ordering = Ordering;
             this.PageInfo = PageInfo;
+            this.IncludeTaxDetails = IncludeTaxDetails;
         }
     }
     

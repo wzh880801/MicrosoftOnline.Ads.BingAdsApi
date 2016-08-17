@@ -125,6 +125,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
+        <xs:element minOccurs="0" name="IncludeTaxDetails" nillable="true" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -464,6 +465,7 @@
         <xs:element xmlns:q51="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Predicates" nillable="true" type="q51:ArrayOfPredicate" />
         <xs:element xmlns:q52="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="Ordering" nillable="true" type="q52:ArrayOfOrderBy" />
         <xs:element xmlns:q53="https://bingads.microsoft.com/Customer/v9/Entities" minOccurs="0" name="PageInfo" nillable="true" type="q53:Paging" />
+        <xs:element minOccurs="0" name="IncludeTaxDetails" nillable="true" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

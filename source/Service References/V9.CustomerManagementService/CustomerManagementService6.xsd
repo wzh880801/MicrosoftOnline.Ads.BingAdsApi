@@ -816,6 +816,20 @@
           </xs:element>
           <xs:element minOccurs="0" name="BackUpPaymentInstrumentId" nillable="true" type="xs:long" />
           <xs:element minOccurs="0" name="BillingThresholdAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TaxIdStatus" nillable="true" type="tns:TaxIdStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="BusinessAddress" nillable="true" type="tns:Address">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -840,6 +854,54 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TaxType" nillable="true" type="tns:TaxType" />
+  <xs:simpleType name="TaxIdStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Valid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">174</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Invalid">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">175</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">176</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">177</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TaxIdStatus" nillable="true" type="tns:TaxIdStatus" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Line4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateOrProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
   <xs:complexType name="Customer">
     <xs:sequence>
       <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="tns:Address" />
@@ -859,21 +921,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
-  <xs:complexType name="Address">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
-      <xs:element minOccurs="0" name="Line1" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Line2" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Line3" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Line4" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="StateOrProvince" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Address" nillable="true" type="tns:Address" />
   <xs:simpleType name="CustomerFinancialStatus">
     <xs:restriction base="xs:string">
       <xs:enumeration value="ProposalsOnly" />

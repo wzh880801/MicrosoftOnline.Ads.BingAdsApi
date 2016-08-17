@@ -205,6 +205,105 @@
     <None Include="Service References\V9.CustomerManagementService\CustomerManagementService6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddClientLinksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.AddPrepayAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.DeleteAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.DeleteCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.DeleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.FindAccountsOrCustomersInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.FindAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetAccessibleCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetAccountsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCurrentUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCustomerPilotFeaturesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetCustomersInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetPilotFeaturesCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.GetUsersInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapAccountIdToExternalAccountIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.MapCustomerIdToExternalCustomerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchClientLinksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchCustomersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SearchUserInvitationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SendUserInvitationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.SignupCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateClientLinksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdatePrepayAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpdateUserRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpgradeCustomerToAgencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\V9.ReportingService\ReportingService.wsdl" />
     <None Include="Service References\V9.ReportingService\ReportingService.xsd">
       <SubType>Designer</SubType>
