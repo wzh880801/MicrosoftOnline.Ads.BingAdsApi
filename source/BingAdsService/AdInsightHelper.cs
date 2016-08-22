@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.ServiceModel;
 using MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService;
 
@@ -72,6 +73,108 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return Check().GetKeywordCategories(request);
         }
 
+        public GetEstimatedBidByKeywordsResponse GetEstimatedBidByKeywords(
+            ApiAuthentication auth,
+            KeywordAndMatchType[] keywords,
+            long accountId,
+            long? adGroupId = null,
+            long? campaignId = null,
+            Currency? currency = null,
+            string entityLevelBid = "Keyword",
+            string language = null,
+            string[] publisherCountries = null,
+            TargetAdPosition targetAdPosition = TargetAdPosition.MainLine)
+        {
+            var request = new GetEstimatedBidByKeywordsRequest
+            {
+                Keywords = keywords,
+                AdGroupId = adGroupId,
+                CampaignId = campaignId,
+                Currency = currency,
+                EntityLevelBid = entityLevelBid,
+                Language = language,
+                PublisherCountries = publisherCountries,
+                TargetPositionForAds = targetAdPosition,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetEstimatedBidByKeywords(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "GetEstimatedBidByKeywords", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetEstimatedBidByKeywordsResponse> GetEstimatedBidByKeywordsAsync(
+            ApiAuthentication auth,
+            KeywordAndMatchType[] keywords,
+            long accountId,
+            long? adGroupId = null,
+            long? campaignId = null,
+            Currency? currency = null,
+            string entityLevelBid = "Keyword",
+            string language = null,
+            string[] publisherCountries = null,
+            TargetAdPosition targetAdPosition = TargetAdPosition.MainLine)
+        {
+            var request = new GetEstimatedBidByKeywordsRequest
+            {
+                Keywords = keywords,
+                AdGroupId = adGroupId,
+                CampaignId = campaignId,
+                Currency = currency,
+                EntityLevelBid = entityLevelBid,
+                Language = language,
+                PublisherCountries = publisherCountries,
+                TargetPositionForAds = targetAdPosition,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetEstimatedBidByKeywordsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "GetEstimatedBidByKeywordsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetEstimatedBidByKeywordsResponse TryGetEstimatedBidByKeywords(
+            ApiAuthentication auth,
+            KeywordAndMatchType[] keywords,
+            long accountId,
+            long? adGroupId = null,
+            long? campaignId = null,
+            Currency? currency = null,
+            string entityLevelBid = "Keyword",
+            string language = null,
+            string[] publisherCountries = null,
+            TargetAdPosition targetAdPosition = TargetAdPosition.MainLine)
+        {
+            return MethodHelper.TryGet(
+                GetEstimatedBidByKeywords,
+                this,
+                auth,
+                keywords,
+                accountId,
+                adGroupId,
+                campaignId,
+                currency,
+                entityLevelBid,
+                language,
+                publisherCountries,
+                targetAdPosition);
+        }
     }
 }
 
