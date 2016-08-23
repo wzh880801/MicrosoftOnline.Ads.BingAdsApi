@@ -76,7 +76,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetEstimatedBidByKeywordsResponse GetEstimatedBidByKeywords(
             ApiAuthentication auth,
             KeywordAndMatchType[] keywords,
-            long accountId,
+            long? accountId = null,
+            long? customerId = null,
             long? adGroupId = null,
             long? campaignId = null,
             Currency? currency = null,
@@ -95,6 +96,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 Language = language,
                 PublisherCountries = publisherCountries,
                 TargetPositionForAds = targetAdPosition,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId)
             };
 
             try
@@ -114,7 +117,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public async Task<GetEstimatedBidByKeywordsResponse> GetEstimatedBidByKeywordsAsync(
             ApiAuthentication auth,
             KeywordAndMatchType[] keywords,
-            long accountId,
+            long? accountId = null,
+            long? customerId = null,
             long? adGroupId = null,
             long? campaignId = null,
             Currency? currency = null,
@@ -133,6 +137,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 Language = language,
                 PublisherCountries = publisherCountries,
                 TargetPositionForAds = targetAdPosition,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId)
             };
 
             try
@@ -152,7 +158,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetEstimatedBidByKeywordsResponse TryGetEstimatedBidByKeywords(
             ApiAuthentication auth,
             KeywordAndMatchType[] keywords,
-            long accountId,
+            long? accountId = null,
+            long? customerId = null,
             long? adGroupId = null,
             long? campaignId = null,
             Currency? currency = null,
@@ -167,6 +174,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 auth,
                 keywords,
                 accountId,
+                customerId,
                 adGroupId,
                 campaignId,
                 currency,
