@@ -51,11 +51,11 @@
   <wsdl:message name="SubmitGenerateReportResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IReportingService_SubmitGenerateReport_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IReportingService_SubmitGenerateReport_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IReportingService_SubmitGenerateReport_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="PollGenerateReportRequest">
     <wsdl:part name="parameters" element="tns:PollGenerateReportRequest" />
@@ -85,8 +85,8 @@
     <wsdl:operation name="SubmitGenerateReport">
       <wsdl:input wsaw:Action="SubmitGenerateReport" name="SubmitGenerateReportRequest" message="tns:SubmitGenerateReportRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReportResponse" name="SubmitGenerateReportResponse" message="tns:SubmitGenerateReportResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReportApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IReportingService_SubmitGenerateReport_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReportAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IReportingService_SubmitGenerateReport_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReportApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IReportingService_SubmitGenerateReport_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="PollGenerateReport">
       <wsdl:input wsaw:Action="PollGenerateReport" name="PollGenerateReportRequest" message="tns:PollGenerateReportRequest" />
@@ -114,11 +114,11 @@
         <soap:header message="tns:SubmitGenerateReportResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="PollGenerateReport">

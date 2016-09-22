@@ -28,11 +28,11 @@
   <wsdl:types>
     <xsd:schema targetNamespace="https://bingads.microsoft.com/Billing/v9/Imports">
       <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd0" namespace="https://bingads.microsoft.com/Billing/v9" />
-      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" namespace="https://adapi.microsoft.com" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" namespace="https://adapi.microsoft.com" />
       <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd3" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
-      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+      <xsd:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="GetBillingDocumentsInfoRequest">
@@ -51,14 +51,14 @@
   <wsdl:message name="GetBillingDocumentsInfoResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
+  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_ApiBatchFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiBatchFault" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_AdApiFaultDetailFault_FaultMessage">
-    <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  <wsdl:message name="ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetBillingDocumentsRequest">
     <wsdl:part name="parameters" element="tns:GetBillingDocumentsRequest" />
@@ -79,11 +79,11 @@
   <wsdl:message name="ICustomerBillingService_GetBillingDocuments_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetBillingDocuments_ApiBatchFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="GetDisplayInvoicesRequest">
     <wsdl:part name="parameters" element="tns:GetDisplayInvoicesRequest" />
@@ -101,14 +101,14 @@
   <wsdl:message name="GetDisplayInvoicesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q3="https://adapi.microsoft.com" name="detail" element="q3:AdApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_ApiBatchFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiBatchFault" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="AddInsertionOrderRequest">
     <wsdl:part name="parameters" element="tns:AddInsertionOrderRequest" />
@@ -126,11 +126,11 @@
   <wsdl:message name="AddInsertionOrderResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerBillingService_AddInsertionOrder_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q4="https://adapi.microsoft.com" name="detail" element="q4:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFault" />
   </wsdl:message>
   <wsdl:message name="UpdateInsertionOrderRequest">
     <wsdl:part name="parameters" element="tns:UpdateInsertionOrderRequest" />
@@ -214,11 +214,11 @@
   <wsdl:message name="GetKOHIOInvoicesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiBatchFault" />
-  </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q8="https://adapi.microsoft.com" name="detail" element="q8:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiBatchFault" />
   </wsdl:message>
   <wsdl:message name="ICustomerBillingService_GetKOHIOInvoices_ApiFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFault" />
@@ -249,29 +249,29 @@
     <wsdl:operation name="GetBillingDocumentsInfo">
       <wsdl:input wsaw:Action="GetBillingDocumentsInfo" name="GetBillingDocumentsInfoRequest" message="tns:GetBillingDocumentsInfoRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoResponse" name="GetBillingDocumentsInfoResponse" message="tns:GetBillingDocumentsInfoResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiBatchFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiBatchFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsInfoApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocumentsInfo_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBillingDocuments">
       <wsdl:input wsaw:Action="GetBillingDocuments" name="GetBillingDocumentsRequest" message="tns:GetBillingDocumentsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsResponse" name="GetBillingDocumentsResponse" message="tns:GetBillingDocumentsResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetBillingDocuments_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetBillingDocuments_ApiBatchFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocumentsApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetBillingDocuments_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDisplayInvoices">
       <wsdl:input wsaw:Action="GetDisplayInvoices" name="GetDisplayInvoicesRequest" message="tns:GetDisplayInvoicesRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesResponse" name="GetDisplayInvoicesResponse" message="tns:GetDisplayInvoicesResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetDisplayInvoices_AdApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetDisplayInvoices_ApiBatchFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoicesApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetDisplayInvoices_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddInsertionOrder">
       <wsdl:input wsaw:Action="AddInsertionOrder" name="AddInsertionOrderRequest" message="tns:AddInsertionOrderRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderResponse" name="AddInsertionOrderResponse" message="tns:AddInsertionOrderResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderApiFault" name="ApiFault" message="tns:ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_AddInsertionOrder_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrderApiFault" name="ApiFault" message="tns:ICustomerBillingService_AddInsertionOrder_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateInsertionOrder">
       <wsdl:input wsaw:Action="UpdateInsertionOrder" name="UpdateInsertionOrderRequest" message="tns:UpdateInsertionOrderRequest" />
@@ -294,8 +294,8 @@
     <wsdl:operation name="GetKOHIOInvoices">
       <wsdl:input wsaw:Action="GetKOHIOInvoices" name="GetKOHIOInvoicesRequest" message="tns:GetKOHIOInvoicesRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesResponse" name="GetKOHIOInvoicesResponse" message="tns:GetKOHIOInvoicesResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesApiBatchFault" name="ApiBatchFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_ApiBatchFault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoicesApiFault" name="ApiFault" message="tns:ICustomerBillingService_GetKOHIOInvoices_ApiFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAccountMonthlySpend">
@@ -322,14 +322,14 @@
         <soap:header message="tns:GetBillingDocumentsInfoResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
       <wsdl:fault name="ApiBatchFault">
         <soap:fault use="literal" name="ApiBatchFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="AdApiFaultDetailFault">
-        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBillingDocuments">
@@ -349,11 +349,11 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="ApiBatchFault">
         <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetDisplayInvoices">
@@ -370,14 +370,14 @@
         <soap:header message="tns:GetDisplayInvoicesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
       <wsdl:fault name="ApiBatchFault">
         <soap:fault use="literal" name="ApiBatchFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="AddInsertionOrder">
@@ -394,11 +394,11 @@
         <soap:header message="tns:AddInsertionOrderResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFault">
-        <soap:fault use="literal" name="ApiFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFault">
+        <soap:fault use="literal" name="ApiFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="UpdateInsertionOrder">
@@ -478,11 +478,11 @@
         <soap:header message="tns:GetKOHIOInvoicesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiBatchFault">
-        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiBatchFault">
+        <soap:fault use="literal" name="ApiBatchFault" namespace="" />
       </wsdl:fault>
       <wsdl:fault name="ApiFault">
         <soap:fault use="literal" name="ApiFault" namespace="" />

@@ -34,56 +34,119 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ReportLanguage" nillable="true" type="tns:ReportLanguage" />
-  <xs:complexType name="SearchCampaignChangeHistoryReportRequest">
+  <xs:complexType name="AccountPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
         <xs:sequence>
-          <xs:element name="Columns" nillable="true" type="tns:ArrayOfSearchCampaignChangeHistoryReportColumn" />
-          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:SearchCampaignChangeHistoryReportFilter" />
-          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
+          <xs:element name="Aggregation" type="tns:ReportAggregation" />
+          <xs:element name="Columns" nillable="true" type="tns:ArrayOfAccountPerformanceReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:AccountPerformanceReportFilter" />
+          <xs:element name="Scope" nillable="true" type="tns:AccountReportScope" />
           <xs:element name="Time" nillable="true" type="tns:ReportTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="SearchCampaignChangeHistoryReportRequest" nillable="true" type="tns:SearchCampaignChangeHistoryReportRequest" />
-  <xs:complexType name="ArrayOfSearchCampaignChangeHistoryReportColumn">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCampaignChangeHistoryReportColumn" type="tns:SearchCampaignChangeHistoryReportColumn" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSearchCampaignChangeHistoryReportColumn" nillable="true" type="tns:ArrayOfSearchCampaignChangeHistoryReportColumn" />
-  <xs:simpleType name="SearchCampaignChangeHistoryReportColumn">
+  <xs:element name="AccountPerformanceReportRequest" nillable="true" type="tns:AccountPerformanceReportRequest" />
+  <xs:simpleType name="ReportAggregation">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="DateTime" />
-      <xs:enumeration value="AccountId" />
-      <xs:enumeration value="AccountName" />
-      <xs:enumeration value="AccountNumber" />
-      <xs:enumeration value="ChangedBy" />
-      <xs:enumeration value="CampaignName" />
-      <xs:enumeration value="CampaignId" />
-      <xs:enumeration value="AdGroupName" />
-      <xs:enumeration value="AdGroupId" />
-      <xs:enumeration value="AdTitle" />
-      <xs:enumeration value="AdDescription" />
-      <xs:enumeration value="DisplayUrl" />
-      <xs:enumeration value="Keyword" />
-      <xs:enumeration value="ItemChanged" />
-      <xs:enumeration value="AttributeChanged" />
-      <xs:enumeration value="HowChanged" />
-      <xs:enumeration value="OldValue" />
-      <xs:enumeration value="NewValue" />
+      <xs:enumeration value="Summary" />
+      <xs:enumeration value="Hourly" />
+      <xs:enumeration value="Daily" />
+      <xs:enumeration value="Weekly" />
+      <xs:enumeration value="Monthly" />
+      <xs:enumeration value="Yearly" />
+      <xs:enumeration value="HourOfDay" />
+      <xs:enumeration value="DayOfWeek" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="SearchCampaignChangeHistoryReportColumn" nillable="true" type="tns:SearchCampaignChangeHistoryReportColumn" />
-  <xs:complexType name="SearchCampaignChangeHistoryReportFilter">
+  <xs:element name="ReportAggregation" nillable="true" type="tns:ReportAggregation" />
+  <xs:complexType name="ArrayOfAccountPerformanceReportColumn">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element minOccurs="0" name="HowChanged" nillable="true" type="tns:ChangeTypeReportFilter" />
-      <xs:element minOccurs="0" name="ItemChanged" nillable="true" type="tns:ChangeEntityReportFilter" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountPerformanceReportColumn" type="tns:AccountPerformanceReportColumn" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="SearchCampaignChangeHistoryReportFilter" nillable="true" type="tns:SearchCampaignChangeHistoryReportFilter" />
+  <xs:element name="ArrayOfAccountPerformanceReportColumn" nillable="true" type="tns:ArrayOfAccountPerformanceReportColumn" />
+  <xs:simpleType name="AccountPerformanceReportColumn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="AccountNumber" />
+      <xs:enumeration value="AccountId" />
+      <xs:enumeration value="TimePeriod" />
+      <xs:enumeration value="CurrencyCode" />
+      <xs:enumeration value="AdDistribution" />
+      <xs:enumeration value="Impressions" />
+      <xs:enumeration value="Clicks" />
+      <xs:enumeration value="Ctr" />
+      <xs:enumeration value="AverageCpc" />
+      <xs:enumeration value="Spend" />
+      <xs:enumeration value="AveragePosition" />
+      <xs:enumeration value="Conversions" />
+      <xs:enumeration value="ConversionRate" />
+      <xs:enumeration value="CostPerConversion" />
+      <xs:enumeration value="LowQualityClicks" />
+      <xs:enumeration value="LowQualityClicksPercent" />
+      <xs:enumeration value="LowQualityImpressions" />
+      <xs:enumeration value="LowQualityImpressionsPercent" />
+      <xs:enumeration value="LowQualityConversions" />
+      <xs:enumeration value="LowQualityConversionRate" />
+      <xs:enumeration value="AverageCpm" />
+      <xs:enumeration value="DeviceType" />
+      <xs:enumeration value="DeviceOS" />
+      <xs:enumeration value="ImpressionSharePercent" />
+      <xs:enumeration value="ImpressionLostToBudgetPercent" />
+      <xs:enumeration value="ImpressionLostToRankPercent" />
+      <xs:enumeration value="ImpressionLostToBidPercent" />
+      <xs:enumeration value="ImpressionLostToLandingPageRelevancePercent" />
+      <xs:enumeration value="ImpressionLostToKeywordRelevancePercent" />
+      <xs:enumeration value="PhoneImpressions" />
+      <xs:enumeration value="PhoneCalls" />
+      <xs:enumeration value="ManualCalls" />
+      <xs:enumeration value="ClickCalls" />
+      <xs:enumeration value="Ptr" />
+      <xs:enumeration value="PhoneSpend" />
+      <xs:enumeration value="AverageCpp" />
+      <xs:enumeration value="TotalCostPhoneAndClicks" />
+      <xs:enumeration value="Network" />
+      <xs:enumeration value="TopVsOther" />
+      <xs:enumeration value="BidMatchType" />
+      <xs:enumeration value="DeliveredMatchType" />
+      <xs:enumeration value="Assists" />
+      <xs:enumeration value="ExtendedCost" />
+      <xs:enumeration value="Revenue" />
+      <xs:enumeration value="ReturnOnAdSpend" />
+      <xs:enumeration value="CostPerAssist" />
+      <xs:enumeration value="RevenuePerConversion" />
+      <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="BounceRate" />
+      <xs:enumeration value="TotalVisits" />
+      <xs:enumeration value="AveragePagesPerVisit" />
+      <xs:enumeration value="AverageDurationPerVisit" />
+      <xs:enumeration value="AccountStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountPerformanceReportColumn" nillable="true" type="tns:AccountPerformanceReportColumn" />
+  <xs:complexType name="AccountPerformanceReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
+      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountPerformanceReportFilter" nillable="true" type="tns:AccountPerformanceReportFilter" />
+  <xs:simpleType name="AccountStatusReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="Paused" />
+          <xs:enumeration value="Inactive" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AccountStatusReportFilter" nillable="true" type="tns:AccountStatusReportFilter" />
   <xs:simpleType name="AdDistributionReportFilter">
     <xs:list>
       <xs:simpleType>
@@ -102,67 +165,39 @@
     </xs:list>
   </xs:simpleType>
   <xs:element name="AdDistributionReportFilter" nillable="true" type="tns:AdDistributionReportFilter" />
-  <xs:simpleType name="ChangeTypeReportFilter">
+  <xs:simpleType name="DeviceOSReportFilter">
     <xs:list>
       <xs:simpleType>
         <xs:restriction base="xs:string">
-          <xs:enumeration value="Added" />
-          <xs:enumeration value="Deleted" />
-          <xs:enumeration value="Changed" />
+          <xs:enumeration value="Other" />
+          <xs:enumeration value="Windows" />
+          <xs:enumeration value="iOS" />
+          <xs:enumeration value="Android" />
+          <xs:enumeration value="BlackBerry" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
   </xs:simpleType>
-  <xs:element name="ChangeTypeReportFilter" nillable="true" type="tns:ChangeTypeReportFilter" />
-  <xs:simpleType name="ChangeEntityReportFilter">
+  <xs:element name="DeviceOSReportFilter" nillable="true" type="tns:DeviceOSReportFilter" />
+  <xs:simpleType name="DeviceTypeReportFilter">
     <xs:list>
       <xs:simpleType>
         <xs:restriction base="xs:string">
-          <xs:enumeration value="Account" />
-          <xs:enumeration value="Campaign" />
-          <xs:enumeration value="AdGroup" />
-          <xs:enumeration value="Ad" />
-          <xs:enumeration value="Keyword" />
+          <xs:enumeration value="Computer" />
+          <xs:enumeration value="SmartPhone" />
+          <xs:enumeration value="NonSmartPhone" />
+          <xs:enumeration value="Tablet" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
   </xs:simpleType>
-  <xs:element name="ChangeEntityReportFilter" nillable="true" type="tns:ChangeEntityReportFilter" />
-  <xs:complexType name="AccountThroughAdGroupReportScope">
+  <xs:element name="DeviceTypeReportFilter" nillable="true" type="tns:DeviceTypeReportFilter" />
+  <xs:complexType name="AccountReportScope">
     <xs:sequence>
       <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q1:ArrayOflong" />
-      <xs:element minOccurs="0" name="AdGroups" nillable="true" type="tns:ArrayOfAdGroupReportScope" />
-      <xs:element minOccurs="0" name="Campaigns" nillable="true" type="tns:ArrayOfCampaignReportScope" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AccountThroughAdGroupReportScope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
-  <xs:complexType name="ArrayOfAdGroupReportScope">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupReportScope" nillable="true" type="tns:AdGroupReportScope" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAdGroupReportScope" nillable="true" type="tns:ArrayOfAdGroupReportScope" />
-  <xs:complexType name="AdGroupReportScope">
-    <xs:sequence>
-      <xs:element name="AccountId" type="xs:long" />
-      <xs:element name="CampaignId" type="xs:long" />
-      <xs:element name="AdGroupId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AdGroupReportScope" nillable="true" type="tns:AdGroupReportScope" />
-  <xs:complexType name="ArrayOfCampaignReportScope">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampaignReportScope" nillable="true" type="tns:CampaignReportScope" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCampaignReportScope" nillable="true" type="tns:ArrayOfCampaignReportScope" />
-  <xs:complexType name="CampaignReportScope">
-    <xs:sequence>
-      <xs:element name="AccountId" type="xs:long" />
-      <xs:element name="CampaignId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CampaignReportScope" nillable="true" type="tns:CampaignReportScope" />
+  <xs:element name="AccountReportScope" nillable="true" type="tns:AccountReportScope" />
   <xs:complexType name="ReportTime">
     <xs:sequence>
       <xs:element minOccurs="0" name="CustomDateRangeEnd" nillable="true" type="tns:Date" />
@@ -196,6 +231,153 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ReportTimePeriod" nillable="true" type="tns:ReportTimePeriod" />
+  <xs:complexType name="CampaignPerformanceReportRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReportRequest">
+        <xs:sequence>
+          <xs:element name="Aggregation" type="tns:ReportAggregation" />
+          <xs:element name="Columns" nillable="true" type="tns:ArrayOfCampaignPerformanceReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:CampaignPerformanceReportFilter" />
+          <xs:element name="Scope" nillable="true" type="tns:AccountThroughCampaignReportScope" />
+          <xs:element name="Time" nillable="true" type="tns:ReportTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CampaignPerformanceReportRequest" nillable="true" type="tns:CampaignPerformanceReportRequest" />
+  <xs:complexType name="ArrayOfCampaignPerformanceReportColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampaignPerformanceReportColumn" type="tns:CampaignPerformanceReportColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCampaignPerformanceReportColumn" nillable="true" type="tns:ArrayOfCampaignPerformanceReportColumn" />
+  <xs:simpleType name="CampaignPerformanceReportColumn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="AccountNumber" />
+      <xs:enumeration value="AccountId" />
+      <xs:enumeration value="TimePeriod" />
+      <xs:enumeration value="Status" />
+      <xs:enumeration value="CampaignName" />
+      <xs:enumeration value="CampaignId" />
+      <xs:enumeration value="CurrencyCode" />
+      <xs:enumeration value="AdDistribution" />
+      <xs:enumeration value="Impressions" />
+      <xs:enumeration value="Clicks" />
+      <xs:enumeration value="Ctr" />
+      <xs:enumeration value="AverageCpc" />
+      <xs:enumeration value="Spend" />
+      <xs:enumeration value="AveragePosition" />
+      <xs:enumeration value="Conversions" />
+      <xs:enumeration value="ConversionRate" />
+      <xs:enumeration value="CostPerConversion" />
+      <xs:enumeration value="LowQualityClicks" />
+      <xs:enumeration value="LowQualityClicksPercent" />
+      <xs:enumeration value="LowQualityImpressions" />
+      <xs:enumeration value="LowQualityImpressionsPercent" />
+      <xs:enumeration value="LowQualityConversions" />
+      <xs:enumeration value="LowQualityConversionRate" />
+      <xs:enumeration value="AverageCpm" />
+      <xs:enumeration value="DeviceType" />
+      <xs:enumeration value="DeviceOS" />
+      <xs:enumeration value="ImpressionSharePercent" />
+      <xs:enumeration value="ImpressionLostToBudgetPercent" />
+      <xs:enumeration value="ImpressionLostToRankPercent" />
+      <xs:enumeration value="QualityScore" />
+      <xs:enumeration value="KeywordRelevance" />
+      <xs:enumeration value="LandingPageRelevance" />
+      <xs:enumeration value="LandingPageUserExperience" />
+      <xs:enumeration value="HistoricQualityScore" />
+      <xs:enumeration value="HistoricKeywordRelevance" />
+      <xs:enumeration value="HistoricLandingPageRelevance" />
+      <xs:enumeration value="HistoricLandingPageUserExperience" />
+      <xs:enumeration value="ImpressionLostToBidPercent" />
+      <xs:enumeration value="ImpressionLostToLandingPageRelevancePercent" />
+      <xs:enumeration value="ImpressionLostToKeywordRelevancePercent" />
+      <xs:enumeration value="PhoneImpressions" />
+      <xs:enumeration value="PhoneCalls" />
+      <xs:enumeration value="ManualCalls" />
+      <xs:enumeration value="ClickCalls" />
+      <xs:enumeration value="Ptr" />
+      <xs:enumeration value="PhoneSpend" />
+      <xs:enumeration value="AverageCpp" />
+      <xs:enumeration value="TotalCostPhoneAndClicks" />
+      <xs:enumeration value="Network" />
+      <xs:enumeration value="TopVsOther" />
+      <xs:enumeration value="BidMatchType" />
+      <xs:enumeration value="DeliveredMatchType" />
+      <xs:enumeration value="Assists" />
+      <xs:enumeration value="ExtendedCost" />
+      <xs:enumeration value="Revenue" />
+      <xs:enumeration value="ReturnOnAdSpend" />
+      <xs:enumeration value="CostPerAssist" />
+      <xs:enumeration value="RevenuePerConversion" />
+      <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="BounceRate" />
+      <xs:enumeration value="TotalVisits" />
+      <xs:enumeration value="AveragePagesPerVisit" />
+      <xs:enumeration value="AverageDurationPerVisit" />
+      <xs:enumeration value="TrackingTemplate" />
+      <xs:enumeration value="CustomParameters" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="BudgetName" />
+      <xs:enumeration value="BudgetStatus" />
+      <xs:enumeration value="BudgetAssociationStatus" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CampaignPerformanceReportColumn" nillable="true" type="tns:CampaignPerformanceReportColumn" />
+  <xs:complexType name="CampaignPerformanceReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
+      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:CampaignStatusReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CampaignPerformanceReportFilter" nillable="true" type="tns:CampaignPerformanceReportFilter" />
+  <xs:simpleType name="CampaignStatusReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Submitted" />
+          <xs:enumeration value="Cancelled" />
+          <xs:enumeration value="Deleted" />
+          <xs:enumeration value="Paused" />
+          <xs:enumeration value="BudgetPaused" />
+          <xs:enumeration value="Active">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Suspended" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CampaignStatusReportFilter" nillable="true" type="tns:CampaignStatusReportFilter" />
+  <xs:complexType name="AccountThroughCampaignReportScope">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q2:ArrayOflong" />
+      <xs:element minOccurs="0" name="Campaigns" nillable="true" type="tns:ArrayOfCampaignReportScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountThroughCampaignReportScope" nillable="true" type="tns:AccountThroughCampaignReportScope" />
+  <xs:complexType name="ArrayOfCampaignReportScope">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampaignReportScope" nillable="true" type="tns:CampaignReportScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCampaignReportScope" nillable="true" type="tns:ArrayOfCampaignReportScope" />
+  <xs:complexType name="CampaignReportScope">
+    <xs:sequence>
+      <xs:element name="AccountId" type="xs:long" />
+      <xs:element name="CampaignId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CampaignReportScope" nillable="true" type="tns:CampaignReportScope" />
   <xs:complexType name="AdDynamicTextPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -257,18 +439,82 @@
       <xs:enumeration value="PricingModel" />
       <xs:enumeration value="DeviceType" />
       <xs:enumeration value="Language" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="KeywordStatus" />
+      <xs:enumeration value="TitlePart1" />
+      <xs:enumeration value="TitlePart2" />
+      <xs:enumeration value="Path1" />
+      <xs:enumeration value="Path2" />
+      <xs:enumeration value="FinalURL" />
+      <xs:enumeration value="FinalMobileURL" />
+      <xs:enumeration value="FinalAppURL" />
+      <xs:enumeration value="AdDescription" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdDynamicTextPerformanceReportColumn" nillable="true" type="tns:AdDynamicTextPerformanceReportColumn" />
   <xs:complexType name="AdDynamicTextPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
       <xs:element minOccurs="0" name="AdType" nillable="true" type="tns:AdTypeReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q3:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdDynamicTextPerformanceReportFilter" nillable="true" type="tns:AdDynamicTextPerformanceReportFilter" />
+  <xs:simpleType name="AdGroupStatusReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Submitted" />
+          <xs:enumeration value="Deleted" />
+          <xs:enumeration value="Expired" />
+          <xs:enumeration value="Draft" />
+          <xs:enumeration value="Paused" />
+          <xs:enumeration value="Active">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AdGroupStatusReportFilter" nillable="true" type="tns:AdGroupStatusReportFilter" />
+  <xs:simpleType name="AdStatusReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Submitted" />
+          <xs:enumeration value="Rejected" />
+          <xs:enumeration value="Deleted" />
+          <xs:enumeration value="Pending" />
+          <xs:enumeration value="Active">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Paused">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AdStatusReportFilter" nillable="true" type="tns:AdStatusReportFilter" />
   <xs:simpleType name="AdTypeReportFilter">
     <xs:list>
       <xs:simpleType>
@@ -282,24 +528,52 @@
           <xs:enumeration value="RichAd" />
           <xs:enumeration value="Product" />
           <xs:enumeration value="AppInstall" />
+          <xs:enumeration value="ExpandedText">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
   </xs:simpleType>
   <xs:element name="AdTypeReportFilter" nillable="true" type="tns:AdTypeReportFilter" />
-  <xs:simpleType name="DeviceTypeReportFilter">
+  <xs:simpleType name="KeywordStatusReportFilter">
     <xs:list>
       <xs:simpleType>
         <xs:restriction base="xs:string">
-          <xs:enumeration value="Computer" />
-          <xs:enumeration value="SmartPhone" />
-          <xs:enumeration value="NonSmartPhone" />
-          <xs:enumeration value="Tablet" />
+          <xs:enumeration value="Active" />
+          <xs:enumeration value="Paused" />
+          <xs:enumeration value="Deleted" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
   </xs:simpleType>
-  <xs:element name="DeviceTypeReportFilter" nillable="true" type="tns:DeviceTypeReportFilter" />
+  <xs:element name="KeywordStatusReportFilter" nillable="true" type="tns:KeywordStatusReportFilter" />
+  <xs:complexType name="AccountThroughAdGroupReportScope">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q4:ArrayOflong" />
+      <xs:element minOccurs="0" name="AdGroups" nillable="true" type="tns:ArrayOfAdGroupReportScope" />
+      <xs:element minOccurs="0" name="Campaigns" nillable="true" type="tns:ArrayOfCampaignReportScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountThroughAdGroupReportScope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
+  <xs:complexType name="ArrayOfAdGroupReportScope">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupReportScope" nillable="true" type="tns:AdGroupReportScope" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdGroupReportScope" nillable="true" type="tns:ArrayOfAdGroupReportScope" />
+  <xs:complexType name="AdGroupReportScope">
+    <xs:sequence>
+      <xs:element name="AccountId" type="xs:long" />
+      <xs:element name="CampaignId" type="xs:long" />
+      <xs:element name="AdGroupId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdGroupReportScope" nillable="true" type="tns:AdGroupReportScope" />
   <xs:complexType name="AdGroupPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -314,19 +588,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AdGroupPerformanceReportRequest" nillable="true" type="tns:AdGroupPerformanceReportRequest" />
-  <xs:simpleType name="ReportAggregation">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Summary" />
-      <xs:enumeration value="Hourly" />
-      <xs:enumeration value="Daily" />
-      <xs:enumeration value="Weekly" />
-      <xs:enumeration value="Monthly" />
-      <xs:enumeration value="Yearly" />
-      <xs:enumeration value="HourOfDay" />
-      <xs:enumeration value="DayOfWeek" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ReportAggregation" nillable="true" type="tns:ReportAggregation" />
   <xs:complexType name="ArrayOfAdGroupPerformanceReportColumn">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupPerformanceReportColumn" type="tns:AdGroupPerformanceReportColumn" />
@@ -403,54 +664,23 @@
       <xs:enumeration value="AverageDurationPerVisit" />
       <xs:enumeration value="TrackingTemplate" />
       <xs:enumeration value="CustomParameters" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdGroupPerformanceReportColumn" nillable="true" type="tns:AdGroupPerformanceReportColumn" />
   <xs:complexType name="AdGroupPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q5:ArrayOfstring" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="tns:AdGroupStatusReportFilter" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdGroupPerformanceReportFilter" nillable="true" type="tns:AdGroupPerformanceReportFilter" />
-  <xs:simpleType name="DeviceOSReportFilter">
-    <xs:list>
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Other" />
-          <xs:enumeration value="Windows" />
-          <xs:enumeration value="iOS" />
-          <xs:enumeration value="Android" />
-          <xs:enumeration value="BlackBerry" />
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:list>
-  </xs:simpleType>
-  <xs:element name="DeviceOSReportFilter" nillable="true" type="tns:DeviceOSReportFilter" />
-  <xs:simpleType name="AdGroupStatusReportFilter">
-    <xs:list>
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Submitted" />
-          <xs:enumeration value="Deleted" />
-          <xs:enumeration value="Expired" />
-          <xs:enumeration value="Draft" />
-          <xs:enumeration value="Paused" />
-          <xs:enumeration value="Active">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:list>
-  </xs:simpleType>
-  <xs:element name="AdGroupStatusReportFilter" nillable="true" type="tns:AdGroupStatusReportFilter" />
   <xs:complexType name="AdPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -524,15 +754,26 @@
       <xs:enumeration value="FinalURL" />
       <xs:enumeration value="FinalMobileURL" />
       <xs:enumeration value="FinalAppURL" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="TitlePart1" />
+      <xs:enumeration value="TitlePart2" />
+      <xs:enumeration value="Path1" />
+      <xs:enumeration value="Path2" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdPerformanceReportColumn" nillable="true" type="tns:AdPerformanceReportColumn" />
   <xs:complexType name="AdPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
       <xs:element minOccurs="0" name="AdType" nillable="true" type="tns:AdTypeReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q6:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdPerformanceReportFilter" nillable="true" type="tns:AdPerformanceReportFilter" />
@@ -576,11 +817,19 @@
       <xs:enumeration value="ComponentNonBillableClicks" />
       <xs:enumeration value="ComponentTotalClicks" />
       <xs:enumeration value="ComponentCTR" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="RichAdComponentPerformanceReportColumn" nillable="true" type="tns:RichAdComponentPerformanceReportColumn" />
   <xs:complexType name="RichAdComponentPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="ComponentType" nillable="true" type="tns:ComponentTypeFilter" />
       <xs:element minOccurs="0" name="RichAdSubType" nillable="true" type="tns:RichAdSubTypeFilter" />
     </xs:sequence>
@@ -711,22 +960,28 @@
       <xs:enumeration value="FinalURL" />
       <xs:enumeration value="FinalMobileURL" />
       <xs:enumeration value="FinalAppURL" />
+      <xs:enumeration value="BidStrategyType" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="KeywordPerformanceReportColumn" nillable="true" type="tns:KeywordPerformanceReportColumn" />
   <xs:complexType name="KeywordPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
       <xs:element minOccurs="0" name="AdType" nillable="true" type="tns:AdTypeReportFilter" />
       <xs:element minOccurs="0" name="BidMatchType" nillable="true" type="tns:BidMatchTypeReportFilter" />
+      <xs:element minOccurs="0" name="BidStrategyType" nillable="true" type="tns:BidStrategyTypeReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeliveredMatchType" nillable="true" type="tns:DeliveredMatchTypeReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordRelevance" nillable="true" type="q5:ArrayOfint" />
-      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q6:ArrayOfstring" />
-      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LandingPageRelevance" nillable="true" type="q7:ArrayOfint" />
-      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LandingPageUserExperience" nillable="true" type="q8:ArrayOfint" />
-      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q9:ArrayOfstring" />
-      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QualityScore" nillable="true" type="q10:ArrayOfint" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordRelevance" nillable="true" type="q7:ArrayOfint" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LandingPageRelevance" nillable="true" type="q9:ArrayOfint" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LandingPageUserExperience" nillable="true" type="q10:ArrayOfint" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q11:ArrayOfstring" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QualityScore" nillable="true" type="q12:ArrayOfint" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="KeywordPerformanceReportFilter" nillable="true" type="tns:KeywordPerformanceReportFilter" />
@@ -743,6 +998,23 @@
     </xs:list>
   </xs:simpleType>
   <xs:element name="BidMatchTypeReportFilter" nillable="true" type="tns:BidMatchTypeReportFilter" />
+  <xs:simpleType name="BidStrategyTypeReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ManualCpc" />
+          <xs:enumeration value="EnhancedCpc">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="BidStrategyTypeReportFilter" nillable="true" type="tns:BidStrategyTypeReportFilter" />
   <xs:simpleType name="DeliveredMatchTypeReportFilter">
     <xs:list>
       <xs:simpleType>
@@ -840,14 +1112,22 @@
       <xs:enumeration value="FinalURL" />
       <xs:enumeration value="FinalMobileURL" />
       <xs:enumeration value="FinalAppURL" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="DestinationUrlPerformanceReportColumn" nillable="true" type="tns:DestinationUrlPerformanceReportColumn" />
   <xs:complexType name="DestinationUrlPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q11:ArrayOfstring" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q13:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DestinationUrlPerformanceReportFilter" nillable="true" type="tns:DestinationUrlPerformanceReportFilter" />
@@ -884,13 +1164,6 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="BudgetSummaryReportColumn" nillable="true" type="tns:BudgetSummaryReportColumn" />
-  <xs:complexType name="AccountThroughCampaignReportScope">
-    <xs:sequence>
-      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q12:ArrayOflong" />
-      <xs:element minOccurs="0" name="Campaigns" nillable="true" type="tns:ArrayOfCampaignReportScope" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AccountThroughCampaignReportScope" nillable="true" type="tns:AccountThroughCampaignReportScope" />
   <xs:complexType name="BudgetSummaryReportTime">
     <xs:sequence>
       <xs:element minOccurs="0" name="CustomDateRangeEnd" nillable="true" type="tns:Date" />
@@ -946,13 +1219,23 @@
       <xs:enumeration value="EstimatedClickPercent" />
       <xs:enumeration value="EstimatedCtr" />
       <xs:enumeration value="Language" />
+      <xs:enumeration value="EstimatedImpressions" />
+      <xs:enumeration value="EstimatedClicks" />
+      <xs:enumeration value="EstimatedConversions" />
+      <xs:enumeration value="EstimatedConversionRate" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AgeGenderDemographicReportColumn" nillable="true" type="tns:AgeGenderDemographicReportColumn" />
   <xs:complexType name="AgeGenderDemographicReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q13:ArrayOfstring" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q14:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AgeGenderDemographicReportFilter" nillable="true" type="tns:AgeGenderDemographicReportFilter" />
@@ -1028,8 +1311,8 @@
   <xs:complexType name="GeographicalLocationReportFilter">
     <xs:sequence>
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountryCode" nillable="true" type="q14:ArrayOfstring" />
-      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q15:ArrayOfstring" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountryCode" nillable="true" type="q15:ArrayOfstring" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q16:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GeographicalLocationReportFilter" nillable="true" type="tns:GeographicalLocationReportFilter" />
@@ -1091,13 +1374,19 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="PublisherUsagePerformanceReportColumn" nillable="true" type="tns:PublisherUsagePerformanceReportColumn" />
   <xs:complexType name="PublisherUsagePerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q16:ArrayOfstring" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q17:ArrayOfstring" />
       <xs:element minOccurs="0" name="PricingModel" nillable="true" type="tns:PricingModelReportFilter" />
     </xs:sequence>
   </xs:complexType>
@@ -1170,17 +1459,27 @@
       <xs:enumeration value="FinalURL" />
       <xs:enumeration value="FinalMobileURL" />
       <xs:enumeration value="FinalAppURL" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="BidStrategyType" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="SitePerformanceReportColumn" nillable="true" type="tns:SitePerformanceReportColumn" />
   <xs:complexType name="SitePerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
       <xs:element minOccurs="0" name="AdType" nillable="true" type="tns:AdTypeReportFilter" />
+      <xs:element minOccurs="0" name="BidStrategyType" nillable="true" type="tns:BidStrategyTypeReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeliveredMatchType" nillable="true" type="tns:DeliveredMatchTypeReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q17:ArrayOfstring" />
-      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SiteIds" nillable="true" type="q18:ArrayOflong" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q18:ArrayOfstring" />
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SiteIds" nillable="true" type="q19:ArrayOflong" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SitePerformanceReportFilter" nillable="true" type="tns:SitePerformanceReportFilter" />
@@ -1260,62 +1559,28 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
+      <xs:enumeration value="CampaignType" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="SearchQueryPerformanceReportColumn" nillable="true" type="tns:SearchQueryPerformanceReportColumn" />
   <xs:complexType name="SearchQueryPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
       <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
       <xs:element minOccurs="0" name="AdType" nillable="true" type="tns:AdTypeReportFilter" />
       <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeliveredMatchType" nillable="true" type="tns:DeliveredMatchTypeReportFilter" />
       <xs:element minOccurs="0" name="ExcludeZeroClicks" type="xs:boolean" />
-      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q19:ArrayOfstring" />
-      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SearchQueries" nillable="true" type="q20:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q20:ArrayOfstring" />
+      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SearchQueries" nillable="true" type="q21:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SearchQueryPerformanceReportFilter" nillable="true" type="tns:SearchQueryPerformanceReportFilter" />
-  <xs:simpleType name="AdStatusReportFilter">
-    <xs:list>
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Submitted" />
-          <xs:enumeration value="Rejected" />
-          <xs:enumeration value="Deleted" />
-          <xs:enumeration value="Pending" />
-          <xs:enumeration value="Active">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:list>
-  </xs:simpleType>
-  <xs:element name="AdStatusReportFilter" nillable="true" type="tns:AdStatusReportFilter" />
-  <xs:simpleType name="CampaignStatusReportFilter">
-    <xs:list>
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="Submitted" />
-          <xs:enumeration value="Cancelled" />
-          <xs:enumeration value="Deleted" />
-          <xs:enumeration value="Paused" />
-          <xs:enumeration value="BudgetPaused" />
-          <xs:enumeration value="Active">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:list>
-  </xs:simpleType>
-  <xs:element name="CampaignStatusReportFilter" nillable="true" type="tns:CampaignStatusReportFilter" />
   <xs:complexType name="ConversionPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -1363,14 +1628,22 @@
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
       <xs:enumeration value="DeviceType" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ConversionPerformanceReportColumn" nillable="true" type="tns:ConversionPerformanceReportColumn" />
   <xs:complexType name="ConversionPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q21:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q22:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConversionPerformanceReportFilter" nillable="true" type="tns:ConversionPerformanceReportFilter" />
@@ -1422,15 +1695,23 @@
       <xs:enumeration value="GoalId" />
       <xs:enumeration value="DeviceType" />
       <xs:enumeration value="DeviceOS" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="GoalsAndFunnelsReportColumn" nillable="true" type="tns:GoalsAndFunnelsReportColumn" />
   <xs:complexType name="GoalsAndFunnelsReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GoalIds" nillable="true" type="q22:ArrayOflong" />
+      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GoalIds" nillable="true" type="q23:ArrayOflong" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GoalsAndFunnelsReportFilter" nillable="true" type="tns:GoalsAndFunnelsReportFilter" />
@@ -1472,126 +1753,92 @@
       <xs:enumeration value="FunnelConversionRate" />
       <xs:enumeration value="Revenue" />
       <xs:enumeration value="RevenuePerConversion" />
+      <xs:enumeration value="AccountStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="TrafficSourcesReportColumn" nillable="true" type="tns:TrafficSourcesReportColumn" />
   <xs:complexType name="TrafficSourcesReportFilter">
     <xs:sequence>
-      <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GoalIds" nillable="true" type="q23:ArrayOflong" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GoalIds" nillable="true" type="q24:ArrayOflong" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TrafficSourcesReportFilter" nillable="true" type="tns:TrafficSourcesReportFilter" />
-  <xs:complexType name="AccountReportScope">
-    <xs:sequence>
-      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q24:ArrayOflong" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AccountReportScope" nillable="true" type="tns:AccountReportScope" />
-  <xs:complexType name="CampaignPerformanceReportRequest">
+  <xs:complexType name="TacticChannelReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
         <xs:sequence>
-          <xs:element name="Aggregation" type="tns:ReportAggregation" />
-          <xs:element name="Columns" nillable="true" type="tns:ArrayOfCampaignPerformanceReportColumn" />
-          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:CampaignPerformanceReportFilter" />
-          <xs:element name="Scope" nillable="true" type="tns:AccountThroughCampaignReportScope" />
+          <xs:element name="Aggregation" type="tns:NonHourlyReportAggregation" />
+          <xs:element name="Columns" nillable="true" type="tns:ArrayOfTacticChannelReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:TacticChannelReportFilter" />
+          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
           <xs:element name="Time" nillable="true" type="tns:ReportTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="CampaignPerformanceReportRequest" nillable="true" type="tns:CampaignPerformanceReportRequest" />
-  <xs:complexType name="ArrayOfCampaignPerformanceReportColumn">
+  <xs:element name="TacticChannelReportRequest" nillable="true" type="tns:TacticChannelReportRequest" />
+  <xs:complexType name="ArrayOfTacticChannelReportColumn">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CampaignPerformanceReportColumn" type="tns:CampaignPerformanceReportColumn" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TacticChannelReportColumn" type="tns:TacticChannelReportColumn" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCampaignPerformanceReportColumn" nillable="true" type="tns:ArrayOfCampaignPerformanceReportColumn" />
-  <xs:simpleType name="CampaignPerformanceReportColumn">
+  <xs:element name="ArrayOfTacticChannelReportColumn" nillable="true" type="tns:ArrayOfTacticChannelReportColumn" />
+  <xs:simpleType name="TacticChannelReportColumn">
     <xs:restriction base="xs:string">
       <xs:enumeration value="AccountName" />
       <xs:enumeration value="AccountNumber" />
       <xs:enumeration value="AccountId" />
       <xs:enumeration value="TimePeriod" />
-      <xs:enumeration value="Status" />
+      <xs:enumeration value="Tactic" />
+      <xs:enumeration value="Channel" />
+      <xs:enumeration value="ThirdPartyCampaign" />
+      <xs:enumeration value="ThirdPartyAdGroup" />
+      <xs:enumeration value="ThirdPartyTerm" />
       <xs:enumeration value="CampaignName" />
       <xs:enumeration value="CampaignId" />
-      <xs:enumeration value="CurrencyCode" />
-      <xs:enumeration value="AdDistribution" />
-      <xs:enumeration value="Impressions" />
-      <xs:enumeration value="Clicks" />
-      <xs:enumeration value="Ctr" />
-      <xs:enumeration value="AverageCpc" />
-      <xs:enumeration value="Spend" />
-      <xs:enumeration value="AveragePosition" />
+      <xs:enumeration value="AdGroupName" />
+      <xs:enumeration value="AdGroupId" />
+      <xs:enumeration value="Keyword" />
+      <xs:enumeration value="KeywordId" />
+      <xs:enumeration value="Goal" />
+      <xs:enumeration value="Step1Count" />
+      <xs:enumeration value="Step2Count" />
+      <xs:enumeration value="Step3Count" />
+      <xs:enumeration value="Step4Count" />
+      <xs:enumeration value="Step5Count" />
       <xs:enumeration value="Conversions" />
-      <xs:enumeration value="ConversionRate" />
-      <xs:enumeration value="CostPerConversion" />
-      <xs:enumeration value="LowQualityClicks" />
-      <xs:enumeration value="LowQualityClicksPercent" />
-      <xs:enumeration value="LowQualityImpressions" />
-      <xs:enumeration value="LowQualityImpressionsPercent" />
-      <xs:enumeration value="LowQualityConversions" />
-      <xs:enumeration value="LowQualityConversionRate" />
-      <xs:enumeration value="AverageCpm" />
-      <xs:enumeration value="DeviceType" />
-      <xs:enumeration value="DeviceOS" />
-      <xs:enumeration value="ImpressionSharePercent" />
-      <xs:enumeration value="ImpressionLostToBudgetPercent" />
-      <xs:enumeration value="ImpressionLostToRankPercent" />
-      <xs:enumeration value="QualityScore" />
-      <xs:enumeration value="KeywordRelevance" />
-      <xs:enumeration value="LandingPageRelevance" />
-      <xs:enumeration value="LandingPageUserExperience" />
-      <xs:enumeration value="HistoricQualityScore" />
-      <xs:enumeration value="HistoricKeywordRelevance" />
-      <xs:enumeration value="HistoricLandingPageRelevance" />
-      <xs:enumeration value="HistoricLandingPageUserExperience" />
-      <xs:enumeration value="ImpressionLostToBidPercent" />
-      <xs:enumeration value="ImpressionLostToLandingPageRelevancePercent" />
-      <xs:enumeration value="ImpressionLostToKeywordRelevancePercent" />
-      <xs:enumeration value="PhoneImpressions" />
-      <xs:enumeration value="PhoneCalls" />
-      <xs:enumeration value="ManualCalls" />
-      <xs:enumeration value="ClickCalls" />
-      <xs:enumeration value="Ptr" />
-      <xs:enumeration value="PhoneSpend" />
-      <xs:enumeration value="AverageCpp" />
-      <xs:enumeration value="TotalCostPhoneAndClicks" />
-      <xs:enumeration value="Network" />
-      <xs:enumeration value="TopVsOther" />
-      <xs:enumeration value="BidMatchType" />
-      <xs:enumeration value="DeliveredMatchType" />
       <xs:enumeration value="Assists" />
-      <xs:enumeration value="ExtendedCost" />
+      <xs:enumeration value="Spend" />
+      <xs:enumeration value="FunnelConversionRate" />
       <xs:enumeration value="Revenue" />
       <xs:enumeration value="ReturnOnAdSpend" />
-      <xs:enumeration value="CostPerAssist" />
-      <xs:enumeration value="RevenuePerConversion" />
-      <xs:enumeration value="RevenuePerAssist" />
-      <xs:enumeration value="BounceRate" />
-      <xs:enumeration value="TotalVisits" />
-      <xs:enumeration value="AveragePagesPerVisit" />
-      <xs:enumeration value="AverageDurationPerVisit" />
-      <xs:enumeration value="TrackingTemplate" />
-      <xs:enumeration value="CustomParameters" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="CampaignPerformanceReportColumn" nillable="true" type="tns:CampaignPerformanceReportColumn" />
-  <xs:complexType name="CampaignPerformanceReportFilter">
+  <xs:element name="TacticChannelReportColumn" nillable="true" type="tns:TacticChannelReportColumn" />
+  <xs:complexType name="TacticChannelReportFilter">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
-      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ChannelIds" nillable="true" type="q25:ArrayOflong" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TacticIds" nillable="true" type="q26:ArrayOflong" />
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ThirdPartyAdGroupIds" nillable="true" type="q27:ArrayOflong" />
+      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ThirdPartyCampaignIds" nillable="true" type="q28:ArrayOflong" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CampaignPerformanceReportFilter" nillable="true" type="tns:CampaignPerformanceReportFilter" />
+  <xs:element name="TacticChannelReportFilter" nillable="true" type="tns:TacticChannelReportFilter" />
   <xs:complexType name="NegativeKeywordConflictReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
         <xs:sequence>
           <xs:element name="Columns" nillable="true" type="tns:ArrayOfNegativeKeywordConflictReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:NegativeKeywordConflictReportFilter" />
           <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
         </xs:sequence>
       </xs:extension>
@@ -1622,9 +1869,98 @@
       <xs:enumeration value="NegativeKeywordList" />
       <xs:enumeration value="NegativeKeywordId" />
       <xs:enumeration value="NegativeKeywordMatchType" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="NegativeKeywordConflictReportColumn" nillable="true" type="tns:NegativeKeywordConflictReportColumn" />
+  <xs:complexType name="NegativeKeywordConflictReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NegativeKeywordConflictReportFilter" nillable="true" type="tns:NegativeKeywordConflictReportFilter" />
+  <xs:complexType name="SearchCampaignChangeHistoryReportRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ReportRequest">
+        <xs:sequence>
+          <xs:element name="Columns" nillable="true" type="tns:ArrayOfSearchCampaignChangeHistoryReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:SearchCampaignChangeHistoryReportFilter" />
+          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
+          <xs:element name="Time" nillable="true" type="tns:ReportTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchCampaignChangeHistoryReportRequest" nillable="true" type="tns:SearchCampaignChangeHistoryReportRequest" />
+  <xs:complexType name="ArrayOfSearchCampaignChangeHistoryReportColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCampaignChangeHistoryReportColumn" type="tns:SearchCampaignChangeHistoryReportColumn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCampaignChangeHistoryReportColumn" nillable="true" type="tns:ArrayOfSearchCampaignChangeHistoryReportColumn" />
+  <xs:simpleType name="SearchCampaignChangeHistoryReportColumn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="AccountId" />
+      <xs:enumeration value="AccountName" />
+      <xs:enumeration value="AccountNumber" />
+      <xs:enumeration value="ChangedBy" />
+      <xs:enumeration value="CampaignName" />
+      <xs:enumeration value="CampaignId" />
+      <xs:enumeration value="AdGroupName" />
+      <xs:enumeration value="AdGroupId" />
+      <xs:enumeration value="AdTitle" />
+      <xs:enumeration value="AdDescription" />
+      <xs:enumeration value="DisplayUrl" />
+      <xs:enumeration value="Keyword" />
+      <xs:enumeration value="ItemChanged" />
+      <xs:enumeration value="AttributeChanged" />
+      <xs:enumeration value="HowChanged" />
+      <xs:enumeration value="OldValue" />
+      <xs:enumeration value="NewValue" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchCampaignChangeHistoryReportColumn" nillable="true" type="tns:SearchCampaignChangeHistoryReportColumn" />
+  <xs:complexType name="SearchCampaignChangeHistoryReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="HowChanged" nillable="true" type="tns:ChangeTypeReportFilter" />
+      <xs:element minOccurs="0" name="ItemChanged" nillable="true" type="tns:ChangeEntityReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCampaignChangeHistoryReportFilter" nillable="true" type="tns:SearchCampaignChangeHistoryReportFilter" />
+  <xs:simpleType name="ChangeTypeReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Added" />
+          <xs:enumeration value="Deleted" />
+          <xs:enumeration value="Changed" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ChangeTypeReportFilter" nillable="true" type="tns:ChangeTypeReportFilter" />
+  <xs:simpleType name="ChangeEntityReportFilter">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Account" />
+          <xs:enumeration value="Campaign" />
+          <xs:enumeration value="AdGroup" />
+          <xs:enumeration value="Ad" />
+          <xs:enumeration value="Keyword" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ChangeEntityReportFilter" nillable="true" type="tns:ChangeEntityReportFilter" />
   <xs:complexType name="AdExtensionByAdReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -1683,11 +2019,21 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="TitlePart1" />
+      <xs:enumeration value="TitlePart2" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdExtensionByAdReportColumn" nillable="true" type="tns:AdExtensionByAdReportColumn" />
   <xs:complexType name="AdExtensionByAdReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
     </xs:sequence>
@@ -1751,13 +2097,21 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdExtensionByKeywordReportColumn" nillable="true" type="tns:AdExtensionByKeywordReportColumn" />
   <xs:complexType name="AdExtensionByKeywordReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdExtensionByKeywordReportFilter" nillable="true" type="tns:AdExtensionByKeywordReportFilter" />
@@ -1804,6 +2158,7 @@
         <xs:sequence>
           <xs:element name="Aggregation" type="tns:ReportAggregation" />
           <xs:element name="Columns" nillable="true" type="tns:ArrayOfAudiencePerformanceReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:AudiencePerformanceReportFilter" />
           <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
           <xs:element name="Time" nillable="true" type="tns:ReportTime" />
         </xs:sequence>
@@ -1844,9 +2199,20 @@
       <xs:enumeration value="Revenue" />
       <xs:enumeration value="ReturnOnAdSpend" />
       <xs:enumeration value="RevenuePerConversion" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AudiencePerformanceReportColumn" nillable="true" type="tns:AudiencePerformanceReportColumn" />
+  <xs:complexType name="AudiencePerformanceReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AudiencePerformanceReportFilter" nillable="true" type="tns:AudiencePerformanceReportFilter" />
   <xs:complexType name="AdExtensionDetailReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -1904,11 +2270,19 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="AdStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdExtensionDetailReportColumn" nillable="true" type="tns:AdExtensionDetailReportColumn" />
   <xs:complexType name="AdExtensionDetailReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
     </xs:sequence>
@@ -1974,17 +2348,27 @@
       <xs:enumeration value="ClickSharePercent" />
       <xs:enumeration value="DeviceType" />
       <xs:enumeration value="Network" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
+      <xs:enumeration value="KeywordStatus" />
+      <xs:enumeration value="BidStrategyType" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ShareOfVoiceReportColumn" nillable="true" type="tns:ShareOfVoiceReportColumn" />
   <xs:complexType name="ShareOfVoiceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
       <xs:element minOccurs="0" name="BidMatchType" nillable="true" type="tns:BidMatchTypeReportFilter" />
+      <xs:element minOccurs="0" name="BidStrategyType" nillable="true" type="tns:BidStrategyTypeReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeliveredMatchType" nillable="true" type="tns:DeliveredMatchTypeReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q25:ArrayOfstring" />
-      <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q26:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q29:ArrayOfstring" />
+      <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q30:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ShareOfVoiceReportFilter" nillable="true" type="tns:ShareOfVoiceReportFilter" />
@@ -2050,13 +2434,19 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AdStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductTargetPerformanceReportColumn" nillable="true" type="tns:ProductTargetPerformanceReportColumn" />
   <xs:complexType name="ProductTargetPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q27:ArrayOfstring" />
+      <xs:element minOccurs="0" name="KeywordStatus" nillable="true" type="tns:KeywordStatusReportFilter" />
+      <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q31:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductTargetPerformanceReportFilter" nillable="true" type="tns:ProductTargetPerformanceReportFilter" />
@@ -2126,13 +2516,21 @@
       <xs:enumeration value="ConversionRate" />
       <xs:enumeration value="Revenue" />
       <xs:enumeration value="RevenuePerConversion" />
+      <xs:enumeration value="SellerName" />
+      <xs:enumeration value="OfferLanguage" />
+      <xs:enumeration value="CountryOfSale" />
+      <xs:enumeration value="AdStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductDimensionPerformanceReportColumn" nillable="true" type="tns:ProductDimensionPerformanceReportColumn" />
   <xs:complexType name="ProductDimensionPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q28:ArrayOfstring" />
+      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q32:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductDimensionPerformanceReportFilter" nillable="true" type="tns:ProductDimensionPerformanceReportFilter" />
@@ -2196,13 +2594,22 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="OfferLanguage" />
+      <xs:enumeration value="CountryOfSale" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="TrackingTemplate" />
+      <xs:enumeration value="CustomParameters" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductPartitionPerformanceReportColumn" nillable="true" type="tns:ProductPartitionPerformanceReportColumn" />
   <xs:complexType name="ProductPartitionPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q29:ArrayOfstring" />
+      <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q33:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductPartitionPerformanceReportFilter" nillable="true" type="tns:ProductPartitionPerformanceReportFilter" />
@@ -2265,13 +2672,20 @@
       <xs:enumeration value="CostPerAssist" />
       <xs:enumeration value="RevenuePerConversion" />
       <xs:enumeration value="RevenuePerAssist" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="TrackingTemplate" />
+      <xs:enumeration value="CustomParameters" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductPartitionUnitPerformanceReportColumn" nillable="true" type="tns:ProductPartitionUnitPerformanceReportColumn" />
   <xs:complexType name="ProductPartitionUnitPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q30:ArrayOfstring" />
+      <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q34:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductPartitionUnitPerformanceReportFilter" nillable="true" type="tns:ProductPartitionUnitPerformanceReportFilter" />
@@ -2281,6 +2695,7 @@
         <xs:sequence>
           <xs:element name="Aggregation" type="tns:ReportAggregation" />
           <xs:element name="Columns" nillable="true" type="tns:ArrayOfCallDetailReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:CallDetailReportFilter" />
           <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
           <xs:element name="Time" nillable="true" type="tns:ReportTime" />
         </xs:sequence>
@@ -2311,95 +2726,78 @@
       <xs:enumeration value="AccountId" />
       <xs:enumeration value="CampaignId" />
       <xs:enumeration value="AdGroupId" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="CallDetailReportColumn" nillable="true" type="tns:CallDetailReportColumn" />
-  <xs:complexType name="AccountPerformanceReportRequest">
+  <xs:complexType name="CallDetailReportFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CallDetailReportFilter" nillable="true" type="tns:CallDetailReportFilter" />
+  <xs:complexType name="ProductOfferPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
         <xs:sequence>
           <xs:element name="Aggregation" type="tns:ReportAggregation" />
-          <xs:element name="Columns" nillable="true" type="tns:ArrayOfAccountPerformanceReportColumn" />
-          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:AccountPerformanceReportFilter" />
-          <xs:element name="Scope" nillable="true" type="tns:AccountReportScope" />
+          <xs:element name="Columns" nillable="true" type="tns:ArrayOfProductOfferPerformanceReportColumn" />
+          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:ProductOfferPerformanceReportFilter" />
+          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
           <xs:element name="Time" nillable="true" type="tns:ReportTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="AccountPerformanceReportRequest" nillable="true" type="tns:AccountPerformanceReportRequest" />
-  <xs:complexType name="ArrayOfAccountPerformanceReportColumn">
+  <xs:element name="ProductOfferPerformanceReportRequest" nillable="true" type="tns:ProductOfferPerformanceReportRequest" />
+  <xs:complexType name="ArrayOfProductOfferPerformanceReportColumn">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountPerformanceReportColumn" type="tns:AccountPerformanceReportColumn" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductOfferPerformanceReportColumn" type="tns:ProductOfferPerformanceReportColumn" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAccountPerformanceReportColumn" nillable="true" type="tns:ArrayOfAccountPerformanceReportColumn" />
-  <xs:simpleType name="AccountPerformanceReportColumn">
+  <xs:element name="ArrayOfProductOfferPerformanceReportColumn" nillable="true" type="tns:ArrayOfProductOfferPerformanceReportColumn" />
+  <xs:simpleType name="ProductOfferPerformanceReportColumn">
     <xs:restriction base="xs:string">
+      <xs:enumeration value="TimePeriod" />
       <xs:enumeration value="AccountName" />
       <xs:enumeration value="AccountNumber" />
-      <xs:enumeration value="AccountId" />
-      <xs:enumeration value="TimePeriod" />
+      <xs:enumeration value="AdGroupName" />
+      <xs:enumeration value="AdGroupId" />
+      <xs:enumeration value="AdId" />
+      <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="CampaignName" />
       <xs:enumeration value="CurrencyCode" />
-      <xs:enumeration value="AdDistribution" />
+      <xs:enumeration value="DeviceType" />
+      <xs:enumeration value="Language" />
+      <xs:enumeration value="MerchantProductId" />
+      <xs:enumeration value="SellerName" />
       <xs:enumeration value="Impressions" />
       <xs:enumeration value="Clicks" />
       <xs:enumeration value="Ctr" />
       <xs:enumeration value="AverageCpc" />
       <xs:enumeration value="Spend" />
-      <xs:enumeration value="AveragePosition" />
-      <xs:enumeration value="Conversions" />
-      <xs:enumeration value="ConversionRate" />
-      <xs:enumeration value="CostPerConversion" />
-      <xs:enumeration value="LowQualityClicks" />
-      <xs:enumeration value="LowQualityClicksPercent" />
-      <xs:enumeration value="LowQualityImpressions" />
-      <xs:enumeration value="LowQualityImpressionsPercent" />
-      <xs:enumeration value="LowQualityConversions" />
-      <xs:enumeration value="LowQualityConversionRate" />
       <xs:enumeration value="AverageCpm" />
-      <xs:enumeration value="DeviceType" />
-      <xs:enumeration value="DeviceOS" />
-      <xs:enumeration value="ImpressionSharePercent" />
-      <xs:enumeration value="ImpressionLostToBudgetPercent" />
-      <xs:enumeration value="ImpressionLostToRankPercent" />
-      <xs:enumeration value="ImpressionLostToBidPercent" />
-      <xs:enumeration value="ImpressionLostToLandingPageRelevancePercent" />
-      <xs:enumeration value="ImpressionLostToKeywordRelevancePercent" />
-      <xs:enumeration value="PhoneImpressions" />
-      <xs:enumeration value="PhoneCalls" />
-      <xs:enumeration value="ManualCalls" />
-      <xs:enumeration value="ClickCalls" />
-      <xs:enumeration value="Ptr" />
-      <xs:enumeration value="PhoneSpend" />
-      <xs:enumeration value="AverageCpp" />
-      <xs:enumeration value="TotalCostPhoneAndClicks" />
-      <xs:enumeration value="Network" />
-      <xs:enumeration value="TopVsOther" />
-      <xs:enumeration value="BidMatchType" />
-      <xs:enumeration value="DeliveredMatchType" />
-      <xs:enumeration value="Assists" />
-      <xs:enumeration value="ExtendedCost" />
-      <xs:enumeration value="Revenue" />
-      <xs:enumeration value="ReturnOnAdSpend" />
-      <xs:enumeration value="CostPerAssist" />
-      <xs:enumeration value="RevenuePerConversion" />
-      <xs:enumeration value="RevenuePerAssist" />
-      <xs:enumeration value="BounceRate" />
-      <xs:enumeration value="TotalVisits" />
-      <xs:enumeration value="AveragePagesPerVisit" />
-      <xs:enumeration value="AverageDurationPerVisit" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:element name="AccountPerformanceReportColumn" nillable="true" type="tns:AccountPerformanceReportColumn" />
-  <xs:complexType name="AccountPerformanceReportFilter">
+  <xs:element name="ProductOfferPerformanceReportColumn" nillable="true" type="tns:ProductOfferPerformanceReportColumn" />
+  <xs:complexType name="ProductOfferPerformanceReportFilter">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSReportFilter" />
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="AdStatus" nillable="true" type="tns:AdStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
+      <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q35:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AccountPerformanceReportFilter" nillable="true" type="tns:AccountPerformanceReportFilter" />
+  <xs:element name="ProductOfferPerformanceReportFilter" nillable="true" type="tns:ProductOfferPerformanceReportFilter" />
   <xs:complexType name="GeoLocationPerformanceReportRequest">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ReportRequest">
@@ -2464,14 +2862,20 @@
       <xs:enumeration value="RevenuePerAssist" />
       <xs:enumeration value="LocationType" />
       <xs:enumeration value="MostSpecificLocation" />
+      <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="CampaignStatus" />
+      <xs:enumeration value="AdGroupStatus" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="GeoLocationPerformanceReportColumn" nillable="true" type="tns:GeoLocationPerformanceReportColumn" />
   <xs:complexType name="GeoLocationPerformanceReportFilter">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccountStatus" nillable="true" type="tns:AccountStatusReportFilter" />
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
-      <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountryCode" nillable="true" type="q31:ArrayOfstring" />
-      <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q32:ArrayOfstring" />
+      <xs:element minOccurs="0" name="AdGroupStatus" nillable="true" type="tns:AdGroupStatusReportFilter" />
+      <xs:element minOccurs="0" name="CampaignStatus" nillable="true" type="tns:CampaignStatusReportFilter" />
+      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountryCode" nillable="true" type="q36:ArrayOfstring" />
+      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q37:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GeoLocationPerformanceReportFilter" nillable="true" type="tns:GeoLocationPerformanceReportFilter" />
@@ -2538,123 +2942,11 @@
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistributionReportFilter" />
       <xs:element minOccurs="0" name="DeliveredMatchType" nillable="true" type="tns:DeliveredMatchTypeReportFilter" />
       <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
-      <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q33:ArrayOfstring" />
-      <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q34:ArrayOfstring" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="BrandZonePerformanceReportFilter" nillable="true" type="tns:BrandZonePerformanceReportFilter" />
-  <xs:complexType name="TacticChannelReportRequest">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ReportRequest">
-        <xs:sequence>
-          <xs:element name="Aggregation" type="tns:NonHourlyReportAggregation" />
-          <xs:element name="Columns" nillable="true" type="tns:ArrayOfTacticChannelReportColumn" />
-          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:TacticChannelReportFilter" />
-          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
-          <xs:element name="Time" nillable="true" type="tns:ReportTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TacticChannelReportRequest" nillable="true" type="tns:TacticChannelReportRequest" />
-  <xs:complexType name="ArrayOfTacticChannelReportColumn">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TacticChannelReportColumn" type="tns:TacticChannelReportColumn" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTacticChannelReportColumn" nillable="true" type="tns:ArrayOfTacticChannelReportColumn" />
-  <xs:simpleType name="TacticChannelReportColumn">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AccountName" />
-      <xs:enumeration value="AccountNumber" />
-      <xs:enumeration value="AccountId" />
-      <xs:enumeration value="TimePeriod" />
-      <xs:enumeration value="Tactic" />
-      <xs:enumeration value="Channel" />
-      <xs:enumeration value="ThirdPartyCampaign" />
-      <xs:enumeration value="ThirdPartyAdGroup" />
-      <xs:enumeration value="ThirdPartyTerm" />
-      <xs:enumeration value="CampaignName" />
-      <xs:enumeration value="CampaignId" />
-      <xs:enumeration value="AdGroupName" />
-      <xs:enumeration value="AdGroupId" />
-      <xs:enumeration value="Keyword" />
-      <xs:enumeration value="KeywordId" />
-      <xs:enumeration value="Goal" />
-      <xs:enumeration value="Step1Count" />
-      <xs:enumeration value="Step2Count" />
-      <xs:enumeration value="Step3Count" />
-      <xs:enumeration value="Step4Count" />
-      <xs:enumeration value="Step5Count" />
-      <xs:enumeration value="Conversions" />
-      <xs:enumeration value="Assists" />
-      <xs:enumeration value="Spend" />
-      <xs:enumeration value="FunnelConversionRate" />
-      <xs:enumeration value="Revenue" />
-      <xs:enumeration value="ReturnOnAdSpend" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="TacticChannelReportColumn" nillable="true" type="tns:TacticChannelReportColumn" />
-  <xs:complexType name="TacticChannelReportFilter">
-    <xs:sequence>
-      <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ChannelIds" nillable="true" type="q35:ArrayOflong" />
-      <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TacticIds" nillable="true" type="q36:ArrayOflong" />
-      <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ThirdPartyAdGroupIds" nillable="true" type="q37:ArrayOflong" />
-      <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ThirdPartyCampaignIds" nillable="true" type="q38:ArrayOflong" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TacticChannelReportFilter" nillable="true" type="tns:TacticChannelReportFilter" />
-  <xs:complexType name="ProductOfferPerformanceReportRequest">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ReportRequest">
-        <xs:sequence>
-          <xs:element name="Aggregation" type="tns:ReportAggregation" />
-          <xs:element name="Columns" nillable="true" type="tns:ArrayOfProductOfferPerformanceReportColumn" />
-          <xs:element minOccurs="0" name="Filter" nillable="true" type="tns:ProductOfferPerformanceReportFilter" />
-          <xs:element name="Scope" nillable="true" type="tns:AccountThroughAdGroupReportScope" />
-          <xs:element name="Time" nillable="true" type="tns:ReportTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProductOfferPerformanceReportRequest" nillable="true" type="tns:ProductOfferPerformanceReportRequest" />
-  <xs:complexType name="ArrayOfProductOfferPerformanceReportColumn">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductOfferPerformanceReportColumn" type="tns:ProductOfferPerformanceReportColumn" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProductOfferPerformanceReportColumn" nillable="true" type="tns:ArrayOfProductOfferPerformanceReportColumn" />
-  <xs:simpleType name="ProductOfferPerformanceReportColumn">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="TimePeriod" />
-      <xs:enumeration value="AccountName" />
-      <xs:enumeration value="AccountNumber" />
-      <xs:enumeration value="AdGroupName" />
-      <xs:enumeration value="AdGroupId" />
-      <xs:enumeration value="AdId" />
-      <xs:enumeration value="AdStatus" />
-      <xs:enumeration value="CampaignName" />
-      <xs:enumeration value="CurrencyCode" />
-      <xs:enumeration value="DeviceType" />
-      <xs:enumeration value="Language" />
-      <xs:enumeration value="MerchantProductId" />
-      <xs:enumeration value="SellerName" />
-      <xs:enumeration value="Impressions" />
-      <xs:enumeration value="Clicks" />
-      <xs:enumeration value="Ctr" />
-      <xs:enumeration value="AverageCpc" />
-      <xs:enumeration value="Spend" />
-      <xs:enumeration value="AverageCpm" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="ProductOfferPerformanceReportColumn" nillable="true" type="tns:ProductOfferPerformanceReportColumn" />
-  <xs:complexType name="ProductOfferPerformanceReportFilter">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="DeviceType" nillable="true" type="tns:DeviceTypeReportFilter" />
+      <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Keywords" nillable="true" type="q38:ArrayOfstring" />
       <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LanguageCode" nillable="true" type="q39:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ProductOfferPerformanceReportFilter" nillable="true" type="tns:ProductOfferPerformanceReportFilter" />
+  <xs:element name="BrandZonePerformanceReportFilter" nillable="true" type="tns:BrandZonePerformanceReportFilter" />
   <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
   <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
   <xs:element name="CustomerAccountId" nillable="true" type="xs:string" />

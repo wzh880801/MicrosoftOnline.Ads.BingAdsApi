@@ -79,8 +79,28 @@
           <xs:enumeration value="AppAdExtensions" />
           <xs:enumeration value="AdGroupAppAdExtensions" />
           <xs:enumeration value="CampaignAppAdExtensions" />
+          <xs:enumeration value="ReviewAdExtensions" />
           <xs:enumeration value="AdGroupProductPartitions" />
           <xs:enumeration value="CampaignProductScopes" />
+          <xs:enumeration value="CampaignReviewAdExtensions" />
+          <xs:enumeration value="AdGroupReviewAdExtensions" />
+          <xs:enumeration value="CalloutAdExtensions" />
+          <xs:enumeration value="CampaignCalloutAdExtensions" />
+          <xs:enumeration value="AdGroupCalloutAdExtensions" />
+          <xs:enumeration value="Sitelink2AdExtensions" />
+          <xs:enumeration value="CampaignSitelink2AdExtensions" />
+          <xs:enumeration value="AdGroupSitelink2AdExtensions" />
+          <xs:enumeration value="StructuredSnippetAdExtensions" />
+          <xs:enumeration value="CampaignStructuredSnippetAdExtensions" />
+          <xs:enumeration value="AdGroupStructuredSnippetAdExtensions" />
+          <xs:enumeration value="RemarketingLists" />
+          <xs:enumeration value="AdGroupRemarketingListAssociations" />
+          <xs:enumeration value="Budgets" />
+          <xs:enumeration value="TextAds" />
+          <xs:enumeration value="ProductAds" />
+          <xs:enumeration value="AppInstallAds" />
+          <xs:enumeration value="ExpandedTextAds" />
+          <xs:enumeration value="DynamicSearchAds" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>

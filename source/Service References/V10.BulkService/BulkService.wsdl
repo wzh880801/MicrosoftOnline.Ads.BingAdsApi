@@ -52,11 +52,11 @@
   <wsdl:message name="DownloadCampaignsByAccountIdsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="DownloadCampaignsByCampaignIdsRequest">
     <wsdl:part name="parameters" element="tns:DownloadCampaignsByCampaignIdsRequest" />
@@ -76,11 +76,11 @@
   <wsdl:message name="DownloadCampaignsByCampaignIdsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetBulkDownloadStatusRequest">
     <wsdl:part name="parameters" element="tns:GetBulkDownloadStatusRequest" />
@@ -158,14 +158,14 @@
     <wsdl:operation name="DownloadCampaignsByAccountIds">
       <wsdl:input wsaw:Action="DownloadCampaignsByAccountIds" name="DownloadCampaignsByAccountIdsRequest" message="tns:DownloadCampaignsByAccountIdsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsResponse" name="DownloadCampaignsByAccountIdsResponse" message="tns:DownloadCampaignsByAccountIdsResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByAccountIds_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DownloadCampaignsByCampaignIds">
       <wsdl:input wsaw:Action="DownloadCampaignsByCampaignIds" name="DownloadCampaignsByCampaignIdsRequest" message="tns:DownloadCampaignsByCampaignIdsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsResponse" name="DownloadCampaignsByCampaignIdsResponse" message="tns:DownloadCampaignsByCampaignIdsResponse" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBulkDownloadStatus">
       <wsdl:input wsaw:Action="GetBulkDownloadStatus" name="GetBulkDownloadStatusRequest" message="tns:GetBulkDownloadStatusRequest" />
@@ -205,11 +205,11 @@
         <soap:header message="tns:DownloadCampaignsByAccountIdsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetail3Fault">
+        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DownloadCampaignsByCampaignIds">
@@ -228,11 +228,11 @@
         <soap:header message="tns:DownloadCampaignsByCampaignIdsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetail3Fault">
+        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBulkDownloadStatus">

@@ -149,7 +149,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 }
             }
 
-            if (this.DeleteZipFileAfterProcessCompleted)
+            if (this.DeleteZipFileAfterProcessCompleted && result)
             {
                 try
                 {

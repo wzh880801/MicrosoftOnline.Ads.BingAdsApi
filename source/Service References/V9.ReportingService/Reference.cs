@@ -17,7 +17,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDynamicTextPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdPerformanceReportRequest))]
@@ -33,8 +34,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ConversionPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.GoalsAndFunnelsReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TrafficSourcesReportRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NegativeKeywordConflictReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdExtensionByAdReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdExtensionByKeywordReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdExtensionDimensionReportRequest))]
@@ -46,11 +48,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductPartitionPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductPartitionUnitPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CallDetailReportRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.GeoLocationPerformanceReportRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BrandZonePerformanceReportRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportRequest))]
     public partial class ReportRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -142,21 +142,36 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class SearchCampaignChangeHistoryReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
+    public partial class AccountPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportColumn[] ColumnsField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation AggregationField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportColumn[] ColumnsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportFilter FilterField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportFilter FilterField;
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountReportScope ScopeField;
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportColumn[] Columns {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation Aggregation {
+            get {
+                return this.AggregationField;
+            }
+            set {
+                if ((this.AggregationField.Equals(value) != true)) {
+                    this.AggregationField = value;
+                    this.RaisePropertyChanged("Aggregation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportColumn[] Columns {
             get {
                 return this.ColumnsField;
             }
@@ -169,7 +184,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportFilter Filter {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportFilter Filter {
             get {
                 return this.FilterField;
             }
@@ -182,7 +197,90 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountReportScope Scope {
+            get {
+                return this.ScopeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScopeField, value) != true)) {
+                    this.ScopeField = value;
+                    this.RaisePropertyChanged("Scope");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class CampaignPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation AggregationField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportColumn[] ColumnsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportFilter FilterField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughCampaignReportScope ScopeField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation Aggregation {
+            get {
+                return this.AggregationField;
+            }
+            set {
+                if ((this.AggregationField.Equals(value) != true)) {
+                    this.AggregationField = value;
+                    this.RaisePropertyChanged("Aggregation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportColumn[] Columns {
+            get {
+                return this.ColumnsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
+                    this.ColumnsField = value;
+                    this.RaisePropertyChanged("Columns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportFilter Filter {
+            get {
+                return this.FilterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughCampaignReportScope Scope {
             get {
                 return this.ScopeField;
             }
@@ -1456,23 +1554,23 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class CampaignPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
+    public partial class TacticChannelReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation AggregationField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NonHourlyReportAggregation AggregationField;
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportColumn[] ColumnsField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportColumn[] ColumnsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportFilter FilterField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportFilter FilterField;
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughCampaignReportScope ScopeField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation Aggregation {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NonHourlyReportAggregation Aggregation {
             get {
                 return this.AggregationField;
             }
@@ -1485,7 +1583,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportColumn[] Columns {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportColumn[] Columns {
             get {
                 return this.ColumnsField;
             }
@@ -1498,7 +1596,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignPerformanceReportFilter Filter {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportFilter Filter {
             get {
                 return this.FilterField;
             }
@@ -1511,7 +1609,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughCampaignReportScope Scope {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
             get {
                 return this.ScopeField;
             }
@@ -1545,6 +1643,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NegativeKeywordConflictReportColumn[] ColumnsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NegativeKeywordConflictReportFilter FilterField;
+        
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
@@ -1560,6 +1661,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NegativeKeywordConflictReportFilter Filter {
+            get {
+                return this.FilterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
             get {
@@ -1569,6 +1683,74 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.ScopeField, value) != true)) {
                     this.ScopeField = value;
                     this.RaisePropertyChanged("Scope");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class SearchCampaignChangeHistoryReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportColumn[] ColumnsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportFilter FilterField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
+        
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportColumn[] Columns {
+            get {
+                return this.ColumnsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
+                    this.ColumnsField = value;
+                    this.RaisePropertyChanged("Columns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SearchCampaignChangeHistoryReportFilter Filter {
+            get {
+                return this.FilterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
+            get {
+                return this.ScopeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScopeField, value) != true)) {
+                    this.ScopeField = value;
+                    this.RaisePropertyChanged("Scope");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -1803,6 +1985,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AudiencePerformanceReportColumn[] ColumnsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AudiencePerformanceReportFilter FilterField;
+        
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
@@ -1829,6 +2014,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
                     this.ColumnsField = value;
                     this.RaisePropertyChanged("Columns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AudiencePerformanceReportFilter Filter {
+            get {
+                return this.FilterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
                 }
             }
         }
@@ -2368,6 +2566,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CallDetailReportColumn[] ColumnsField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CallDetailReportFilter FilterField;
+        
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
@@ -2394,6 +2595,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
                     this.ColumnsField = value;
                     this.RaisePropertyChanged("Columns");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CallDetailReportFilter Filter {
+            get {
+                return this.FilterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
+                    this.FilterField = value;
+                    this.RaisePropertyChanged("Filter");
                 }
             }
         }
@@ -2427,18 +2641,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class AccountPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
+    public partial class ProductOfferPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation AggregationField;
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportColumn[] ColumnsField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportColumn[] ColumnsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportFilter FilterField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportFilter FilterField;
         
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountReportScope ScopeField;
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
         
         private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
         
@@ -2456,7 +2670,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportColumn[] Columns {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportColumn[] Columns {
             get {
                 return this.ColumnsField;
             }
@@ -2469,7 +2683,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountPerformanceReportFilter Filter {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportFilter Filter {
             get {
                 return this.FilterField;
             }
@@ -2482,7 +2696,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountReportScope Scope {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
             get {
                 return this.ScopeField;
             }
@@ -2674,172 +2888,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class TacticChannelReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NonHourlyReportAggregation AggregationField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportColumn[] ColumnsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportFilter FilterField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.NonHourlyReportAggregation Aggregation {
-            get {
-                return this.AggregationField;
-            }
-            set {
-                if ((this.AggregationField.Equals(value) != true)) {
-                    this.AggregationField = value;
-                    this.RaisePropertyChanged("Aggregation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportColumn[] Columns {
-            get {
-                return this.ColumnsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
-                    this.ColumnsField = value;
-                    this.RaisePropertyChanged("Columns");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.TacticChannelReportFilter Filter {
-            get {
-                return this.FilterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
-                    this.FilterField = value;
-                    this.RaisePropertyChanged("Filter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
-            get {
-                return this.ScopeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ScopeField, value) != true)) {
-                    this.ScopeField = value;
-                    this.RaisePropertyChanged("Scope");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime Time {
-            get {
-                return this.TimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
-                    this.TimeField = value;
-                    this.RaisePropertyChanged("Time");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportRequest", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class ProductOfferPerformanceReportRequest : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportRequest {
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation AggregationField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportColumn[] ColumnsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportFilter FilterField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope ScopeField;
-        
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime TimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportAggregation Aggregation {
-            get {
-                return this.AggregationField;
-            }
-            set {
-                if ((this.AggregationField.Equals(value) != true)) {
-                    this.AggregationField = value;
-                    this.RaisePropertyChanged("Aggregation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportColumn[] Columns {
-            get {
-                return this.ColumnsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColumnsField, value) != true)) {
-                    this.ColumnsField = value;
-                    this.RaisePropertyChanged("Columns");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ProductOfferPerformanceReportFilter Filter {
-            get {
-                return this.FilterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FilterField, value) != true)) {
-                    this.FilterField = value;
-                    this.RaisePropertyChanged("Filter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountThroughAdGroupReportScope Scope {
-            get {
-                return this.ScopeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ScopeField, value) != true)) {
-                    this.ScopeField = value;
-                    this.RaisePropertyChanged("Scope");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ReportTime Time {
-            get {
-                return this.TimeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TimeField, value) != true)) {
-                    this.TimeField = value;
-                    this.RaisePropertyChanged("Time");
-                }
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportFormat", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     public enum ReportFormat : int {
@@ -2867,21 +2915,24 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class SearchCampaignChangeHistoryReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AccountPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeTypeReportFilter> HowChangedField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeEntityReportFilter> ItemChangedField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2890,6 +2941,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
             }
         }
         
@@ -2907,27 +2971,27 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeTypeReportFilter> HowChanged {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOS {
             get {
-                return this.HowChangedField;
+                return this.DeviceOSField;
             }
             set {
-                if ((this.HowChangedField.Equals(value) != true)) {
-                    this.HowChangedField = value;
-                    this.RaisePropertyChanged("HowChanged");
+                if ((this.DeviceOSField.Equals(value) != true)) {
+                    this.DeviceOSField = value;
+                    this.RaisePropertyChanged("DeviceOS");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeEntityReportFilter> ItemChanged {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
             get {
-                return this.ItemChangedField;
+                return this.DeviceTypeField;
             }
             set {
-                if ((this.ItemChangedField.Equals(value) != true)) {
-                    this.ItemChangedField = value;
-                    this.RaisePropertyChanged("ItemChanged");
+                if ((this.DeviceTypeField.Equals(value) != true)) {
+                    this.DeviceTypeField = value;
+                    this.RaisePropertyChanged("DeviceType");
                 }
             }
         }
@@ -2944,21 +3008,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountThroughAdGroupReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class AccountThroughAdGroupReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class AccountReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long[] AccountIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupReportScope[] AdGroupsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] CampaignsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2979,32 +3037,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.AccountIdsField, value) != true)) {
                     this.AccountIdsField = value;
                     this.RaisePropertyChanged("AccountIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupReportScope[] AdGroups {
-            get {
-                return this.AdGroupsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdGroupsField, value) != true)) {
-                    this.AdGroupsField = value;
-                    this.RaisePropertyChanged("AdGroups");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] Campaigns {
-            get {
-                return this.CampaignsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CampaignsField, value) != true)) {
-                    this.CampaignsField = value;
-                    this.RaisePropertyChanged("Campaigns");
                 }
             }
         }
@@ -3097,62 +3129,214 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum SearchCampaignChangeHistoryReportColumn : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportAggregation", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum ReportAggregation : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DateTime = 0,
+        Summary = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountId = 1,
+        Hourly = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountName = 2,
+        Daily = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountNumber = 3,
+        Weekly = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ChangedBy = 4,
+        Monthly = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignName = 5,
+        Yearly = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignId = 6,
+        HourOfDay = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupName = 7,
+        DayOfWeek = 7,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum AccountPerformanceReportColumn : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupId = 8,
+        AccountName = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdTitle = 9,
+        AccountNumber = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdDescription = 10,
+        AccountId = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DisplayUrl = 11,
+        TimePeriod = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Keyword = 12,
+        CurrencyCode = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ItemChanged = 13,
+        AdDistribution = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AttributeChanged = 14,
+        Impressions = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HowChanged = 15,
+        Clicks = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OldValue = 16,
+        Ctr = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NewValue = 17,
+        AverageCpc = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Spend = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AveragePosition = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Conversions = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConversionRate = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPerConversion = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityClicks = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityClicksPercent = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityImpressions = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityImpressionsPercent = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityConversions = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityConversionRate = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpm = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeviceType = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeviceOS = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionSharePercent = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBudgetPercent = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToRankPercent = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBidPercent = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToLandingPageRelevancePercent = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToKeywordRelevancePercent = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneImpressions = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneCalls = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ManualCalls = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ClickCalls = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ptr = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneSpend = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpp = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TotalCostPhoneAndClicks = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Network = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TopVsOther = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidMatchType = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeliveredMatchType = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Assists = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExtendedCost = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Revenue = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReturnOnAdSpend = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPerAssist = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RevenuePerConversion = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RevenuePerAssist = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BounceRate = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TotalVisits = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AveragePagesPerVisit = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageDurationPerVisit = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 53,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum AccountStatusReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Active = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paused = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Inactive = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -3172,171 +3356,41 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum ChangeTypeReportFilter : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceOSReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum DeviceOSReportFilter : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Added = 1,
+        Other = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Deleted = 2,
+        Windows = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Changed = 4,
+        iOS = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Android = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BlackBerry = 16,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeEntityReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum ChangeEntityReportFilter : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum DeviceTypeReportFilter : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Account = 1,
+        Computer = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Campaign = 2,
+        SmartPhone = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroup = 4,
+        NonSmartPhone = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ad = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Keyword = 16,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdGroupReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class AdGroupReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private long AccountIdField;
-        
-        private long CampaignIdField;
-        
-        private long AdGroupIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long AccountId {
-            get {
-                return this.AccountIdField;
-            }
-            set {
-                if ((this.AccountIdField.Equals(value) != true)) {
-                    this.AccountIdField = value;
-                    this.RaisePropertyChanged("AccountId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long CampaignId {
-            get {
-                return this.CampaignIdField;
-            }
-            set {
-                if ((this.CampaignIdField.Equals(value) != true)) {
-                    this.CampaignIdField = value;
-                    this.RaisePropertyChanged("CampaignId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public long AdGroupId {
-            get {
-                return this.AdGroupIdField;
-            }
-            set {
-                if ((this.AdGroupIdField.Equals(value) != true)) {
-                    this.AdGroupIdField = value;
-                    this.RaisePropertyChanged("AdGroupId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class CampaignReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private long AccountIdField;
-        
-        private long CampaignIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long AccountId {
-            get {
-                return this.AccountIdField;
-            }
-            set {
-                if ((this.AccountIdField.Equals(value) != true)) {
-                    this.AccountIdField = value;
-                    this.RaisePropertyChanged("AccountId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long CampaignId {
-            get {
-                return this.CampaignIdField;
-            }
-            set {
-                if ((this.CampaignIdField.Equals(value) != true)) {
-                    this.CampaignIdField = value;
-                    this.RaisePropertyChanged("CampaignId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        Tablet = 8,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3456,6 +3510,477 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class CampaignPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
+            get {
+                return this.AdDistributionField;
+            }
+            set {
+                if ((this.AdDistributionField.Equals(value) != true)) {
+                    this.AdDistributionField = value;
+                    this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOS {
+            get {
+                return this.DeviceOSField;
+            }
+            set {
+                if ((this.DeviceOSField.Equals(value) != true)) {
+                    this.DeviceOSField = value;
+                    this.RaisePropertyChanged("DeviceOS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
+            get {
+                return this.DeviceTypeField;
+            }
+            set {
+                if ((this.DeviceTypeField.Equals(value) != true)) {
+                    this.DeviceTypeField = value;
+                    this.RaisePropertyChanged("DeviceType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountThroughCampaignReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class AccountThroughCampaignReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] AccountIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] CampaignsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] AccountIds {
+            get {
+                return this.AccountIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountIdsField, value) != true)) {
+                    this.AccountIdsField = value;
+                    this.RaisePropertyChanged("AccountIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] Campaigns {
+            get {
+                return this.CampaignsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CampaignsField, value) != true)) {
+                    this.CampaignsField = value;
+                    this.RaisePropertyChanged("Campaigns");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum CampaignPerformanceReportColumn : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountName = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountNumber = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountId = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimePeriod = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Status = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignName = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignId = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CurrencyCode = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdDistribution = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Impressions = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Clicks = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ctr = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpc = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Spend = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AveragePosition = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Conversions = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConversionRate = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPerConversion = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityClicks = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityClicksPercent = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityImpressions = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityImpressionsPercent = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityConversions = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityConversionRate = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpm = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeviceType = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeviceOS = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionSharePercent = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBudgetPercent = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToRankPercent = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        QualityScore = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordRelevance = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LandingPageRelevance = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LandingPageUserExperience = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HistoricQualityScore = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HistoricKeywordRelevance = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HistoricLandingPageRelevance = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HistoricLandingPageUserExperience = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBidPercent = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToLandingPageRelevancePercent = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToKeywordRelevancePercent = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneImpressions = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneCalls = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ManualCalls = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ClickCalls = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ptr = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PhoneSpend = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageCpp = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TotalCostPhoneAndClicks = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Network = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TopVsOther = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidMatchType = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DeliveredMatchType = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Assists = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExtendedCost = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Revenue = 55,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReturnOnAdSpend = 56,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPerAssist = 57,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RevenuePerConversion = 58,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RevenuePerAssist = 59,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BounceRate = 60,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TotalVisits = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AveragePagesPerVisit = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AverageDurationPerVisit = 63,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TrackingTemplate = 64,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomParameters = 65,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 66,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BudgetName = 67,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BudgetStatus = 68,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BudgetAssociationStatus = 69,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum CampaignStatusReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Submitted = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Cancelled = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Deleted = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paused = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BudgetPaused = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Active = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Suspended = 64,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class CampaignReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private long AccountIdField;
+        
+        private long CampaignIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long CampaignId {
+            get {
+                return this.CampaignIdField;
+            }
+            set {
+                if ((this.CampaignIdField.Equals(value) != true)) {
+                    this.CampaignIdField = value;
+                    this.RaisePropertyChanged("CampaignId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AdDynamicTextPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
     public partial class AdDynamicTextPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3464,13 +3989,25 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] LanguageCodeField;
@@ -3486,6 +4023,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -3494,6 +4044,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
                 }
             }
         }
@@ -3525,6 +4101,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] LanguageCode {
             get {
                 return this.LanguageCodeField;
@@ -3533,6 +4122,83 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.LanguageCodeField, value) != true)) {
                     this.LanguageCodeField = value;
                     this.RaisePropertyChanged("LanguageCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountThroughAdGroupReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class AccountThroughAdGroupReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] AccountIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupReportScope[] AdGroupsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] CampaignsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] AccountIds {
+            get {
+                return this.AccountIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountIdsField, value) != true)) {
+                    this.AccountIdsField = value;
+                    this.RaisePropertyChanged("AccountIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupReportScope[] AdGroups {
+            get {
+                return this.AdGroupsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdGroupsField, value) != true)) {
+                    this.AdGroupsField = value;
+                    this.RaisePropertyChanged("AdGroups");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] Campaigns {
+            get {
+                return this.CampaignsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CampaignsField, value) != true)) {
+                    this.CampaignsField = value;
+                    this.RaisePropertyChanged("Campaigns");
                 }
             }
         }
@@ -3657,6 +4323,90 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Language = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart1 = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart2 = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Path1 = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Path2 = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinalURL = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinalMobileURL = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinalAppURL = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdDescription = 40,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdGroupStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum AdGroupStatusReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Submitted = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Deleted = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Expired = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Draft = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paused = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Active = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum AdStatusReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Submitted = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Rejected = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Deleted = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pending = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Active = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Paused = 16,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -3690,24 +4440,98 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AppInstall = 256,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExpandedText = 1024,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum DeviceTypeReportFilter : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="KeywordStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum KeywordStatusReportFilter : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Computer = 1,
+        Active = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SmartPhone = 2,
+        Paused = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NonSmartPhone = 4,
+        Deleted = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdGroupReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class AdGroupReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Tablet = 8,
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private long AccountIdField;
+        
+        private long CampaignIdField;
+        
+        private long AdGroupIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long CampaignId {
+            get {
+                return this.CampaignIdField;
+            }
+            set {
+                if ((this.CampaignIdField.Equals(value) != true)) {
+                    this.CampaignIdField = value;
+                    this.RaisePropertyChanged("CampaignId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public long AdGroupId {
+            get {
+                return this.AdGroupIdField;
+            }
+            set {
+                if ((this.AdGroupIdField.Equals(value) != true)) {
+                    this.AdGroupIdField = value;
+                    this.RaisePropertyChanged("AdGroupId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3720,7 +4544,13 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
@@ -3745,6 +4575,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -3753,6 +4596,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -3817,35 +4673,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportAggregation", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum ReportAggregation : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Summary = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Hourly = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Daily = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Weekly = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Monthly = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Yearly = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HourOfDay = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DayOfWeek = 7,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4055,51 +4882,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CustomParameters = 67,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DeviceOSReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum DeviceOSReportFilter : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Other = 1,
+        AccountStatus = 68,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Windows = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        iOS = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Android = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BlackBerry = 16,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdGroupStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum AdGroupStatusReportFilter : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Submitted = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Deleted = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Expired = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Draft = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Paused = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Active = 1,
+        CampaignStatus = 69,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4112,10 +4900,22 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
@@ -4134,6 +4934,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -4147,6 +4960,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdType {
             get {
                 return this.AdTypeField;
@@ -4155,6 +4994,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdTypeField.Equals(value) != true)) {
                     this.AdTypeField = value;
                     this.RaisePropertyChanged("AdType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -4351,6 +5203,27 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FinalAppURL = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart1 = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart2 = 55,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Path1 = 56,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Path2 = 57,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4361,6 +5234,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ComponentTypeFilter> ComponentTypeField;
@@ -4375,6 +5260,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -4471,6 +5408,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ComponentCTR = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 21,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4540,13 +5489,25 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidMatchTypeReportFilter> BidMatchTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeliveredMatchTypeReportFilter> DeliveredMatchTypeField;
@@ -4556,6 +5517,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int[] KeywordRelevanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] KeywordsField;
@@ -4583,6 +5547,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -4591,6 +5568,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
                 }
             }
         }
@@ -4617,6 +5607,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.BidMatchTypeField.Equals(value) != true)) {
                     this.BidMatchTypeField = value;
                     this.RaisePropertyChanged("BidMatchType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyType {
+            get {
+                return this.BidStrategyTypeField;
+            }
+            set {
+                if ((this.BidStrategyTypeField.Equals(value) != true)) {
+                    this.BidStrategyTypeField = value;
+                    this.RaisePropertyChanged("BidStrategyType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -4656,6 +5672,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.KeywordRelevanceField, value) != true)) {
                     this.KeywordRelevanceField = value;
                     this.RaisePropertyChanged("KeywordRelevance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -4942,6 +5971,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FinalAppURL = 67,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidStrategyType = 68,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5023,6 +6055,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BidStrategyTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum BidStrategyTypeReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ManualCpc = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EnhancedCpc = 16,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
     [System.Runtime.Serialization.DataContractAttribute(Name="DeliveredMatchTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     public enum DeliveredMatchTypeReportFilter : int {
         
@@ -5060,7 +6104,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
@@ -5079,6 +6135,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -5087,6 +6156,45 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -5256,67 +6364,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FinalAppURL = 41,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountThroughCampaignReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class AccountThroughCampaignReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 42,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] AccountIdsField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 43,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] CampaignsField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 44,
         
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] AccountIds {
-            get {
-                return this.AccountIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountIdsField, value) != true)) {
-                    this.AccountIdsField = value;
-                    this.RaisePropertyChanged("AccountIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignReportScope[] Campaigns {
-            get {
-                return this.CampaignsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CampaignsField, value) != true)) {
-                    this.CampaignsField = value;
-                    this.RaisePropertyChanged("Campaigns");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 45,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5461,7 +6520,16 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] LanguageCodeField;
@@ -5477,6 +6545,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -5485,6 +6566,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -5560,6 +6667,27 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Language = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EstimatedImpressions = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EstimatedClicks = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EstimatedConversions = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EstimatedConversionRate = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 21,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5786,7 +6914,16 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] LanguageCodeField;
@@ -5805,6 +6942,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -5813,6 +6963,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -5964,6 +7140,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 38,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -5988,10 +7173,25 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeliveredMatchTypeReportFilter> DeliveredMatchTypeField;
@@ -6016,6 +7216,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -6029,6 +7242,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdTypeReportFilter> AdType {
             get {
                 return this.AdTypeField;
@@ -6037,6 +7276,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdTypeField.Equals(value) != true)) {
                     this.AdTypeField = value;
                     this.RaisePropertyChanged("AdType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyType {
+            get {
+                return this.BidStrategyTypeField;
+            }
+            set {
+                if ((this.BidStrategyTypeField.Equals(value) != true)) {
+                    this.BidStrategyTypeField = value;
+                    this.RaisePropertyChanged("BidStrategyType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -6211,6 +7476,21 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FinalAppURL = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidStrategyType = 39,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6221,6 +7501,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
@@ -6238,6 +7524,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private bool ExcludeZeroClicksField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] LanguageCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6250,6 +7539,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
             }
         }
         
@@ -6314,6 +7629,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.ExcludeZeroClicksField.Equals(value) != true)) {
                     this.ExcludeZeroClicksField = value;
                     this.RaisePropertyChanged("ExcludeZeroClicks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -6509,51 +7837,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 40,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum AdStatusReportFilter : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Submitted = 1,
+        AccountStatus = 41,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Rejected = 2,
+        AdGroupStatus = 42,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Deleted = 4,
+        KeywordStatus = 43,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Pending = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Active = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignStatusReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum CampaignStatusReportFilter : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Submitted = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Cancelled = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Deleted = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Paused = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BudgetPaused = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Active = 1,
+        CampaignType = 44,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6566,10 +7861,22 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] KeywordsField;
@@ -6581,6 +7888,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
             }
         }
         
@@ -6598,6 +7918,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
             get {
                 return this.DeviceTypeField;
@@ -6606,6 +7952,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.DeviceTypeField.Equals(value) != true)) {
                     this.DeviceTypeField = value;
                     this.RaisePropertyChanged("DeviceType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -6711,6 +8070,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DeviceType = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 28,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6723,7 +8094,16 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
@@ -6733,6 +8113,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long[] GoalIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -6745,6 +8128,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -6753,6 +8149,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -6792,6 +8214,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.GoalIdsField, value) != true)) {
                     this.GoalIdsField = value;
                     this.RaisePropertyChanged("GoalIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -6887,6 +8322,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DeviceOS = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 29,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6897,6 +8344,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long[] GoalIdsField;
@@ -6912,6 +8362,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public long[] GoalIds {
             get {
                 return this.GoalIdsField;
@@ -6920,51 +8383,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((object.ReferenceEquals(this.GoalIdsField, value) != true)) {
                     this.GoalIdsField = value;
                     this.RaisePropertyChanged("GoalIds");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountReportScope", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class AccountReportScope : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] AccountIdsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] AccountIds {
-            get {
-                return this.AccountIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountIdsField, value) != true)) {
-                    this.AccountIdsField = value;
-                    this.RaisePropertyChanged("AccountIds");
                 }
             }
         }
@@ -7030,28 +8448,43 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerConversion = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 16,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class CampaignPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TacticChannelReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> StatusField;
+        private long[] ChannelIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] TacticIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] ThirdPartyAdGroupIdsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long[] ThirdPartyCampaignIdsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -7064,53 +8497,105 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
             get {
-                return this.AdDistributionField;
+                return this.AccountStatusField;
             }
             set {
-                if ((this.AdDistributionField.Equals(value) != true)) {
-                    this.AdDistributionField = value;
-                    this.RaisePropertyChanged("AdDistribution");
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOS {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
             get {
-                return this.DeviceOSField;
+                return this.AdGroupStatusField;
             }
             set {
-                if ((this.DeviceOSField.Equals(value) != true)) {
-                    this.DeviceOSField = value;
-                    this.RaisePropertyChanged("DeviceOS");
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
             get {
-                return this.DeviceTypeField;
+                return this.CampaignStatusField;
             }
             set {
-                if ((this.DeviceTypeField.Equals(value) != true)) {
-                    this.DeviceTypeField = value;
-                    this.RaisePropertyChanged("DeviceType");
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> Status {
+        public long[] ChannelIds {
             get {
-                return this.StatusField;
+                return this.ChannelIdsField;
             }
             set {
-                if ((this.StatusField.Equals(value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
+                if ((object.ReferenceEquals(this.ChannelIdsField, value) != true)) {
+                    this.ChannelIdsField = value;
+                    this.RaisePropertyChanged("ChannelIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] TacticIds {
+            get {
+                return this.TacticIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TacticIdsField, value) != true)) {
+                    this.TacticIdsField = value;
+                    this.RaisePropertyChanged("TacticIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] ThirdPartyAdGroupIds {
+            get {
+                return this.ThirdPartyAdGroupIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThirdPartyAdGroupIdsField, value) != true)) {
+                    this.ThirdPartyAdGroupIdsField = value;
+                    this.RaisePropertyChanged("ThirdPartyAdGroupIds");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long[] ThirdPartyCampaignIds {
+            get {
+                return this.ThirdPartyCampaignIdsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ThirdPartyCampaignIdsField, value) != true)) {
+                    this.ThirdPartyCampaignIdsField = value;
+                    this.RaisePropertyChanged("ThirdPartyCampaignIds");
                 }
             }
         }
@@ -7126,8 +8611,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CampaignPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum CampaignPerformanceReportColumn : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum TacticChannelReportColumn : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AccountName = 0,
@@ -7142,190 +8627,178 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         TimePeriod = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Status = 4,
+        Tactic = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignName = 5,
+        Channel = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignId = 6,
+        ThirdPartyCampaign = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CurrencyCode = 7,
+        ThirdPartyAdGroup = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdDistribution = 8,
+        ThirdPartyTerm = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Impressions = 9,
+        CampaignName = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Clicks = 10,
+        CampaignId = 10,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ctr = 11,
+        AdGroupName = 11,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpc = 12,
+        AdGroupId = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 13,
+        Keyword = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePosition = 14,
+        KeywordId = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conversions = 15,
+        Goal = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConversionRate = 16,
+        Step1Count = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CostPerConversion = 17,
+        Step2Count = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityClicks = 18,
+        Step3Count = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityClicksPercent = 19,
+        Step4Count = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityImpressions = 20,
+        Step5Count = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityImpressionsPercent = 21,
+        Conversions = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityConversions = 22,
+        Assists = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityConversionRate = 23,
+        Spend = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpm = 24,
+        FunnelConversionRate = 24,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeviceType = 25,
+        Revenue = 25,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeviceOS = 26,
+        ReturnOnAdSpend = 26,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionSharePercent = 27,
+        AccountStatus = 27,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToBudgetPercent = 28,
+        CampaignStatus = 28,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToRankPercent = 29,
+        AdGroupStatus = 29,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        QualityScore = 30,
+        KeywordStatus = 30,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NegativeKeywordConflictReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class NegativeKeywordConflictReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KeywordRelevance = 31,
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LandingPageRelevance = 32,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LandingPageUserExperience = 33,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HistoricQualityScore = 34,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HistoricKeywordRelevance = 35,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HistoricLandingPageRelevance = 36,
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HistoricLandingPageUserExperience = 37,
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToBidPercent = 38,
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToLandingPageRelevancePercent = 39,
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
+            }
+        }
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToKeywordRelevancePercent = 40,
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
+                }
+            }
+        }
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneImpressions = 41,
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneCalls = 42,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManualCalls = 43,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ClickCalls = 44,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ptr = 45,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneSpend = 46,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpp = 47,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TotalCostPhoneAndClicks = 48,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Network = 49,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TopVsOther = 50,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BidMatchType = 51,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeliveredMatchType = 52,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assists = 53,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ExtendedCost = 54,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Revenue = 55,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReturnOnAdSpend = 56,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CostPerAssist = 57,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevenuePerConversion = 58,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevenuePerAssist = 59,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BounceRate = 60,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TotalVisits = 61,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePagesPerVisit = 62,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageDurationPerVisit = 63,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TrackingTemplate = 64,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CustomParameters = 65,
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -7379,6 +8852,190 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NegativeKeywordMatchType = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 19,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class SearchCampaignChangeHistoryReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeTypeReportFilter> HowChangedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeEntityReportFilter> ItemChangedField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
+            get {
+                return this.AdDistributionField;
+            }
+            set {
+                if ((this.AdDistributionField.Equals(value) != true)) {
+                    this.AdDistributionField = value;
+                    this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeTypeReportFilter> HowChanged {
+            get {
+                return this.HowChangedField;
+            }
+            set {
+                if ((this.HowChangedField.Equals(value) != true)) {
+                    this.HowChangedField = value;
+                    this.RaisePropertyChanged("HowChanged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ChangeEntityReportFilter> ItemChanged {
+            get {
+                return this.ItemChangedField;
+            }
+            set {
+                if ((this.ItemChangedField.Equals(value) != true)) {
+                    this.ItemChangedField = value;
+                    this.RaisePropertyChanged("ItemChanged");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SearchCampaignChangeHistoryReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum SearchCampaignChangeHistoryReportColumn : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DateTime = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountId = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountName = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountNumber = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ChangedBy = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignName = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignId = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupName = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupId = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdTitle = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdDescription = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DisplayUrl = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keyword = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ItemChanged = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AttributeChanged = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HowChanged = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OldValue = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NewValue = 17,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeTypeReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum ChangeTypeReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Added = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Deleted = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Changed = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeEntityReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum ChangeEntityReportFilter : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Account = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Campaign = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroup = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ad = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keyword = 16,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7389,6 +9046,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
@@ -7403,6 +9072,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -7553,6 +9274,24 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart1 = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TitlePart2 = 41,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7565,10 +9304,22 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -7577,6 +9328,45 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -7602,6 +9392,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.DeviceTypeField.Equals(value) != true)) {
                     this.DeviceTypeField = value;
                     this.RaisePropertyChanged("DeviceType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -7727,6 +9530,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 39,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7816,6 +9631,83 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         AdExtensionPropertyValue = 6,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AudiencePerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class AudiencePerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AudiencePerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     public enum AudiencePerformanceReportColumn : int {
@@ -7894,6 +9786,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerConversion = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 27,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7904,6 +9805,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
@@ -7918,6 +9831,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -8065,6 +10030,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 38,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8077,16 +10054,31 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidMatchTypeReportFilter> BidMatchTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeliveredMatchTypeReportFilter> DeliveredMatchTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] KeywordsField;
@@ -8105,6 +10097,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -8118,6 +10123,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidMatchTypeReportFilter> BidMatchType {
             get {
                 return this.BidMatchTypeField;
@@ -8126,6 +10144,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.BidMatchTypeField.Equals(value) != true)) {
                     this.BidMatchTypeField = value;
                     this.RaisePropertyChanged("BidMatchType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.BidStrategyTypeReportFilter> BidStrategyType {
+            get {
+                return this.BidStrategyTypeField;
+            }
+            set {
+                if ((this.BidStrategyTypeField.Equals(value) != true)) {
+                    this.BidStrategyTypeField = value;
+                    this.RaisePropertyChanged("BidStrategyType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -8152,6 +10196,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.DeviceTypeField.Equals(value) != true)) {
                     this.DeviceTypeField = value;
                     this.RaisePropertyChanged("DeviceType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -8309,6 +10366,21 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Network = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KeywordStatus = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BidStrategyType = 42,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8321,7 +10393,22 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] LanguageCodeField;
@@ -8337,6 +10424,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
             get {
                 return this.DeviceTypeField;
@@ -8345,6 +10484,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.DeviceTypeField.Equals(value) != true)) {
                     this.DeviceTypeField = value;
                     this.RaisePropertyChanged("DeviceType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.KeywordStatusReportFilter> KeywordStatus {
+            get {
+                return this.KeywordStatusField;
+            }
+            set {
+                if ((this.KeywordStatusField.Equals(value) != true)) {
+                    this.KeywordStatusField = value;
+                    this.RaisePropertyChanged("KeywordStatus");
                 }
             }
         }
@@ -8495,6 +10647,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 40,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8505,6 +10660,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
@@ -8519,6 +10686,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -8693,6 +10912,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerConversion = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SellerName = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OfferLanguage = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CountryOfSale = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 47,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8703,6 +10934,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
@@ -8717,6 +10960,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -8873,6 +11168,21 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OfferLanguage = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CountryOfSale = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TrackingTemplate = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomParameters = 42,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8883,6 +11193,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
@@ -8897,6 +11219,58 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
             }
         }
         
@@ -9050,6 +11424,92 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         RevenuePerAssist = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdStatus = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TrackingTemplate = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomParameters = 39,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CallDetailReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.SerializableAttribute()]
+    public partial class CallDetailReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -9100,25 +11560,43 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AdGroupId = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 17,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
-    public partial class AccountPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ProductOfferPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOSField;
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] LanguageCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -9131,27 +11609,53 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
             get {
-                return this.AdDistributionField;
+                return this.AccountStatusField;
             }
             set {
-                if ((this.AdDistributionField.Equals(value) != true)) {
-                    this.AdDistributionField = value;
-                    this.RaisePropertyChanged("AdDistribution");
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceOSReportFilter> DeviceOS {
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
             get {
-                return this.DeviceOSField;
+                return this.AdGroupStatusField;
             }
             set {
-                if ((this.DeviceOSField.Equals(value) != true)) {
-                    this.DeviceOSField = value;
-                    this.RaisePropertyChanged("DeviceOS");
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdStatusReportFilter> AdStatus {
+            get {
+                return this.AdStatusField;
+            }
+            set {
+                if ((this.AdStatusField.Equals(value) != true)) {
+                    this.AdStatusField = value;
+                    this.RaisePropertyChanged("AdStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -9169,6 +11673,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] LanguageCode {
+            get {
+                return this.LanguageCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LanguageCodeField, value) != true)) {
+                    this.LanguageCodeField = value;
+                    this.RaisePropertyChanged("LanguageCode");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -9180,167 +11697,74 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccountPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum AccountPerformanceReportColumn : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
+    public enum ProductOfferPerformanceReportColumn : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountName = 0,
+        TimePeriod = 0,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountNumber = 1,
+        AccountName = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountId = 2,
+        AccountNumber = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimePeriod = 3,
+        AdGroupName = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CurrencyCode = 4,
+        AdGroupId = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdDistribution = 5,
+        AdId = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Impressions = 6,
+        AdStatus = 6,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Clicks = 7,
+        CampaignName = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ctr = 8,
+        CurrencyCode = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpc = 9,
+        DeviceType = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 10,
+        Language = 10,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePosition = 11,
+        MerchantProductId = 11,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conversions = 12,
+        SellerName = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConversionRate = 13,
+        Impressions = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CostPerConversion = 14,
+        Clicks = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityClicks = 15,
+        Ctr = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityClicksPercent = 16,
+        AverageCpc = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityImpressions = 17,
+        Spend = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityImpressionsPercent = 18,
+        AverageCpm = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityConversions = 19,
+        AccountStatus = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        LowQualityConversionRate = 20,
+        CampaignStatus = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpm = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeviceType = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeviceOS = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionSharePercent = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToBudgetPercent = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToRankPercent = 26,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToBidPercent = 27,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToLandingPageRelevancePercent = 28,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ImpressionLostToKeywordRelevancePercent = 29,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneImpressions = 30,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneCalls = 31,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManualCalls = 32,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ClickCalls = 33,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ptr = 34,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PhoneSpend = 35,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpp = 36,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TotalCostPhoneAndClicks = 37,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Network = 38,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TopVsOther = 39,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BidMatchType = 40,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeliveredMatchType = 41,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assists = 42,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ExtendedCost = 43,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Revenue = 44,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReturnOnAdSpend = 45,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CostPerAssist = 46,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevenuePerConversion = 47,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RevenuePerAssist = 48,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BounceRate = 49,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TotalVisits = 50,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AveragePagesPerVisit = 51,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageDurationPerVisit = 52,
+        AdGroupStatus = 21,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9353,7 +11777,16 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistributionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] CountryCodeField;
@@ -9372,6 +11805,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AccountStatusReportFilter> AccountStatus {
+            get {
+                return this.AccountStatusField;
+            }
+            set {
+                if ((this.AccountStatusField.Equals(value) != true)) {
+                    this.AccountStatusField = value;
+                    this.RaisePropertyChanged("AccountStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdDistributionReportFilter> AdDistribution {
             get {
                 return this.AdDistributionField;
@@ -9380,6 +11826,32 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                 if ((this.AdDistributionField.Equals(value) != true)) {
                     this.AdDistributionField = value;
                     this.RaisePropertyChanged("AdDistribution");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdGroupStatusReportFilter> AdGroupStatus {
+            get {
+                return this.AdGroupStatusField;
+            }
+            set {
+                if ((this.AdGroupStatusField.Equals(value) != true)) {
+                    this.AdGroupStatusField = value;
+                    this.RaisePropertyChanged("AdGroupStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.CampaignStatusReportFilter> CampaignStatus {
+            get {
+                return this.CampaignStatusField;
+            }
+            set {
+                if ((this.CampaignStatusField.Equals(value) != true)) {
+                    this.CampaignStatusField = value;
+                    this.RaisePropertyChanged("CampaignStatus");
                 }
             }
         }
@@ -9549,6 +12021,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MostSpecificLocation = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountStatus = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStatus = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStatus = 44,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9766,312 +12247,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class TacticChannelReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] ChannelIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] TacticIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] ThirdPartyAdGroupIdsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long[] ThirdPartyCampaignIdsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] ChannelIds {
-            get {
-                return this.ChannelIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ChannelIdsField, value) != true)) {
-                    this.ChannelIdsField = value;
-                    this.RaisePropertyChanged("ChannelIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] TacticIds {
-            get {
-                return this.TacticIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TacticIdsField, value) != true)) {
-                    this.TacticIdsField = value;
-                    this.RaisePropertyChanged("TacticIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] ThirdPartyAdGroupIds {
-            get {
-                return this.ThirdPartyAdGroupIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThirdPartyAdGroupIdsField, value) != true)) {
-                    this.ThirdPartyAdGroupIdsField = value;
-                    this.RaisePropertyChanged("ThirdPartyAdGroupIds");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long[] ThirdPartyCampaignIds {
-            get {
-                return this.ThirdPartyCampaignIdsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThirdPartyCampaignIdsField, value) != true)) {
-                    this.ThirdPartyCampaignIdsField = value;
-                    this.RaisePropertyChanged("ThirdPartyCampaignIds");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TacticChannelReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum TacticChannelReportColumn : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountName = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountNumber = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountId = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimePeriod = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Tactic = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Channel = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThirdPartyCampaign = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThirdPartyAdGroup = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThirdPartyTerm = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignName = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignId = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupName = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupId = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Keyword = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KeywordId = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Goal = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Step1Count = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Step2Count = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Step3Count = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Step4Count = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Step5Count = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Conversions = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Assists = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FunnelConversionRate = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Revenue = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReturnOnAdSpend = 26,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportFilter", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    [System.SerializableAttribute()]
-    public partial class ProductOfferPerformanceReportFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] LanguageCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.DeviceTypeReportFilter> DeviceType {
-            get {
-                return this.DeviceTypeField;
-            }
-            set {
-                if ((this.DeviceTypeField.Equals(value) != true)) {
-                    this.DeviceTypeField = value;
-                    this.RaisePropertyChanged("DeviceType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] LanguageCode {
-            get {
-                return this.LanguageCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LanguageCodeField, value) != true)) {
-                    this.LanguageCodeField = value;
-                    this.RaisePropertyChanged("LanguageCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductOfferPerformanceReportColumn", Namespace="https://bingads.microsoft.com/Reporting/v9")]
-    public enum ProductOfferPerformanceReportColumn : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimePeriod = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountName = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AccountNumber = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupName = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupId = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdId = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdStatus = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignName = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CurrencyCode = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeviceType = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Language = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MerchantProductId = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SellerName = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Impressions = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Clicks = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Ctr = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpc = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Spend = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AverageCpm = 18,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationFault", Namespace="https://adapi.microsoft.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiFaultDetail))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApiFaultDetail))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiFaultDetail))]
     public partial class ApplicationFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -10115,29 +12294,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApplicationFault {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiError[] ErrorsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiError[] Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApiFaultDetail", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
     public partial class ApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApplicationFault {
@@ -10171,6 +12327,122 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
                     this.OperationErrorsField = value;
                     this.RaisePropertyChanged("OperationErrors");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApplicationFault {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiError[] ErrorsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiError[] Errors {
+            get {
+                return this.ErrorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
+                    this.ErrorsField = value;
+                    this.RaisePropertyChanged("Errors");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Detail {
+            get {
+                return this.DetailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
+                    this.DetailField = value;
+                    this.RaisePropertyChanged("Detail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -10379,99 +12651,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DetailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Detail {
-            get {
-                return this.DetailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
-                    this.DetailField = value;
-                    this.RaisePropertyChanged("Detail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorCode {
-            get {
-                return this.ErrorCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
-                    this.ErrorCodeField = value;
-                    this.RaisePropertyChanged("ErrorCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ReportRequestStatus", Namespace="https://bingads.microsoft.com/Reporting/v9")]
     [System.SerializableAttribute()]
     public partial class ReportRequestStatus : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -10551,10 +12730,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="SubmitGenerateReport", ReplyAction="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReport" +
             "Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApiFaultDetail), Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReport" +
-            "ApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReport" +
             "AdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.ApiFaultDetail), Action="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReport" +
+            "ApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SubmitGenerateReportResponse SubmitGenerateReport(MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SubmitGenerateReportRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="SubmitGenerateReport", ReplyAction="https://bingads.microsoft.com/Reporting/v9/IReportingService/SubmitGenerateReport" +

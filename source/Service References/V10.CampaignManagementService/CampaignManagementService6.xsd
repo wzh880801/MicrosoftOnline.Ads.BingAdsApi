@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/CampaignManagementService.svc?xsd=xsd1" namespace="https://bingads.microsoft.com/CampaignManagement/v10" />
   <xs:complexType name="ArrayOfAppUrl">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AppUrl" nillable="true" type="tns:AppUrl" />
@@ -32,6 +33,69 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CustomParameter" nillable="true" type="tns:CustomParameter" />
+  <xs:complexType name="BiddingScheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BiddingScheme" nillable="true" type="tns:BiddingScheme" />
+  <xs:complexType name="MaxClicksBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence>
+          <xs:element xmlns:q1="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="MaxCpc" nillable="true" type="q1:Bid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaxClicksBiddingScheme" nillable="true" type="tns:MaxClicksBiddingScheme" />
+  <xs:complexType name="MaxConversionsBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence>
+          <xs:element xmlns:q2="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="MaxCpc" nillable="true" type="q2:Bid" />
+          <xs:element xmlns:q3="https://bingads.microsoft.com/CampaignManagement/v10" name="StartingBid" nillable="true" type="q3:Bid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MaxConversionsBiddingScheme" nillable="true" type="tns:MaxConversionsBiddingScheme" />
+  <xs:complexType name="TargetCpaBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence>
+          <xs:element xmlns:q4="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="MaxCpc" nillable="true" type="q4:Bid" />
+          <xs:element xmlns:q5="https://bingads.microsoft.com/CampaignManagement/v10" name="StartingBid" nillable="true" type="q5:Bid" />
+          <xs:element name="TargetCpa" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TargetCpaBiddingScheme" nillable="true" type="tns:TargetCpaBiddingScheme" />
+  <xs:complexType name="ManualCpcBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ManualCpcBiddingScheme" nillable="true" type="tns:ManualCpcBiddingScheme" />
+  <xs:complexType name="EnhancedCpcBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EnhancedCpcBiddingScheme" nillable="true" type="tns:EnhancedCpcBiddingScheme" />
+  <xs:complexType name="InheritFromParentBiddingScheme">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BiddingScheme">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InheritFromParentBiddingScheme" nillable="true" type="tns:InheritFromParentBiddingScheme" />
   <xs:complexType name="ArrayOfEntityIdToParentIdAssociation">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityIdToParentIdAssociation" nillable="true" type="tns:EntityIdToParentIdAssociation" />
@@ -45,4 +109,125 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EntityIdToParentIdAssociation" nillable="true" type="tns:EntityIdToParentIdAssociation" />
+  <xs:complexType name="Webpage">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="https://bingads.microsoft.com/CampaignManagement/v10" base="q6:Criterion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Parameter" nillable="true" type="tns:WebpageParameter" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Webpage" nillable="true" type="tns:Webpage" />
+  <xs:complexType name="WebpageParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Conditions" nillable="true" type="tns:ArrayOfWebpageCondition" />
+      <xs:element minOccurs="0" name="CriterionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebpageParameter" nillable="true" type="tns:WebpageParameter" />
+  <xs:complexType name="ArrayOfWebpageCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebpageCondition" nillable="true" type="tns:WebpageCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebpageCondition" nillable="true" type="tns:ArrayOfWebpageCondition" />
+  <xs:complexType name="WebpageCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Argument" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="Operand" type="q7:WebpageConditionOperand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebpageCondition" nillable="true" type="tns:WebpageCondition" />
+  <xs:complexType name="RemarketingRule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarketingRule" nillable="true" type="tns:RemarketingRule" />
+  <xs:complexType name="PageVisitorsRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RemarketingRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RuleItemGroups" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PageVisitorsRule" nillable="true" type="tns:PageVisitorsRule" />
+  <xs:complexType name="ArrayOfRuleItemGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RuleItemGroup" nillable="true" type="tns:RuleItemGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRuleItemGroup" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+  <xs:complexType name="RuleItemGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfRuleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleItemGroup" nillable="true" type="tns:RuleItemGroup" />
+  <xs:complexType name="ArrayOfRuleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RuleItem" nillable="true" type="tns:RuleItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRuleItem" nillable="true" type="tns:ArrayOfRuleItem" />
+  <xs:complexType name="RuleItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RuleItem" nillable="true" type="tns:RuleItem" />
+  <xs:complexType name="StringRuleItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RuleItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Operand" nillable="true" type="xs:string" />
+          <xs:element xmlns:q8="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="Operator" type="q8:StringOperator" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StringRuleItem" nillable="true" type="tns:StringRuleItem" />
+  <xs:complexType name="PageVisitorsWhoVisitedAnotherPageRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RemarketingRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnotherRuleItemGroups" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+          <xs:element minOccurs="0" name="RuleItemGroups" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PageVisitorsWhoVisitedAnotherPageRule" nillable="true" type="tns:PageVisitorsWhoVisitedAnotherPageRule" />
+  <xs:complexType name="PageVisitorsWhoDidNotVisitAnotherPageRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RemarketingRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExcludeRuleItemGroups" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+          <xs:element minOccurs="0" name="IncludeRuleItemGroups" nillable="true" type="tns:ArrayOfRuleItemGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PageVisitorsWhoDidNotVisitAnotherPageRule" nillable="true" type="tns:PageVisitorsWhoDidNotVisitAnotherPageRule" />
+  <xs:complexType name="CustomEventsRule">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RemarketingRule">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element xmlns:q9="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="ActionOperator" type="q9:StringOperator" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element xmlns:q10="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="CategoryOperator" type="q10:StringOperator" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="LabelOperator" type="q11:StringOperator" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:decimal" />
+          <xs:element xmlns:q12="https://bingads.microsoft.com/CampaignManagement/v10" minOccurs="0" name="ValueOperator" type="q12:NumberOperator" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomEventsRule" nillable="true" type="tns:CustomEventsRule" />
 </xs:schema>

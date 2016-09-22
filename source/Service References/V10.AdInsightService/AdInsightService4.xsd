@@ -320,4 +320,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetDomainCategoriesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDomainCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Categories" nillable="true" type="q56:ArrayOfDomainCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

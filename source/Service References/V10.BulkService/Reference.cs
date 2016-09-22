@@ -137,10 +137,70 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         CampaignAppAdExtensions = 33554432,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AdGroupProductPartitions = 67108864,
+        ReviewAdExtensions = 67108864,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CampaignProductScopes = 134217728,
+        AdGroupProductPartitions = 134217728,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignProductScopes = 268435456,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignReviewAdExtensions = 536870912,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupReviewAdExtensions = 1073741824,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CalloutAdExtensions = 2147483648,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignCalloutAdExtensions = 4294967296,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupCalloutAdExtensions = 8589934592,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Sitelink2AdExtensions = 17179869184,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignSitelink2AdExtensions = 34359738368,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupSitelink2AdExtensions = 68719476736,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        StructuredSnippetAdExtensions = 137438953472,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStructuredSnippetAdExtensions = 274877906944,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStructuredSnippetAdExtensions = 549755813888,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemarketingLists = 1099511627776,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupRemarketingListAssociations = 2199023255552,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Budgets = 4398046511104,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TextAds = 8796093022208,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductAds = 17592186044416,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AppInstallAds = 35184372088832,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExpandedTextAds = 70368744177664,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DynamicSearchAds = 140737488355328,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -339,8 +399,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationFault", Namespace="https://adapi.microsoft.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail))]
     public partial class ApplicationFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -384,29 +444,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApplicationFault {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiError[] ErrorsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiError[] Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApiFaultDetail", Namespace="https://bingads.microsoft.com/CampaignManagement/v10")]
     [System.SerializableAttribute()]
     public partial class ApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApplicationFault {
@@ -440,6 +477,122 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
                     this.OperationErrorsField = value;
                     this.RaisePropertyChanged("OperationErrors");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApplicationFault {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiError[] ErrorsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiError[] Errors {
+            get {
+                return this.ErrorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
+                    this.ErrorsField = value;
+                    this.RaisePropertyChanged("Errors");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Detail {
+            get {
+                return this.DetailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
+                    this.DetailField = value;
+                    this.RaisePropertyChanged("Detail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -697,99 +850,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DetailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Detail {
-            get {
-                return this.DetailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
-                    this.DetailField = value;
-                    this.RaisePropertyChanged("Detail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorCode {
-            get {
-                return this.ErrorCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
-                    this.ErrorCodeField = value;
-                    this.RaisePropertyChanged("ErrorCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EditorialError", Namespace="https://bingads.microsoft.com/CampaignManagement/v10")]
     [System.SerializableAttribute()]
     public partial class EditorialError : MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BatchError {
@@ -953,10 +1013,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByAccountIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByAccountIdsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
-            "nsByAccountIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByAccountIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
+            "nsByAccountIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByAccountIdsResponse DownloadCampaignsByAccountIds(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByAccountIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByAccountIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
@@ -965,10 +1025,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByCampaignIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByCampaignIdsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
-            "nsByCampaignIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByCampaignIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
+            "nsByCampaignIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByCampaignIdsResponse DownloadCampaignsByCampaignIds(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByCampaignIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByCampaignIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +

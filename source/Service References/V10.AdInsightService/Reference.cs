@@ -977,8 +977,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationFault", Namespace="https://adapi.microsoft.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail))]
     public partial class ApplicationFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -1022,29 +1022,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApplicationFault {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiError[] ErrorsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiError[] Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApiFaultDetail", Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
     [System.SerializableAttribute()]
     public partial class ApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApplicationFault {
@@ -1078,6 +1055,122 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
                     this.OperationErrorsField = value;
                     this.RaisePropertyChanged("OperationErrors");
                 }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApplicationFault {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiError[] ErrorsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiError[] Errors {
+            get {
+                return this.ErrorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
+                    this.ErrorsField = value;
+                    this.RaisePropertyChanged("Errors");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
+    [System.SerializableAttribute()]
+    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ErrorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Detail {
+            get {
+                return this.DetailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
+                    this.DetailField = value;
+                    this.RaisePropertyChanged("Detail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -1244,99 +1337,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
                 if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
                     this.DetailsField = value;
                     this.RaisePropertyChanged("Details");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorCode {
-            get {
-                return this.ErrorCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
-                    this.ErrorCodeField = value;
-                    this.RaisePropertyChanged("ErrorCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiError", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DetailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Detail {
-            get {
-                return this.DetailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DetailField, value) != true)) {
-                    this.DetailField = value;
-                    this.RaisePropertyChanged("Detail");
                 }
             }
         }
@@ -4852,16 +4852,94 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DomainCategory", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Ap" +
+        "i.DataContract.Entity")]
+    [System.SerializableAttribute()]
+    public partial class DomainCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double BidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CoverageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Bid {
+            get {
+                return this.BidField;
+            }
+            set {
+                if ((this.BidField.Equals(value) != true)) {
+                    this.BidField = value;
+                    this.RaisePropertyChanged("Bid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Coverage {
+            get {
+                return this.CoverageField;
+            }
+            set {
+                if ((this.CoverageField.Equals(value) != true)) {
+                    this.CoverageField = value;
+                    this.RaisePropertyChanged("Coverage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service", ConfigurationName="V10.AdInsightService.IAdInsightService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
     public interface IAdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBidOpportunities", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesR" +
             "esponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesA" +
-            "piFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesA" +
             "dApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesA" +
+            "piFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBidOpportunitiesResponse GetBidOpportunities(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBidOpportunitiesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBidOpportunities", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesR" +
@@ -4870,10 +4948,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBudgetOpportunities", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportuniti" +
             "esResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportuniti" +
-            "esApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportuniti" +
             "esAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportuniti" +
+            "esApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBudgetOpportunitiesResponse GetBudgetOpportunities(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBudgetOpportunitiesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBudgetOpportunities", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportuniti" +
@@ -4906,10 +4984,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetEstimatedPositionByKeywordIds", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPosition" +
             "ByKeywordIdsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPosition" +
-            "ByKeywordIdsApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPosition" +
             "ByKeywordIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPosition" +
+            "ByKeywordIdsApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedPositionByKeywordIdsResponse GetEstimatedPositionByKeywordIds(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedPositionByKeywordIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetEstimatedPositionByKeywordIds", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPosition" +
@@ -4978,10 +5056,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetHistoricalSearchCount", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchC" +
             "ountResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchC" +
-            "ountApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchC" +
             "ountAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchC" +
+            "ountApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetHistoricalSearchCountResponse GetHistoricalSearchCount(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetHistoricalSearchCountRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetHistoricalSearchCount", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchC" +
@@ -4990,10 +5068,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetKeywordCategories", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategories" +
             "Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategories" +
-            "ApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategories" +
             "AdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategories" +
+            "ApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordCategoriesResponse GetKeywordCategories(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordCategoriesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetKeywordCategories", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategories" +
@@ -5002,10 +5080,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetKeywordDemographics", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographi" +
             "csResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographi" +
-            "csApiFaultDetailFault", Name="ApiFaultDetail")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographi" +
             "csAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographi" +
+            "csApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordDemographicsResponse GetKeywordDemographics(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordDemographicsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetKeywordDemographics", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographi" +
@@ -5059,6 +5137,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         [System.ServiceModel.OperationContractAttribute(Action="GetAuctionInsightData", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetAuctionInsightDat" +
             "aResponse")]
         System.Threading.Tasks.Task<MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetAuctionInsightDataResponse> GetAuctionInsightDataAsync(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetAuctionInsightDataRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="GetDomainCategories", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesR" +
+            "esponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.AdApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesA" +
+            "dApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.ApiFaultDetail), Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesA" +
+            "piFaultDetailFault", Name="ApiFaultDetail")]
+        MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesResponse GetDomainCategories(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="GetDomainCategories", ReplyAction="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesResponse> GetDomainCategoriesAsync(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6397,6 +6487,78 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetDomainCategoriesRequest", WrapperNamespace="Microsoft.Advertiser.AdInsight.Api.Service", IsWrapped=true)]
+    public partial class GetDomainCategoriesRequest {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string ApplicationToken;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string AuthenticationToken;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string CustomerAccountId;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string CustomerId;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string DeveloperToken;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string Password;
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string UserName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service", Order=0)]
+        public string CategoryName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service", Order=1)]
+        public string DomainName;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service", Order=2)]
+        public string Language;
+        
+        public GetDomainCategoriesRequest() {
+        }
+        
+        public GetDomainCategoriesRequest(string ApplicationToken, string AuthenticationToken, string CustomerAccountId, string CustomerId, string DeveloperToken, string Password, string UserName, string CategoryName, string DomainName, string Language) {
+            this.ApplicationToken = ApplicationToken;
+            this.AuthenticationToken = AuthenticationToken;
+            this.CustomerAccountId = CustomerAccountId;
+            this.CustomerId = CustomerId;
+            this.DeveloperToken = DeveloperToken;
+            this.Password = Password;
+            this.UserName = UserName;
+            this.CategoryName = CategoryName;
+            this.DomainName = DomainName;
+            this.Language = Language;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetDomainCategoriesResponse", WrapperNamespace="Microsoft.Advertiser.AdInsight.Api.Service", IsWrapped=true)]
+    public partial class GetDomainCategoriesResponse {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service")]
+        public string TrackingId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="Microsoft.Advertiser.AdInsight.Api.Service", Order=0)]
+        public MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.DomainCategory[] Categories;
+        
+        public GetDomainCategoriesResponse() {
+        }
+        
+        public GetDomainCategoriesResponse(string TrackingId, MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.DomainCategory[] Categories) {
+            this.TrackingId = TrackingId;
+            this.Categories = Categories;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdInsightServiceChannel : MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.IAdInsightService, System.ServiceModel.IClientChannel {
     }
@@ -6558,6 +6720,14 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService {
         
         public System.Threading.Tasks.Task<MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetAuctionInsightDataResponse> GetAuctionInsightDataAsync(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetAuctionInsightDataRequest request) {
             return base.Channel.GetAuctionInsightDataAsync(request);
+        }
+        
+        public MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesResponse GetDomainCategories(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesRequest request) {
+            return base.Channel.GetDomainCategories(request);
+        }
+        
+        public System.Threading.Tasks.Task<MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesResponse> GetDomainCategoriesAsync(MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesRequest request) {
+            return base.Channel.GetDomainCategoriesAsync(request);
         }
     }
 }

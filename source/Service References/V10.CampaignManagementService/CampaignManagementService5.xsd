@@ -6,6 +6,19 @@
   <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/CampaignManagementService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
   <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/CampaignManagementService.svc?xsd=xsd6" namespace="https://adapi.microsoft.com" />
   <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/CampaignManagementService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TextAd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ad">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
+          <xs:element name="DisplayUrl" nillable="true" type="xs:string" />
+          <xs:element name="Text" nillable="true" type="xs:string" />
+          <xs:element name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextAd" nillable="true" type="tns:TextAd" />
   <xs:complexType name="Ad">
     <xs:sequence>
       <xs:element minOccurs="0" name="DevicePreference" nillable="true" type="xs:long" />
@@ -46,22 +59,11 @@
       <xs:enumeration value="Image" />
       <xs:enumeration value="Product" />
       <xs:enumeration value="AppInstall" />
+      <xs:enumeration value="ExpandedText" />
+      <xs:enumeration value="DynamicSearch" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AdType" nillable="true" type="tns:AdType" />
-  <xs:complexType name="TextAd">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Ad">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
-          <xs:element name="DisplayUrl" nillable="true" type="xs:string" />
-          <xs:element name="Text" nillable="true" type="xs:string" />
-          <xs:element name="Title" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="TextAd" nillable="true" type="tns:TextAd" />
   <xs:complexType name="ProductAd">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Ad">
@@ -72,6 +74,46 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ProductAd" nillable="true" type="tns:ProductAd" />
+  <xs:complexType name="AppInstallAd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ad">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AppStoreId" nillable="true" type="xs:string" />
+          <xs:element name="Text" nillable="true" type="xs:string" />
+          <xs:element name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppInstallAd" nillable="true" type="tns:AppInstallAd" />
+  <xs:complexType name="ExpandedTextAd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ad">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path2" nillable="true" type="xs:string" />
+          <xs:element name="Text" nillable="true" type="xs:string" />
+          <xs:element name="TitlePart1" nillable="true" type="xs:string" />
+          <xs:element name="TitlePart2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExpandedTextAd" nillable="true" type="tns:ExpandedTextAd" />
+  <xs:complexType name="DynamicSearchAd">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ad">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Path1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path2" nillable="true" type="xs:string" />
+          <xs:element name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicSearchAd" nillable="true" type="tns:DynamicSearchAd" />
   <xs:element name="AddCampaignsRequest">
     <xs:complexType>
       <xs:sequence>
@@ -88,11 +130,18 @@
   <xs:element name="ArrayOfCampaign" nillable="true" type="tns:ArrayOfCampaign" />
   <xs:complexType name="Campaign">
     <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="BiddingScheme" nillable="true" type="q6:BiddingScheme">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="BudgetType" nillable="true" type="tns:BudgetLimitType" />
       <xs:element minOccurs="0" name="DailyBudget" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="DaylightSaving" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
-      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q6:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q7:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="MonthlyBudget" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
@@ -100,12 +149,25 @@
       <xs:element minOccurs="0" name="Status" nillable="true" type="tns:CampaignStatus" />
       <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q7:CustomParameters" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q8:CustomParameters" />
       <xs:element minOccurs="0" name="CampaignType" nillable="true" type="tns:CampaignType" />
       <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:ArrayOfSetting" />
+      <xs:element minOccurs="0" name="BudgetId" nillable="true" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Campaign" nillable="true" type="tns:Campaign" />
+  <xs:complexType name="Bid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bid" nillable="true" type="tns:Bid" />
   <xs:simpleType name="BudgetLimitType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="MonthlyBudgetSpendUntilDepleted" />
@@ -131,6 +193,7 @@
         <xs:restriction base="xs:string">
           <xs:enumeration value="SearchAndContent" />
           <xs:enumeration value="Shopping" />
+          <xs:enumeration value="DynamicSearchAds" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
@@ -160,6 +223,17 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ShoppingSetting" nillable="true" type="tns:ShoppingSetting" />
+  <xs:complexType name="DynamicSearchAdsSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Setting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DynamicSearchAdsSetting" nillable="true" type="tns:DynamicSearchAdsSetting" />
   <xs:element name="ApplicationToken" nillable="true" type="xs:string" />
   <xs:element name="AuthenticationToken" nillable="true" type="xs:string" />
   <xs:element name="CustomerAccountId" nillable="true" type="xs:string" />
@@ -170,7 +244,7 @@
   <xs:element name="AddCampaignsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CampaignIds" nillable="true" type="q8:ArrayOfNullableOflong" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CampaignIds" nillable="true" type="q9:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
@@ -187,7 +261,7 @@
       <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FieldPath" nillable="true" type="xs:string" />
-      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q9:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q10:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Index" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
@@ -211,7 +285,7 @@
   <xs:element name="TrackingId" nillable="true" type="xs:string" />
   <xs:complexType name="ApiFaultDetail">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q10="https://adapi.microsoft.com" base="q10:ApplicationFault">
+      <xs:extension xmlns:q11="https://adapi.microsoft.com" base="q11:ApplicationFault">
         <xs:sequence>
           <xs:element minOccurs="0" name="BatchErrors" nillable="true" type="tns:ArrayOfBatchError" />
           <xs:element minOccurs="0" name="OperationErrors" nillable="true" type="tns:ArrayOfOperationError" />
@@ -240,9 +314,21 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
         <xs:element minOccurs="0" name="CampaignType" type="tns:CampaignType" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:CampaignAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:simpleType name="CampaignAdditionalField">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BiddingScheme" />
+          <xs:enumeration value="BudgetId" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="CampaignAdditionalField" nillable="true" type="tns:CampaignAdditionalField" />
   <xs:element name="GetCampaignsByAccountIdResponse">
     <xs:complexType>
       <xs:sequence>
@@ -254,8 +340,9 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q11:ArrayOflong" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q12:ArrayOflong" />
         <xs:element minOccurs="0" name="CampaignType" type="tns:CampaignType" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:CampaignAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -271,7 +358,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q12:ArrayOflong" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q13:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -301,7 +388,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q13:ArrayOflong" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q14:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -322,7 +409,7 @@
   <xs:complexType name="CampaignNegativeSites">
     <xs:sequence>
       <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
-      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NegativeSites" nillable="true" type="q14:ArrayOfstring" />
+      <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NegativeSites" nillable="true" type="q15:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CampaignNegativeSites" nillable="true" type="tns:CampaignNegativeSites" />
@@ -355,6 +442,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetBSCCountriesRequest">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBSCCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CountryCodes" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddAdGroupsRequest">
     <xs:complexType>
       <xs:sequence>
@@ -374,21 +473,35 @@
       <xs:element minOccurs="0" name="AdDistribution" nillable="true" type="tns:AdDistribution" />
       <xs:element minOccurs="0" name="AdRotation" nillable="true" type="tns:AdRotation" />
       <xs:element minOccurs="0" name="BiddingModel" nillable="true" type="tns:BiddingModel" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="BiddingScheme" nillable="true" type="q17:BiddingScheme">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="ContentMatchBid" nillable="true" type="tns:Bid" />
       <xs:element minOccurs="0" name="EndDate" nillable="true" type="tns:Date" />
-      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q15:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q18:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NativeBidAdjustment" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Network" nillable="true" type="tns:Network" />
       <xs:element minOccurs="0" name="PricingModel" nillable="true" type="tns:PricingModel" />
+      <xs:element minOccurs="0" name="RemarketingTargetingSetting" nillable="true" type="tns:RemarketingTargetingSetting">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="SearchBid" nillable="true" type="tns:Bid" />
       <xs:element minOccurs="0" name="Settings" nillable="true" type="tns:ArrayOfSetting" />
       <xs:element minOccurs="0" name="StartDate" nillable="true" type="tns:Date" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="tns:AdGroupStatus" />
       <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q16:CustomParameters" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q19:CustomParameters" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdGroup" nillable="true" type="tns:AdGroup" />
@@ -425,12 +538,6 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="BiddingModel" nillable="true" type="tns:BiddingModel" />
-  <xs:complexType name="Bid">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Bid" nillable="true" type="tns:Bid" />
   <xs:complexType name="Date">
     <xs:sequence>
       <xs:element name="Day" type="xs:int" />
@@ -454,6 +561,13 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="PricingModel" nillable="true" type="tns:PricingModel" />
+  <xs:simpleType name="RemarketingTargetingSetting">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BidOnly" />
+      <xs:enumeration value="TargetAndBid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RemarketingTargetingSetting" nillable="true" type="tns:RemarketingTargetingSetting" />
   <xs:simpleType name="AdGroupStatus">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Active" />
@@ -466,7 +580,7 @@
   <xs:element name="AddAdGroupsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupIds" nillable="true" type="q17:ArrayOfNullableOflong" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupIds" nillable="true" type="q20:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
@@ -475,7 +589,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
-        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q18:ArrayOflong" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q21:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -490,10 +604,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
-        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q19:ArrayOflong" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q22:ArrayOflong" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:AdGroupAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:simpleType name="AdGroupAdditionalField">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BiddingScheme" />
+          <xs:enumeration value="RemarketingTargetingSetting" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AdGroupAdditionalField" nillable="true" type="tns:AdGroupAdditionalField" />
   <xs:element name="GetAdGroupsByIdsResponse">
     <xs:complexType>
       <xs:sequence>
@@ -506,6 +632,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:AdGroupAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -536,7 +663,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q20:ArrayOflong" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q23:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -557,7 +684,7 @@
   <xs:complexType name="AdGroupNegativeSites">
     <xs:sequence>
       <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-      <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NegativeSites" nillable="true" type="q21:ArrayOfstring" />
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NegativeSites" nillable="true" type="q24:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AdGroupNegativeSites" nillable="true" type="tns:AdGroupNegativeSites" />
@@ -579,7 +706,7 @@
   <xs:element name="DeleteTargetsFromLibraryRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q22:ArrayOflong" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q25:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -683,7 +810,7 @@
       <xs:element minOccurs="0" name="Age" nillable="true" type="tns:AgeTarget" />
       <xs:element minOccurs="0" name="DayTime" nillable="true" type="tns:DayTimeTarget" />
       <xs:element minOccurs="0" name="DeviceOS" nillable="true" type="tns:DeviceOSTarget" />
-      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q23:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q26:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Gender" nillable="true" type="tns:GenderTarget" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="IsLibraryTarget" nillable="true" type="xs:boolean" />
@@ -786,7 +913,7 @@
     <xs:sequence>
       <xs:element name="BidAdjustment" type="xs:int" />
       <xs:element name="DeviceName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="OSNames" nillable="true" type="q24:ArrayOfstring" />
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="OSNames" nillable="true" type="q27:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DeviceOSTargetBid" nillable="true" type="tns:DeviceOSTargetBid" />
@@ -981,7 +1108,7 @@
   <xs:element name="AddTargetsToLibraryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q25:ArrayOflong" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q28:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1000,7 +1127,7 @@
   <xs:element name="GetTargetsByIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q26:ArrayOflong" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TargetIds" nillable="true" type="q29:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1014,7 +1141,7 @@
   <xs:element name="GetTargetsByAdGroupIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q27:ArrayOflong" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q30:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1029,7 +1156,7 @@
   <xs:element name="GetTargetsByCampaignIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q28:ArrayOflong" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q31:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1058,14 +1185,14 @@
   <xs:element name="AddAdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdIds" nillable="true" type="q29:ArrayOfNullableOflong" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdIds" nillable="true" type="q32:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="EditorialApiFaultDetail">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q30="https://adapi.microsoft.com" base="q30:ApplicationFault">
+      <xs:extension xmlns:q33="https://adapi.microsoft.com" base="q33:ApplicationFault">
         <xs:sequence>
           <xs:element minOccurs="0" name="BatchErrors" nillable="true" type="tns:ArrayOfBatchError" />
           <xs:element minOccurs="0" name="EditorialErrors" nillable="true" type="tns:ArrayOfEditorialError" />
@@ -1085,7 +1212,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdIds" nillable="true" type="q31:ArrayOflong" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdIds" nillable="true" type="q34:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1101,9 +1228,16 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
         <xs:element minOccurs="0" name="EditorialStatus" type="tns:AdEditorialStatus" />
+        <xs:element minOccurs="0" name="AdTypes" nillable="true" type="tns:ArrayOfAdType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:complexType name="ArrayOfAdType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdType" type="tns:AdType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdType" nillable="true" type="tns:ArrayOfAdType" />
   <xs:element name="GetAdsByEditorialStatusResponse">
     <xs:complexType>
       <xs:sequence>
@@ -1115,7 +1249,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdIds" nillable="true" type="q32:ArrayOflong" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdIds" nillable="true" type="q35:ArrayOflong" />
+        <xs:element minOccurs="0" name="AdTypes" nillable="true" type="tns:ArrayOfAdType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1131,6 +1266,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+        <xs:element minOccurs="0" name="AdTypes" nillable="true" type="tns:ArrayOfAdType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1173,12 +1309,19 @@
   <xs:complexType name="Keyword">
     <xs:sequence>
       <xs:element minOccurs="0" name="Bid" nillable="true" type="tns:Bid" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="BiddingScheme" nillable="true" type="q36:BiddingScheme">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EditorialStatus" nillable="true" type="tns:KeywordEditorialStatus" />
-      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q33:ArrayOfAppUrl" />
-      <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q34:ArrayOfstring" />
-      <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q35:ArrayOfstring" />
-      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q36:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q37:ArrayOfAppUrl" />
+      <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q38:ArrayOfstring" />
+      <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q39:ArrayOfstring" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q40:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="MatchType" nillable="true" type="tns:MatchType" />
       <xs:element minOccurs="0" name="Param1" nillable="true" type="xs:string" />
@@ -1187,7 +1330,7 @@
       <xs:element minOccurs="0" name="Status" nillable="true" type="tns:KeywordStatus" />
       <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q37:CustomParameters" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q41:CustomParameters" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Keyword" nillable="true" type="tns:Keyword" />
@@ -1226,7 +1369,7 @@
   <xs:element name="AddKeywordsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="KeywordIds" nillable="true" type="q38:ArrayOfNullableOflong" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="KeywordIds" nillable="true" type="q42:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
@@ -1235,7 +1378,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q39:ArrayOflong" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q43:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1251,9 +1394,20 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
         <xs:element minOccurs="0" name="EditorialStatus" type="tns:KeywordEditorialStatus" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:KeywordAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:simpleType name="KeywordAdditionalField">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BiddingScheme" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="KeywordAdditionalField" nillable="true" type="tns:KeywordAdditionalField" />
   <xs:element name="GetKeywordsByEditorialStatusResponse">
     <xs:complexType>
       <xs:sequence>
@@ -1265,7 +1419,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q40:ArrayOflong" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="KeywordIds" nillable="true" type="q44:ArrayOflong" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:KeywordAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1281,6 +1436,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:KeywordAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1309,7 +1465,7 @@
   <xs:element name="AppealEditorialRejectionsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="EntityIdToParentIdAssociations" nillable="true" type="q41:ArrayOfEntityIdToParentIdAssociation" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="EntityIdToParentIdAssociations" nillable="true" type="q45:ArrayOfEntityIdToParentIdAssociation" />
         <xs:element minOccurs="0" name="EntityType" type="tns:EntityType" />
         <xs:element minOccurs="0" name="JustificationText" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1412,7 +1568,7 @@
   <xs:element name="AddSitePlacementsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q42:ArrayOflong" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q46:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1420,7 +1576,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q43:ArrayOflong" />
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q47:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1433,7 +1589,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
-        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q44:ArrayOflong" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SitePlacementIds" nillable="true" type="q48:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1474,7 +1630,7 @@
   <xs:element name="GetPlacementDetailsForUrlsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Urls" nillable="true" type="q45:ArrayOfstring" />
+        <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Urls" nillable="true" type="q49:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1543,7 +1699,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="EntityIdToParentIdAssociations" nillable="true" type="q46:ArrayOfEntityIdToParentIdAssociation" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="EntityIdToParentIdAssociations" nillable="true" type="q50:ArrayOfEntityIdToParentIdAssociation" />
         <xs:element minOccurs="0" name="EntityType" type="tns:EntityType" />
       </xs:sequence>
     </xs:complexType>
@@ -1606,12 +1762,27 @@
   <xs:complexType name="EditorialReason">
     <xs:sequence>
       <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q47:ArrayOfstring" />
+      <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q51:ArrayOfstring" />
       <xs:element minOccurs="0" name="ReasonCode" type="xs:int" />
       <xs:element minOccurs="0" name="Term" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EditorialReason" nillable="true" type="tns:EditorialReason" />
+  <xs:element name="GetAccountMigrationStatusesRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountIds" nillable="true" type="q52:ArrayOflong" />
+        <xs:element minOccurs="0" name="MigrationType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountMigrationStatusesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MigrationStatuses" nillable="true" type="tns:ArrayOfAccountMigrationStatusesInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:complexType name="ArrayOfAccountMigrationStatusesInfo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AccountMigrationStatusesInfo" nillable="true" type="tns:AccountMigrationStatusesInfo" />
@@ -1664,7 +1835,7 @@
   <xs:element name="ArrayOfAdExtension" nillable="true" type="tns:ArrayOfAdExtension" />
   <xs:complexType name="AdExtension">
     <xs:sequence>
-      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q48:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q53:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="tns:AdExtensionStatus" />
       <xs:element name="Type" nillable="true" type="xs:string" />
@@ -1702,33 +1873,14 @@
       <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DevicePreference" nillable="true" type="xs:long" />
       <xs:element name="DisplayText" nillable="true" type="xs:string" />
-      <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q49:ArrayOfAppUrl" />
-      <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q50:ArrayOfstring" />
-      <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q51:ArrayOfstring" />
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q54:ArrayOfAppUrl" />
+      <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q55:ArrayOfstring" />
+      <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q56:ArrayOfstring" />
       <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q52:CustomParameters" />
+      <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q57:CustomParameters" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SiteLink" nillable="true" type="tns:SiteLink" />
-  <xs:complexType name="AppAdExtension">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AdExtension">
-        <xs:sequence>
-          <xs:element name="AppPlatform" nillable="true" type="xs:string" />
-          <xs:element name="AppStoreId" nillable="true" type="xs:string" />
-          <xs:element name="DestinationUrl" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="DevicePreference" nillable="true" type="xs:long" />
-          <xs:element name="DisplayText" nillable="true" type="xs:string" />
-          <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q53:ArrayOfAppUrl" />
-          <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q54:ArrayOfstring" />
-          <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q55:ArrayOfstring" />
-          <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-          <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q56:CustomParameters" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="AppAdExtension" nillable="true" type="tns:AppAdExtension" />
   <xs:complexType name="LocationAdExtension">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AdExtension">
@@ -1795,17 +1947,89 @@
           <xs:element name="AlternativeText" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
-          <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q57:ArrayOfAppUrl" />
-          <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q58:ArrayOfstring" />
-          <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q59:ArrayOfstring" />
-          <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ImageMediaIds" nillable="true" type="q60:ArrayOflong" />
+          <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q58:ArrayOfAppUrl" />
+          <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q59:ArrayOfstring" />
+          <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q60:ArrayOfstring" />
+          <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="ImageMediaIds" nillable="true" type="q61:ArrayOflong" />
           <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-          <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q61:CustomParameters" />
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q62:CustomParameters" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ImageAdExtension" nillable="true" type="tns:ImageAdExtension" />
+  <xs:complexType name="AppAdExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AdExtension">
+        <xs:sequence>
+          <xs:element name="AppPlatform" nillable="true" type="xs:string" />
+          <xs:element name="AppStoreId" nillable="true" type="xs:string" />
+          <xs:element name="DestinationUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DevicePreference" nillable="true" type="xs:long" />
+          <xs:element name="DisplayText" nillable="true" type="xs:string" />
+          <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q63:ArrayOfAppUrl" />
+          <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q64:ArrayOfstring" />
+          <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q65:ArrayOfstring" />
+          <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
+          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q66:CustomParameters" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppAdExtension" nillable="true" type="tns:AppAdExtension" />
+  <xs:complexType name="ReviewAdExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AdExtension">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsExact" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReviewAdExtension" nillable="true" type="tns:ReviewAdExtension" />
+  <xs:complexType name="CalloutAdExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AdExtension">
+        <xs:sequence>
+          <xs:element name="Text" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalloutAdExtension" nillable="true" type="tns:CalloutAdExtension" />
+  <xs:complexType name="Sitelink2AdExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AdExtension">
+        <xs:sequence>
+          <xs:element name="Description1" nillable="true" type="xs:string" />
+          <xs:element name="Description2" nillable="true" type="xs:string" />
+          <xs:element name="DestinationUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DevicePreference" nillable="true" type="xs:long" />
+          <xs:element name="DisplayText" nillable="true" type="xs:string" />
+          <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q67:ArrayOfAppUrl" />
+          <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q68:ArrayOfstring" />
+          <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q69:ArrayOfstring" />
+          <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
+          <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q70:CustomParameters" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Sitelink2AdExtension" nillable="true" type="tns:Sitelink2AdExtension" />
+  <xs:complexType name="StructuredSnippetAdExtension">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AdExtension">
+        <xs:sequence>
+          <xs:element name="Header" nillable="true" type="xs:string" />
+          <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Values" nillable="true" type="q71:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StructuredSnippetAdExtension" nillable="true" type="tns:StructuredSnippetAdExtension" />
   <xs:element name="AddAdExtensionsResponse">
     <xs:complexType>
       <xs:sequence>
@@ -1830,8 +2054,9 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q62:ArrayOflong" />
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q72:ArrayOflong" />
         <xs:element minOccurs="0" name="AdExtensionType" type="tns:AdExtensionsTypeFilter" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:AdExtensionAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1856,11 +2081,49 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:enumeration>
+          <xs:enumeration value="ReviewAdExtension">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CalloutAdExtension">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">512</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Sitelink2AdExtension">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="StructuredSnippetAdExtension">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4096</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
   </xs:simpleType>
   <xs:element name="AdExtensionsTypeFilter" nillable="true" type="tns:AdExtensionsTypeFilter" />
+  <xs:simpleType name="AdExtensionAdditionalField">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Scheduling" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="AdExtensionAdditionalField" nillable="true" type="tns:AdExtensionAdditionalField" />
   <xs:element name="GetAdExtensionsByIdsResponse">
     <xs:complexType>
       <xs:sequence>
@@ -1885,7 +2148,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q63:ArrayOflong" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q73:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1971,7 +2234,7 @@
   <xs:complexType name="AdExtensionEditorialReason">
     <xs:sequence>
       <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
-      <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q64:ArrayOfstring" />
+      <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PublisherCountries" nillable="true" type="q74:ArrayOfstring" />
       <xs:element minOccurs="0" name="ReasonCode" type="xs:int" />
       <xs:element minOccurs="0" name="Term" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -1999,7 +2262,8 @@
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
         <xs:element minOccurs="0" name="AdExtensionType" type="tns:AdExtensionsTypeFilter" />
         <xs:element minOccurs="0" name="AssociationType" type="tns:AssociationType" />
-        <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q65:ArrayOflong" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q75:ArrayOflong" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:AdExtensionAdditionalField" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2073,7 +2337,7 @@
   <xs:element name="GetAdExtensionIdsByAccountIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q66:ArrayOflong" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdExtensionIds" nillable="true" type="q76:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2112,7 +2376,7 @@
   <xs:element name="AddMediaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q67:ArrayOflong" />
+        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q77:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2120,7 +2384,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q68:ArrayOflong" />
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q78:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2135,7 +2399,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q69:ArrayOflong" />
+        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q79:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2213,7 +2477,7 @@
   <xs:element name="GetMediaMetaDataByIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q70:ArrayOflong" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q80:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2229,7 +2493,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="MediaEnabledEntities" type="tns:MediaEnabledEntityFilter" />
-        <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q71:ArrayOflong" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MediaIds" nillable="true" type="q81:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2265,7 +2529,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q72:ArrayOflong" />
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q82:ArrayOflong" />
         <xs:element minOccurs="0" name="AdGroupId" nillable="true" type="xs:long" />
         <xs:element minOccurs="0" name="CriterionType" nillable="true" type="tns:CriterionType" />
       </xs:sequence>
@@ -2279,6 +2543,13 @@
             <xs:annotation>
               <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Webpage">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
               </xs:appinfo>
             </xs:annotation>
           </xs:enumeration>
@@ -2316,29 +2587,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Criterion" nillable="true" type="tns:Criterion" />
-  <xs:complexType name="ProductScope">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:Criterion">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Conditions" nillable="true" type="tns:ArrayOfProductCondition" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProductScope" nillable="true" type="tns:ProductScope" />
-  <xs:complexType name="ArrayOfProductCondition">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductCondition" nillable="true" type="tns:ProductCondition" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfProductCondition" nillable="true" type="tns:ArrayOfProductCondition" />
-  <xs:complexType name="ProductCondition">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Attribute" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Operand" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ProductCondition" nillable="true" type="tns:ProductCondition" />
   <xs:complexType name="ProductPartition">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Criterion">
@@ -2351,6 +2599,13 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ProductPartition" nillable="true" type="tns:ProductPartition" />
+  <xs:complexType name="ProductCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attribute" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operand" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductCondition" nillable="true" type="tns:ProductCondition" />
   <xs:simpleType name="ProductPartitionType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Subdivision">
@@ -2370,6 +2625,32 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductPartitionType" nillable="true" type="tns:ProductPartitionType" />
+  <xs:complexType name="ProductScope">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Criterion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Conditions" nillable="true" type="tns:ArrayOfProductCondition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductScope" nillable="true" type="tns:ProductScope" />
+  <xs:complexType name="ArrayOfProductCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductCondition" nillable="true" type="tns:ProductCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductCondition" nillable="true" type="tns:ArrayOfProductCondition" />
+  <xs:simpleType name="WebpageConditionOperand">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Url" />
+      <xs:enumeration value="Category" />
+      <xs:enumeration value="PageTitle" />
+      <xs:enumeration value="PageContent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WebpageConditionOperand" nillable="true" type="tns:WebpageConditionOperand" />
   <xs:simpleType name="AdGroupCriterionStatus">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Active" />
@@ -2385,11 +2666,11 @@
           <xs:element minOccurs="0" name="CriterionBid" nillable="true" type="tns:CriterionBid" />
           <xs:element minOccurs="0" name="DestinationUrl" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="EditorialStatus" nillable="true" type="tns:AdGroupCriterionEditorialStatus" />
-          <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q73:ArrayOfAppUrl" />
-          <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q74:ArrayOfstring" />
-          <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q75:ArrayOfstring" />
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="FinalAppUrls" nillable="true" type="q83:ArrayOfAppUrl" />
+          <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalMobileUrls" nillable="true" type="q84:ArrayOfstring" />
+          <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FinalUrls" nillable="true" type="q85:ArrayOfstring" />
           <xs:element minOccurs="0" name="TrackingUrlTemplate" nillable="true" type="xs:string" />
-          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q76:CustomParameters" />
+          <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="UrlCustomParameters" nillable="true" type="q86:CustomParameters" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2440,7 +2721,7 @@
   <xs:element name="AddAdGroupCriterionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q77:ArrayOfNullableOflong" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q87:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="NestedPartialErrors" nillable="true" type="tns:ArrayOfBatchErrorCollection" />
       </xs:sequence>
     </xs:complexType>
@@ -2458,7 +2739,7 @@
       <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FieldPath" nillable="true" type="xs:string" />
-      <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q78:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q88:ArrayOfKeyValuePairOfstringstring" />
       <xs:element minOccurs="0" name="Index" type="xs:int" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
@@ -2485,7 +2766,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q79:ArrayOflong" />
+        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q89:ArrayOflong" />
         <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
         <xs:element minOccurs="0" name="CriterionType" nillable="true" type="tns:CriterionType" />
       </xs:sequence>
@@ -2547,7 +2828,7 @@
   <xs:element name="ApplyProductPartitionActionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q80:ArrayOfNullableOflong" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AdGroupCriterionIds" nillable="true" type="q90:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
@@ -2621,7 +2902,7 @@
   <xs:element name="NegativeKeyword" nillable="true" type="tns:NegativeKeyword" />
   <xs:complexType name="SharedListItem">
     <xs:sequence>
-      <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q81:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q91:ArrayOfKeyValuePairOfstringstring" />
       <xs:element name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -2642,14 +2923,14 @@
   <xs:element name="ArrayOfIdCollection" nillable="true" type="tns:ArrayOfIdCollection" />
   <xs:complexType name="IdCollection">
     <xs:sequence>
-      <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q82:ArrayOflong" />
+      <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Ids" nillable="true" type="q92:ArrayOflong" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IdCollection" nillable="true" type="tns:IdCollection" />
   <xs:element name="GetNegativeKeywordsByEntityIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q83:ArrayOflong" />
+        <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q93:ArrayOflong" />
         <xs:element minOccurs="0" name="EntityType" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="ParentEntityId" nillable="true" type="xs:long" />
       </xs:sequence>
@@ -2700,7 +2981,7 @@
   <xs:complexType name="SharedEntity">
     <xs:sequence>
       <xs:element name="AssociationCount" nillable="true" type="xs:int" />
-      <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q84:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q94:ArrayOfKeyValuePairOfstringstring" />
       <xs:element name="Id" nillable="true" type="xs:long" />
       <xs:element name="Name" nillable="true" type="xs:string" />
       <xs:element name="Type" nillable="true" type="xs:string" />
@@ -2742,7 +3023,7 @@
   <xs:element name="AddSharedEntityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q85:ArrayOflong" />
+        <xs:element xmlns:q95="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q95:ArrayOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
         <xs:element minOccurs="0" name="SharedEntityId" type="xs:long" />
       </xs:sequence>
@@ -2773,7 +3054,7 @@
   <xs:element name="AddListItemsToSharedListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q86:ArrayOflong" />
+        <xs:element xmlns:q96="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q96:ArrayOflong" />
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>
@@ -2795,7 +3076,7 @@
   <xs:element name="DeleteListItemsFromSharedListRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q87:ArrayOflong" />
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListItemIds" nillable="true" type="q97:ArrayOflong" />
         <xs:element minOccurs="0" name="SharedList" nillable="true" type="tns:SharedList" />
       </xs:sequence>
     </xs:complexType>
@@ -2854,7 +3135,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="EntityType" nillable="true" type="xs:string" />
-        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SharedEntityIds" nillable="true" type="q88:ArrayOflong" />
+        <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SharedEntityIds" nillable="true" type="q98:ArrayOflong" />
         <xs:element minOccurs="0" name="SharedEntityType" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -2870,7 +3151,7 @@
   <xs:element name="GetSharedEntityAssociationsByEntityIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q89:ArrayOflong" />
+        <xs:element xmlns:q99="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EntityIds" nillable="true" type="q99:ArrayOflong" />
         <xs:element minOccurs="0" name="EntityType" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="SharedEntityType" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -2902,7 +3183,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="AccountId" type="xs:long" />
-        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q90:ArrayOflong" />
+        <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignIds" nillable="true" type="q100:ArrayOflong" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2945,7 +3226,7 @@
       <xs:element minOccurs="0" name="BidAdjustment" nillable="true" type="xs:int" />
       <xs:element name="CampaignId" type="xs:long" />
       <xs:element minOccurs="0" name="Criterion" nillable="true" type="tns:Criterion" />
-      <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q91:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q101:ArrayOfKeyValuePairOfstringstring" />
       <xs:element name="Id" nillable="true" type="xs:long" />
       <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -2964,6 +3245,7 @@
       <xs:simpleType>
         <xs:restriction base="xs:string">
           <xs:enumeration value="ProductScope" />
+          <xs:enumeration value="Webpage" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
@@ -2972,7 +3254,7 @@
   <xs:element name="AddCampaignCriterionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q92:ArrayOfNullableOflong" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q102:ArrayOfNullableOflong" />
         <xs:element minOccurs="0" name="NestedPartialErrors" nillable="true" type="tns:ArrayOfBatchErrorCollection" />
       </xs:sequence>
     </xs:complexType>
@@ -2995,7 +3277,7 @@
   <xs:element name="DeleteCampaignCriterionsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q93:ArrayOflong" />
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q103:ArrayOflong" />
         <xs:element minOccurs="0" name="CriterionType" type="tns:CampaignCriterionType" />
       </xs:sequence>
     </xs:complexType>
@@ -3010,7 +3292,7 @@
   <xs:element name="GetCampaignCriterionsByIdsRequest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q94:ArrayOflong" />
+        <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CampaignCriterionIds" nillable="true" type="q104:ArrayOflong" />
         <xs:element minOccurs="0" name="CampaignId" type="xs:long" />
         <xs:element minOccurs="0" name="CriterionType" type="tns:CampaignCriterionType" />
       </xs:sequence>
@@ -3020,6 +3302,557 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="CampaignCriterions" nillable="true" type="tns:ArrayOfCampaignCriterion" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddBudgetsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Budgets" nillable="true" type="tns:ArrayOfBudget" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfBudget">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Budget" nillable="true" type="tns:Budget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBudget" nillable="true" type="tns:ArrayOfBudget" />
+  <xs:complexType name="Budget">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AssociationCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="BudgetType" nillable="true" type="tns:BudgetLimitType" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Budget" nillable="true" type="tns:Budget" />
+  <xs:element name="AddBudgetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="BudgetIds" nillable="true" type="q105:ArrayOfNullableOflong" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBudgetsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Budgets" nillable="true" type="tns:ArrayOfBudget" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBudgetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBudgetsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BudgetIds" nillable="true" type="q106:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBudgetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetsByIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BudgetIds" nillable="true" type="q107:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBudgetsByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Budgets" nillable="true" type="tns:ArrayOfBudget" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaignIdsByBudgetIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BudgetIds" nillable="true" type="q108:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCampaignIdsByBudgetIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CampaignIdCollection" nillable="true" type="tns:ArrayOfIdCollection" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRemarketingListsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarketingLists" nillable="true" type="tns:ArrayOfRemarketingList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfRemarketingList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemarketingList" nillable="true" type="tns:RemarketingList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemarketingList" nillable="true" type="tns:ArrayOfRemarketingList" />
+  <xs:complexType name="RemarketingList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ForwardCompatibilityMap" nillable="true" type="q109:ArrayOfKeyValuePairOfstringstring" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="MembershipDuration" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:long" />
+      <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" minOccurs="0" name="Rule" nillable="true" type="q110:RemarketingRule">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Scope" type="tns:EntityScope" />
+      <xs:element minOccurs="0" name="TagId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemarketingList" nillable="true" type="tns:RemarketingList" />
+  <xs:simpleType name="StringOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="Contains" />
+      <xs:enumeration value="BeginsWith" />
+      <xs:enumeration value="EndsWith" />
+      <xs:enumeration value="NotEquals" />
+      <xs:enumeration value="DoesNotContain" />
+      <xs:enumeration value="DoesNotBeginWith" />
+      <xs:enumeration value="DoesNotEndWith" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StringOperator" nillable="true" type="tns:StringOperator" />
+  <xs:simpleType name="NumberOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="GreaterThan" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="GreaterThanEqualTo" />
+      <xs:enumeration value="LessThanEqualTo" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NumberOperator" nillable="true" type="tns:NumberOperator" />
+  <xs:simpleType name="EntityScope">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Account" />
+      <xs:enumeration value="Customer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EntityScope" nillable="true" type="tns:EntityScope" />
+  <xs:element name="AddRemarketingListsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="RemarketingListIds" nillable="true" type="q111:ArrayOfNullableOflong" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemarketingListsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RemarketingListIds" nillable="true" type="q112:ArrayOflong" />
+        <xs:element minOccurs="0" name="ReturnAdditionalFields" nillable="true" type="tns:RemarketingListAdditionalField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="RemarketingListAdditionalField">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Rule" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="RemarketingListAdditionalField" nillable="true" type="tns:RemarketingListAdditionalField" />
+  <xs:element name="GetRemarketingListsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemarketingLists" nillable="true" type="tns:ArrayOfRemarketingList" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAdGroupRemarketingListAssociationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupRemarketingListAssociations" nillable="true" type="tns:ArrayOfAdGroupRemarketingListAssociation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfAdGroupRemarketingListAssociation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdGroupRemarketingListAssociation" nillable="true" type="tns:AdGroupRemarketingListAssociation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdGroupRemarketingListAssociation" nillable="true" type="tns:ArrayOfAdGroupRemarketingListAssociation" />
+  <xs:complexType name="AdGroupRemarketingListAssociation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdGroupId" type="xs:long" />
+      <xs:element minOccurs="0" name="BidAdjustment" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RemarketingListId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:AdGroupRemarketingListAssociationStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdGroupRemarketingListAssociation" nillable="true" type="tns:AdGroupRemarketingListAssociation" />
+  <xs:simpleType name="AdGroupRemarketingListAssociationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Paused" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AdGroupRemarketingListAssociationStatus" nillable="true" type="tns:AdGroupRemarketingListAssociationStatus" />
+  <xs:element name="AddAdGroupRemarketingListAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AssociationIds" nillable="true" type="q113:ArrayOfNullableOflong" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdGroupRemarketingListAssociationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupRemarketingListAssociations" nillable="true" type="tns:ArrayOfAdGroupRemarketingListAssociation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAdGroupRemarketingListAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdGroupRemarketingListAssociationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdGroupIds" nillable="true" type="q114:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAdGroupRemarketingListAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupRemarketingListAssociations" nillable="true" type="tns:ArrayOfAdGroupRemarketingListAssociation" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAdGroupRemarketingListAssociationsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AdGroupRemarketingListAssociations" nillable="true" type="tns:ArrayOfAdGroupRemarketingListAssociation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAdGroupRemarketingListAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUetTagsByIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TagIds" nillable="true" type="q115:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUetTagsByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UetTags" nillable="true" type="tns:ArrayOfUetTag" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfUetTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UetTag" nillable="true" type="tns:UetTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUetTag" nillable="true" type="tns:ArrayOfUetTag" />
+  <xs:complexType name="UetTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingNoScript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingScript" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingStatus" nillable="true" type="tns:UetTagTrackingStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UetTag" nillable="true" type="tns:UetTag" />
+  <xs:simpleType name="UetTagTrackingStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unverified" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Inactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UetTagTrackingStatus" nillable="true" type="tns:UetTagTrackingStatus" />
+  <xs:element name="AddUetTagsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UetTags" nillable="true" type="tns:ArrayOfUetTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUetTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UetTags" nillable="true" type="tns:ArrayOfUetTag" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUetTagsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UetTags" nillable="true" type="tns:ArrayOfUetTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUetTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversionGoalsByIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConversionGoalIds" nillable="true" type="q116:ArrayOflong" />
+        <xs:element minOccurs="0" name="ConversionGoalTypes" type="tns:ConversionGoalType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ConversionGoalType">
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Url" />
+          <xs:enumeration value="Duration" />
+          <xs:enumeration value="PagesViewedPerVisit" />
+          <xs:enumeration value="Event" />
+          <xs:enumeration value="AppInstall" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="ConversionGoalType" nillable="true" type="tns:ConversionGoalType" />
+  <xs:element name="GetConversionGoalsByIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConversionGoals" nillable="true" type="tns:ArrayOfConversionGoal" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfConversionGoal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConversionGoal" nillable="true" type="tns:ConversionGoal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConversionGoal" nillable="true" type="tns:ArrayOfConversionGoal" />
+  <xs:complexType name="ConversionGoal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConversionWindowInMinutes" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CountType" nillable="true" type="tns:ConversionGoalCountType" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Revenue" nillable="true" type="tns:ConversionGoalRevenue" />
+      <xs:element minOccurs="0" name="Scope" nillable="true" type="tns:EntityScope" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:ConversionGoalStatus" />
+      <xs:element minOccurs="0" name="TagId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TrackingStatus" nillable="true" type="tns:ConversionGoalTrackingStatus" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ConversionGoalType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConversionGoal" nillable="true" type="tns:ConversionGoal" />
+  <xs:simpleType name="ConversionGoalCountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Unique" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConversionGoalCountType" nillable="true" type="tns:ConversionGoalCountType" />
+  <xs:complexType name="ConversionGoalRevenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ConversionGoalRevenueType" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConversionGoalRevenue" nillable="true" type="tns:ConversionGoalRevenue" />
+  <xs:simpleType name="ConversionGoalRevenueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FixedValue" />
+      <xs:enumeration value="VariableValue" />
+      <xs:enumeration value="NoValue" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConversionGoalRevenueType" nillable="true" type="tns:ConversionGoalRevenueType" />
+  <xs:simpleType name="ConversionGoalStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Paused" />
+      <xs:enumeration value="Deleted" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConversionGoalStatus" nillable="true" type="tns:ConversionGoalStatus" />
+  <xs:simpleType name="ConversionGoalTrackingStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TagUnverified" />
+      <xs:enumeration value="NoRecentConversions" />
+      <xs:enumeration value="RecordingConversions" />
+      <xs:enumeration value="TagInactive" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConversionGoalTrackingStatus" nillable="true" type="tns:ConversionGoalTrackingStatus" />
+  <xs:complexType name="UrlGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UrlExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UrlOperator" nillable="true" type="tns:ExpressionOperator" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UrlGoal" nillable="true" type="tns:UrlGoal" />
+  <xs:simpleType name="ExpressionOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="BeginsWith" />
+      <xs:enumeration value="RegularExpression" />
+      <xs:enumeration value="Contains" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExpressionOperator" nillable="true" type="tns:ExpressionOperator" />
+  <xs:complexType name="DurationGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MinimumDurationInSeconds" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DurationGoal" nillable="true" type="tns:DurationGoal" />
+  <xs:complexType name="PagesViewedPerVisitGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MinimumPagesViewed" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagesViewedPerVisitGoal" nillable="true" type="tns:PagesViewedPerVisitGoal" />
+  <xs:complexType name="EventGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActionOperator" nillable="true" type="tns:ExpressionOperator" />
+          <xs:element minOccurs="0" name="CategoryExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategoryOperator" nillable="true" type="tns:ExpressionOperator" />
+          <xs:element minOccurs="0" name="LabelExpression" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LabelOperator" nillable="true" type="tns:ExpressionOperator" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ValueOperator" nillable="true" type="tns:ValueOperator" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventGoal" nillable="true" type="tns:EventGoal" />
+  <xs:simpleType name="ValueOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Equals" />
+      <xs:enumeration value="LessThan" />
+      <xs:enumeration value="GreaterThan" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ValueOperator" nillable="true" type="tns:ValueOperator" />
+  <xs:complexType name="AppInstallGoal">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionGoal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AppPlatform" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AppStoreId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AppInstallGoal" nillable="true" type="tns:AppInstallGoal" />
+  <xs:element name="GetConversionGoalsByTagIdsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TagIds" nillable="true" type="q117:ArrayOflong" />
+        <xs:element minOccurs="0" name="ConversionGoalTypes" type="tns:ConversionGoalType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConversionGoalsByTagIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConversionGoals" nillable="true" type="tns:ArrayOfConversionGoal" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddConversionGoalsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConversionGoals" nillable="true" type="tns:ArrayOfConversionGoal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddConversionGoalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ConversionGoalIds" nillable="true" type="q118:ArrayOfNullableOflong" />
+        <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateConversionGoalsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConversionGoals" nillable="true" type="tns:ArrayOfConversionGoal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateConversionGoalsResponse">
+    <xs:complexType>
+      <xs:sequence>
         <xs:element minOccurs="0" name="PartialErrors" nillable="true" type="tns:ArrayOfBatchError" />
       </xs:sequence>
     </xs:complexType>

@@ -126,6 +126,60 @@
     <None Include="Service References\V10.AdInsightService\AdInsightService6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetAuctionInsightDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBidLandscapeByAdGroupIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBidLandscapeByKeywordIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBidOpportunitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetBudgetOpportunitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetDomainCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedBidByKeywordIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedBidByKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedPositionByKeywordIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetEstimatedPositionByKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetHistoricalKeywordPerformanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetHistoricalSearchCountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordDemographicsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordOpportunitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.SuggestKeywordsForUrlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.SuggestKeywordsFromExistingKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\V10.BulkService\BulkService.wsdl" />
     <None Include="Service References\V10.BulkService\BulkService.xsd">
       <SubType>Designer</SubType>
@@ -141,6 +195,21 @@
     </None>
     <None Include="Service References\V10.BulkService\BulkService4.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByAccountIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByCampaignIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkDownloadStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadUrlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.wsdl" />
     <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.xsd">
@@ -164,6 +233,324 @@
     <None Include="Service References\V10.CampaignManagementService\CampaignManagementService6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdExtensionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdGroupCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdGroupRemarketingListAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddBudgetsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddCampaignCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddConversionGoalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddListItemsToSharedListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddMediaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddNegativeKeywordsToEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddRemarketingListsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddSharedEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddSitePlacementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddTargetsToLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddUetTagsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AppealEditorialRejectionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.ApplyProductPartitionActionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdExtensionsAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdExtensionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdGroupCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdGroupRemarketingListAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteAdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteBudgetsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteCampaignCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteListItemsFromSharedListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteMediaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteNegativeKeywordsFromEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteSharedEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteSharedEntityAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteSitePlacementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteTargetFromAdGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteTargetFromCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteTargetsFromLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAccountMigrationStatusesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdExtensionIdsByAccountIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdExtensionsAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdExtensionsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdExtensionsEditorialReasonsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdGroupCriterionsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdGroupRemarketingListAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdGroupsByCampaignIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdGroupsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdsByAdGroupIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdsByEditorialStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetAdsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetBMCStoresByCustomerIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetBSCCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetBudgetsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetCampaignCriterionsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetCampaignIdsByBudgetIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetCampaignsByAccountIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetCampaignsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetCampaignSizesByAccountIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetConfigValueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetConversionGoalsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetConversionGoalsByTagIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetEditorialReasonsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetKeywordsByAdGroupIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetKeywordsByEditorialStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetKeywordsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetListItemsBySharedListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetMediaAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetMediaByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetMediaMetaDataByAccountIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetMediaMetaDataByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetNegativeKeywordsByEntityIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetNegativeSitesByAdGroupIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetNegativeSitesByCampaignIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetPlacementDetailsForUrlsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetRemarketingListsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetSharedEntitiesByAccountIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetSharedEntityAssociationsByEntityIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetSharedEntityAssociationsBySharedEntityIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetSitePlacementsByAdGroupIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetSitePlacementsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetTargetsByAdGroupIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetTargetsByCampaignIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetTargetsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetTargetsInfoFromLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetUetTagsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetAdExtensionsAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetNegativeSitesToAdGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetNegativeSitesToCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetSharedEntityAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetTargetToAdGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.SetTargetToCampaignResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateAdExtensionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateAdGroupCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateAdGroupRemarketingListAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateAdGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateAdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateBudgetsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateCampaignCriterionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateCampaignsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateConversionGoalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateSharedEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateSitePlacementsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateTargetsInLibraryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateUetTagsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\V9.CustomerBillingService\CustomerBillingService.wsdl" />
     <None Include="Service References\V9.CustomerBillingService\CustomerBillingService.xsd">
       <SubType>Designer</SubType>
@@ -182,6 +569,33 @@
     </None>
     <None Include="Service References\V9.CustomerBillingService\CustomerBillingService5.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AddInsertionOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetAccountMonthlySpendResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetDisplayInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetInsertionOrdersByAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetKOHIOInvoicesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.SearchInsertionOrdersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.CustomerBillingService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.UpdateInsertionOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V9.CustomerManagementService\CustomerManagementService.wsdl" />
     <None Include="Service References\V9.CustomerManagementService\CustomerManagementService.xsd">
@@ -302,6 +716,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V9.CustomerManagementService\MicrosoftOnline.Ads.BingAdsApi.V9.CustomerManagementService.UpgradeCustomerToAgencyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.ReportingService\MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.PollGenerateReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V9.ReportingService\MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService.SubmitGenerateReportResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V9.ReportingService\ReportingService.wsdl" />

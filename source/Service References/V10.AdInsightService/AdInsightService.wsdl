@@ -54,11 +54,11 @@
   <wsdl:message name="GetBidOpportunitiesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetBidOpportunities_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetBidOpportunities_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetBidOpportunities_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetBudgetOpportunitiesRequest">
     <wsdl:part name="parameters" element="tns:GetBudgetOpportunitiesRequest" />
@@ -78,11 +78,11 @@
   <wsdl:message name="GetBudgetOpportunitiesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetBudgetOpportunities_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetBudgetOpportunities_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetBudgetOpportunities_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetKeywordOpportunitiesRequest">
     <wsdl:part name="parameters" element="tns:GetKeywordOpportunitiesRequest" />
@@ -150,11 +150,11 @@
   <wsdl:message name="GetEstimatedPositionByKeywordIdsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetEstimatedPositionByKeywordIds_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetEstimatedPositionByKeywordIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q5="https://adapi.microsoft.com" name="detail" element="q5:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetEstimatedPositionByKeywordIds_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetEstimatedBidByKeywordsRequest">
     <wsdl:part name="parameters" element="tns:GetEstimatedBidByKeywordsRequest" />
@@ -294,11 +294,11 @@
   <wsdl:message name="GetHistoricalSearchCountResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetHistoricalSearchCount_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetHistoricalSearchCount_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q11="https://adapi.microsoft.com" name="detail" element="q11:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetHistoricalSearchCount_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetKeywordCategoriesRequest">
     <wsdl:part name="parameters" element="tns:GetKeywordCategoriesRequest" />
@@ -318,11 +318,11 @@
   <wsdl:message name="GetKeywordCategoriesResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetKeywordCategories_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetKeywordCategories_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q12="https://adapi.microsoft.com" name="detail" element="q12:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetKeywordCategories_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetKeywordDemographicsRequest">
     <wsdl:part name="parameters" element="tns:GetKeywordDemographicsRequest" />
@@ -342,11 +342,11 @@
   <wsdl:message name="GetKeywordDemographicsResponse_Headers">
     <wsdl:part name="TrackingId" element="tns:TrackingId" />
   </wsdl:message>
-  <wsdl:message name="IAdInsightService_GetKeywordDemographics_ApiFaultDetailFault_FaultMessage">
-    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
-  </wsdl:message>
   <wsdl:message name="IAdInsightService_GetKeywordDemographics_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q13="https://adapi.microsoft.com" name="detail" element="q13:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetKeywordDemographics_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetKeywordLocationsRequest">
     <wsdl:part name="parameters" element="tns:GetKeywordLocationsRequest" />
@@ -444,18 +444,42 @@
   <wsdl:message name="IAdInsightService_GetAuctionInsightData_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
+  <wsdl:message name="GetDomainCategoriesRequest">
+    <wsdl:part name="parameters" element="tns:GetDomainCategoriesRequest" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainCategoriesRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="CustomerAccountId" element="tns:CustomerAccountId" />
+    <wsdl:part name="CustomerId" element="tns:CustomerId" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainCategoriesResponse">
+    <wsdl:part name="parameters" element="tns:GetDomainCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainCategoriesResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetDomainCategories_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q18="https://adapi.microsoft.com" name="detail" element="q18:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_GetDomainCategories_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
+  </wsdl:message>
   <wsdl:portType msc:usingSession="false" name="IAdInsightService">
     <wsdl:operation name="GetBidOpportunities">
       <wsdl:input wsaw:Action="GetBidOpportunities" name="GetBidOpportunitiesRequest" message="tns:GetBidOpportunitiesRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesResponse" name="GetBidOpportunitiesResponse" message="tns:GetBidOpportunitiesResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetBidOpportunities_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetBidOpportunities_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBidOpportunitiesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetBidOpportunities_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBudgetOpportunities">
       <wsdl:input wsaw:Action="GetBudgetOpportunities" name="GetBudgetOpportunitiesRequest" message="tns:GetBudgetOpportunitiesRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportunitiesResponse" name="GetBudgetOpportunitiesResponse" message="tns:GetBudgetOpportunitiesResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportunitiesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetBudgetOpportunities_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportunitiesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetBudgetOpportunities_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetBudgetOpportunitiesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetBudgetOpportunities_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetKeywordOpportunities">
       <wsdl:input wsaw:Action="GetKeywordOpportunities" name="GetKeywordOpportunitiesRequest" message="tns:GetKeywordOpportunitiesRequest" />
@@ -472,8 +496,8 @@
     <wsdl:operation name="GetEstimatedPositionByKeywordIds">
       <wsdl:input wsaw:Action="GetEstimatedPositionByKeywordIds" name="GetEstimatedPositionByKeywordIdsRequest" message="tns:GetEstimatedPositionByKeywordIdsRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPositionByKeywordIdsResponse" name="GetEstimatedPositionByKeywordIdsResponse" message="tns:GetEstimatedPositionByKeywordIdsResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPositionByKeywordIdsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetEstimatedPositionByKeywordIds_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPositionByKeywordIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetEstimatedPositionByKeywordIds_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetEstimatedPositionByKeywordIdsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetEstimatedPositionByKeywordIds_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetEstimatedBidByKeywords">
       <wsdl:input wsaw:Action="GetEstimatedBidByKeywords" name="GetEstimatedBidByKeywordsRequest" message="tns:GetEstimatedBidByKeywordsRequest" />
@@ -508,20 +532,20 @@
     <wsdl:operation name="GetHistoricalSearchCount">
       <wsdl:input wsaw:Action="GetHistoricalSearchCount" name="GetHistoricalSearchCountRequest" message="tns:GetHistoricalSearchCountRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchCountResponse" name="GetHistoricalSearchCountResponse" message="tns:GetHistoricalSearchCountResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchCountApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetHistoricalSearchCount_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchCountAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetHistoricalSearchCount_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetHistoricalSearchCountApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetHistoricalSearchCount_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetKeywordCategories">
       <wsdl:input wsaw:Action="GetKeywordCategories" name="GetKeywordCategoriesRequest" message="tns:GetKeywordCategoriesRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategoriesResponse" name="GetKeywordCategoriesResponse" message="tns:GetKeywordCategoriesResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategoriesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordCategories_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategoriesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordCategories_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordCategoriesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordCategories_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetKeywordDemographics">
       <wsdl:input wsaw:Action="GetKeywordDemographics" name="GetKeywordDemographicsRequest" message="tns:GetKeywordDemographicsRequest" />
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographicsResponse" name="GetKeywordDemographicsResponse" message="tns:GetKeywordDemographicsResponse" />
-      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographicsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordDemographics_ApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographicsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordDemographics_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetKeywordDemographicsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetKeywordDemographics_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetKeywordLocations">
       <wsdl:input wsaw:Action="GetKeywordLocations" name="GetKeywordLocationsRequest" message="tns:GetKeywordLocationsRequest" />
@@ -547,6 +571,12 @@
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetAuctionInsightDataAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetAuctionInsightData_AdApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetAuctionInsightDataApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetAuctionInsightData_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetDomainCategories">
+      <wsdl:input wsaw:Action="GetDomainCategories" name="GetDomainCategoriesRequest" message="tns:GetDomainCategoriesRequest" />
+      <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesResponse" name="GetDomainCategoriesResponse" message="tns:GetDomainCategoriesResponse" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetDomainCategories_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetDomainCategories_ApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAdInsightService" type="tns:IAdInsightService">
     <wsp:PolicyReference URI="#BasicHttpBinding_IAdInsightService_policy" />
@@ -567,11 +597,11 @@
         <soap:header message="tns:GetBidOpportunitiesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBudgetOpportunities">
@@ -590,11 +620,11 @@
         <soap:header message="tns:GetBudgetOpportunitiesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetKeywordOpportunities">
@@ -659,11 +689,11 @@
         <soap:header message="tns:GetEstimatedPositionByKeywordIdsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetEstimatedBidByKeywords">
@@ -797,11 +827,11 @@
         <soap:header message="tns:GetHistoricalSearchCountResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetKeywordCategories">
@@ -820,11 +850,11 @@
         <soap:header message="tns:GetKeywordCategoriesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetKeywordDemographics">
@@ -843,11 +873,11 @@
         <soap:header message="tns:GetKeywordDemographicsResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ApiFaultDetailFault">
-        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
-      </wsdl:fault>
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetKeywordLocations">
@@ -933,6 +963,29 @@
       </wsdl:input>
       <wsdl:output name="GetAuctionInsightDataResponse">
         <soap:header message="tns:GetAuctionInsightDataResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainCategories">
+      <soap:operation soapAction="GetDomainCategories" style="document" />
+      <wsdl:input name="GetDomainCategoriesRequest">
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="CustomerAccountId" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="CustomerId" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:GetDomainCategoriesRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetDomainCategoriesResponse">
+        <soap:header message="tns:GetDomainCategoriesResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="AdApiFaultDetailFault">

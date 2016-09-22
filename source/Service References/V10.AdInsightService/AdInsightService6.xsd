@@ -906,4 +906,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAuctionInsightKPINode" nillable="true" type="tns:ArrayOfAuctionInsightKPINode" />
+  <xs:complexType name="ArrayOfDomainCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DomainCategory" nillable="true" type="tns:DomainCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDomainCategory" nillable="true" type="tns:ArrayOfDomainCategory" />
+  <xs:complexType name="DomainCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bid" type="xs:double" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coverage" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomainCategory" nillable="true" type="tns:DomainCategory" />
 </xs:schema>

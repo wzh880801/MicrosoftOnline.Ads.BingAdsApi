@@ -158,9 +158,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ApplicationFault", Namespace="https://adapi.microsoft.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail))]
     public partial class ApplicationFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -198,29 +198,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
-    [System.SerializableAttribute()]
-    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApplicationFault {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiError[] ErrorsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiError[] Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
             }
         }
     }
@@ -274,77 +251,23 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OperationError", Namespace="https://bingads.microsoft.com/Customer/v9/Exception")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
     [System.SerializableAttribute()]
-    public partial class OperationError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+    public partial class AdApiFaultDetail : MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApplicationFault {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DetailsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
+        private MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiError[] ErrorsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
+        public MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiError[] Errors {
             get {
-                return this.CodeField;
+                return this.ErrorsField;
             }
             set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
+                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
+                    this.ErrorsField = value;
+                    this.RaisePropertyChanged("Errors");
                 }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Details {
-            get {
-                return this.DetailsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
-                    this.DetailsField = value;
-                    this.RaisePropertyChanged("Details");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -415,6 +338,83 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
                 if ((object.ReferenceEquals(this.ErrorCodeField, value) != true)) {
                     this.ErrorCodeField = value;
                     this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OperationError", Namespace="https://bingads.microsoft.com/Customer/v9/Exception")]
+    [System.SerializableAttribute()]
+    public partial class OperationError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
                 }
             }
         }
@@ -1177,12 +1177,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBillingDocumentsInfo", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
             "ntsInfoResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
-            "ntsInfoApiFault", Name="ApiFault")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
-            "ntsInfoApiBatchFault", Name="ApiBatchFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
             "ntsInfoAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
+            "ntsInfoApiBatchFault", Name="ApiBatchFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
+            "ntsInfoApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsInfoResponse GetBillingDocumentsInfo(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsInfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBillingDocumentsInfo", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
@@ -1193,10 +1193,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
             "ntsResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
             "ntsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
-            "ntsApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
             "ntsApiBatchFault", Name="ApiBatchFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
+            "ntsApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsResponse GetBillingDocuments(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetBillingDocumentsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBillingDocuments", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetBillingDocume" +
@@ -1205,12 +1205,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetDisplayInvoices", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
             "esResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
-            "esApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
             "esAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
             "esApiBatchFault", Name="ApiBatchFault")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
+            "esApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetDisplayInvoicesResponse GetDisplayInvoices(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetDisplayInvoicesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetDisplayInvoices", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetDisplayInvoic" +
@@ -1219,10 +1219,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="AddInsertionOrder", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrde" +
             "rResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrde" +
-            "rApiFault", Name="ApiFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrde" +
             "rAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrde" +
+            "rApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AddInsertionOrderResponse AddInsertionOrder(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AddInsertionOrderRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="AddInsertionOrder", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/AddInsertionOrde" +
@@ -1267,10 +1267,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="GetKOHIOInvoices", ReplyAction="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoices" +
             "Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoices" +
-            "ApiBatchFault", Name="ApiBatchFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.AdApiFaultDetail), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoices" +
             "AdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
+        [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiBatchFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoices" +
+            "ApiBatchFault", Name="ApiBatchFault")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.ApiFault), Action="https://bingads.microsoft.com/Billing/v9/ICustomerBillingService/GetKOHIOInvoices" +
             "ApiFault", Name="ApiFault")]
         MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetKOHIOInvoicesResponse GetKOHIOInvoices(MicrosoftOnline.Ads.BingAdsApi.V9.CustomerBillingService.GetKOHIOInvoicesRequest request);

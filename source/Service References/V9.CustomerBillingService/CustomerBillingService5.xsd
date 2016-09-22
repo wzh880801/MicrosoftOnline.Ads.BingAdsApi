@@ -1,53 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="https://bingads.microsoft.com/Customer/v9/Exception" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/Customer/v9/Exception" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" namespace="https://adapi.microsoft.com" />
-  <xs:complexType name="ApiFault">
+<xs:schema xmlns:tns="https://adapi.microsoft.com" elementFormDefault="qualified" targetNamespace="https://adapi.microsoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="AdApiFaultDetail">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="https://adapi.microsoft.com" base="q1:ApplicationFault">
+      <xs:extension base="tns:ApplicationFault">
         <xs:sequence>
-          <xs:element minOccurs="0" name="OperationErrors" nillable="true" type="tns:ArrayOfOperationError" />
+          <xs:element minOccurs="0" name="Errors" nillable="true" type="tns:ArrayOfAdApiError" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ApiFault" nillable="true" type="tns:ApiFault" />
-  <xs:complexType name="ArrayOfOperationError">
+  <xs:element name="AdApiFaultDetail" nillable="true" type="tns:AdApiFaultDetail" />
+  <xs:complexType name="ApplicationFault">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationError" nillable="true" type="tns:OperationError" />
+      <xs:element minOccurs="0" name="TrackingId" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfOperationError" nillable="true" type="tns:ArrayOfOperationError" />
-  <xs:complexType name="OperationError">
+  <xs:element name="ApplicationFault" nillable="true" type="tns:ApplicationFault" />
+  <xs:complexType name="ArrayOfAdApiError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdApiError" nillable="true" type="tns:AdApiError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdApiError" nillable="true" type="tns:ArrayOfAdApiError" />
+  <xs:complexType name="AdApiError">
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" type="xs:int" />
-      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ErrorCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="OperationError" nillable="true" type="tns:OperationError" />
-  <xs:complexType name="ApiBatchFault">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ApiFault">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="BatchErrors" nillable="true" type="tns:ArrayOfBatchError" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ApiBatchFault" nillable="true" type="tns:ApiBatchFault" />
-  <xs:complexType name="ArrayOfBatchError">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="BatchError" nillable="true" type="tns:BatchError" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfBatchError" nillable="true" type="tns:ArrayOfBatchError" />
-  <xs:complexType name="BatchError">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Code" type="xs:int" />
-      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Index" type="xs:int" />
-      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="BatchError" nillable="true" type="tns:BatchError" />
+  <xs:element name="AdApiError" nillable="true" type="tns:AdApiError" />
 </xs:schema>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="https://adapi.microsoft.com" elementFormDefault="qualified" targetNamespace="https://adapi.microsoft.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ApplicationFault">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="TrackingId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ApplicationFault" nillable="true" type="tns:ApplicationFault" />
   <xs:complexType name="AdApiFaultDetail">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ApplicationFault">
@@ -16,6 +10,12 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="AdApiFaultDetail" nillable="true" type="tns:AdApiFaultDetail" />
+  <xs:complexType name="ApplicationFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TrackingId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationFault" nillable="true" type="tns:ApplicationFault" />
   <xs:complexType name="ArrayOfAdApiError">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AdApiError" nillable="true" type="tns:AdApiError" />

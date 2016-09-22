@@ -2,7 +2,7 @@
 <xs:schema xmlns:tns="https://bingads.microsoft.com/Billing/v9" elementFormDefault="qualified" targetNamespace="https://bingads.microsoft.com/Billing/v9" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd3" namespace="https://bingads.microsoft.com/Customer/v9/Entities" />
-  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd4" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
+  <xs:import schemaLocation="https://clientcenter.api.bingads.microsoft.com/Api/Billing/v9/CustomerBillingService.svc?xsd=xsd5" namespace="https://bingads.microsoft.com/Customer/v9/Exception" />
   <xs:element name="GetBillingDocumentsInfoRequest">
     <xs:complexType>
       <xs:sequence>
@@ -25,8 +25,8 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="TrackingId" nillable="true" type="xs:string" />
-  <xs:element xmlns:q3="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiFault" nillable="true" type="q3:ApiFault" />
-  <xs:element xmlns:q4="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiBatchFault" nillable="true" type="q4:ApiBatchFault" />
+  <xs:element xmlns:q3="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiBatchFault" nillable="true" type="q3:ApiBatchFault" />
+  <xs:element xmlns:q4="https://bingads.microsoft.com/Customer/v9/Exception" name="ApiFault" nillable="true" type="q4:ApiFault" />
   <xs:element name="GetBillingDocumentsRequest">
     <xs:complexType>
       <xs:sequence>
