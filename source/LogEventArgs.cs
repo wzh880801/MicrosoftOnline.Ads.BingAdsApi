@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MicrosoftOnline.Ads.BingAdsApi
 {
@@ -12,7 +14,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         CustomerManagement,
         Reporting,
         FileProcessor,
-        Others
+        Others,
+        BulkFileProcessor
     }
 
     public enum LogLevel
@@ -75,6 +78,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public object[] RowValues { get; private set; }
+        public bool Completed { get; private set; }
+    }
+
+    public class BulkProcessEventArgs : EventArgs
+    {
+        public BulkProcessEventArgs(Dictionary<string, string> rowValues, bool completed)
+        {
+            this.RowValues = rowValues;
+            this.Completed = completed;
+        }
+
+        public Dictionary<string, string> RowValues { get; private set; }
         public bool Completed { get; private set; }
     }
 }

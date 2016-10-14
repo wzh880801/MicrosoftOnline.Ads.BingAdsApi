@@ -60,6 +60,7 @@
     <Compile Include="Common\Common.cs" />
     <Compile Include="BingAdsService\CustomerBillingHelper.cs" />
     <Compile Include="BingAdsService\CustomerMHelper.cs" />
+    <Compile Include="Processor\BulkFileProcessor.cs" />
     <Compile Include="Processor\FileProcessor.cs" />
     <Compile Include="LogBase.cs" />
     <Compile Include="LogEventArgs.cs" />
