@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BingAdsService\AdInsightHelper.cs" />
+    <Compile Include="Common\FileDownloadHelper.cs" />
+    <Compile Include="IProgressChanged.cs" />
     <Compile Include="OAuth\Authentication.cs" />
     <Compile Include="Processor\BillingProcessor.cs" />
     <Compile Include="OAuth\BingAdsApiException.cs" />

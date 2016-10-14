@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 
 namespace MicrosoftOnline.Ads.BingAdsApi
 {
-    public class BulkHelper : LogBase, IDisposable
+    public class BulkHelper : LogBase, IDisposable, IProgressChanged
     {
         private BulkServiceClient cs = null;
+        private EventHandler<ProgressChangeEventArgs> _progressChangedHandler = null;
 
-        public BulkHelper(EventHandler<LogEventArgs> handler = null)
+        public BulkHelper(EventHandler<LogEventArgs> handler = null, EventHandler<ProgressChangeEventArgs> progressChangedHandler = null)
             : base(handler)
         {
             cs = new BulkServiceClient("BasicHttpBinding_IBulkService");
+            this._progressChangedHandler = progressChangedHandler;
+        }
+
+        public void ReportProgress(double percent, string fileName = null)
+        {
+            if (this._progressChangedHandler != null)
+                this._progressChangedHandler(this, new ProgressChangeEventArgs(percent, fileName));
         }
 
         public void Dispose()
@@ -495,6 +503,177 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             }
 
             return null;
+        }
+
+        public bool BulkDownloadCampaignsByAccountIds(
+            ApiAuthentication auth,
+            long accountId,
+            long? customerId,
+            DataScope dataScope,
+            BulkDownloadEntity entities,
+            string zipFilePath,
+            CompressionType compressionType = CompressionType.Zip,
+            DownloadFileType downloadFileType = DownloadFileType.Tsv,
+            string formatVersion = "4.0",
+            DateTime? lastSyncTimeInUTC = null,
+            DateTime? start = null,
+            DateTime? end = null)
+        {
+            var request = DownloadCampaignsByAccountIds(auth, accountId, customerId, dataScope, entities, compressionType, downloadFileType, formatVersion, lastSyncTimeInUTC, start, end);
+            if (request == null)
+                return false;
+
+            int errors = 0;
+            int percent = 0;
+            string downloadUrl = null;
+
+            while (true)
+            {
+                if (errors >= 30)
+                    return false;
+
+                var _req = GetBulkDownloadStatus(auth, request.DownloadRequestId, accountId, customerId);
+                if (_req == null)
+                    return false;
+
+                if (percent != _req.PercentComplete)
+                {
+                    percent = _req.PercentComplete;
+                    ReportProgress(percent);
+                }
+
+                if (_req.RequestStatus == "Completed")//InProgress //Failed //FailedFullSyncRequired 
+                {
+                    downloadUrl = _req.ResultFileUrl;
+                    break;
+                }
+                else if (_req.RequestStatus == "Failed" || _req.RequestStatus == "FailedFullSyncRequired")
+                {
+                    Log(new LogEventArgs(
+                        ServiceType.Bulk, 
+                        "BulkDownloadCampaignsByAccountIds", 
+                        "GetBulkDownloadStatus Failed!",
+                        new { Response = _req }, 
+                        null, 
+                        this.TrackingId));
+                    return false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(downloadUrl))
+            {
+                Log(new LogEventArgs(
+                        ServiceType.Bulk,
+                        "BulkDownloadCampaignsByAccountIds",
+                        "Beging to download...",
+                        new { Url = downloadUrl, accountId = accountId },
+                        null,
+                        this.TrackingId, LogLevel.Info));
+
+                using (FileDownloadHelper fd = new FileDownloadHelper())
+                {
+                    fd.DownloadFileFromUrl(downloadUrl, zipFilePath);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> BulkDownloadCampaignsByAccountIdsAsync(
+            ApiAuthentication auth,
+            long accountId,
+            long? customerId,
+            DataScope dataScope,
+            BulkDownloadEntity entities,
+            string zipFilePath,
+            CompressionType compressionType = CompressionType.Zip,
+            DownloadFileType downloadFileType = DownloadFileType.Tsv,
+            string formatVersion = "4.0",
+            DateTime? lastSyncTimeInUTC = null,
+            DateTime? start = null,
+            DateTime? end = null)
+        {
+            var request = await DownloadCampaignsByAccountIdsAsync(auth, accountId, customerId, dataScope, entities, compressionType, downloadFileType, formatVersion, lastSyncTimeInUTC, start, end);
+            if (request == null)
+                return false;
+
+            int errors = 0;
+            int percent = 0;
+            string downloadUrl = null;
+
+            while (true)
+            {
+                if (errors >= 30)
+                    return false;
+
+                var _req = await GetBulkDownloadStatusAsync(auth, request.DownloadRequestId, accountId, customerId);
+                if (_req == null)
+                    return false;
+
+                if (percent != _req.PercentComplete)
+                {
+                    percent = _req.PercentComplete;
+                    ReportProgress(percent);
+                }
+
+                if (_req.RequestStatus == "Completed")//InProgress //Failed //FailedFullSyncRequired 
+                {
+                    downloadUrl = _req.ResultFileUrl;
+                    break;
+                }
+                else if (_req.RequestStatus == "Failed" || _req.RequestStatus == "FailedFullSyncRequired")
+                {
+                    Log(new LogEventArgs(
+                        ServiceType.Bulk,
+                        "BulkDownloadCampaignsByAccountIds",
+                        "GetBulkDownloadStatus Failed!",
+                        new { Response = _req },
+                        null,
+                        this.TrackingId));
+                    return false;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(downloadUrl))
+            {
+                Log(new LogEventArgs(
+                        ServiceType.Bulk,
+                        "BulkDownloadCampaignsByAccountIds",
+                        "Beging to download...",
+                        new { Url = downloadUrl, accountId = accountId },
+                        null,
+                        this.TrackingId, LogLevel.Info));
+
+                using (FileDownloadHelper fd = new FileDownloadHelper())
+                {
+                    await fd.DownloadFileFromUrlAsync(downloadUrl, zipFilePath);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool TryBulkDownloadCampaignsByAccountIds(
+           ApiAuthentication auth,
+           long accountId,
+           long? customerId,
+           DataScope dataScope,
+           BulkDownloadEntity entities,
+           string zipFilePath,
+           CompressionType compressionType = CompressionType.Zip,
+           DownloadFileType downloadFileType = DownloadFileType.Tsv,
+           string formatVersion = "4.0",
+           DateTime? lastSyncTimeInUTC = null,
+           DateTime? start = null,
+           DateTime? end = null)
+        {
+            return MethodHelper.TryGetBool(
+                BulkDownloadCampaignsByAccountIds, this, 
+                auth, accountId, customerId, dataScope, entities, zipFilePath, compressionType, downloadFileType, formatVersion, lastSyncTimeInUTC, start, end);
         }
     }
 }

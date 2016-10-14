@@ -13,7 +13,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
     /// BingAds API V9 Reporting Service
     /// https://msdn.microsoft.com/en-us/library/bing-ads-reporting-service-reference(v=msads.90).aspx
     /// </summary>
-    public class ReportingHelper : LogBase, IDisposable
+    public class ReportingHelper : LogBase, IDisposable, IProgressChanged
     {
         private EventHandler<ProgressChangeEventArgs> _progressChangedHandler = null;
 
@@ -57,7 +57,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return cs;
         }
 
-        protected void ReportProgress(double percent, string fileName = null)
+        public void ReportProgress(double percent, string fileName = null)
         {
             if (this._progressChangedHandler != null)
                 this._progressChangedHandler(this, new ProgressChangeEventArgs(percent, fileName));
@@ -133,7 +133,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
                     try
                     {
-                        DownloadFileFromUrl(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        using (var fd = new FileDownloadHelper(null, this._progressChangedHandler))
+                        {
+                            fd.DownloadFileFromUrl(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        }
 
                         break;
                     }
@@ -254,7 +257,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
                     try
                     {
-                        TryDownloadFileFromUrl(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        using (var fd = new FileDownloadHelper(null, this._progressChangedHandler))
+                        {
+                            fd.TryDownloadFileFromUrl(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        }
 
                         break;
                     }
@@ -375,7 +381,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
                     try
                     {
-                        await DownloadFileFromUrlAsync(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        using (var fd = new FileDownloadHelper(null, this._progressChangedHandler))
+                        {
+                            await fd.DownloadFileFromUrlAsync(pullResponse.ReportRequestStatus.ReportDownloadUrl, zipFilePath);
+                        }
 
                         break;
                     }
@@ -572,115 +581,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                     Day = endDate.Day
                 },
             };
-        }
-
-        public void DownloadFileFromUrl(string downloadUrl, string zipFileName)
-        {
-            // Open a connection to the URL where the report is available.
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(downloadUrl);
-            HttpWebResponse response = (HttpWebResponse)webRequest.GetResponse();
-            Stream httpStream = response.GetResponseStream();
-
-            // Open the report file.
-            FileInfo zipFileInfo = new FileInfo(zipFileName);
-            if (!zipFileInfo.Directory.Exists)
-            {
-                zipFileInfo.Directory.Create();
-            }
-
-            FileStream fileStream = new FileStream(zipFileInfo.FullName, FileMode.Create);
-            BinaryWriter binaryWriter = new BinaryWriter(fileStream);
-            BinaryReader binaryReader = new BinaryReader(httpStream);
-
-            // Read the report and save it to the file.
-            int bufferSize = 10240;
-            long writtenBytes = 0L;
-            while (true)
-            {
-                // Read report data from API.
-                byte[] buffer = binaryReader.ReadBytes(bufferSize);
-
-                // Write report data to file.
-                binaryWriter.Write(buffer);
-
-                writtenBytes += buffer.Length;
-
-                if (this._progressChangedHandler != null)
-                {
-                    var _percent = response.ContentLength == 0 ? 0.5 : writtenBytes * 0.5 / response.ContentLength;
-                    this._progressChangedHandler(this, new ProgressChangeEventArgs(0.5 + _percent, zipFileName));
-                }
-
-                // If the end of the report is reached, break out of the 
-                // loop.
-                if (buffer.Length != bufferSize)
-                {
-                    break;
-                }
-            }
-
-            // Clean up.
-            binaryWriter.Close();
-            binaryReader.Close();
-            fileStream.Close();
-            httpStream.Close();
-        }
-
-        public void TryDownloadFileFromUrl(string downloadUrl, string zipFileName)
-        {
-            MethodHelper.TryGetVoid(DownloadFileFromUrl, this, downloadUrl, zipFileName);
-        }
-
-        public async Task DownloadFileFromUrlAsync(string downloadUrl, string zipFileName)
-        {
-            // Open a connection to the URL where the report is available.
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(downloadUrl);
-            HttpWebResponse response = (HttpWebResponse)await webRequest.GetResponseAsync();
-            Stream httpStream = response.GetResponseStream();
-
-            // Open the report file.
-            FileInfo zipFileInfo = new FileInfo(zipFileName);
-            if (!zipFileInfo.Directory.Exists)
-            {
-                zipFileInfo.Directory.Create();
-            }
-
-            FileStream fileStream = new FileStream(zipFileInfo.FullName, FileMode.Create);
-            BinaryWriter binaryWriter = new BinaryWriter(fileStream);
-            BinaryReader binaryReader = new BinaryReader(httpStream);
-
-            // Read the report and save it to the file.
-            int bufferSize = 10240;
-            long writtenBytes = 0L;
-            while (true)
-            {
-                // Read report data from API.
-                byte[] buffer = binaryReader.ReadBytes(bufferSize);
-
-                // Write report data to file.
-                binaryWriter.Write(buffer);
-
-                writtenBytes += buffer.Length;
-
-                if (this._progressChangedHandler != null)
-                {
-                    var _percent = response.ContentLength == 0 ? 0.5 : writtenBytes * 0.5 / response.ContentLength;
-                    this._progressChangedHandler(this, new ProgressChangeEventArgs(0.5 + _percent, zipFileName));
-                }
-
-                // If the end of the report is reached, break out of the 
-                // loop.
-                if (buffer.Length != bufferSize)
-                {
-                    break;
-                }
-            }
-
-            // Clean up.
-            binaryWriter.Close();
-            binaryReader.Close();
-            fileStream.Close();
-            httpStream.Close();
         }
     }
 }
