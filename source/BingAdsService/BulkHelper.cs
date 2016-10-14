@@ -558,6 +558,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                         this.TrackingId));
                     return false;
                 }
+
+                System.Threading.Thread.Sleep(5000);
             }
 
             if (!string.IsNullOrWhiteSpace(downloadUrl))
@@ -634,6 +636,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                         this.TrackingId));
                     return false;
                 }
+
+                System.Threading.Thread.Sleep(5000);
             }
 
             if (!string.IsNullOrWhiteSpace(downloadUrl))
