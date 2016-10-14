@@ -121,12 +121,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// <param name="predicates">Determines the request conditions. This operation's response will include accounts that match all of the specified predicates. Note: You may specify up to 6 predicates, and one of the predicate fields must be AccountId. You may use the StartDate and EndDate predicate fields twice each to specify start and end date ranges, and otherwise may only use each predicate field once.
         /// For a list of supported Field and Operator elements of a Predicate object for this service operation, see Predicate Field and Operator.</param>
         /// <returns>SearchInsertionOrdersResponse</returns>
-        public SearchInsertionOrdersResponse SearchInsertionOrders(ApiAuthentication auth, OrderBy[] ordering, Paging pageing, Predicate[] predicates)
+        public SearchInsertionOrdersResponse SearchInsertionOrders(ApiAuthentication auth, OrderBy[] ordering, Paging paging, Predicate[] predicates)
         {
             var request = new SearchInsertionOrdersRequest
             {
                 Ordering = ordering,
-                PageInfo = pageing,
+                PageInfo = paging,
                 Predicates = predicates,
             };
 
@@ -144,17 +144,17 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return null;
         }
 
-        public SearchInsertionOrdersResponse TrySearchInsertionOrders(ApiAuthentication auth, OrderBy[] ordering, Paging pageing, Predicate[] predicates)
+        public SearchInsertionOrdersResponse TrySearchInsertionOrders(ApiAuthentication auth, OrderBy[] ordering, Paging paging, Predicate[] predicates)
         {
-            return MethodHelper.TryGet(SearchInsertionOrders, this, auth, ordering, pageing, predicates);
+            return MethodHelper.TryGet(SearchInsertionOrders, this, auth, ordering, paging, predicates);
         }
 
-        public async Task<SearchInsertionOrdersResponse> SearchInsertionOrdersAsync(ApiAuthentication auth, OrderBy[] ordering, Paging pageing, Predicate[] predicates)
+        public async Task<SearchInsertionOrdersResponse> SearchInsertionOrdersAsync(ApiAuthentication auth, OrderBy[] ordering, Paging paging, Predicate[] predicates)
         {
             var request = new SearchInsertionOrdersRequest
             {
                 Ordering = ordering,
-                PageInfo = pageing,
+                PageInfo = paging,
                 Predicates = predicates,
             };
 
