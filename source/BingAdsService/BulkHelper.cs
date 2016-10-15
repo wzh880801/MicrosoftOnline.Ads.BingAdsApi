@@ -272,6 +272,13 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             {
                 SetAuthHelper.SetAuth(auth, request);
 
+                Log(new LogEventArgs(
+                    ServiceType.Bulk,
+                    "DownloadCampaignsByAccountIds",
+                    "Ready to submit DownloadCampaignsByAccountIdsRequest...",
+                    new { Request = request },
+                    null, this.TrackingId, LogLevel.Info));
+
                 return Check().DownloadCampaignsByAccountIds(request);
             }
             catch (Exception ex)
@@ -339,6 +346,13 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             try
             {
                 SetAuthHelper.SetAuth(auth, request);
+
+                Log(new LogEventArgs(
+                    ServiceType.Bulk,
+                    "DownloadCampaignsByAccountIdsAsync",
+                    "Ready to submit DownloadCampaignsByAccountIdsRequest async...",
+                    new { Request = request },
+                    null, this.TrackingId, LogLevel.Info));
 
                 return await Check().DownloadCampaignsByAccountIdsAsync(request);
             }
@@ -523,6 +537,13 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             if (request == null)
                 return false;
 
+            Log(new LogEventArgs(
+                    ServiceType.Bulk,
+                    "BulkDownloadCampaignsByAccountIds",
+                    "DownloadCampaignsByAccountIdsRequest successfully submitted...",
+                    new { Response = request },
+                    null, this.TrackingId, LogLevel.Info));
+
             int errors = 0;
             int percent = 0;
             string downloadUrl = null;
@@ -539,7 +560,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
                 if (percent != _req.PercentComplete)
                 {
                     percent = _req.PercentComplete;
-                    ReportProgress(percent);
+                    ReportProgress(percent / 100.0d);
                 }
 
                 if (_req.RequestStatus == "Completed")//InProgress //Failed //FailedFullSyncRequired 
