@@ -67,6 +67,7 @@
     <Compile Include="Common\MethodHelper.cs" />
     <Compile Include="OAuth\OAuthHelper.cs" />
     <Compile Include="OAuth\OAuthSettings.cs" />
+    <Compile Include="Processor\TsvReportFileProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BingAdsService\ReportingHelper.cs" />
     <Compile Include="Service References\V10.AdInsightService\Reference.cs">

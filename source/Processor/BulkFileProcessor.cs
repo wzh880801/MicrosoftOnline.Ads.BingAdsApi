@@ -100,6 +100,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             try
             {
+                _zipFileProcessed = false;
+
                 UnZip();
                 Parse();
 
