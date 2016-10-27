@@ -1077,5 +1077,67 @@ namespace MicrosoftOnline.Ads.BingAdsApi
 
             return null;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="paging"></param>
+        /// <param name="predicates"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="includeTaxDetails">Determines whether or not the returned AdvertiserAccount should include the TaxId, TaxIdStatus, and BusinessAddress elements. By default, the elements are not returned. To include the TaxId, TaxIdStatus, and BusinessAddress elements, set the value of this element to True.</param>
+        /// <returns></returns>
+        public SearchAccountsResponse SearchAccounts(ApiAuthentication auth, Paging paging, Predicate[] predicates, OrderBy[] orderBy = null, bool? includeTaxDetails = false)
+        {
+            var request = new SearchAccountsRequest
+            {
+                IncludeTaxDetails = includeTaxDetails,
+                PageInfo = paging,
+                Predicates = predicates,
+                Ordering = orderBy,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().SearchAccounts(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "SearchAccounts", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public SearchAccountsResponse TrySearchAccounts(ApiAuthentication auth, Paging paging, Predicate[] predicates, OrderBy[] orderBy = null, bool? includeTaxDetails = false)
+        {
+            return MethodHelper.TryGet(SearchAccounts, this, auth, paging, predicates, orderBy, includeTaxDetails);
+        }
+
+        public async Task<SearchAccountsResponse> SearchAccountsAsync(ApiAuthentication auth, Paging paging, Predicate[] predicates, OrderBy[] orderBy = null, bool? includeTaxDetails = false)
+        {
+            var request = new SearchAccountsRequest
+            {
+                IncludeTaxDetails = includeTaxDetails,
+                PageInfo = paging,
+                Predicates = predicates,
+                Ordering = orderBy,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().SearchAccountsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "SearchAccountsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
     }
 }
