@@ -1027,6 +1027,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             if (_request == null)
                 return null;
 
+            if(_request.Account.AccountLifeCycleStatus == AccountLifeCycleStatus.Inactive)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "DeleteAccount",
+                    string.Format("Account {0} is InActive already!", accountId),
+                    new { AccountId = accountId },
+                    new Exception(string.Format("Account {0} is InActive already!", accountId))));
+                return null;
+            }
+
             var request = new DeleteAccountRequest
             {
                 AccountId = accountId,
@@ -1057,6 +1066,15 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             var _request = GetAccount(auth, accountId);
             if (_request == null)
                 return null;
+
+            if (_request.Account.AccountLifeCycleStatus == AccountLifeCycleStatus.Inactive)
+            {
+                Log(new LogEventArgs(ServiceType.CustomerManagement, "DeleteAccountAsync",
+                    string.Format("Account {0} is InActive already!", accountId),
+                    new { AccountId = accountId },
+                    new Exception(string.Format("Account {0} is InActive already!", accountId))));
+                return null;
+            }
 
             var request = new DeleteAccountRequest
             {
