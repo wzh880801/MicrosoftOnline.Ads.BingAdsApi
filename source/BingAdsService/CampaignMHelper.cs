@@ -63,9 +63,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// Note: Required for service operations related to targeting and editorial. As a best practice you should always specify this element.</param>
         /// <returns></returns>
         public GetCampaignsByAccountIdResponse GetCampaignsByAccountId(
-            ApiAuthentication auth, 
-            long accountId, 
-            CampaignType campaignType, 
+            ApiAuthentication auth,
+            long accountId,
+            CampaignType campaignType,
             long? customerId = null)
         {
             var request = new GetCampaignsByAccountIdRequest
@@ -91,18 +91,18 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public GetCampaignsByAccountIdResponse TryGetCampaignsByAccountId(
-            ApiAuthentication auth, 
-            long accountId, 
-            CampaignType campaignType, 
+            ApiAuthentication auth,
+            long accountId,
+            CampaignType campaignType,
             long? customerId = null)
         {
             return MethodHelper.TryGet(GetCampaignsByAccountId, this, auth, accountId, campaignType, customerId);
         }
 
         public async Task<GetCampaignsByAccountIdResponse> GetCampaignsByAccountIdAsync(
-            ApiAuthentication auth, 
-            long accountId, 
-            CampaignType campaignType, 
+            ApiAuthentication auth,
+            long accountId,
+            CampaignType campaignType,
             long? customerId = null)
         {
             var request = new GetCampaignsByAccountIdRequest
@@ -140,10 +140,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// <param name="customerId"></param>
         /// <returns></returns>
         public GetCampaignsByIdsResponse GetCampaignsByIds(
-            ApiAuthentication auth, 
-            long[] campaignIds, 
-            CampaignType campaignType, 
-            long accountId, 
+            ApiAuthentication auth,
+            long[] campaignIds,
+            CampaignType campaignType,
+            long accountId,
             long? customerId = null)
         {
             var request = new GetCampaignsByIdsRequest
@@ -170,20 +170,20 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public GetCampaignsByIdsResponse TryGetCampaignsByIds(
-            ApiAuthentication auth, 
-            long[] campaignIds, 
-            CampaignType campaignType, 
-            long accountId, 
+            ApiAuthentication auth,
+            long[] campaignIds,
+            CampaignType campaignType,
+            long accountId,
             long? customerId = null)
         {
             return MethodHelper.TryGet(GetCampaignsByIds, this, auth, campaignIds, campaignType, accountId, customerId);
         }
 
         public async Task<GetCampaignsByIdsResponse> GetCampaignsByIdsAsync(
-            ApiAuthentication auth, 
-            long[] campaignIds, 
-            CampaignType campaignType, 
-            long accountId, 
+            ApiAuthentication auth,
+            long[] campaignIds,
+            CampaignType campaignType,
+            long accountId,
             long? customerId = null)
         {
             var request = new GetCampaignsByIdsRequest
@@ -220,11 +220,11 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// <param name="customerId"></param>
         /// <returns></returns>
         public GetCampaignCriterionsByIdsResponse GetCampaignCriterionsByIds(
-            ApiAuthentication auth, 
-            long[] campaignCriterionIds, 
-            long campaignId, 
-            CampaignCriterionType criterionType, 
-            long? accountId, 
+            ApiAuthentication auth,
+            long[] campaignCriterionIds,
+            long campaignId,
+            CampaignCriterionType criterionType,
+            long? accountId,
             long? customerId = null)
         {
             var request = new GetCampaignCriterionsByIdsRequest
@@ -251,30 +251,30 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public GetCampaignCriterionsByIdsResponse TryGetCampaignCriterionsByIds(
-            ApiAuthentication auth, 
-            long[] campaignCriterionIds, 
-            long campaignId, 
-            CampaignCriterionType criterionType, 
-            long? accountId, 
+            ApiAuthentication auth,
+            long[] campaignCriterionIds,
+            long campaignId,
+            CampaignCriterionType criterionType,
+            long? accountId,
             long? customerId = null)
         {
             return MethodHelper.TryGet(
-                GetCampaignCriterionsByIds, 
-                this, 
-                auth, 
-                campaignCriterionIds, 
-                campaignId, 
-                criterionType, 
+                GetCampaignCriterionsByIds,
+                this,
+                auth,
+                campaignCriterionIds,
+                campaignId,
+                criterionType,
                 accountId,
                 customerId);
         }
 
         public async Task<GetCampaignCriterionsByIdsResponse> GetCampaignCriterionsByIdsAsync(
-            ApiAuthentication auth, 
-            long[] campaignCriterionIds, 
-            long campaignId, 
-            CampaignCriterionType criterionType, 
-            long? accountId, 
+            ApiAuthentication auth,
+            long[] campaignCriterionIds,
+            long campaignId,
+            CampaignCriterionType criterionType,
+            long? accountId,
             long? customerId = null)
         {
             var request = new GetCampaignCriterionsByIdsRequest
@@ -309,9 +309,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         /// <param name="customerId"></param>
         /// <returns></returns>
         public GetCampaignSizesByAccountIdResponse GetCampaignSizesByAccountId(
-            ApiAuthentication auth, 
-            long accountId, 
-            long[] campaignIds, 
+            ApiAuthentication auth,
+            long accountId,
+            long[] campaignIds,
             long? customerId = null)
         {
             var request = new GetCampaignSizesByAccountIdRequest
@@ -337,17 +337,17 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public GetCampaignSizesByAccountIdResponse TryGetCampaignSizesByAccountId(
-            ApiAuthentication auth, 
-            long accountId, 
-            long[] campaignIds, 
+            ApiAuthentication auth,
+            long accountId,
+            long[] campaignIds,
             long? customerId = null)
         {
             return MethodHelper.TryGet(
-                GetCampaignSizesByAccountId, 
-                this, 
-                auth, 
-                accountId, 
-                campaignIds, 
+                GetCampaignSizesByAccountId,
+                this,
+                auth,
+                accountId,
+                campaignIds,
                 customerId);
         }
 
@@ -380,9 +380,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddCampaignsResponse AddCampaigns(
-            ApiAuthentication auth, 
-            long accountId, 
-            long? customerId, 
+            ApiAuthentication auth,
+            long accountId,
+            long? customerId,
             Campaign[] campaigns)
         {
             var request = new AddCampaignsRequest
@@ -451,10 +451,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdGroupsResponse AddAdGroups(
-            ApiAuthentication auth, 
-            long? accountId, 
-            long? customerId, 
-            long campaignId, 
+            ApiAuthentication auth,
+            long? accountId,
+            long? customerId,
+            long campaignId,
             AdGroup[] adGroups)
         {
             var request = new AddAdGroupsRequest
@@ -480,10 +480,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdGroupsResponse TryAddAdGroups(
-            ApiAuthentication auth, 
-            long? accountId, 
-            long? customerId, 
-            long campaignId, 
+            ApiAuthentication auth,
+            long? accountId,
+            long? customerId,
+            long campaignId,
             AdGroup[] adGroups)
         {
             return MethodHelper.TryGet(AddAdGroups,
@@ -496,10 +496,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public async Task<AddAdGroupsResponse> AddAdGroupsAsync(
-            ApiAuthentication auth, 
-            long? accountId, 
-            long? customerId, 
-            long campaignId, 
+            ApiAuthentication auth,
+            long? accountId,
+            long? customerId,
+            long campaignId,
             AdGroup[] adGroups)
         {
             var request = new AddAdGroupsRequest
@@ -525,10 +525,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdsResponse AddAds(
-            ApiAuthentication auth, 
-            long? accountId, 
-            long? customerId, 
-            long adGroupId, 
+            ApiAuthentication auth,
+            long? accountId,
+            long? customerId,
+            long adGroupId,
             Ad[] ads)
         {
             var request = new AddAdsRequest
@@ -554,14 +554,14 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdsResponse TryAddAds(
-            ApiAuthentication auth, 
-            long? accountId, 
-            long? customerId, 
-            long adGroupId, 
+            ApiAuthentication auth,
+            long? accountId,
+            long? customerId,
+            long adGroupId,
             Ad[] ads)
         {
             return MethodHelper.TryGet(AddAds,
-                this, 
+                this,
                 auth,
                 accountId,
                 customerId,
@@ -570,10 +570,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public async Task<AddAdsResponse> AddAdsAsync(
-            ApiAuthentication auth, 
+            ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
-            long adGroupId, 
+            long? customerId,
+            long adGroupId,
             Ad[] ads)
         {
             var request = new AddAdsRequest
@@ -601,8 +601,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public AddKeywordsResponse AddKeywords(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
-            long adGroupId, 
+            long? customerId,
+            long adGroupId,
             Keyword[] keywords)
         {
             var request = new AddKeywordsRequest
@@ -630,8 +630,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public AddKeywordsResponse TryAddKeywords(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
-            long adGroupId, 
+            long? customerId,
+            long adGroupId,
             Keyword[] keywords)
         {
             return MethodHelper.TryGet(AddKeywords, this, auth, accountId, customerId, adGroupId, keywords);
@@ -640,8 +640,8 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public async Task<AddKeywordsResponse> AddKeywordsAsync(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
-            long adGroupId, 
+            long? customerId,
+            long adGroupId,
             Keyword[] keywords)
         {
             var request = new AddKeywordsRequest
@@ -670,7 +670,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetAdGroupsByCampaignIdResponse GetAdGroupsByCampaignId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long campaignId)
         {
             var request = new GetAdGroupsByCampaignIdRequest
@@ -697,7 +697,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetAdGroupsByCampaignIdResponse TryGetAdGroupsByCampaignId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long campaignId)
         {
             return MethodHelper.TryGet(GetAdGroupsByCampaignId, this, auth, accountId, customerId, campaignId);
@@ -706,7 +706,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public async Task<GetAdGroupsByCampaignIdResponse> GetAdGroupsByCampaignIdAsync(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long campaignId)
         {
             var request = new GetAdGroupsByCampaignIdRequest
@@ -733,7 +733,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetAdsByAdGroupIdResponse GetAdsByAdGroupId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             var request = new GetAdsByAdGroupIdRequest
@@ -760,7 +760,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetAdsByAdGroupIdResponse TryGetAdsByAdGroupId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             return MethodHelper.TryGet(GetAdsByAdGroupId, this, auth, accountId, customerId, adGroupId);
@@ -769,7 +769,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public async Task<GetAdsByAdGroupIdResponse> GetAdsByAdGroupIdAsync(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             var request = new GetAdsByAdGroupIdRequest
@@ -797,7 +797,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetKeywordsByAdGroupIdResponse GetKeywordsByAdGroupId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             var request = new GetKeywordsByAdGroupIdRequest
@@ -824,7 +824,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public GetKeywordsByAdGroupIdResponse TryGetKeywordsByAdGroupId(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             return MethodHelper.TryGet(GetKeywordsByAdGroupId,
@@ -838,7 +838,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         public async Task<GetKeywordsByAdGroupIdResponse> GetKeywordsByAdGroupIdAsync(
             ApiAuthentication auth,
             long? accountId,
-            long? customerId, 
+            long? customerId,
             long adGroupId)
         {
             var request = new GetKeywordsByAdGroupIdRequest
@@ -912,11 +912,11 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             long? accountId)
         {
             return MethodHelper.TryGet(
-                GetTargetsByCampaignIds, 
-                this, 
-                auth, 
-                campaignIds, 
-                customerId, 
+                GetTargetsByCampaignIds,
+                this,
+                auth,
+                campaignIds,
+                customerId,
                 accountId);
         }
 
@@ -1200,6 +1200,141 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             }
 
             return null;
+        }
+
+        public AddAdExtensionsResponse AddAdExtensions(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtension[] adExtensions, 
+            long? customerId)
+        {
+            var request = new AddAdExtensionsRequest
+            {
+                AccountId = accountId,
+                AdExtensions = adExtensions,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddAdExtensions(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddAdExtensions", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddAdExtensionsResponse> AddAdExtensionsAsync(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtension[] adExtensions, 
+            long? customerId)
+        {
+            var request = new AddAdExtensionsRequest
+            {
+                AccountId = accountId,
+                AdExtensions = adExtensions,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddAdExtensionsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddAdExtensionsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddAdExtensionsResponse TryAddAdExtensions(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtension[] adExtensions, 
+            long? customerId)
+        {
+            return MethodHelper.TryGet(AddAdExtensions, this, auth, accountId, adExtensions, customerId);
+        }
+
+        public SetAdExtensionsAssociationsResponse SetAdExtensionsAssociations(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtensionIdToEntityIdAssociation[] assiciations, 
+            AssociationType associationType, 
+            long? customerId)
+        {
+            var request = new SetAdExtensionsAssociationsRequest
+            {
+                AccountId = accountId,
+                AdExtensionIdToEntityIdAssociations = assiciations,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                AssociationType = associationType
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().SetAdExtensionsAssociations(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetAdExtensionsAssociations", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<SetAdExtensionsAssociationsResponse> SetAdExtensionsAssociationsAsync(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtensionIdToEntityIdAssociation[] assiciations, 
+            AssociationType associationType, 
+            long? customerId)
+        {
+            var request = new SetAdExtensionsAssociationsRequest
+            {
+                AccountId = accountId,
+                AdExtensionIdToEntityIdAssociations = assiciations,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                AssociationType = associationType
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().SetAdExtensionsAssociationsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetAdExtensionsAssociationsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public SetAdExtensionsAssociationsResponse TrySetAdExtensionsAssociations(
+            ApiAuthentication auth, 
+            long accountId, 
+            AdExtensionIdToEntityIdAssociation[] assiciations, 
+            AssociationType associationType, 
+            long? customerId)
+        {
+            return MethodHelper.TryGet(SetAdExtensionsAssociations, this, auth, accountId, assiciations, associationType, customerId);
         }
     }
 }
