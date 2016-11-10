@@ -1203,9 +1203,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdExtensionsResponse AddAdExtensions(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtension[] adExtensions, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtension[] adExtensions,
             long? customerId)
         {
             var request = new AddAdExtensionsRequest
@@ -1231,9 +1231,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public async Task<AddAdExtensionsResponse> AddAdExtensionsAsync(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtension[] adExtensions, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtension[] adExtensions,
             long? customerId)
         {
             var request = new AddAdExtensionsRequest
@@ -1259,19 +1259,19 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public AddAdExtensionsResponse TryAddAdExtensions(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtension[] adExtensions, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtension[] adExtensions,
             long? customerId)
         {
             return MethodHelper.TryGet(AddAdExtensions, this, auth, accountId, adExtensions, customerId);
         }
 
         public SetAdExtensionsAssociationsResponse SetAdExtensionsAssociations(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtensionIdToEntityIdAssociation[] assiciations, 
-            AssociationType associationType, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtensionIdToEntityIdAssociation[] assiciations,
+            AssociationType associationType,
             long? customerId)
         {
             var request = new SetAdExtensionsAssociationsRequest
@@ -1298,10 +1298,10 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public async Task<SetAdExtensionsAssociationsResponse> SetAdExtensionsAssociationsAsync(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtensionIdToEntityIdAssociation[] assiciations, 
-            AssociationType associationType, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtensionIdToEntityIdAssociation[] assiciations,
+            AssociationType associationType,
             long? customerId)
         {
             var request = new SetAdExtensionsAssociationsRequest
@@ -1328,13 +1328,899 @@ namespace MicrosoftOnline.Ads.BingAdsApi
         }
 
         public SetAdExtensionsAssociationsResponse TrySetAdExtensionsAssociations(
-            ApiAuthentication auth, 
-            long accountId, 
-            AdExtensionIdToEntityIdAssociation[] assiciations, 
-            AssociationType associationType, 
+            ApiAuthentication auth,
+            long accountId,
+            AdExtensionIdToEntityIdAssociation[] assiciations,
+            AssociationType associationType,
             long? customerId)
         {
             return MethodHelper.TryGet(SetAdExtensionsAssociations, this, auth, accountId, assiciations, associationType, customerId);
+        }
+
+        public SetTargetToCampaignResponse SetTargetToCampaign(
+            ApiAuthentication auth,
+            long campaignId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetTargetToCampaignRequest
+            {
+                CampaignId = campaignId,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReplaceAssociation = replaceAssociation,
+                TargetId = targerId
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().SetTargetToCampaign(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetTargetToCampaign", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<SetTargetToCampaignResponse> SetTargetToCampaignAsync(
+            ApiAuthentication auth,
+            long campaignId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetTargetToCampaignRequest
+            {
+                CampaignId = campaignId,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReplaceAssociation = replaceAssociation,
+                TargetId = targerId
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().SetTargetToCampaignAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetTargetToCampaignAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public SetTargetToCampaignResponse TrySetTargetToCampaign(
+            ApiAuthentication auth,
+            long campaignId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(SetTargetToCampaign, this, auth, campaignId, targerId, replaceAssociation, accountId, customerId);
+        }
+
+        public SetTargetToAdGroupResponse SetTargetToAdGroup(
+            ApiAuthentication auth,
+            long adGroupId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetTargetToAdGroupRequest
+            {
+                AdGroupId = adGroupId,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReplaceAssociation = replaceAssociation,
+                TargetId = targerId
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().SetTargetToAdGroup(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetTargetToAdGroup", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<SetTargetToAdGroupResponse> SetTargetToAdGroupAsync(
+            ApiAuthentication auth,
+            long adGroupId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetTargetToAdGroupRequest
+            {
+                AdGroupId = adGroupId,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReplaceAssociation = replaceAssociation,
+                TargetId = targerId
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().SetTargetToAdGroupAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetTargetToAdGroupAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public SetTargetToAdGroupResponse TrySetTargetToAdGroup(
+            ApiAuthentication auth,
+            long adGroupId,
+            long targerId,
+            bool replaceAssociation,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(SetTargetToAdGroup, this, auth, adGroupId, targerId, replaceAssociation, accountId, customerId);
+        }
+
+        public AddBudgetsResponse AddBudgets(
+            ApiAuthentication auth,
+            Budget[] budgets,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddBudgetsRequest
+            {
+                Budgets = budgets,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddBudgets(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddBudgets", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddBudgetsResponse> AddBudgetsAsync(
+           ApiAuthentication auth,
+           Budget[] budgets,
+           long accountId,
+           long customerId)
+        {
+            var request = new AddBudgetsRequest
+            {
+                Budgets = budgets,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddBudgetsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddBudgetsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddBudgetsResponse TryAddBudgets(
+            ApiAuthentication auth,
+            Budget[] budgets,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(TryAddBudgets, this, auth, budgets, accountId, customerId);
+        }
+
+        public AddSharedEntityResponse AddSharedEntity(
+            ApiAuthentication auth,
+            SharedEntity shareEntity,
+            SharedListItem[] sharedListItems,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddSharedEntityRequest
+            {
+                SharedEntity = shareEntity,
+                ListItems = sharedListItems,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddSharedEntity(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddSharedEntity", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddSharedEntityResponse> AddSharedEntityAsync(
+            ApiAuthentication auth,
+            SharedEntity shareEntity,
+            SharedListItem[] sharedListItems,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddSharedEntityRequest
+            {
+                SharedEntity = shareEntity,
+                ListItems = sharedListItems,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddSharedEntityAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddSharedEntityAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddSharedEntityResponse TryAddSharedEntity(
+            ApiAuthentication auth,
+            SharedEntity shareEntity,
+            SharedListItem[] sharedListItems,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(AddSharedEntity, this, auth, shareEntity, sharedListItems, accountId, customerId);
+        }
+
+        public AddNegativeKeywordsToEntitiesResponse AddNegativeKeywordsToEntities(
+            ApiAuthentication auth,
+            EntityNegativeKeyword[] entityNegativeKeywords,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddNegativeKeywordsToEntitiesRequest
+            {
+                EntityNegativeKeywords = entityNegativeKeywords,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddNegativeKeywordsToEntities(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddNegativeKeywordsToEntities", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddNegativeKeywordsToEntitiesResponse> AddNegativeKeywordsToEntitiesAsync(
+           ApiAuthentication auth,
+           EntityNegativeKeyword[] entityNegativeKeywords,
+           long accountId,
+           long customerId)
+        {
+            var request = new AddNegativeKeywordsToEntitiesRequest
+            {
+                EntityNegativeKeywords = entityNegativeKeywords,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddNegativeKeywordsToEntitiesAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddNegativeKeywordsToEntitiesAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddNegativeKeywordsToEntitiesResponse TryAddNegativeKeywordsToEntities(
+           ApiAuthentication auth,
+           EntityNegativeKeyword[] entityNegativeKeywords,
+           long accountId,
+           long customerId)
+        {
+            return MethodHelper.TryGet(AddNegativeKeywordsToEntities, this, auth, entityNegativeKeywords, accountId, customerId);
+        }
+
+        public AddTargetsToLibraryResponse AddTargetsToLibrary(
+            ApiAuthentication auth,
+            Target[] targets,
+            long accountId,
+           long customerId)
+        {
+            var request = new AddTargetsToLibraryRequest
+            {
+                Targets = targets,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddTargetsToLibrary(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddTargetsToLibrary", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddTargetsToLibraryResponse> AddTargetsToLibraryAsync(
+            ApiAuthentication auth,
+            Target[] targets,
+            long accountId,
+           long customerId)
+        {
+            var request = new AddTargetsToLibraryRequest
+            {
+                Targets = targets,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddTargetsToLibraryAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddTargetsToLibraryAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddTargetsToLibraryResponse TryAddTargetsToLibrary(
+            ApiAuthentication auth,
+            Target[] targets,
+            long accountId,
+           long customerId)
+        {
+            return MethodHelper.TryGet(AddTargetsToLibrary, this, auth, targets, accountId, customerId);
+        }
+
+        public AddUetTagsResponse AddUetTags(
+            ApiAuthentication auth,
+            UetTag[] tags,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddUetTagsRequest
+            {
+                UetTags = tags,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().AddUetTags(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddUetTags", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<AddUetTagsResponse> AddUetTagsAsync(
+            ApiAuthentication auth,
+            UetTag[] tags,
+            long accountId,
+            long customerId)
+        {
+            var request = new AddUetTagsRequest
+            {
+                UetTags = tags,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().AddUetTagsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "AddUetTagsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public AddUetTagsResponse TryAddUetTags(
+            ApiAuthentication auth,
+            UetTag[] tags,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(AddUetTags, this, auth, tags, accountId, customerId);
+        }
+
+        public GetBudgetsByIdsResponse GetBudgetsByIds(
+            ApiAuthentication auth,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetBudgetsByIdsRequest
+            {
+                BudgetIds = ids,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetBudgetsByIds(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetBudgetsByIds", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetBudgetsByIdsResponse> GetBudgetsByIdsAsync(
+            ApiAuthentication auth,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetBudgetsByIdsRequest
+            {
+                BudgetIds = ids,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetBudgetsByIdsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetBudgetsByIdsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetBudgetsByIdsResponse TryGetBudgetsByIds(
+            ApiAuthentication auth,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(GetBudgetsByIds, this, auth, ids, accountId, customerId);
+        }
+
+        public GetAdExtensionIdsByAccountIdResponse GetAdExtensionIdsByAccountId(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AssociationType associationType,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionIdsByAccountIdRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                AssociationType = associationType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetAdExtensionIdsByAccountId(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionIdsByAccountId", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetAdExtensionIdsByAccountIdResponse> GetAdExtensionIdsByAccountIdAsync(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AssociationType associationType,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionIdsByAccountIdRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                AssociationType = associationType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetAdExtensionIdsByAccountIdAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionIdsByAccountIdAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetAdExtensionIdsByAccountIdResponse TryGetAdExtensionIdsByAccountId(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AssociationType associationType,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(GetAdExtensionIdsByAccountId, this, auth, extensionType, associationType, accountId, customerId);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="auth"></param>
+        /// <param name="extensionType">Filters the returned associations by ad extension type.</param>
+        /// <param name="associationType">Filters the returned associations by entity type.</param>
+        /// <param name="entityIds">The list of entity identifiers by which you may request the respective ad extension associations.</param>
+        /// <param name="adExtensionAdditionalField">The list of additional elements that you want included within each returned AdExtension object. This set of flags enables you to get the latest features using the current version of Bing Ads Campaign Management API, and in the next version the corresponding elements will be included by default.</param>
+        /// <param name="accountId">The identifier of the account that owns the extensions.</param>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
+        public GetAdExtensionsAssociationsResponse GetAdExtensionsAssociations(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AssociationType associationType,
+            long[] entityIds,
+            AdExtensionAdditionalField? adExtensionAdditionalField,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionsAssociationsRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                AssociationType = associationType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                EntityIds = entityIds,
+                ReturnAdditionalFields = adExtensionAdditionalField,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetAdExtensionsAssociations(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionsAssociations", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetAdExtensionsAssociationsResponse> GetAdExtensionsAssociationsAsync(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AssociationType associationType,
+            long[] entityIds,
+            AdExtensionAdditionalField? adExtensionAdditionalField,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionsAssociationsRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                AssociationType = associationType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                EntityIds = entityIds,
+                ReturnAdditionalFields = adExtensionAdditionalField,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetAdExtensionsAssociationsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionsAssociationsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetAdExtensionsAssociationsResponse TryGetAdExtensionsAssociations(
+           ApiAuthentication auth,
+           AdExtensionsTypeFilter extensionType,
+           AssociationType associationType,
+           long[] entityIds,
+           AdExtensionAdditionalField? adExtensionAdditionalField,
+           long accountId,
+           long customerId)
+        {
+            return MethodHelper.TryGet(GetAdExtensionsAssociations, this, auth, extensionType, associationType, entityIds, adExtensionAdditionalField, accountId, customerId);
+        }
+
+        public GetAdExtensionsByIdsResponse GetAdExtensionsByIds(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AdExtensionAdditionalField? adExtensionAdditionalField,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionsByIdsRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReturnAdditionalFields = adExtensionAdditionalField,
+                AdExtensionIds = ids
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetAdExtensionsByIds(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionsByIds", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetAdExtensionsByIdsResponse> GetAdExtensionsByIdsAsync(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AdExtensionAdditionalField? adExtensionAdditionalField,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetAdExtensionsByIdsRequest
+            {
+                AccountId = accountId,
+                AdExtensionType = extensionType,
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                ReturnAdditionalFields = adExtensionAdditionalField,
+                AdExtensionIds = ids
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetAdExtensionsByIdsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetAdExtensionsByIdsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetAdExtensionsByIdsResponse TryGetAdExtensionsByIds(
+            ApiAuthentication auth,
+            AdExtensionsTypeFilter extensionType,
+            AdExtensionAdditionalField? adExtensionAdditionalField,
+            long[] ids,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(GetAdExtensionsByIds, this, auth, extensionType, adExtensionAdditionalField, ids, accountId, customerId);
+        }
+
+        public GetTargetsInfoFromLibraryResponse GetTargetsInfoFromLibrary(
+            ApiAuthentication auth,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetTargetsInfoFromLibraryRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().GetTargetsInfoFromLibrary(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsInfoFromLibrary", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<GetTargetsInfoFromLibraryResponse> GetTargetsInfoFromLibraryAsync(
+            ApiAuthentication auth,
+            long accountId,
+            long customerId)
+        {
+            var request = new GetTargetsInfoFromLibraryRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().GetTargetsInfoFromLibraryAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "GetTargetsInfoFromLibraryAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public GetTargetsInfoFromLibraryResponse TryGetTargetsInfoFromLibrary(
+            ApiAuthentication auth,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(GetTargetsInfoFromLibrary, this, auth, accountId, customerId);
+        }
+
+        public SetSharedEntityAssociationsResponse SetSharedEntityAssociations(
+            ApiAuthentication auth,
+            SharedEntityAssociation[] sharedEntityAssociations,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetSharedEntityAssociationsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                Associations = sharedEntityAssociations,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return Check().SetSharedEntityAssociations(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetSharedEntityAssociations", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public async Task<SetSharedEntityAssociationsResponse> SetSharedEntityAssociationsAsync(
+            ApiAuthentication auth,
+            SharedEntityAssociation[] sharedEntityAssociations,
+            long accountId,
+            long customerId)
+        {
+            var request = new SetSharedEntityAssociationsRequest
+            {
+                CustomerAccountId = string.Format("{0}", accountId),
+                CustomerId = string.Format("{0}", customerId),
+                Associations = sharedEntityAssociations,
+            };
+
+            try
+            {
+                SetAuthHelper.SetAuth(auth, request);
+
+                return await Check().SetSharedEntityAssociationsAsync(request);
+            }
+            catch (Exception ex)
+            {
+                Log(new LogEventArgs(ServiceType.CampaignManagement, "SetSharedEntityAssociationsAsync", ex.Message, new { Request = request }, ex));
+            }
+
+            return null;
+        }
+
+        public SetSharedEntityAssociationsResponse TrySetSharedEntityAssociations(
+            ApiAuthentication auth,
+            SharedEntityAssociation[] sharedEntityAssociations,
+            long accountId,
+            long customerId)
+        {
+            return MethodHelper.TryGet(SetSharedEntityAssociations, this, auth, sharedEntityAssociations, accountId, customerId);
         }
     }
 }
