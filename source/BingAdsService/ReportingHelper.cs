@@ -450,7 +450,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return true;
         }
 
-        private SubmitGenerateReportResponse SubmitReport(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
+        public SubmitGenerateReportResponse SubmitReport(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
         {
             var request = new SubmitGenerateReportRequest
             {
@@ -473,12 +473,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi
             return null;
         }
 
-        private SubmitGenerateReportResponse TrySubmitReport(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
+        public SubmitGenerateReportResponse TrySubmitReport(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
         {
             return MethodHelper.TryGet(SubmitReport, this, auth, reportRequest, customerId, accountId);
         }
 
-        private async Task<SubmitGenerateReportResponse> SubmitReportAsync(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
+        public async Task<SubmitGenerateReportResponse> SubmitReportAsync(ApiAuthentication auth, ReportRequest reportRequest, long? customerId, long? accountId)
         {
             var request = new SubmitGenerateReportRequest
             {
