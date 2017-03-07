@@ -3322,6 +3322,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AccountStatus = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityGeneralClicks = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualitySophisticatedClicks = 55,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -3891,6 +3897,12 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         BudgetAssociationStatus = 69,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualityGeneralClicks = 70,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LowQualitySophisticatedClicks = 71,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -4440,6 +4452,9 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AppInstall = 256,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DynamicSearchAd = 512,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ExpandedText = 1024,
@@ -10924,6 +10939,27 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AdStatus = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionSharePercent = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBudgetPercent = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToRankPercent = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BenchmarkBid = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BenchmarkCtr = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TopVsOther = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdDistribution = 54,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11183,6 +11219,24 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V9.ReportingService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         CustomParameters = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionSharePercent = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToBudgetPercent = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImpressionLostToRankPercent = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BenchmarkBid = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BenchmarkCtr = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdDistribution = 48,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

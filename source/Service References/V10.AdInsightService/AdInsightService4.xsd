@@ -336,4 +336,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PutMetricDataRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Microsoft.BingAds.Advertiser.AdInsight.Api.DataContract.Entity" minOccurs="0" name="Metrics" nillable="true" type="q57:ArrayOfMetricData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PutMetricDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

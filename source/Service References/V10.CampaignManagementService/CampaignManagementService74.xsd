@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts.V10" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/V10/CampaignManagementService.svc?xsd=xsd1" namespace="https://bingads.microsoft.com/CampaignManagement/v10" />
+  <xs:import schemaLocation="https://campaign.api.bingads.microsoft.com/Api/Advertiser/CampaignManagement/v10/CampaignManagementService.svc?xsd=xsd1" namespace="https://bingads.microsoft.com/CampaignManagement/v10" />
   <xs:complexType name="ArrayOfAppUrl">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="AppUrl" nillable="true" type="tns:AppUrl" />

@@ -43,6 +43,176 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DownloadEntity", Namespace="https://bingads.microsoft.com/CampaignManagement/v10")]
+    public enum DownloadEntity : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Campaigns = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroups = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ads = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Keywords = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignNegativeKeywords = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupNegativeKeywords = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignNegativeSites = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupNegativeSites = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignSiteLinksAdExtensions = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignLocationAdExtensions = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignCallAdExtensions = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupSiteLinksAdExtensions = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LocationAdExtensions = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CallAdExtensions = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SiteLinksAdExtensions = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NegativeKeywordLists = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SharedNegativeKeywords = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignNegativeKeywordListAssociations = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ImageAdExtensions = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignImageAdExtensions = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupImageAdExtensions = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AppAdExtensions = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupAppAdExtensions = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignAppAdExtensions = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NewsAdExtensions = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReviewAdExtensions = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignNegativeDynamicSearchAdTargets = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupProductPartitions = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignProductScopes = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignReviewAdExtensions = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupReviewAdExtensions = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CalloutAdExtensions = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignCalloutAdExtensions = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupCalloutAdExtensions = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Sitelink2AdExtensions = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignSitelink2AdExtensions = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupSitelink2AdExtensions = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ActionLinkAdExtensions = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignActionLinkAdExtensions = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupActionLinkAdExtensions = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        StructuredSnippetAdExtensions = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignStructuredSnippetAdExtensions = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupStructuredSnippetAdExtensions = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RemarketingLists = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupRemarketingListAssociations = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Budgets = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TextAds = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductAds = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AppInstallAds = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExpandedTextAds = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DynamicSearchAds = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupDynamicSearchAdTargets = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupNegativeDynamicSearchAdTargets = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CampaignTargetCriterions = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AdGroupTargetCriterions = 55,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DownloadFileType", Namespace="https://bingads.microsoft.com/CampaignManagement/v10")]
     public enum DownloadFileType : int {
         
@@ -198,9 +368,6 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ExpandedTextAds = 70368744177664,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DynamicSearchAds = 140737488355328,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1016,7 +1183,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByAccountIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
-            "nsByAccountIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
+            "nsByAccountIdsApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByAccountIdsResponse DownloadCampaignsByAccountIds(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByAccountIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByAccountIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
@@ -1028,7 +1195,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
             "nsByCampaignIdsAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
-            "nsByCampaignIdsApiFaultDetail3Fault", Name="ApiFaultDetail")]
+            "nsByCampaignIdsApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByCampaignIdsResponse DownloadCampaignsByCampaignIds(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadCampaignsByCampaignIdsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="DownloadCampaignsByCampaignIds", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaig" +
@@ -1040,7 +1207,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownload" +
             "StatusAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownload" +
-            "StatusApiFaultDetail3Fault", Name="ApiFaultDetail")]
+            "StatusApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkDownloadStatusResponse GetBulkDownloadStatus(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkDownloadStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBulkDownloadStatus", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownload" +
@@ -1052,7 +1219,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUr" +
             "lAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUr" +
-            "lApiFaultDetail3Fault", Name="ApiFaultDetail")]
+            "lApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadUrlResponse GetBulkUploadUrl(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadUrlRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBulkUploadUrl", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUr" +
@@ -1064,7 +1231,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.AdApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadSt" +
             "atusAdApiFaultDetailFault", Name="AdApiFaultDetail", Namespace="https://adapi.microsoft.com")]
         [System.ServiceModel.FaultContractAttribute(typeof(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.ApiFaultDetail), Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadSt" +
-            "atusApiFaultDetail3Fault", Name="ApiFaultDetail")]
+            "atusApiFaultDetailFault", Name="ApiFaultDetail")]
         MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadStatusResponse GetBulkUploadStatus(MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetBulkUploadStatus", ReplyAction="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadSt" +
@@ -1108,24 +1275,43 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=3)]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType;
+        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadEntity[] DownloadEntities;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=4)]
-        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities;
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=5)]
-        public string FormatVersion;
+        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=6)]
-        public System.Nullable<System.DateTime> LastSyncTimeInUTC;
+        public string FormatVersion;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=7)]
+        public System.Nullable<System.DateTime> LastSyncTimeInUTC;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=8)]
         public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange;
         
         public DownloadCampaignsByAccountIdsRequest() {
         }
         
-        public DownloadCampaignsByAccountIdsRequest(string ApplicationToken, string AuthenticationToken, string CustomerAccountId, string CustomerId, string DeveloperToken, string Password, string UserName, long[] AccountIds, System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CompressionType> CompressionType, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope, System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities, string FormatVersion, System.Nullable<System.DateTime> LastSyncTimeInUTC, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange) {
+        public DownloadCampaignsByAccountIdsRequest(
+                    string ApplicationToken, 
+                    string AuthenticationToken, 
+                    string CustomerAccountId, 
+                    string CustomerId, 
+                    string DeveloperToken, 
+                    string Password, 
+                    string UserName, 
+                    long[] AccountIds, 
+                    System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CompressionType> CompressionType, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadEntity[] DownloadEntities, 
+                    System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities, 
+                    string FormatVersion, 
+                    System.Nullable<System.DateTime> LastSyncTimeInUTC, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange) {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
             this.CustomerAccountId = CustomerAccountId;
@@ -1136,6 +1322,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
             this.AccountIds = AccountIds;
             this.CompressionType = CompressionType;
             this.DataScope = DataScope;
+            this.DownloadEntities = DownloadEntities;
             this.DownloadFileType = DownloadFileType;
             this.Entities = Entities;
             this.FormatVersion = FormatVersion;
@@ -1200,24 +1387,43 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
         public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=3)]
-        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType;
+        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadEntity[] DownloadEntities;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=4)]
-        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities;
+        public System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=5)]
-        public string FormatVersion;
+        public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=6)]
-        public System.Nullable<System.DateTime> LastSyncTimeInUTC;
+        public string FormatVersion;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=7)]
+        public System.Nullable<System.DateTime> LastSyncTimeInUTC;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="https://bingads.microsoft.com/CampaignManagement/v10", Order=8)]
         public MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange;
         
         public DownloadCampaignsByCampaignIdsRequest() {
         }
         
-        public DownloadCampaignsByCampaignIdsRequest(string ApplicationToken, string AuthenticationToken, string CustomerAccountId, string CustomerId, string DeveloperToken, string Password, string UserName, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CampaignScope[] Campaigns, System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CompressionType> CompressionType, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope, System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities, string FormatVersion, System.Nullable<System.DateTime> LastSyncTimeInUTC, MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange) {
+        public DownloadCampaignsByCampaignIdsRequest(
+                    string ApplicationToken, 
+                    string AuthenticationToken, 
+                    string CustomerAccountId, 
+                    string CustomerId, 
+                    string DeveloperToken, 
+                    string Password, 
+                    string UserName, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CampaignScope[] Campaigns, 
+                    System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.CompressionType> CompressionType, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DataScope DataScope, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadEntity[] DownloadEntities, 
+                    System.Nullable<MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.DownloadFileType> DownloadFileType, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.BulkDownloadEntity Entities, 
+                    string FormatVersion, 
+                    System.Nullable<System.DateTime> LastSyncTimeInUTC, 
+                    MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.PerformanceStatsDateRange PerformanceStatsDateRange) {
             this.ApplicationToken = ApplicationToken;
             this.AuthenticationToken = AuthenticationToken;
             this.CustomerAccountId = CustomerAccountId;
@@ -1228,6 +1434,7 @@ namespace MicrosoftOnline.Ads.BingAdsApi.V10.BulkService {
             this.Campaigns = Campaigns;
             this.CompressionType = CompressionType;
             this.DataScope = DataScope;
+            this.DownloadEntities = DownloadEntities;
             this.DownloadFileType = DownloadFileType;
             this.Entities = Entities;
             this.FormatVersion = FormatVersion;

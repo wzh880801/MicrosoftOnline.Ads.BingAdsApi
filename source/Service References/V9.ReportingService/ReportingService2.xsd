@@ -123,6 +123,8 @@
       <xs:enumeration value="AveragePagesPerVisit" />
       <xs:enumeration value="AverageDurationPerVisit" />
       <xs:enumeration value="AccountStatus" />
+      <xs:enumeration value="LowQualityGeneralClicks" />
+      <xs:enumeration value="LowQualitySophisticatedClicks" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AccountPerformanceReportColumn" nillable="true" type="tns:AccountPerformanceReportColumn" />
@@ -323,6 +325,8 @@
       <xs:enumeration value="BudgetName" />
       <xs:enumeration value="BudgetStatus" />
       <xs:enumeration value="BudgetAssociationStatus" />
+      <xs:enumeration value="LowQualityGeneralClicks" />
+      <xs:enumeration value="LowQualitySophisticatedClicks" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="CampaignPerformanceReportColumn" nillable="true" type="tns:CampaignPerformanceReportColumn" />
@@ -528,13 +532,8 @@
           <xs:enumeration value="RichAd" />
           <xs:enumeration value="Product" />
           <xs:enumeration value="AppInstall" />
-          <xs:enumeration value="ExpandedText">
-            <xs:annotation>
-              <xs:appinfo>
-                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1024</EnumerationValue>
-              </xs:appinfo>
-            </xs:annotation>
-          </xs:enumeration>
+          <xs:enumeration value="DynamicSearchAd" />
+          <xs:enumeration value="ExpandedText" />
         </xs:restriction>
       </xs:simpleType>
     </xs:list>
@@ -2520,6 +2519,13 @@
       <xs:enumeration value="OfferLanguage" />
       <xs:enumeration value="CountryOfSale" />
       <xs:enumeration value="AdStatus" />
+      <xs:enumeration value="ImpressionSharePercent" />
+      <xs:enumeration value="ImpressionLostToBudgetPercent" />
+      <xs:enumeration value="ImpressionLostToRankPercent" />
+      <xs:enumeration value="BenchmarkBid" />
+      <xs:enumeration value="BenchmarkCtr" />
+      <xs:enumeration value="TopVsOther" />
+      <xs:enumeration value="AdDistribution" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductDimensionPerformanceReportColumn" nillable="true" type="tns:ProductDimensionPerformanceReportColumn" />
@@ -2599,6 +2605,12 @@
       <xs:enumeration value="AdStatus" />
       <xs:enumeration value="TrackingTemplate" />
       <xs:enumeration value="CustomParameters" />
+      <xs:enumeration value="ImpressionSharePercent" />
+      <xs:enumeration value="ImpressionLostToBudgetPercent" />
+      <xs:enumeration value="ImpressionLostToRankPercent" />
+      <xs:enumeration value="BenchmarkBid" />
+      <xs:enumeration value="BenchmarkCtr" />
+      <xs:enumeration value="AdDistribution" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="ProductPartitionPerformanceReportColumn" nillable="true" type="tns:ProductPartitionPerformanceReportColumn" />

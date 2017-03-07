@@ -468,6 +468,30 @@
   <wsdl:message name="IAdInsightService_GetDomainCategories_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
+  <wsdl:message name="PutMetricDataRequest">
+    <wsdl:part name="parameters" element="tns:PutMetricDataRequest" />
+  </wsdl:message>
+  <wsdl:message name="PutMetricDataRequest_Headers">
+    <wsdl:part name="ApplicationToken" element="tns:ApplicationToken" />
+    <wsdl:part name="AuthenticationToken" element="tns:AuthenticationToken" />
+    <wsdl:part name="CustomerAccountId" element="tns:CustomerAccountId" />
+    <wsdl:part name="CustomerId" element="tns:CustomerId" />
+    <wsdl:part name="DeveloperToken" element="tns:DeveloperToken" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="PutMetricDataResponse">
+    <wsdl:part name="parameters" element="tns:PutMetricDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PutMetricDataResponse_Headers">
+    <wsdl:part name="TrackingId" element="tns:TrackingId" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_PutMetricData_AdApiFaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q19="https://adapi.microsoft.com" name="detail" element="q19:AdApiFaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAdInsightService_PutMetricData_ApiFaultDetailFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ApiFaultDetail" />
+  </wsdl:message>
   <wsdl:portType msc:usingSession="false" name="IAdInsightService">
     <wsdl:operation name="GetBidOpportunities">
       <wsdl:input wsaw:Action="GetBidOpportunities" name="GetBidOpportunitiesRequest" message="tns:GetBidOpportunitiesRequest" />
@@ -576,6 +600,12 @@
       <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesResponse" name="GetDomainCategoriesResponse" message="tns:GetDomainCategoriesResponse" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_GetDomainCategories_AdApiFaultDetailFault_FaultMessage" />
       <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/GetDomainCategoriesApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_GetDomainCategories_ApiFaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PutMetricData">
+      <wsdl:input wsaw:Action="PutMetricData" name="PutMetricDataRequest" message="tns:PutMetricDataRequest" />
+      <wsdl:output wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/PutMetricDataResponse" name="PutMetricDataResponse" message="tns:PutMetricDataResponse" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/PutMetricDataAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IAdInsightService_PutMetricData_AdApiFaultDetailFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="Microsoft.Advertiser.AdInsight.Api.Service/IAdInsightService/PutMetricDataApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IAdInsightService_PutMetricData_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAdInsightService" type="tns:IAdInsightService">
@@ -986,6 +1016,29 @@
       </wsdl:input>
       <wsdl:output name="GetDomainCategoriesResponse">
         <soap:header message="tns:GetDomainCategoriesResponse_Headers" part="TrackingId" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AdApiFaultDetailFault">
+        <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PutMetricData">
+      <soap:operation soapAction="PutMetricData" style="document" />
+      <wsdl:input name="PutMetricDataRequest">
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="ApplicationToken" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="AuthenticationToken" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="CustomerAccountId" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="CustomerId" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="DeveloperToken" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="Password" use="literal" />
+        <soap:header message="tns:PutMetricDataRequest_Headers" part="UserName" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PutMetricDataResponse">
+        <soap:header message="tns:PutMetricDataResponse_Headers" part="TrackingId" use="literal" />
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="AdApiFaultDetailFault">

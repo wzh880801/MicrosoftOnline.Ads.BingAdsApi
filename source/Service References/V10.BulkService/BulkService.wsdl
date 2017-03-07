@@ -55,7 +55,7 @@
   <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q1="https://adapi.microsoft.com" name="detail" element="q1:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage">
+  <wsdl:message name="IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="DownloadCampaignsByCampaignIdsRequest">
@@ -79,7 +79,7 @@
   <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q2="https://adapi.microsoft.com" name="detail" element="q2:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage">
+  <wsdl:message name="IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetBulkDownloadStatusRequest">
@@ -103,7 +103,7 @@
   <wsdl:message name="IBulkService_GetBulkDownloadStatus_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q3="https://adapi.microsoft.com" name="detail" element="q3:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_GetBulkDownloadStatus_ApiFaultDetail3Fault_FaultMessage">
+  <wsdl:message name="IBulkService_GetBulkDownloadStatus_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetBulkUploadUrlRequest">
@@ -127,7 +127,7 @@
   <wsdl:message name="IBulkService_GetBulkUploadUrl_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q4="https://adapi.microsoft.com" name="detail" element="q4:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_GetBulkUploadUrl_ApiFaultDetail3Fault_FaultMessage">
+  <wsdl:message name="IBulkService_GetBulkUploadUrl_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:message name="GetBulkUploadStatusRequest">
@@ -151,7 +151,7 @@
   <wsdl:message name="IBulkService_GetBulkUploadStatus_AdApiFaultDetailFault_FaultMessage">
     <wsdl:part xmlns:q5="https://adapi.microsoft.com" name="detail" element="q5:AdApiFaultDetail" />
   </wsdl:message>
-  <wsdl:message name="IBulkService_GetBulkUploadStatus_ApiFaultDetail3Fault_FaultMessage">
+  <wsdl:message name="IBulkService_GetBulkUploadStatus_ApiFaultDetailFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ApiFaultDetail" />
   </wsdl:message>
   <wsdl:portType msc:usingSession="false" name="IBulkService">
@@ -159,31 +159,31 @@
       <wsdl:input wsaw:Action="DownloadCampaignsByAccountIds" name="DownloadCampaignsByAccountIdsRequest" message="tns:DownloadCampaignsByAccountIdsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsResponse" name="DownloadCampaignsByAccountIdsResponse" message="tns:DownloadCampaignsByAccountIdsResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByAccountIds_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetail3Fault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByAccountIdsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByAccountIds_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DownloadCampaignsByCampaignIds">
       <wsdl:input wsaw:Action="DownloadCampaignsByCampaignIds" name="DownloadCampaignsByCampaignIdsRequest" message="tns:DownloadCampaignsByCampaignIdsRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsResponse" name="DownloadCampaignsByCampaignIdsResponse" message="tns:DownloadCampaignsByCampaignIdsResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetail3Fault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/DownloadCampaignsByCampaignIdsApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IBulkService_DownloadCampaignsByCampaignIds_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBulkDownloadStatus">
       <wsdl:input wsaw:Action="GetBulkDownloadStatus" name="GetBulkDownloadStatusRequest" message="tns:GetBulkDownloadStatusRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownloadStatusResponse" name="GetBulkDownloadStatusResponse" message="tns:GetBulkDownloadStatusResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownloadStatusAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_GetBulkDownloadStatus_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownloadStatusApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_GetBulkDownloadStatus_ApiFaultDetail3Fault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkDownloadStatusApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IBulkService_GetBulkDownloadStatus_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBulkUploadUrl">
       <wsdl:input wsaw:Action="GetBulkUploadUrl" name="GetBulkUploadUrlRequest" message="tns:GetBulkUploadUrlRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUrlResponse" name="GetBulkUploadUrlResponse" message="tns:GetBulkUploadUrlResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUrlAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_GetBulkUploadUrl_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUrlApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_GetBulkUploadUrl_ApiFaultDetail3Fault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadUrlApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IBulkService_GetBulkUploadUrl_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBulkUploadStatus">
       <wsdl:input wsaw:Action="GetBulkUploadStatus" name="GetBulkUploadStatusRequest" message="tns:GetBulkUploadStatusRequest" />
       <wsdl:output wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadStatusResponse" name="GetBulkUploadStatusResponse" message="tns:GetBulkUploadStatusResponse" />
       <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadStatusAdApiFaultDetailFault" name="AdApiFaultDetailFault" message="tns:IBulkService_GetBulkUploadStatus_AdApiFaultDetailFault_FaultMessage" />
-      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadStatusApiFaultDetail3Fault" name="ApiFaultDetail3Fault" message="tns:IBulkService_GetBulkUploadStatus_ApiFaultDetail3Fault_FaultMessage" />
+      <wsdl:fault wsaw:Action="https://bingads.microsoft.com/CampaignManagement/v10/IBulkService/GetBulkUploadStatusApiFaultDetailFault" name="ApiFaultDetailFault" message="tns:IBulkService_GetBulkUploadStatus_ApiFaultDetailFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBulkService" type="tns:IBulkService">
@@ -208,8 +208,8 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DownloadCampaignsByCampaignIds">
@@ -231,8 +231,8 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBulkDownloadStatus">
@@ -254,8 +254,8 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBulkUploadUrl">
@@ -277,8 +277,8 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="GetBulkUploadStatus">
@@ -300,8 +300,8 @@
       <wsdl:fault name="AdApiFaultDetailFault">
         <soap:fault use="literal" name="AdApiFaultDetailFault" namespace="" />
       </wsdl:fault>
-      <wsdl:fault name="ApiFaultDetail3Fault">
-        <soap:fault use="literal" name="ApiFaultDetail3Fault" namespace="" />
+      <wsdl:fault name="ApiFaultDetailFault">
+        <soap:fault use="literal" name="ApiFaultDetailFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>

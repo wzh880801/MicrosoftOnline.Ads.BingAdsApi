@@ -920,4 +920,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DomainCategory" nillable="true" type="tns:DomainCategory" />
+  <xs:complexType name="ArrayOfMetricData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MetricData" nillable="true" type="tns:MetricData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMetricData" nillable="true" type="tns:ArrayOfMetricData" />
+  <xs:complexType name="MetricData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MetricDetail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetricType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetricData" nillable="true" type="tns:MetricData" />
 </xs:schema>

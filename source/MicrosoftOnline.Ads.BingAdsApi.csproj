@@ -178,6 +178,9 @@
     <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.GetKeywordOpportunitiesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.PutMetricDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\V10.AdInsightService\MicrosoftOnline.Ads.BingAdsApi.V10.AdInsightService.SuggestKeywordsForUrlResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -215,26 +218,26 @@
     <None Include="Service References\V10.BulkService\MicrosoftOnline.Ads.BingAdsApi.V10.BulkService.GetBulkUploadUrlResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.wsdl" />
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService1.wsdl" />
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService1.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService71.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService2.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService72.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService3.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService73.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService4.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService74.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService5.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService75.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService6.xsd">
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService76.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.AddAdExtensionsResponse.datasource">
@@ -336,6 +339,9 @@
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteNegativeKeywordsFromEntitiesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteRemarketingListsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.DeleteSharedEntitiesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -424,6 +430,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetEditorialReasonsByIdsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetGeoLocationsFileUrlResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.GetKeywordsByAdGroupIdResponse.datasource">
@@ -541,6 +550,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateKeywordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateRemarketingListsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\V10.CampaignManagementService\MicrosoftOnline.Ads.BingAdsApi.V10.CampaignManagementService.UpdateSharedEntitiesResponse.datasource">
@@ -796,9 +808,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\V10.CampaignManagementService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -839,6 +848,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\V10.CampaignManagementService\CampaignManagementService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
