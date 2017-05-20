@@ -10,11 +10,15 @@ namespace BingAdsApiDemo
     {
         static void Main(string[] args)
         {
-            //Run(new DownloadAccountPerformanceReportDemo(
-            //    new DateTime(2016, 1, 1),
-            //    new DateTime(2016, 6, 1),
-            //    42164768,
-            //    @"d:\report.zip"));
+            Run(new GetGeoGraphicPerformanceReportDemo(
+                new DateTime(2016, 1, 1),
+                new DateTime(2016, 6, 1),
+                42164768));
+
+            Run(new GetKeywordPerformanceReportDemo(
+                new DateTime(2016, 1, 1),
+                new DateTime(2016, 6, 1),
+                42164768));
 
             //Run(new GetTargetsDemo(42164768));
 
@@ -25,7 +29,7 @@ namespace BingAdsApiDemo
             //Run(new GetAccountListUnderCustomerDemo());
 
             //Insertion Orders
-            Run(new GetAccountInsertionOrdersDemo());
+            //Run(new GetAccountInsertionOrdersDemo());
 
             Console.WriteLine("Done");
             Console.ReadLine();

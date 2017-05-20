@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="GetKeywordPerformanceReportDemo.cs" />
+    <Compile Include="GetGeoGraphicPerformanceReportDemo.cs" />
     <Compile Include="DownloadAccountPerformanceReportDemo.cs" />
     <Compile Include="GetAccountInsertionOrdersDemo.cs" />
     <Compile Include="GetAccountListUnderCustomerDemo.cs" />
