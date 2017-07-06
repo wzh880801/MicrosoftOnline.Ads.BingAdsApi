@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftOnline.Ads.BingAdsApi", "source\MicrosoftOnline.Ads.BingAdsApi.csproj", "{26AB752C-3D4A-4168-8E17-E66E0E63B1F6}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{0DEAF6F2-268B-4416-9D16-FA74A036BDB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingAdsApiDemo", "example\BingAdsApiDemo.csproj", "{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftOnline.Ads.UnitTestCase", "MicrosoftOnline.Ads.UnitTestCase\MicrosoftOnline.Ads.UnitTestCase.csproj", "{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B4CE12DE-3E68-4913-BFDA-85E7B3CDF2E2}"
 EndProject
@@ -29,10 +27,6 @@ Global
 		{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DA533CA-DA67-4990-83D5-C8F10DB4D41D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +34,5 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{26AB752C-3D4A-4168-8E17-E66E0E63B1F6} = {642E15C8-89B8-491C-84B5-C692D592A279}
 		{7DA533CA-DA67-4990-83D5-C8F10DB4D41D} = {0DEAF6F2-268B-4416-9D16-FA74A036BDB4}
-		{AD47621D-4B29-4BD9-AAE8-BBB8758FBB37} = {B4CE12DE-3E68-4913-BFDA-85E7B3CDF2E2}
 	EndGlobalSection
 EndGlobal
