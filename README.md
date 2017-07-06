@@ -1,6 +1,8 @@
 # MicrosoftOnline.Ads.BingAdsApi
 .NET SDK for BingAds API
 
+[![Build Status](https://travis-ci.org/wzh880801/MicrosoftOnline.Ads.BingAdsApi.svg?branch=master)](https://travis-ci.org/wzh880801/MicrosoftOnline.Ads.BingAdsApi)
+
 `NuGet`: 
 <br>You could get `MicrosoftOnline.Ads.Log.dll` & `Microsoft.Ads.BingAdsApi.dll` from [MyNuGet](http://nuget.esobing.com/nuget/) [`http://nuget.esobing.com/nuget/`](http://nuget.esobing.com/nuget/)
 
